@@ -1,2 +1,3 @@
-# new-NyxWeb
-typescript muonline website
+# NyxWeb Client (TypeScript)
+
+NyxWeb muonline website - client
