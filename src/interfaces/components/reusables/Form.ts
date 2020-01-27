@@ -6,7 +6,8 @@ export interface Input {
 }
 
 export interface Button {
-  type?: 'button' | 'submit' | 'reset' | undefined;
-  looks?: 'basic' | 'default' | 'primary' | undefined;
   value: string;
+  type?: 'button' | 'submit' | 'reset' | undefined;
+  looks?: 'basic' | 'default' | 'primary' | 'secondary' | undefined;
+  loading?: boolean;
 }

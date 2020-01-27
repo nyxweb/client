@@ -5,7 +5,7 @@ const initialState = {
   logged: false
 };
 
-const admin = (state = initialState, action: ReduxAction) => {
+const login = (state = initialState, action: ReduxAction) => {
   const { type } = action;
 
   switch (type) {
@@ -24,4 +24,4 @@ const admin = (state = initialState, action: ReduxAction) => {
   }
 };
 
-export default admin;
+export default login;
