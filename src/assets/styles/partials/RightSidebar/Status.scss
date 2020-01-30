@@ -1,0 +1,46 @@
+.Status {
+  height: 90px;
+  box-shadow: 0px 5px 20px -2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+
+  & .image {
+    position: relative;
+    margin-left: 5px;
+    width: 74px;
+    height: 74px;
+    line-height: 77px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+
+    &.online {
+      background: url('../../../images/partials/server-on.png') no-repeat center
+        center/contain;
+
+      &:after {
+        content: 'ON';
+        color: #0c3000;
+      }
+    }
+
+    &.offline {
+      background: url('../../../images/partials/server-off.png') no-repeat
+        center center/contain;
+
+      &:after {
+        content: 'OFF';
+        color: #f00000;
+      }
+    }
+  }
+
+  & .info {
+    height: 74px;
+    display: flex;
+    padding: 20px 0;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,22 @@
+.Download {
+  background: url(../../../images/partials/download-button.jpg) no-repeat;
+  height: 90px;
+  box-shadow: 0px 5px 20px -2px rgba(0, 0, 0, 0.1);
+
+  & a {
+    display: block;
+    position: relative;
+    z-index: 3;
+    font-size: 11px;
+    color: #7a96b0;
+    line-height: 1.5;
+    padding: 23px 0px 23px 90px;
+  }
+  & a span {
+    display: block;
+    color: #aacff2;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}

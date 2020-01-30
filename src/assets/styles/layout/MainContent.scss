@@ -1,0 +1,30 @@
+.MainContent {
+  width: 690px;
+  padding: 30px 20px 40px 20px;
+  position: relative;
+  background: url(../../images/layout/content-bg.jpg);
+  line-height: 1.4;
+
+  &:before {
+    content: '';
+    background: url(../../images/layout/top-content-icon.png) no-repeat;
+    left: 50%;
+    margin-left: -71px;
+    top: -41px;
+    width: 143px;
+    height: 74px;
+    position: absolute;
+    z-index: 11;
+  }
+
+  &:after {
+    content: '';
+    background: url(../../images/layout/bottom-content-icon.png) no-repeat;
+    background-size: 720px 40px;
+    left: -30px;
+    bottom: -12px;
+    width: 720px;
+    height: 40px;
+    position: absolute;
+  }
+}

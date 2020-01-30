@@ -1,0 +1,35 @@
+.BlockLight {
+  background: url(../../images/partials/light-bg.jpg);
+  box-shadow: 0px 12px 30px -5px rgba(0, 0, 0, 0.1),
+    0px -12px 30px -5px rgba(0, 0, 0, 0.1);
+
+  & .title {
+    color: #657793;
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    & .text {
+      & span {
+        display: block;
+        font-size: 16px;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    & .image {
+      background: url(../../images/partials/bar-title-bg.png) no-repeat;
+      width: 43px;
+      height: 42px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 14px 0px rgba(51, 99, 171, 0.5);
+    }
+  }
+
+  & .content {
+    padding: 0 20px 20px 20px;
+  }
+}

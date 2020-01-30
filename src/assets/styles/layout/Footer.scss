@@ -1,0 +1,40 @@
+.Footer {
+  color: #455468;
+  line-height: 1.3;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & .copyright {
+    display: flex;
+    flex-direction: column;
+
+    & :first-child {
+      font-size: 14px;
+    }
+  }
+
+  & .menu {
+    & a {
+      color: #455468;
+      text-transform: uppercase;
+      font-size: 12px;
+
+      &:hover {
+        color: #ffffff;
+      }
+
+      &:after {
+        content: '|';
+        color: #455468;
+        margin: 0 10px;
+      }
+
+      &:last-of-type:after {
+        content: '';
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+}
