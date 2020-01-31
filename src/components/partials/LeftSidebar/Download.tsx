@@ -7,7 +7,7 @@ const Download: React.FC<Props> = () => {
   return (
     <div className='Download'>
       <Link to='/downloads'>
-        <span>Descargar Cliente</span>y empieza a jugar!
+        <span>Download</span>and start playing...
       </Link>
     </div>
   );

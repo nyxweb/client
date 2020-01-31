@@ -31,5 +31,7 @@
 
   & .content {
     padding: 0 20px 20px 20px;
+
+    @import 'assets/styles/partials/LeftSidebar/Menu.scss';
   }
 }
