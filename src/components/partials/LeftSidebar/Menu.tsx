@@ -2,32 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Partials
-import BlockLight from 'components/partials/BlockLight';
+import ContentBlock from 'components/partials/LeftSidebar/ContentBlock';
 
 interface Props {}
 
 const Menu: React.FC<Props> = () => {
   return (
-    <BlockLight title='main navigator' desc='quick access menu'>
+    <ContentBlock title='main navigator' desc='quick access menu'>
       <Link className='menu-link' to='/'>
-        Home
+        Server News
       </Link>
-      <Link className='menu-link' to='/'>
-        Register
+      <Link className='menu-link' to='/register'>
+        Create Account
       </Link>
-      <Link className='menu-link' to='/'>
-        Download
+      <Link className='menu-link' to='/download'>
+        Game Files
       </Link>
-      <Link className='menu-link' to='/'>
+      <Link className='menu-link' to='/rankings'>
         Rankings
       </Link>
       <Link className='menu-link' to='/'>
         WebShop
       </Link>
-      <Link className='menu-link' to='/'>
+      <a
+        className='menu-link'
+        href='http://darksteam.net'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
         Forums
-      </Link>
-    </BlockLight>
+      </a>
+    </ContentBlock>
   );
 };
 

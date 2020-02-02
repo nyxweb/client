@@ -19,12 +19,10 @@
     justify-content: space-evenly;
 
     & a {
-      all: unset;
       line-height: 63px;
       text-transform: uppercase;
       padding: 0 20px;
       color: #b7cdef;
-      cursor: pointer;
 
       &:hover {
         color: #c8ddf1;

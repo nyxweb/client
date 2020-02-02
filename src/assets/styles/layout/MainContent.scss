@@ -1,9 +1,7 @@
 .MainContent {
   width: 690px;
-  padding: 30px 20px 40px 20px;
   position: relative;
   background: url(../../images/layout/content-bg.jpg);
-  line-height: 1.4;
 
   &:before {
     content: '';
@@ -27,4 +25,7 @@
     height: 40px;
     position: absolute;
   }
+
+  @import 'assets/styles/partials/MainContent/TopPlayers.scss';
+  @import 'assets/styles/pages/Router.scss';
 }

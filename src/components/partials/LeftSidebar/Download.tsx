@@ -6,8 +6,8 @@ interface Props {}
 const Download: React.FC<Props> = () => {
   return (
     <div className='Download'>
-      <Link to='/downloads'>
-        <span>Download</span>and start playing...
+      <Link to='/download'>
+        <span>Download Now</span>...and start playing right away!
       </Link>
     </div>
   );

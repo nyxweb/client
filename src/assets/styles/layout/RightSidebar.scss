@@ -15,5 +15,7 @@
   }
 
   // Partials
+  @import 'assets/styles/partials/RightSidebar/ContentBlock.scss';
   @import 'assets/styles/partials/RightSidebar/Status.scss';
+  @import 'assets/styles/partials/RightSidebar/EventTimers.scss';
 }

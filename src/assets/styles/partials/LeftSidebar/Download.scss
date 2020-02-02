@@ -12,11 +12,13 @@
     line-height: 1.5;
     padding: 23px 0px 23px 90px;
   }
+
   & a span {
     display: block;
     color: #aacff2;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: 700;
+    cursor: url('../../../images/main/pointer.cur'), pointer;
   }
 }

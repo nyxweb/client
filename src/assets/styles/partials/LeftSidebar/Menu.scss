@@ -1,15 +1,18 @@
 a.menu-link {
   display: block;
-  margin: 5px 5px 5px 30px;
-  padding: 5px;
+  margin: 8px 0 0 20px;
   position: relative;
+
+  :first-of-type {
+    margin: 0 0 0 20px;
+  }
 
   &:before {
     content: '';
     position: absolute;
     width: 10px;
-    height: 11px;
-    margin-left: -18px;
+    height: 12px;
+    margin-left: -15px;
     background: url('../../../images/partials/li.png') no-repeat left center;
   }
 }
