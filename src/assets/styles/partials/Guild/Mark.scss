@@ -1,0 +1,7 @@
+.GuildMark {
+  display: inline-block;
+
+  & .cell {
+    float: left;
+  }
+}

@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const fetchEvents = async () => {
+const getCharacters = async () => {
   try {
     const { data } = await axios.get(
-      process.env.REACT_APP_API_URI + '/config/events'
+      process.env.REACT_APP_API_URI + '/characters'
     );
     return typeof data === 'object' ? data : false;
   } catch (error) {
@@ -11,4 +11,4 @@ const fetchEvents = async () => {
   }
 };
 
-export default fetchEvents;
+export default getCharacters;

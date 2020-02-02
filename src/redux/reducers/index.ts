@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
 // Reducers
-import admin from 'redux/reducers/admin';
+import login from 'redux/reducers/login';
 
 const reducers = combineReducers({
-  admin
+  login
 });
 
 export default reducers;

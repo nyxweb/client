@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-interface Props {}
+// Redux
+import { connect } from 'react-redux';
 
-const Login: React.FC<Props> = () => {
+// Actions
+import userLogin from 'redux/actions/user/login';
+
+interface Props {
+  userLogin: Function;
+}
+
+const Login: React.FC<Props> = ({ userLogin }) => {
   const [form, setForm] = useState({
     username: '',
     password: ''
@@ -15,7 +23,7 @@ const Login: React.FC<Props> = () => {
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(form);
+    userLogin(form);
   };
 
   return (
@@ -48,4 +56,4 @@ const Login: React.FC<Props> = () => {
   );
 };
 
-export default Login;
+export default connect(null, { userLogin })(Login);

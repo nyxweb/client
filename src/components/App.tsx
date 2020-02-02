@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import axios from 'axios';
+import 'dotenv/config';
 
 // Redux
-import { Provider } from 'react-redux';
-import store from 'redux/store';
+import { connect } from 'react-redux';
+import userVerification from 'redux/actions/user/verification';
 
 // Styles
 import 'assets/styles/App.scss';
@@ -15,26 +17,39 @@ import LeftSidebar from 'components/layout/LeftSidebar';
 import MainContent from 'components/layout/MainContent';
 import RightSidebar from 'components/layout/RightSidebar';
 import Footer from 'components/layout/Footer';
+import AppState from 'redux/types/app';
 
-interface Props {}
+// Axios auth header
+axios.defaults.headers.common.nyxAuthToken = localStorage.nyxToken;
 
-const App: React.FC<Props> = () => {
+interface Props {
+  username: null | string;
+  userVerification: Function;
+}
+
+const App: React.FC<Props> = ({ username, userVerification }) => {
+  useEffect(() => {
+    username && userVerification();
+  }, [username, userVerification]);
+
   return (
-    <Provider store={store}>
-      <Router>
-        <div className='App'>
-          <Navbar />
-          <Header />
-          <div className='Container'>
-            <LeftSidebar />
-            <MainContent />
-            <RightSidebar />
-          </div>
-          <Footer />
+    <Router>
+      <div className='App'>
+        <Navbar />
+        <Header />
+        <div className='Container'>
+          <LeftSidebar />
+          <MainContent />
+          <RightSidebar />
         </div>
-      </Router>
-    </Provider>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 
-export default App;
+const mapStateToProps = (state: AppState) => ({
+  username: state.login.username
+});
+
+export default connect(mapStateToProps, { userVerification })(App);

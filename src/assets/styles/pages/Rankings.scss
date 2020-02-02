@@ -21,6 +21,26 @@
       padding: 5px 0;
       text-align: center;
 
+      & .guild-name {
+        display: flex;
+        align-items: center;
+
+        & .guild {
+          flex: 1;
+          text-align: right;
+          padding-right: 5px;
+        }
+
+        & .name {
+          flex: 1;
+          text-align: left;
+
+          & a {
+            color: goldenrod;
+          }
+        }
+      }
+
       & a.down-link {
         display: inline-block;
         padding: 5px 15px;

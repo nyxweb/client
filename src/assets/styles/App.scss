@@ -71,6 +71,9 @@ input {
     @import 'assets/styles/layout/MainContent.scss';
     @import 'assets/styles/layout/RightSidebar.scss';
 
+    // Partials
+    @import 'assets/styles/partials/Guild/Mark.scss';
+
     &:before {
       content: '';
       background: url('../images/layout/left-container-icon.png') no-repeat;
