@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import userVerification from 'redux/actions/user/verification';
 
 // Styles
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import 'assets/styles/App.scss';
 
 // Layout

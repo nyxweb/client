@@ -21,4 +21,24 @@ const charClass = (Class: number) => {
   }
 };
 
-export default charClass;
+const shortClass = (Class: number) => {
+  switch (Class) {
+    case 0:
+    case 1:
+      return 'sm';
+    case 16:
+    case 17:
+      return 'bk';
+    case 32:
+    case 33:
+      return 'elf';
+    case 48:
+      return 'mg';
+    case 64:
+      return 'dl';
+    default:
+      return 'none';
+  }
+};
+
+export { charClass, shortClass };

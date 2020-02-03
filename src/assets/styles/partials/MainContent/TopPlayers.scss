@@ -21,6 +21,23 @@
       & a {
         color: goldenrod;
       }
+
+      &:after {
+        display: inline-block;
+        content: '';
+        width: 4px;
+        height: 4px;
+        margin-left: 5px;
+        border-radius: 4px;
+      }
+
+      &.online:after {
+        background: green;
+      }
+
+      &.offline:after {
+        background: red;
+      }
     }
 
     & .card {

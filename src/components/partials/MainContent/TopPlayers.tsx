@@ -1,29 +1,50 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-interface Props {}
+// Actions
+import { getTopCharacters } from 'redux/actions/characters';
+import AppState from 'redux/types/app';
+import { TopCharacter } from 'redux/types/Characters';
 
-const TopPlayers: React.FC<Props> = () => {
+// Components
+import Loader from 'react-loader-spinner';
+
+// Helpers
+import { shortClass } from 'helpers/characters/class';
+
+interface Props {
+  getTopCharacters: Function;
+  topCharacters: TopCharacter[] | null;
+}
+
+const TopPlayers: React.FC<Props> = ({ getTopCharacters, topCharacters }) => {
+  useEffect(() => {
+    getTopCharacters();
+  }, [getTopCharacters]);
+
   return (
     <div className='TopPlayers'>
-      <Character cClass='sm' wins={1} name='Dea7h' />
-      <Character cClass='bk' wins={3} name='DarkMaster' />
-      <Character cClass='elf' wins={5} name='r00tme' />
-      <Character cClass='mg' wins={2} name='mistar_ti' />
-      <Character cClass='dl' wins={4} name='radiPetrov' />
+      {!topCharacters ? (
+        <Loader type='Triangle' color='#00BFFF' height={50} width={50} />
+      ) : (
+        topCharacters.map((char: TopCharacter, i: number) => (
+          <Character key={i} char={char} />
+        ))
+      )}
     </div>
   );
 };
 
 interface CharacterProps {
-  cClass: string;
-  name: string;
-  wins: number;
+  char: TopCharacter;
 }
 
-const Character: React.FC<CharacterProps> = ({ cClass, name, wins }) => {
+const Character: React.FC<CharacterProps> = ({ char }) => {
   const winsTranslate = (num: number) => {
     switch (num) {
+      case 0:
+        return 'zero';
       case 1:
         return 'one';
       case 2:
@@ -37,14 +58,27 @@ const Character: React.FC<CharacterProps> = ({ cClass, name, wins }) => {
     }
   };
 
+  const status =
+    char['account.GameIDC'] === char.Name && char['status.ConnectStat'] === 1
+      ? 'online'
+      : 'offline';
+
   return (
     <div className='frame'>
-      <div className={`card ${cClass} ${winsTranslate(wins)}`} />
-      <div className='name'>
-        <Link to={`/char/${name}`}>{name}</Link>
+      <div
+        className={`card ${shortClass(char.Class)} ${winsTranslate(
+          char.HOFWins
+        )}`}
+      />
+      <div className={`name ${status}`}>
+        <Link to={`/char/${char.Name}`}>{char.Name}</Link>
       </div>
     </div>
   );
 };
 
-export default TopPlayers;
+const mapStateToProps = (state: AppState) => ({
+  topCharacters: state.characters.topCharacters
+});
+
+export default connect(mapStateToProps, { getTopCharacters })(TopPlayers);
