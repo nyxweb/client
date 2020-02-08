@@ -1,11 +1,5 @@
-export interface TopCharacter {
-  Name: string;
-  Class: number;
-  HOFWins: number;
-  'status.ConnectStat': number;
-  'account.GameIDC': string;
-}
+import Character from 'types/Character';
 
 export default interface Characters {
-  topCharacters: TopCharacter[] | null;
+  topCharacters: Character[] | null;
 }

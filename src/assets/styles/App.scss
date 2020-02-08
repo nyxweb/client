@@ -72,6 +72,7 @@ input {
     @import 'assets/styles/layout/RightSidebar.scss';
 
     // Partials
+    @import 'assets/styles/partials/Loader.scss';
     @import 'assets/styles/partials/Guild/Mark.scss';
 
     &:before {

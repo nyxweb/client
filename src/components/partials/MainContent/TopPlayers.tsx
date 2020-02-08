@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // Actions
 import { getTopCharacters } from 'redux/actions/characters';
 import AppState from 'redux/types/app';
-import { TopCharacter } from 'redux/types/Characters';
+import Character from 'types/Character';
 
 // Components
 import Loader from 'react-loader-spinner';
@@ -15,7 +15,7 @@ import { shortClass } from 'helpers/characters/class';
 
 interface Props {
   getTopCharacters: Function;
-  topCharacters: TopCharacter[] | null;
+  topCharacters: Character[] | null;
 }
 
 const TopPlayers: React.FC<Props> = ({ getTopCharacters, topCharacters }) => {
@@ -28,8 +28,8 @@ const TopPlayers: React.FC<Props> = ({ getTopCharacters, topCharacters }) => {
       {!topCharacters ? (
         <Loader type='Triangle' color='#00BFFF' height={50} width={50} />
       ) : (
-        topCharacters.map((char: TopCharacter, i: number) => (
-          <Character key={i} char={char} />
+        topCharacters.map((char: Character, i: number) => (
+          <CharacterCard key={i} char={char} />
         ))
       )}
     </div>
@@ -37,10 +37,10 @@ const TopPlayers: React.FC<Props> = ({ getTopCharacters, topCharacters }) => {
 };
 
 interface CharacterProps {
-  char: TopCharacter;
+  char: Character;
 }
 
-const Character: React.FC<CharacterProps> = ({ char }) => {
+const CharacterCard: React.FC<CharacterProps> = ({ char }) => {
   const winsTranslate = (num: number) => {
     switch (num) {
       case 0:
@@ -59,7 +59,7 @@ const Character: React.FC<CharacterProps> = ({ char }) => {
   };
 
   const status =
-    char['account.GameIDC'] === char.Name && char['status.ConnectStat'] === 1
+    char.account.GameIDC === char.Name && char.status.ConnectStat === 1
       ? 'online'
       : 'offline';
 
