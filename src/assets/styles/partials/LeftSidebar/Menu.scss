@@ -1,0 +1,18 @@
+a.menu-link {
+  display: block;
+  margin: 8px 0 0 20px;
+  position: relative;
+
+  :first-of-type {
+    margin: 0 0 0 20px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 12px;
+    margin-left: -15px;
+    background: url('../../../images/partials/li.png') no-repeat left center;
+  }
+}

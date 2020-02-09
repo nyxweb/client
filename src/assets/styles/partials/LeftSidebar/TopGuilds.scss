@@ -1,0 +1,51 @@
+table.TopGuilds {
+  width: 100%;
+  border-collapse: collapse;
+
+  & thead {
+    font-size: 12px;
+    text-align: left;
+
+    & th {
+      padding: 5px;
+      text-align: center;
+
+      &:first-of-type {
+        text-align: left;
+      }
+
+      &:nth-of-type(2) {
+        text-align: left;
+      }
+
+      &:last-of-type {
+        text-align: right;
+      }
+    }
+  }
+
+  & tbody {
+    & td {
+      padding: 5px;
+      text-align: center;
+
+      &:first-of-type {
+        text-align: left;
+      }
+
+      &:nth-of-type(2) {
+        text-align: left;
+      }
+
+      &:last-of-type {
+        text-align: right;
+        padding: 2px;
+      }
+
+      & img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

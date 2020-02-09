@@ -1,0 +1,21 @@
+.RightSidebar {
+  width: 285px;
+  background: url(../../images/layout/sidebar-bg.jpg);
+  margin-bottom: 110px;
+  position: relative;
+
+  &:after {
+    content: '';
+    background: url(../../images/layout/right-sidebar-icon.png) no-repeat;
+    right: -4px;
+    bottom: -4px;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+  }
+
+  // Partials
+  @import 'assets/styles/partials/RightSidebar/ContentBlock.scss';
+  @import 'assets/styles/partials/RightSidebar/Status.scss';
+  @import 'assets/styles/partials/RightSidebar/EventTimers.scss';
+}

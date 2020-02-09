@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux';
 
 // Reducers
-import login from 'redux/reducers/admin/login';
+import user from 'redux/reducers/user';
+import rankings from 'redux/reducers/rankings';
+import others from 'redux/reducers/others';
 
 const reducers = combineReducers({
-  login
+  user,
+  rankings,
+  others
 });
 
 export default reducers;

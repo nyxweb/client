@@ -1,0 +1,69 @@
+.Status {
+  height: 90px;
+  box-shadow: 0px 5px 20px -2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+
+  & .image {
+    position: relative;
+    margin-left: 5px;
+    width: 74px;
+    height: 74px;
+    line-height: 77px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+
+    &.online {
+      background: url('../../../images/partials/server-on.png') no-repeat center
+        center/contain;
+
+      &:after {
+        content: 'ON';
+        color: #0c3000;
+      }
+    }
+
+    &.offline {
+      background: url('../../../images/partials/server-off.png') no-repeat
+        center center/contain;
+
+      &:after {
+        content: 'OFF';
+        color: #f00000;
+      }
+    }
+  }
+
+  & .info {
+    width: 170px;
+
+    & .top {
+      display: flex;
+      justify-content: space-between;
+
+      & :first-child {
+        color: white;
+      }
+
+      .count {
+        color: #27a067;
+      }
+    }
+
+    & .progress {
+      background: #0a0a0a;
+      border-radius: 2px;
+      margin: 6px 0;
+
+      & .loader {
+        width: 0;
+        height: 8px;
+        background: #12a2e7;
+        box-shadow: 0 0 5px 0 #1584b8;
+        transition: 0.2s ease-in-out;
+      }
+    }
+  }
+}

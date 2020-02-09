@@ -1,0 +1,28 @@
+.News {
+  & article.body {
+    margin: 20px;
+    padding: 15px;
+    overflow: hidden;
+
+    & h1.title {
+      text-align: center;
+      margin: 0 0 15px 0;
+    }
+
+    & article.content {
+      padding: 3px 15px;
+      background: rgba(63, 85, 114, 0.1);
+      border-radius: 10px;
+    }
+
+    & .author {
+      text-align: right;
+      margin-top: 15px;
+
+      & .name,
+      .time {
+        color: lightblue;
+      }
+    }
+  }
+}

@@ -1,25 +1,105 @@
 body {
   margin: 0;
+  width: 100%;
+  background: url('../images/layout/top-bg.jpg') no-repeat top center,
+    url('../images/layout/bottom-bg.jpg') no-repeat bottom center, #121a25;
+  font-size: 12px;
+  color: #61738e;
+
+  .react-notification-root {
+    top: 0;
+    left: 0;
+  }
 }
 
 * {
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  cursor: url('../images/main/default.cur'), auto;
+}
+
+a {
+  transition: all 0.3s ease;
+  color: #c8ddf1;
+  text-decoration: none;
+  cursor: url('../images/main/pointer.cur'), pointer;
+}
+
+a:hover,
+button:hover {
+  -webkit-filter: brightness(120%);
+  filter: brightness(120%);
+  text-decoration: none;
 }
 
 button {
-  cursor: pointer;
+  transition: all 0.3s ease;
+  cursor: url('../images/main/pointer.cur'), pointer;
+  background: url(../images/partials/button.jpg) no-repeat center center/cover;
+  border: none;
+  outline: none;
+  color: #c3eaee;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 7px 15px;
+  display: inline-block;
+}
+
+input {
+  background-color: #131f2d;
+  border: 1px solid #2c3545;
+  color: #7d8a9f;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+  outline: none;
 }
 
 .App {
-  & .Client {
-    font-size: 14px;
-  }
+  width: 1200px;
+  margin: 0 auto;
 
-  & .Admin {
-    @import './admin/Login.scss';
-  }
+  // Layout
+  @import 'assets/styles/layout/Navbar.scss';
+  @import 'assets/styles/layout/Header.scss';
+  @import 'assets/styles/layout/Footer.scss';
 
-  @import './reusables/index.scss';
+  & .Container {
+    min-height: 1050px;
+    display: flex;
+    position: relative;
+
+    // Layout
+    @import 'assets/styles/layout/LeftSidebar.scss';
+    @import 'assets/styles/layout/MainContent.scss';
+    @import 'assets/styles/layout/RightSidebar.scss';
+
+    // Partials
+    @import 'assets/styles/partials/Loader.scss';
+    @import 'assets/styles/partials/Guild/Mark.scss';
+
+    &:before {
+      content: '';
+      background: url('../images/layout/left-container-icon.png') no-repeat;
+      left: -35px;
+      top: -34px;
+      width: 74px;
+      height: 73px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &:after {
+      content: '';
+      background: url('../images/layout/right-container-icon.png') no-repeat;
+      right: -35px;
+      top: -34px;
+      width: 74px;
+      height: 73px;
+      position: absolute;
+      z-index: 1;
+    }
+  }
 }

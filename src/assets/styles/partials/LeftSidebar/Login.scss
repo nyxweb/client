@@ -1,0 +1,45 @@
+.Login {
+  background: url(../../../images/partials/login-block-bg.jpg) bottom no-repeat;
+  padding: 20px;
+
+  & .title {
+    display: flex;
+    justify-content: space-between;
+
+    & a {
+      color: #6fa5ff;
+    }
+  }
+
+  & form.fields {
+    margin: 20px 0 10px 0;
+    display: grid;
+    flex-direction: column;
+    gap: 10px;
+
+    & input {
+      padding: 7px 7px 7px 50px;
+      font-size: 14px;
+      background-repeat: no-repeat;
+      background-position: left;
+      height: 32px;
+
+      &.user {
+        background-image: url('../../../images/partials/login-icon.png');
+      }
+
+      &.pass {
+        background-image: url('../../../images/partials/password-icon.png');
+      }
+    }
+
+    & button {
+      width: 110px;
+      text-transform: uppercase;
+      font-size: 16px;
+      background: url(../../../images/partials/green-button.jpg) no-repeat
+        center center/cover;
+      box-shadow: 0px 0px 20px 0px rgba(119, 240, 241, 0.2);
+    }
+  }
+}

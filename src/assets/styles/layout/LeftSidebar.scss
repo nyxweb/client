@@ -1,0 +1,23 @@
+.LeftSidebar {
+  width: 285px;
+  background: url('../../images/layout/sidebar-bg.jpg');
+  margin-bottom: 110px;
+  position: relative;
+
+  &:after {
+    content: '';
+    background: url('../../images/layout/left-sidebar-icon.png') no-repeat;
+    left: -4px;
+    bottom: -4px;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+  }
+
+  // Partials
+  @import 'assets/styles/partials/LeftSidebar/ContentBlock.scss';
+  @import 'assets/styles/partials/LeftSidebar/Download.scss';
+  @import 'assets/styles/partials/LeftSidebar/Login.scss';
+  @import 'assets/styles/partials/LeftSidebar/Menu.scss';
+  @import 'assets/styles/partials/LeftSidebar/TopGuilds.scss';
+}

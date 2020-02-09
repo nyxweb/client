@@ -1,30 +1,54 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import axios from 'axios';
+import 'dotenv/config';
 
 // Redux
-import { Provider } from 'react-redux';
-import store from 'redux/store';
+import { connect } from 'react-redux';
+import userVerification from 'redux/actions/user/verification';
+import ReactNotification from 'react-notifications-component';
 
 // Styles
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import 'assets/styles/App.scss';
+import 'react-notifications-component/dist/theme.css';
+import 'animate.css';
 
-// Components
-import Admin from './admin/Admin';
-import Client from './client/Client';
+// Layout
+import Navbar from 'components/layout/Navbar';
+import Header from 'components/layout/Header';
+import LeftSidebar from 'components/layout/LeftSidebar';
+import MainContent from 'components/layout/MainContent';
+import RightSidebar from 'components/layout/RightSidebar';
+import Footer from 'components/layout/Footer';
 
-const App: React.FC = () => {
+// Axios auth header
+axios.defaults.headers.common.nyxAuthToken = localStorage.nyxToken;
+
+interface Props {
+  userVerification: Function;
+}
+
+const App: React.FC<Props> = ({ userVerification }) => {
+  useEffect(() => {
+    userVerification();
+  }, [userVerification]);
+
   return (
-    <Provider store={store}>
+    <Router>
       <div className='App'>
-        <Router>
-          <Switch>
-            <Route path='/admin' component={Admin} />
-            <Route path='/' component={Client} />
-          </Switch>
-        </Router>
+        <Navbar />
+        <Header />
+        <div className='Container'>
+          <LeftSidebar />
+          <MainContent />
+          <RightSidebar />
+        </div>
+        <Footer />
       </div>
-    </Provider>
+      <ReactNotification />
+    </Router>
   );
 };
 
-export default App;
+export default connect(null, { userVerification })(App);
