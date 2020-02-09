@@ -5,6 +5,11 @@ body {
     url('../images/layout/bottom-bg.jpg') no-repeat bottom center, #121a25;
   font-size: 12px;
   color: #61738e;
+
+  .react-notification-root {
+    top: 0;
+    left: 0;
+  }
 }
 
 * {

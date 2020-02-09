@@ -27,7 +27,7 @@ const LeftSidebar: React.FC<Props> = ({ username }) => {
 };
 
 const mapStateToProps = (state: AppState) => ({
-  username: state.login.username
+  username: state.user.username
 });
 
 export default connect(mapStateToProps)(LeftSidebar);

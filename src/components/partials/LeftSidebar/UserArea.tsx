@@ -22,7 +22,7 @@ const UserArea: React.FC<Props> = ({ username, userLogout }) => {
 };
 
 const mapStateToProps = (state: AppState) => ({
-  username: state.login.username
+  username: state.user.username
 });
 
 export default connect(mapStateToProps, { userLogout })(UserArea);

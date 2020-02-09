@@ -1,10 +1,10 @@
-import LoginState from './Login';
+import UserState from './User';
 import Character from 'redux/types/rankings/Character';
 import Event from 'redux/types/others/Event';
 import Guild from './rankings/Guild';
 
 export default interface AppState {
-  login: LoginState;
+  user: UserState;
   rankings: {
     hof: Character[];
     top5guilds: Guild[];

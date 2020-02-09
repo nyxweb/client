@@ -6,10 +6,13 @@ import 'dotenv/config';
 // Redux
 import { connect } from 'react-redux';
 import userVerification from 'redux/actions/user/verification';
+import ReactNotification from 'react-notifications-component';
 
 // Styles
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import 'assets/styles/App.scss';
+import 'react-notifications-component/dist/theme.css';
+import 'animate.css';
 
 // Layout
 import Navbar from 'components/layout/Navbar';
@@ -18,20 +21,18 @@ import LeftSidebar from 'components/layout/LeftSidebar';
 import MainContent from 'components/layout/MainContent';
 import RightSidebar from 'components/layout/RightSidebar';
 import Footer from 'components/layout/Footer';
-import AppState from 'redux/types/app';
 
 // Axios auth header
 axios.defaults.headers.common.nyxAuthToken = localStorage.nyxToken;
 
 interface Props {
-  username: null | string;
   userVerification: Function;
 }
 
-const App: React.FC<Props> = ({ username, userVerification }) => {
+const App: React.FC<Props> = ({ userVerification }) => {
   useEffect(() => {
-    username && userVerification();
-  }, [username, userVerification]);
+    userVerification();
+  }, [userVerification]);
 
   return (
     <Router>
@@ -45,12 +46,9 @@ const App: React.FC<Props> = ({ username, userVerification }) => {
         </div>
         <Footer />
       </div>
+      <ReactNotification />
     </Router>
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  username: state.login.username
-});
-
-export default connect(mapStateToProps, { userVerification })(App);
+export default connect(null, { userVerification })(App);
