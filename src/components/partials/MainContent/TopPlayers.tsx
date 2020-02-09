@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 // Actions
-import { getTopCharacters } from 'redux/actions/characters';
+import { getHof } from 'redux/actions/rankings';
 import AppState from 'redux/types/app';
-import Character from 'types/Character';
+import Character from 'redux/types/rankings/Character';
 
 // Components
 import Loader from 'react-loader-spinner';
@@ -14,21 +14,21 @@ import Loader from 'react-loader-spinner';
 import { shortClass } from 'helpers/characters/class';
 
 interface Props {
-  getTopCharacters: Function;
-  topCharacters: Character[] | null;
+  getHof: Function;
+  hof: Character[] | null;
 }
 
-const TopPlayers: React.FC<Props> = ({ getTopCharacters, topCharacters }) => {
+const TopPlayers: React.FC<Props> = ({ getHof, hof }) => {
   useEffect(() => {
-    getTopCharacters();
-  }, [getTopCharacters]);
+    getHof();
+  }, [getHof]);
 
   return (
     <div className='TopPlayers'>
-      {!topCharacters ? (
+      {!hof ? (
         <Loader type='Triangle' color='#00BFFF' height={50} width={50} />
       ) : (
-        topCharacters.map((char: Character, i: number) => (
+        hof.map((char: Character, i: number) => (
           <CharacterCard key={i} char={char} />
         ))
       )}
@@ -78,7 +78,7 @@ const CharacterCard: React.FC<CharacterProps> = ({ char }) => {
 };
 
 const mapStateToProps = (state: AppState) => ({
-  topCharacters: state.characters.topCharacters
+  hof: state.rankings.hof
 });
 
-export default connect(mapStateToProps, { getTopCharacters })(TopPlayers);
+export default connect(mapStateToProps, { getHof })(TopPlayers);

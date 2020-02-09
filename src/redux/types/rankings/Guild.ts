@@ -1,3 +1,5 @@
+import GuildMember from './GuildMember';
+
 export default interface Guild {
   G_Name: string;
   G_Mark: object;
@@ -8,4 +10,5 @@ export default interface Guild {
   G_Type: number;
   G_Rival: number;
   G_Union: number;
+  guild_memb: GuildMember[];
 }

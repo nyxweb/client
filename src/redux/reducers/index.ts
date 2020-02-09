@@ -2,11 +2,13 @@ import { combineReducers } from 'redux';
 
 // Reducers
 import login from 'redux/reducers/login';
-import characters from 'redux/reducers/characters';
+import rankings from 'redux/reducers/rankings';
+import others from 'redux/reducers/others';
 
 const reducers = combineReducers({
   login,
-  characters
+  rankings,
+  others
 });
 
 export default reducers;

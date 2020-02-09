@@ -1,4 +1,5 @@
 import Guild from './Guild';
+import Character from './Character';
 
 export default interface GuildMember {
   Name: string;
@@ -6,4 +7,5 @@ export default interface GuildMember {
   G_Level: number;
   G_Status: number;
   guild: Guild;
+  character: Character;
 }

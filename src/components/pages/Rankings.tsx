@@ -1,24 +1,34 @@
-import React, { useState, useEffect } from 'react';
-
-// Actions
-import getCharacters from 'actions/rankings/getCharacters';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
 // Partials
 import Table from 'components/partials/MainContent/rankings/Table';
 import Loader from 'components/partials/Loader';
 
-interface Props {}
+// Actions
+import getCharacters from 'redux/actions/rankings/getCharacters';
+import clearCharacters from 'redux/actions/rankings/clearCharacters';
 
-const Rankings: React.FC<Props> = () => {
-  const [characters, setCharacters] = useState();
+// Types
+import AppState from 'redux/types/app';
+import Character from 'redux/types/rankings/Character';
 
+interface Props {
+  characters: Character[];
+  getCharacters: Function;
+  clearCharacters: Function;
+}
+
+const Rankings: React.FC<Props> = ({
+  characters,
+  getCharacters,
+  clearCharacters
+}) => {
   useEffect(() => {
-    const fetchCharacters = async () => {
-      setCharacters(await getCharacters());
-    };
+    getCharacters();
 
-    fetchCharacters();
-  }, []);
+    return () => clearCharacters();
+  }, [getCharacters, clearCharacters]);
 
   return (
     <div className='Rankings'>
@@ -31,4 +41,10 @@ const Rankings: React.FC<Props> = () => {
   );
 };
 
-export default Rankings;
+const mapStateToProps = (state: AppState) => ({
+  characters: state.rankings.characters
+});
+
+export default connect(mapStateToProps, { getCharacters, clearCharacters })(
+  Rankings
+);

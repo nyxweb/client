@@ -4,7 +4,7 @@ import React from 'react';
 import TableRow from 'components/partials/MainContent/rankings/TableRow';
 
 // Types
-import Character from 'types/Character';
+import Character from 'redux/types/rankings/Character';
 
 interface Props {
   characters: Character[];

@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 // Types
-import { GET_TOP_PLAYERS, GET_TOP_PLAYERS_FAILED } from 'redux/types/actions';
+import { CONFIG_EVENTS, CONFIG_EVENTS_FAILED } from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 
-const getTopPlayers: ActionCreator<ThunkAction<
+const getCharacters: ActionCreator<ThunkAction<
   Promise<any>,
   AppState,
   any,
@@ -14,18 +14,18 @@ const getTopPlayers: ActionCreator<ThunkAction<
 >> = () => async dispatch => {
   try {
     const { data } = await axios.get(
-      process.env.REACT_APP_API_URI + '/characters/hof'
+      process.env.REACT_APP_API_URI + '/config/events'
     );
 
     dispatch({
-      type: !data.error ? GET_TOP_PLAYERS : GET_TOP_PLAYERS_FAILED,
+      type: data ? CONFIG_EVENTS : CONFIG_EVENTS_FAILED,
       payload: data
     });
   } catch (error) {
     dispatch({
-      type: GET_TOP_PLAYERS_FAILED
+      type: CONFIG_EVENTS_FAILED
     });
   }
 };
 
-export default getTopPlayers;
+export default getCharacters;

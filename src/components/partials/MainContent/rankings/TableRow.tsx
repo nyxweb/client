@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 // Partials
 import GuildMark from 'components/partials/Guild/Mark';
+import CharacterName from 'components/partials/Character/Name';
 
 // Helpers
 import { charClass } from 'helpers/characters/class';
 
 // Types
-import Character from 'types/Character';
+import Character from 'redux/types/rankings/Character';
 
 interface Props {
   rank: number;
@@ -16,33 +16,11 @@ interface Props {
 }
 
 const TableRow: React.FC<Props> = ({ rank, char }) => {
-  const status =
-    !char.status ||
-    char.status.ConnectStat !== 1 ||
-    char.account.GameIDC !== char.Name
-      ? 'offline'
-      : 'online';
-
   return (
     <tr>
       <td>{rank}.</td>
       <td>
-        <div className='guild-name'>
-          <span className='guild'>
-            [&nbsp;
-            {char.guild_memb ? (
-              <Link to={`/guild/${char.guild_memb.G_Name}`}>
-                {char.guild_memb.G_Name}
-              </Link>
-            ) : (
-              'No Guild'
-            )}
-            &nbsp;]
-          </span>
-          <span className={`name ${status}`}>
-            <Link to={`/char/${char.Name}`}>{char.Name}</Link>
-          </span>
-        </div>
+        <CharacterName char={char} />
       </td>
       <td>{charClass(char.Class)}</td>
       <td>
@@ -56,7 +34,7 @@ const TableRow: React.FC<Props> = ({ rank, char }) => {
         {char.guild_memb ? (
           <GuildMark mark={char.guild_memb.guild.G_Mark} size={25} />
         ) : (
-          'woops'
+          '-'
         )}
       </td>
     </tr>

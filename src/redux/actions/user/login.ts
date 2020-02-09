@@ -23,6 +23,8 @@ const userLogin: ActionCreator<ThunkAction<
     localStorage.nyxLogin = username;
     localStorage.nyxToken = token;
 
+    axios.defaults.headers.common.nyxAuthToken = token;
+
     dispatch({
       type: USER_LOGIN,
       payload: {
