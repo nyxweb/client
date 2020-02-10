@@ -49,8 +49,8 @@ const TopGuilds: React.FC<Props> = ({ guilds, getTop5Guilds }) => {
                 <td>
                   <Link to={`/guild/${guild.G_Name}`}>{guild.G_Name}</Link>
                 </td>
-                <td>{guild.guild_memb.length}</td>
-                <td>43</td>
+                <td>{guild.TotalMembers}</td>
+                <td>{guild.TotalResets}</td>
                 <td>
                   <GuildMark mark={guild.G_Mark} size={20} />
                 </td>
