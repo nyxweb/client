@@ -14,10 +14,12 @@ const getCharacters: ActionCreator<ThunkAction<
   AppState,
   any,
   Action
->> = () => async dispatch => {
+>> = ({ loader, page }) => async dispatch => {
+  loader(true);
+
   try {
     const { data } = await axios.get(
-      process.env.REACT_APP_API_URI + '/characters'
+      process.env.REACT_APP_API_URI + `/characters?page=${page}`
     );
 
     dispatch({
@@ -29,6 +31,8 @@ const getCharacters: ActionCreator<ThunkAction<
       type: GET_RANK_CHARACTERS_FAILED
     });
   }
+
+  loader(false);
 };
 
 export default getCharacters;

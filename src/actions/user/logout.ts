@@ -11,8 +11,7 @@ const userLogout: ActionCreator<ThunkAction<
   any,
   Action
 >> = () => dispatch => {
-  localStorage.nyxLogin = null;
-  localStorage.nyxToken = null;
+  delete localStorage.nyxToken;
 
   dispatch({
     type: USER_LOGOUT

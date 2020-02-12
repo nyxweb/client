@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
 // Partials
@@ -6,8 +6,7 @@ import Table from 'components/partials/MainContent/rankings/Table';
 import Loader from 'components/partials/Loader';
 
 // Actions
-import getCharacters from 'redux/actions/rankings/getCharacters';
-import clearCharacters from 'redux/actions/rankings/clearCharacters';
+import { getCharacters, clearCharacters } from 'actions/rankings';
 
 // Types
 import AppState from 'redux/types/app';
@@ -24,18 +23,21 @@ const Rankings: React.FC<Props> = ({
   getCharacters,
   clearCharacters
 }) => {
+  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
-    getCharacters();
+    getCharacters({ loader: setLoading, page });
 
     return () => clearCharacters();
-  }, [getCharacters, clearCharacters]);
+  }, [page, getCharacters, clearCharacters]);
 
   return (
     <div className='Rankings'>
-      {characters === undefined ? (
+      {loading ? (
         <Loader />
       ) : (
-        <Table characters={characters} />
+        <Table characters={characters} page={page} setPage={setPage} />
       )}
     </div>
   );

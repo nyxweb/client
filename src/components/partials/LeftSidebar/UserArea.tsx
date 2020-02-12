@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import userLogout from 'redux/actions/user/logout';
+import userLogout from 'actions/user/logout';
 import AppState from 'redux/types/app';
 
 interface Props {

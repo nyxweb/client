@@ -7,7 +7,7 @@ import ContentBlock from 'components/partials/LeftSidebar/ContentBlock';
 import GuildMark from 'components/partials/Guild/Mark';
 
 // Actions
-import getTop5Guilds from 'redux/actions/rankings/getTop5Guilds';
+import getTop5Guilds from 'actions/rankings/getTop5Guilds';
 
 // Types
 import AppState from 'redux/types/app';

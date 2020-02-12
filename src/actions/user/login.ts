@@ -11,13 +11,13 @@ const userLogin: ActionCreator<ThunkAction<
   AppState,
   any,
   Action
->> = ({ username: loginUser, password: loginPass }) => async dispatch => {
+>> = ({ username, password }) => async dispatch => {
   try {
     const {
-      data: { username, reg_time, reg_ip, vip, vip_exp, token }
+      data: { username: account, reg_time, reg_ip, vip, vip_exp, token }
     } = await axios.post(process.env.REACT_APP_API_URI + '/users/auth', {
-      loginUser,
-      loginPass
+      username,
+      password
     });
 
     localStorage.nyxToken = token;
@@ -26,7 +26,7 @@ const userLogin: ActionCreator<ThunkAction<
     dispatch({
       type: USER_LOGIN,
       payload: {
-        username,
+        username: account,
         reg_time,
         reg_ip,
         vip,

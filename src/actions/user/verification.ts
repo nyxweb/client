@@ -11,27 +11,25 @@ const userVerification: ActionCreator<ThunkAction<
   AppState,
   any,
   Action
->> = () => async dispatch => {
+>> = loading => async dispatch => {
   try {
-    const {
-      data: { username, reg_time, reg_ip, vip, vip_exp }
-    } = await axios.post(process.env.REACT_APP_API_URI + '/users/verify');
+    if (localStorage.nyxToken) {
+      const { data } = await axios.post(
+        process.env.REACT_APP_API_URI + '/users/verify'
+      );
 
-    dispatch({
-      type: USER_LOGIN,
-      payload: {
-        username,
-        reg_time,
-        reg_ip,
-        vip,
-        vip_exp
-      }
-    });
+      dispatch({
+        type: USER_LOGIN,
+        payload: data
+      });
+    }
   } catch (error) {
     dispatch({
       type: USER_LOGOUT
     });
   }
+
+  loading(false);
 };
 
 export default userVerification;

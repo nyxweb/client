@@ -1,12 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import axios from 'axios';
 import 'dotenv/config';
-
-// Redux
-import { connect } from 'react-redux';
-import userVerification from 'redux/actions/user/verification';
-import ReactNotification from 'react-notifications-component';
 
 // Styles
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
@@ -22,17 +17,27 @@ import MainContent from 'components/layout/MainContent';
 import RightSidebar from 'components/layout/RightSidebar';
 import Footer from 'components/layout/Footer';
 
+// Partials
+import Loader from 'components/partials/Loader';
+import ReactNotification from 'react-notifications-component';
+
+// Redux
+import { connect } from 'react-redux';
+import { verification } from 'actions/user';
+
 // Axios auth header
 axios.defaults.headers.common.nyxAuthToken = localStorage.nyxToken;
 
 interface Props {
-  userVerification: Function;
+  verification: Function;
 }
 
-const App: React.FC<Props> = ({ userVerification }) => {
+const App: React.FC<Props> = ({ verification }) => {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    userVerification();
-  }, [userVerification]);
+    verification(setLoading);
+  }, [verification]);
 
   return (
     <Router>
@@ -45,10 +50,11 @@ const App: React.FC<Props> = ({ userVerification }) => {
           <RightSidebar />
         </div>
         <Footer />
+        <Loader active={loading} styles='dark' />
       </div>
       <ReactNotification />
     </Router>
   );
 };
 
-export default connect(null, { userVerification })(App);
+export default connect(null, { verification })(App);

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 // Actions
-import { getHof } from 'redux/actions/rankings';
+import { getHof } from 'actions/rankings';
 import AppState from 'redux/types/app';
 import Character from 'redux/types/rankings/Character';
 
@@ -25,8 +25,10 @@ const TopPlayers: React.FC<Props> = ({ getHof, hof }) => {
 
   return (
     <div className='TopPlayers'>
-      {!hof ? (
+      {hof === null ? (
         <Loader type='Triangle' color='#00BFFF' height={50} width={50} />
+      ) : !hof ? (
+        <div>No characters</div>
       ) : (
         hof.map((char: Character, i: number) => (
           <CharacterCard key={i} char={char} />
@@ -58,23 +60,27 @@ const CharacterCard: React.FC<CharacterProps> = ({ char }) => {
     }
   };
 
-  const status =
-    char.account.GameIDC === char.Name && char.status.ConnectStat === 1
-      ? 'online'
-      : 'offline';
+  if (char) {
+    const status =
+      char.account.GameIDC === char.Name && char.status.ConnectStat === 1
+        ? 'online'
+        : 'offline';
 
-  return (
-    <div className='frame'>
-      <div
-        className={`card ${shortClass(char.Class)} ${winsTranslate(
-          char.HOFWins
-        )}`}
-      />
-      <div className={`name ${status}`}>
-        <Link to={`/char/${char.Name}`}>{char.Name}</Link>
+    return (
+      <div className='frame'>
+        <div
+          className={`card ${shortClass(char.Class)} ${winsTranslate(
+            char.HOFWins
+          )}`}
+        />
+        <div className={`name ${status}`}>
+          <Link to={`/char/${char.Name}`}>{char.Name}</Link>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  return <div />;
 };
 
 const mapStateToProps = (state: AppState) => ({

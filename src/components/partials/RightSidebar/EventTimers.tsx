@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import ContentBlock from 'components/partials/RightSidebar/ContentBlock';
 
 // Actions
-import getEvents from 'redux/actions/others/getEvents';
+import getEvents from 'actions/others/getEvents';
 
 // Types
 import AppState from 'redux/types/app';
