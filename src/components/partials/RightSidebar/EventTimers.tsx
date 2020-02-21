@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
 // Partials
-import ContentBlock from 'components/partials/RightSidebar/ContentBlock';
+import ContentBlock from "components/partials/RightSidebar/ContentBlock";
+
+// Reusables
+import ReactLoader from "components/reusables/ReactLoader";
 
 // Actions
-import getEvents from 'actions/others/getEvents';
+import getEvents from "actions/others/getEvents";
 
 // Types
-import AppState from 'redux/types/app';
-import Event from 'redux/types/others/Event';
+import AppState from "redux/types/app";
+import Event from "redux/types/others/Event";
 
 interface Props {
   events: Event[];
@@ -22,13 +25,15 @@ const EventTimers: React.FC<Props> = ({ events, getEvents }) => {
   }, [getEvents]);
 
   return (
-    <ContentBlock title='server events' desc='server events schedule'>
-      <div className='EventTimers'>
-        {!events
-          ? 'loading...'
-          : events.map((event: Event, i: number) => (
-              <EventCard key={i} event={event} />
-            ))}
+    <ContentBlock title="server events" desc="server events schedule">
+      <div className="EventTimers">
+        {!events ? (
+          <ReactLoader />
+        ) : (
+          events.map((event: Event, i: number) => (
+            <EventCard key={i} event={event} />
+          ))
+        )}
       </div>
     </ContentBlock>
   );
@@ -39,11 +44,11 @@ interface EventProps {
 }
 
 const EventCard: React.FC<EventProps> = ({ event: { name, hours } }) => {
-  const [hour, setHour] = useState('00:00');
-  const [left, setLeft] = useState('00:00:00');
+  const [hour, setHour] = useState("00:00");
+  const [left, setLeft] = useState("00:00:00");
 
   useEffect(() => {
-    const addZero = (num: number) => (num < 10 ? '0' + num : num);
+    const addZero = (num: number) => (num < 10 ? "0" + num : num);
 
     const secondsTransform = (secs: number) => {
       const hour = Math.floor(secs / 60 / 60);
@@ -59,14 +64,14 @@ const EventCard: React.FC<EventProps> = ({ event: { name, hours } }) => {
         (date.getHours() * 60 + date.getMinutes()) * 60 + date.getSeconds();
 
       for (let i = 0; i < hours.length; i++) {
-        const [hour, min] = hours[i].split(':');
+        const [hour, min] = hours[i].split(":");
         const mySecs = (Number(hour) * 60 + Number(min)) * 60;
         if (mySecs > secs) {
           setHour(hours[i]);
           setLeft(secondsTransform(mySecs - secs));
           break;
         } else if (i === hours.length - 1) {
-          const [hour1, sec1] = hours[0].split(':');
+          const [hour1, sec1] = hours[0].split(":");
           const newSecs =
             1440 * 60 - secs + (Number(hour1) * 60 + Number(sec1)) * 60;
           setHour(hours[0]);
@@ -79,12 +84,12 @@ const EventCard: React.FC<EventProps> = ({ event: { name, hours } }) => {
   }, [hours]);
 
   return (
-    <div className='event'>
-      <div className='event-title'>
+    <div className="event">
+      <div className="event-title">
         <div>{name}</div>
         <div>{hour}</div>
       </div>
-      <div className='event-desc'>
+      <div className="event-desc">
         <div>starts in</div>
         <div>{left}</div>
       </div>

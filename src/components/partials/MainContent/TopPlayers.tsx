@@ -8,10 +8,10 @@ import AppState from 'redux/types/app';
 import Character from 'redux/types/rankings/Character';
 
 // Components
-import Loader from 'react-loader-spinner';
+import ReactLoader from 'components/reusables/ReactLoader';
 
 // Helpers
-import { shortClass } from 'helpers/characters/class';
+import { cclass, rankings } from 'helpers/characters';
 
 interface Props {
   getHof: Function;
@@ -26,7 +26,7 @@ const TopPlayers: React.FC<Props> = ({ getHof, hof }) => {
   return (
     <div className='TopPlayers'>
       {hof === null ? (
-        <Loader type='Triangle' color='#00BFFF' height={50} width={50} />
+        <ReactLoader />
       ) : !hof ? (
         <div>No characters</div>
       ) : (
@@ -43,23 +43,6 @@ interface CharacterProps {
 }
 
 const CharacterCard: React.FC<CharacterProps> = ({ char }) => {
-  const winsTranslate = (num: number) => {
-    switch (num) {
-      case 0:
-        return 'zero';
-      case 1:
-        return 'one';
-      case 2:
-        return 'two';
-      case 3:
-        return 'three';
-      case 4:
-        return 'four';
-      default:
-        return 'five';
-    }
-  };
-
   if (char) {
     const status =
       char.account.GameIDC === char.Name && char.status.ConnectStat === 1
@@ -69,9 +52,9 @@ const CharacterCard: React.FC<CharacterProps> = ({ char }) => {
     return (
       <div className='frame'>
         <div
-          className={`card ${shortClass(char.Class)} ${winsTranslate(
-            char.HOFWins
-          )}`}
+          className={`card ${cclass.shortClass(
+            char.Class
+          )} ${rankings.winsTranslate(char.HOFWins)}`}
         />
         <div className={`name ${status}`}>
           <Link to={`/char/${char.Name}`}>{char.Name}</Link>

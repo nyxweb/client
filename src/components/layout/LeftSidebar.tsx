@@ -10,16 +10,17 @@ import TopGuilds from 'components/partials/LeftSidebar/TopGuilds';
 
 // Types
 import AppState from 'redux/types/app';
+import MEMB_INFO from 'redux/types/user/MEMB_INFO';
 
 interface Props {
-  username: null | string;
+  user: MEMB_INFO | null;
 }
 
-const LeftSidebar: React.FC<Props> = ({ username }) => {
+const LeftSidebar: React.FC<Props> = ({ user }) => {
   return (
     <aside className='LeftSidebar'>
       <Download />
-      {username ? <UserArea /> : <Login />}
+      {user ? <UserArea /> : <Login />}
       <Menu />
       <TopGuilds />
     </aside>
@@ -27,7 +28,7 @@ const LeftSidebar: React.FC<Props> = ({ username }) => {
 };
 
 const mapStateToProps = (state: AppState) => ({
-  username: state.user.username
+  user: state.user
 });
 
 export default connect(mapStateToProps)(LeftSidebar);

@@ -5,15 +5,18 @@ import { connect } from 'react-redux';
 import userLogout from 'actions/user/logout';
 import AppState from 'redux/types/app';
 
+// Types
+import MEMB_INFO from 'redux/types/user/MEMB_INFO';
+
 interface Props {
-  username: null | string;
+  user: MEMB_INFO | null;
   userLogout: Function;
 }
 
-const UserArea: React.FC<Props> = ({ username, userLogout }) => {
+const UserArea: React.FC<Props> = ({ user, userLogout }) => {
   return (
     <div>
-      <div>welcome {username}</div>
+      <div>welcome {user?.memb___id}</div>
       <div className='div'>
         <button onClick={() => userLogout()}>Logout</button>
       </div>
@@ -22,7 +25,7 @@ const UserArea: React.FC<Props> = ({ username, userLogout }) => {
 };
 
 const mapStateToProps = (state: AppState) => ({
-  username: state.user.username
+  user: state.user
 });
 
 export default connect(mapStateToProps, { userLogout })(UserArea);

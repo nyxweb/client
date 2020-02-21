@@ -4,14 +4,21 @@ import {
   USER_LOGOUT
 } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
-import UserState from 'redux/types/User';
+import UserState from 'redux/types/user/User';
 
 const initialState: UserState = {
-  username: null,
-  reg_time: null,
+  memb___id: null,
+  memb_name: null,
+  sno__numb: null,
+  mail_addr: null,
+  bloc_code: null,
+  ctl1_code: null,
+  IsVip: null,
+  VipExpirationTime: null,
   reg_ip: null,
-  vip: null,
-  vip_exp: null
+  jwt_token: null,
+  admin_lvl: null,
+  resources: null
 };
 
 const user = (state = initialState, action: ReduxAction) => {
@@ -22,9 +29,8 @@ const user = (state = initialState, action: ReduxAction) => {
       return payload;
     case USER_LOGOUT:
       return {
-        username: null,
-        reg_time: null,
-        reg_ip: null
+        info: null,
+        resources: null
       };
     case USER_LOGIN_FAILED:
     default:

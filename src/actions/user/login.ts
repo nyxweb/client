@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+// Actions
+import { notice } from 'actions/utils';
+
 // Types
 import { USER_LOGIN, USER_LOGIN_FAILED } from 'redux/types/actions';
 import AppState from 'redux/types/app';
@@ -13,30 +16,29 @@ const userLogin: ActionCreator<ThunkAction<
   Action
 >> = ({ username, password }) => async dispatch => {
   try {
-    const {
-      data: { username: account, reg_time, reg_ip, vip, vip_exp, token }
-    } = await axios.post(process.env.REACT_APP_API_URI + '/users/auth', {
-      username,
-      password
-    });
+    const { data } = await axios.post(
+      process.env.REACT_APP_API_URI + '/users/auth',
+      {
+        username,
+        password
+      }
+    );
 
-    localStorage.nyxToken = token;
-    axios.defaults.headers.common.nyxAuthToken = token;
+    localStorage.nyxToken = data.jwt_token;
+    axios.defaults.headers.common.nyxAuthToken = data.jwt_token;
 
     dispatch({
       type: USER_LOGIN,
-      payload: {
-        username: account,
-        reg_time,
-        reg_ip,
-        vip,
-        vip_exp
-      }
+      payload: data
     });
+
+    notice(data);
   } catch (error) {
     dispatch({
       type: USER_LOGIN_FAILED
     });
+
+    notice(error);
   }
 };
 
