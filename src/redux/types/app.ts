@@ -4,7 +4,7 @@ import Event from 'redux/types/others/Event';
 import Guild from './rankings/Guild';
 
 export default interface AppState {
-  user: UserState | null;
+  user: UserState;
   rankings: {
     hof: Character[];
     top5guilds: Guild[];

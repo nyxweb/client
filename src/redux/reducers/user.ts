@@ -28,10 +28,7 @@ const user = (state = initialState, action: ReduxAction) => {
     case USER_LOGIN:
       return payload;
     case USER_LOGOUT:
-      return {
-        info: null,
-        resources: null
-      };
+      return initialState;
     case USER_LOGIN_FAILED:
     default:
       return state;

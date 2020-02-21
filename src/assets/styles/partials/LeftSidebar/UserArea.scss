@@ -1,0 +1,202 @@
+.UserArea {
+  & > .welcome {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .highlight {
+    color: #c8ddf1;
+
+    &:after {
+      display: inline-block;
+      content: '';
+      width: 6px;
+      height: 6px;
+      margin: 0 0 2px 5px;
+      border-radius: 4px;
+    }
+
+    &.online:after {
+      background: green;
+    }
+
+    &.offline:after {
+      background: red;
+    }
+  }
+
+  & > .menu {
+    margin: 0 10px 10px 10px;
+
+    & .section {
+      & .title {
+        font-size: 14px;
+        padding: 10px;
+        cursor: url('../../../images/main/pointer.cur'), pointer;
+        user-select: none;
+      }
+
+      & .content {
+        overflow: hidden;
+        transition: 0.2s ease;
+        background: rgba(63, 85, 114, 0.1);
+
+        & a {
+          display: block;
+          padding: 5px;
+          font-size: 12px;
+          margin: 0 10px 0 10px;
+
+          &:hover {
+            background: rgba(63, 85, 114, 0.1);
+          }
+
+          &:first-of-type {
+            margin: 10px 10px 0 10px;
+          }
+
+          &:last-of-type {
+            margin: 0 10px 10px 10px;
+          }
+        }
+
+        &.open {
+          transition: 0.4s ease;
+          max-height: 200px;
+        }
+
+        &.closed {
+          max-height: 0;
+        }
+      }
+    }
+  }
+
+  & > .resources {
+    box-shadow: 0px 0 15px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(63, 85, 114, 0.1);
+    margin: 0 10px 10px 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+
+    & > .res {
+      position: relative;
+      float: left;
+      width: 30px;
+      height: 30px;
+      background-color: rgba(0, 0, 0, 0.308);
+      margin: 5px 0 0 5px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      user-select: none;
+
+      background-repeat: no-repeat;
+      background-size: 70% 70%;
+      background-position-x: center;
+      background-position-y: center;
+      background-image: url('../../../images/items/0/0.gif');
+
+      & > span {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        padding: 0 2px;
+        cursor: url('../../../images/main/pointer.cur'), pointer;
+      }
+
+      &:hover {
+        cursor: url('../../../images/main/pointer.cur'), pointer;
+        background-color: rgba(0, 0, 0, 0.424);
+        transform: scale(1.2);
+      }
+
+      &.chaos {
+        background-image: url('../../../images/items/jewels/chaos.gif');
+      }
+
+      &.bless {
+        background-image: url('../../../images/items/jewels/bless.gif');
+      }
+
+      &.soul {
+        background-image: url('../../../images/items/jewels/soul.gif');
+      }
+
+      &.creation {
+        background-image: url('../../../images/items/jewels/creation.gif');
+      }
+
+      &.life {
+        background-image: url('../../../images/items/jewels/life.gif');
+      }
+
+      &.bok1 {
+        background-image: url('../../../images/items/jewels/bok1.gif');
+      }
+
+      &.bok2 {
+        background-image: url('../../../images/items/jewels/bok2.gif');
+      }
+
+      &.bok3 {
+        background-image: url('../../../images/items/jewels/bok3.gif');
+      }
+
+      &.bok4 {
+        background-image: url('../../../images/items/jewels/bok4.gif');
+      }
+
+      &.bok5 {
+        background-image: url('../../../images/items/jewels/bok5.gif');
+      }
+
+      &.heart {
+        background-image: url('../../../images/items/jewels/heart.gif');
+      }
+
+      &.bol {
+        background-image: url('../../../images/items/jewels/bol.gif');
+      }
+
+      &.boh {
+        background-image: url('../../../images/items/jewels/boh.gif');
+      }
+
+      &.rena {
+        background-image: url('../../../images/items/jewels/rena.gif');
+      }
+
+      &.stone {
+        background-image: url('../../../images/items/jewels/stone.gif');
+      }
+
+      &.angel {
+        background-image: url('../../../images/items/jewels/angel.gif');
+      }
+
+      &.satan {
+        background-image: url('../../../images/items/jewels/satan.gif');
+      }
+
+      &.unilia {
+        background-image: url('../../../images/items/jewels/unilia.gif');
+      }
+
+      &.dino {
+        background-image: url('../../../images/items/jewels/dino.gif');
+      }
+
+      &.guardian {
+        background-image: url('../../../images/items/jewels/guardian.gif');
+      }
+    }
+  }
+}

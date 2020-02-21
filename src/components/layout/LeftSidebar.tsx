@@ -13,14 +13,14 @@ import AppState from 'redux/types/app';
 import MEMB_INFO from 'redux/types/user/MEMB_INFO';
 
 interface Props {
-  user: MEMB_INFO | null;
+  user: MEMB_INFO;
 }
 
 const LeftSidebar: React.FC<Props> = ({ user }) => {
   return (
     <aside className='LeftSidebar'>
       <Download />
-      {user ? <UserArea /> : <Login />}
+      {user.memb___id ? <UserArea /> : <Login />}
       <Menu />
       <TopGuilds />
     </aside>

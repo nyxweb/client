@@ -22,4 +22,5 @@ export default interface _nyxResources {
   boh: number;
   bol: number;
   heart: number;
+  [key: string]: string | number;
 }
