@@ -2,17 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+// Reusables
+import Resource from 'components/reusables/particles/Resource';
+
 // Actions
 import { logout } from 'actions/user';
 
 // Types
 import AppState from 'redux/types/app';
 import UserState from 'redux/types/user/User';
-
-interface Resource {
-  name: string;
-  value: number | string;
-}
+import IResource from 'redux/types/reusables/Resource';
 
 interface Props {
   user: UserState;
@@ -20,12 +19,12 @@ interface Props {
 }
 
 const UserArea: React.FC<Props> = ({ user, logout }) => {
-  const [resources, setResources] = useState<Resource[]>([]);
+  const [resources, setResources] = useState<IResource[]>([]);
   const [menu, setMenu] = useState('');
 
   useEffect(() => {
     if (user.resources) {
-      const result: Resource[] = [];
+      const result: IResource[] = [];
       for (const key in user.resources) {
         if (!['account', 'storage', 'zen', 'credits'].includes(key)) {
           result.push({ name: key, value: user.resources[key] });
@@ -44,10 +43,8 @@ const UserArea: React.FC<Props> = ({ user, logout }) => {
       </div>
       {resources && (
         <div className='resources'>
-          {resources.map((res: Resource, i: number) => (
-            <div key={i} className={`res ${res.name}`}>
-              <span>{res.value}</span>
-            </div>
+          {resources.map((res: IResource, i: number) => (
+            <Resource key={i} name={res.name} value={res.value} />
           ))}
         </div>
       )}

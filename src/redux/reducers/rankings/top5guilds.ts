@@ -11,6 +11,7 @@ const guilds = (state = initialState, action: ReduxAction) => {
     case GET_RANK_5GUILDS:
       return payload;
     case GET_RANK_5GUILDS_FAILED:
+      return false;
     default:
       return state;
   }

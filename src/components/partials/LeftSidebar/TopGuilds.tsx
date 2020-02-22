@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // Partials
 import ContentBlock from 'components/partials/LeftSidebar/ContentBlock';
 import GuildMark from 'components/partials/Guild/Mark';
+import Loader from 'components/reusables/ReactLoader';
 
 // Actions
 import getTop5Guilds from 'actions/rankings/getTop5Guilds';
@@ -38,11 +39,11 @@ const TopGuilds: React.FC<Props> = ({ guilds, getTop5Guilds }) => {
         <tbody>
           {!guilds ? (
             <tr>
-              <td colSpan={4} style={{ textAlign: 'left' }}>
-                Loading...
+              <td colSpan={4}>
+                {guilds === null ? <Loader /> : 'Failed to load'}
               </td>
             </tr>
-          ) : (
+          ) : guilds.length ? (
             guilds.map((guild: Guild, i: number) => (
               <tr key={i}>
                 <td>{i + 1}</td>
@@ -56,6 +57,8 @@ const TopGuilds: React.FC<Props> = ({ guilds, getTop5Guilds }) => {
                 </td>
               </tr>
             ))
+          ) : (
+            'No data'
           )}
         </tbody>
       </table>

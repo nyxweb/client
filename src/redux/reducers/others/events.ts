@@ -11,6 +11,7 @@ const events = (state = initialState, action: ReduxAction) => {
     case CONFIG_EVENTS:
       return payload;
     case CONFIG_EVENTS_FAILED:
+      return false;
     default:
       return state;
   }

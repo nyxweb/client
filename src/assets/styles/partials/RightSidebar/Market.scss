@@ -1,0 +1,33 @@
+.MarketItems {
+  .Item {
+    display: flex;
+    margin-top: 10px;
+
+    &:first-of-type {
+      margin: 0;
+    }
+
+    .image {
+      width: 55px;
+      height: 55px;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(3, 2, 7, 0.4);
+
+      & > img {
+        max-width: 95%;
+        max-height: 95%;
+      }
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: calc(100% - 55px);
+    }
+  }
+}

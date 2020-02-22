@@ -25,14 +25,18 @@ const TopPlayers: React.FC<Props> = ({ getHof, hof }) => {
 
   return (
     <div className='TopPlayers'>
-      {hof === null ? (
-        <ReactLoader />
-      ) : !hof ? (
-        <div>No characters</div>
-      ) : (
+      {!hof ? (
+        hof === null ? (
+          <ReactLoader />
+        ) : (
+          'Failed to load'
+        )
+      ) : hof.length ? (
         hof.map((char: Character, i: number) => (
           <CharacterCard key={i} char={char} />
         ))
+      ) : (
+        <div>No characters</div>
       )}
     </div>
   );

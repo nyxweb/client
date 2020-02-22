@@ -11,6 +11,7 @@ const hof = (state = initialState, action: ReduxAction) => {
     case GET_HOF:
       return payload;
     case GET_HOF_FAILED:
+      return false;
     default:
       return state;
   }
