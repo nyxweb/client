@@ -1,7 +1,8 @@
 import UserState from './user/User';
-import Character from 'redux/types/rankings/Character';
-import Event from 'redux/types/others/Event';
+import Character from './rankings/Character';
 import Guild from './rankings/Guild';
+import Event from './others/Event';
+import MarketState from './others/MarketState';
 
 export default interface AppState {
   user: UserState;
@@ -12,6 +13,7 @@ export default interface AppState {
   };
   others: {
     events: Event[];
+    market: MarketState;
   };
 }
 

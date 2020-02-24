@@ -23,25 +23,24 @@ const UserArea: React.FC<Props> = ({ user, logout }) => {
   const [menu, setMenu] = useState('');
 
   useEffect(() => {
-    if (user.resources) {
-      const result: IResource[] = [];
-      for (const key in user.resources) {
-        if (!['account', 'storage', 'zen', 'credits'].includes(key)) {
-          result.push({ name: key, value: user.resources[key] });
-        }
-      }
-
-      setResources(result);
+    if (user.resources?.list) {
+      setResources(JSON.parse(user.resources.list));
     }
   }, [user.resources]);
 
   return (
     <div className='UserArea'>
       <div className='welcome'>
-        <span className='highlight online'>{user.memb___id}</span>
+        <span
+          className={`highlight ${
+            user.status?.ConnectStat === 1 ? 'online' : 'offline'
+          }`}
+        >
+          {user.memb___id}
+        </span>
         <button onClick={logout}>Logout</button>
       </div>
-      {resources && (
+      {user.resources?.list && (
         <div className='resources'>
           {resources.map((res: IResource, i: number) => (
             <Resource key={i} name={res.name} value={res.value} />

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
 
 // Actions
 import { getHof } from 'actions/rankings';
@@ -18,7 +18,11 @@ interface Props {
   hof: Character[] | null;
 }
 
-const TopPlayers: React.FC<Props> = ({ getHof, hof }) => {
+const TopPlayers: React.FC<Props & RouteComponentProps> = ({
+  getHof,
+  hof,
+  history
+}) => {
   useEffect(() => {
     getHof();
   }, [getHof]);
@@ -33,7 +37,7 @@ const TopPlayers: React.FC<Props> = ({ getHof, hof }) => {
         )
       ) : hof.length ? (
         hof.map((char: Character, i: number) => (
-          <CharacterCard key={i} char={char} />
+          <CharacterCard key={i} char={char} history={history} />
         ))
       ) : (
         <div>No characters</div>
@@ -42,11 +46,14 @@ const TopPlayers: React.FC<Props> = ({ getHof, hof }) => {
   );
 };
 
-interface CharacterProps {
+interface CardProps {
   char: Character;
+  history: {
+    push: Function;
+  };
 }
 
-const CharacterCard: React.FC<CharacterProps> = ({ char }) => {
+const CharacterCard: React.FC<CardProps> = ({ char, history }) => {
   if (char) {
     const status =
       char.account.GameIDC === char.Name && char.status.ConnectStat === 1
@@ -59,6 +66,7 @@ const CharacterCard: React.FC<CharacterProps> = ({ char }) => {
           className={`card ${cclass.shortClass(
             char.Class
           )} ${rankings.winsTranslate(char.HOFWins)}`}
+          onClick={() => history.push('/char/' + char.Name)}
         />
         <div className={`name ${status}`}>
           <Link to={`/char/${char.Name}`}>{char.Name}</Link>
@@ -74,4 +82,4 @@ const mapStateToProps = (state: AppState) => ({
   hof: state.rankings.hof
 });
 
-export default connect(mapStateToProps, { getHof })(TopPlayers);
+export default connect(mapStateToProps, { getHof })(withRouter(TopPlayers));

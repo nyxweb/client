@@ -18,6 +18,7 @@ const initialState: UserState = {
   reg_ip: null,
   jwt_token: null,
   admin_lvl: null,
+  status: null,
   resources: null
 };
 

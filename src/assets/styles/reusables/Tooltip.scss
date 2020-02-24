@@ -1,0 +1,33 @@
+.__react_component_tooltip {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  &.type-dark {
+    background-color: rgb(0, 0, 0);
+
+    &.show {
+      opacity: 1;
+    }
+
+    &.place-left:after {
+      border-left-color: rgb(0, 0, 0);
+      border-left-width: 10px;
+      border-top-width: 10px;
+      border-bottom-width: 10px;
+      margin-top: -10px;
+      right: -10px;
+    }
+
+    &.place-top:after {
+      border-top-color: rgb(0, 0, 0);
+      border-top-width: 10px;
+      border-left-width: 10px;
+      border-right-width: 10px;
+      margin-left: -10px;
+      bottom: -10px;
+    }
+  }
+}
