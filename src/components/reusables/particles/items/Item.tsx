@@ -9,9 +9,12 @@ import Options from 'components/reusables/particles/items/Options';
 import { decode } from 'helpers/items';
 
 // Config
-// import list from 'config/items/list.json';
+import list from 'config/items/list.json';
 
 const getImage = require.context('../../../../assets/images/items/', true);
+
+// Types
+// import IItems from 'redux/types/items/List';
 
 interface Props {
   hex: string;
@@ -19,6 +22,8 @@ interface Props {
 }
 
 const Item: React.FC<Props> = ({ hex, image = true }) => {
+  const itemsList: any = list;
+
   const getItemImage = (name: string) => {
     try {
       return getImage(name);
@@ -29,16 +34,24 @@ const Item: React.FC<Props> = ({ hex, image = true }) => {
 
   const id = uuid();
   const item = decode(hex);
+  const itemData =
+    item && itemsList[item.group] && itemsList[item.group].items[item.id]
+      ? itemsList[item.group].items[item.id]
+      : false;
 
-  return item ? (
+  return item && itemData ? (
     <div className='Item' data-tip data-for={id}>
       {image ? (
-        <img src={getItemImage(`./${item.group}/${item.id}.gif`)} alt='item' />
+        <img
+          src={getItemImage(`./${item.group}/${item.id}.gif`)}
+          alt={itemData.name}
+          className='item-image'
+        />
       ) : (
-        'name of the item'
+        itemData.name
       )}
       <ReactTooltip effect='solid' place='left' offset={{ left: 10 }} id={id}>
-        <Options item={item} />
+        <Options item={item} itemData={itemData} image={!image} />
       </ReactTooltip>
     </div>
   ) : (

@@ -2,4 +2,44 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .Options {
+    .row {
+      margin: 10px 0;
+      text-align: center;
+
+      &:first-of-type {
+        margin: 0 0 10px 0;
+      }
+
+      &:last-of-type {
+        margin: 10px 0 0 0;
+      }
+
+      &.name {
+        font-size: 15px;
+      }
+
+      &.dur {
+        margin: -8px 0 20px 0;
+        font-size: 12px;
+      }
+
+      &.equipped {
+        background: rgb(129, 5, 5);
+        padding: 2px;
+      }
+
+      &.skill {
+        margin-bottom: -10px;
+      }
+
+      &.skill,
+      &.luck,
+      &.options,
+      &.excellent {
+        color: rgb(151, 174, 208);
+      }
+    }
+  }
 }

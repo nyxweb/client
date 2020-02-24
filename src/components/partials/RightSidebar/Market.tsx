@@ -26,40 +26,6 @@ const Market: React.FC<Props> = ({ latest, getLatest }) => {
     getLatest();
   }, [getLatest]);
 
-  // const [items] = useState([
-  //   {
-  //     id: 1,
-  //     group: 7,
-  //     // options:
-  //     //   '<div align=center style="padding-left: 6px; padding-right:6px;font-family:arial;font-size: 10px;"><span style="font-weight:bold;font-size: 11px;"><span style=color:#8CB0EA>Aquagold Crossbow </span><br><br></span></font> 200 durability <br><font color=#9aadd5>This weapon has a special skill</font> <br><font color=#9aadd5><br><font color=red>Can be equipped by Elf</font><br><br>Luck (success rate of Jewel of Soul +25%)<br>Luck (critical damage rate +5%)<br><font color=#9aadd5>Additional dmg +4</font></font> </div>',
-  //     price: [
-  //       { name: 'chaos', value: 33 },
-  //       { name: 'creation', value: 9 }
-  //     ]
-  //   },
-  //   {
-  //     id: 12,
-  //     group: 6,
-  //     price: [
-  //       { name: 'chaos', value: 33 },
-  //       { name: 'bless', value: 2 },
-  //       { name: 'soul', value: 5 },
-  //       { name: 'stone', value: 9 }
-  //     ]
-  //   },
-  //   {
-  //     id: 5,
-  //     group: 12,
-  //     price: [
-  //       { name: 'chaos', value: 33 },
-  //       { name: 'bless', value: 2 },
-  //       { name: 'soul', value: 5 },
-  //       { name: 'creation', value: 9 },
-  //       { name: 'rena', value: 9 }
-  //     ]
-  //   }
-  // ]);
-
   return (
     <ContentBlock title='market items' desc='latest items on the market'>
       <div className='MarketItems'>
@@ -88,7 +54,7 @@ const Market: React.FC<Props> = ({ latest, getLatest }) => {
                     : 'free'}
                 </div>
                 <div className='image'>
-                  <Item hex={item.hex} />
+                  <Item hex={item.hex} image={true} />
                 </div>
               </div>
             );

@@ -1,25 +1,42 @@
 .MarketItems {
-  .Item {
+  & > .Item {
     display: flex;
-    margin-top: 10px;
+    margin-top: 5px;
+    border-bottom: 1px solid #101c27;
+    padding: 0 0 5px 0;
 
     &:first-of-type {
       margin: 0;
+      padding-top: 5px;
+      border-top: 1px solid #101c27;
     }
 
     .image {
       width: 55px;
       height: 55px;
       border-radius: 30px;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       background: rgba(3, 2, 7, 0.4);
 
-      & img {
-        max-width: 95%;
-        max-height: 95%;
+      .Item {
+        width: 55px;
+        height: 55px;
+        cursor: url('../../../images/main/pointer.cur'), pointer;
+
+        &:hover {
+          .item-image {
+            transform: scale(1.4);
+          }
+        }
+
+        .item-image {
+          cursor: url('../../../images/main/pointer.cur'), pointer;
+          transition: 0.2s ease-in-out;
+          max-width: 95%;
+          max-height: 95%;
+        }
       }
     }
 
