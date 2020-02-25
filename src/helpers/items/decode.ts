@@ -12,8 +12,7 @@ interface IDecode {
 }
 
 const hexDecode = (hex: string): IDecode | false => {
-  if (hex.length !== 32) {
-    console.error('Supported only 32 characters hex code');
+  if (hex.length !== 32 || hex.toLowerCase() === 'f'.repeat(32)) {
     return false;
   }
 

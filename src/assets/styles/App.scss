@@ -71,6 +71,7 @@ input {
 
   // Reusables
   @import 'assets/styles/reusables/Tooltip.scss';
+  @import 'assets/styles/reusables/user/Warehouse.scss';
 
   & .Container {
     min-height: 1050px;

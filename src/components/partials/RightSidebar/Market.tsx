@@ -54,7 +54,12 @@ const Market: React.FC<Props> = ({ latest, getLatest }) => {
                     : 'free'}
                 </div>
                 <div className='image'>
-                  <Item hex={item.hex} image={true} />
+                  <Item
+                    hex={item.hex}
+                    image={true}
+                    size={70}
+                    realSize={false}
+                  />
                 </div>
               </div>
             );

@@ -1,0 +1,31 @@
+.Warehouse {
+  display: inline-block;
+  margin: 30px;
+  padding: 16px;
+
+  background: url('../../../images/partials/warehouse/frame-corner-top-left.png')
+      no-repeat top left/32px 32px,
+    url('../../../images/partials/warehouse/frame-corner-top-right.png')
+      no-repeat top right/32px 32px,
+    url('../../../images/partials/warehouse/frame-corner-bottom-left.png')
+      no-repeat bottom left/32px 32px,
+    url('../../../images/partials/warehouse/frame-corner-bottom-right.png')
+      no-repeat bottom right/32px 32px,
+    url('../../../images/partials/warehouse/frame-border-left.png') no-repeat
+      left center/16px 100%,
+    url('../../../images/partials/warehouse/frame-border-right.png') no-repeat
+      right center/16px 100%,
+    url('../../../images/partials/warehouse/frame-border-top.png') no-repeat top
+      center/100% 16px,
+    url('../../../images/partials/warehouse/frame-border-bottom.png') no-repeat
+      bottom center/100% 16px;
+
+  & .content {
+    position: relative;
+    border-top: 1px solid #2b2a27;
+    border-left: 1px solid #2b2a27;
+    border-radius: 3px;
+    background: url('../../../images/partials/warehouse/slot.png') repeat top
+      left/32px 32px;
+  }
+}
