@@ -2,13 +2,13 @@
   "Warrior": {
     "options": [
       "Increase Strength +10",
-      "Increase attack rate +10 ",
-      "Increase maximum AG +20",
-      "AG increase Rate +5",
+      "Increase Skill Damage ",
+      "Increase Maximum AG +20",
+      "Increase AG Value +5",
       "Increase Defense +20",
-      "Increase agility +10",
-      "Critical damage rate +5%",
-      "Excellent damage rate +5%",
+      "Increase Agility +10",
+      "Increase Critical Damage Chance +5%",
+      "Increase Excellent Damage Chance +5%",
       "Increase Strength +25"
     ],
     "parts": [
@@ -21,14 +21,32 @@
       "Ring of Ice"
     ]
   },
+  "Anonymous": {
+    "options": [
+      "Increase Max. Life +50",
+      "Increase Agility +50 ",
+      "Increase defense when using shield weapons +25%",
+      "Increase Damage +30"
+    ],
+    "parts": ["Leather Helm", "Leather Pants", "Leather Boots", "Small Shield"]
+  },
   "Hyperion": {
     "options": [
       "Increase Energy +15",
       "Increase Agility +15",
-      "Increase skill attacking rate +20",
-      "Increase Mana +30"
+      "Increase Skill Damage +20",
+      "Increase Max. Mana +30"
     ],
     "parts": ["Bronze Armor", "Bronze Pants", "Bronze Boots"]
+  },
+  "Mist": {
+    "options": [
+      "Increase Stamina +20",
+      "Increase Skill Damage +30",
+      "Double Damage Chance +10%",
+      "Increase Agility +20"
+    ],
+    "parts": ["Bronze Helm", "Bronze Pants", "Bronze Gloves"]
   },
   "Eplete": {
     "options": [
@@ -36,9 +54,9 @@
       "Increase atack +50",
       "Increase Wizardry dmg +5%",
       "Maximum HP +50",
-      "Increase maximum AG +30",
+      "Increase Maximum AG +30",
       "Increase Critical damage rate +10%",
-      "Excellent damage rate +10"
+      "Increase Excellent Damage Chance +10"
     ],
     "parts": [
       "Scale Helm",
@@ -48,13 +66,30 @@
       "Pendant of Lightning"
     ]
   },
+  "Berserker": {
+    "options": [
+      "Increase Max. Damage +10",
+      "Increase Max. Damage +20",
+      "Increase Max. Damage +30",
+      "Increase Max. Damage +40",
+      "Increase Skill Damage +40",
+      "Increase Strength +40"
+    ],
+    "parts": [
+      "Scale Helm",
+      "Scale Armor",
+      "Scale Pants",
+      "Scale Gloves",
+      "Scale Boots"
+    ]
+  },
   "Garuda": {
     "options": [
-      "Increase max stamine +30",
-      "Double Damage rate +5%",
+      "Increase Max. AG +30",
+      "Double Damage Chance +5%",
       "Increase Energy +15",
-      "Maximum HP +50",
-      "Increase skill attack rate +25",
+      "Increase Max. Life +50",
+      "Increase Skill Damage +25",
       "Increase Wizardry Damage +15%"
     ],
     "parts": [
@@ -65,6 +100,13 @@
       "Pendant of Fire"
     ]
   },
+  "Cloud": {
+    "options": [
+      "Increase Critical Damange Chance +20%",
+      "Increase Critical Damage Chance +50"
+    ],
+    "parts": ["Brass Helm", "Brass Pants"]
+  },
   "Kantata": {
     "options": [
       "Increase Energy +15",
@@ -72,8 +114,8 @@
       "Increase Wizardry Damage +10%",
       "Increase Strength +15",
       "Increase skill damage +25",
-      "Excellent damage rate +10%",
-      "Increase excellent damage +20"
+      "Increase Excellent Damage Chance +10%",
+      "Increase Excellent Damage +20"
     ],
     "parts": [
       "Plate Armor",
@@ -83,17 +125,48 @@
       "Ring of Poison"
     ]
   },
-
+  "Rave": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Double Damage Chance +10%",
+      "Increase damage two handed weapons +30%",
+      "Ignore Enemy's Defense +5%"
+    ],
+    "parts": ["Plate Helm", "Plate Armor", "Plate Pants"]
+  },
+  "Hyon": {
+    "options": [
+      "Increase Defense +25",
+      "Double Damage Chance +10%",
+      "Increase Skill Damage +20",
+      "Increase Critical Damage Chance +15%",
+      "Increase Excellent Damage Chance +15%",
+      "Increase Critical Damage +20",
+      "Increase Excellent Damage +20"
+    ],
+    "parts": ["Dragon Helm", "Dragon Gloves", "Dragon Boots", "Lightning Sword"]
+  },
+  "Vicious": {
+    "options": [
+      "Increase Skill Damage +15",
+      "Increase Damage +15",
+      "Double Damage Chance +10%",
+      "Increase Min. Damage +20",
+      "Increase Max. Damage +30",
+      "Ignore Enemy's Defense +5%"
+    ],
+    "parts": ["Dragon Helm", "Dragon Armor", "Dragon Pants", "Ring of Earth"]
+  },
   "Apollo": {
     "options": [
       "Increase Energy +10",
-      "Increase wizardry +5%",
-      "Increase attack. skill +10",
-      "Maximum mana +30",
-      "Maximum life +30",
-      "Increase max. AG +20",
-      "Increase critical damage +10",
-      "Increase excellent damage +10",
+      "Increase Wizardry Damage +5%",
+      "Increase Skill Damage +10",
+      "Increase Max. Mana +30",
+      "Increase Max. Life +30",
+      "Increase Max. AG +20",
+      "Increase Critical Damage Chance +10%",
+      "Increase Excellent Damage Chance +10%",
       "Increase Energy +30"
     ],
     "parts": [
@@ -106,28 +179,49 @@
       "Ring of Magic"
     ]
   },
+  "Barnake": {
+    "options": [
+      "Increase Wizardy Damage +10%",
+      "Increase Energy +20",
+      "Increase Skill Damage +30",
+      "Increase Max. Mana +100"
+    ],
+    "parts": ["Pad Helm", "Pad Pants", "Pad Boots"]
+  },
   "Evis": {
     "options": [
-      "Increase attacking skill +15",
-      "Increase stamina +20",
-      "Increase wizardry damage +10",
-      "Double damage rate 5%",
-      "Increase damage success rate +50",
-      "Increase AG regen rate +5"
+      "Increase Skill Damage +15",
+      "Increase Stamina +20",
+      "Increase Wizardry Damage +10%",
+      "Double Damage Chance +5%",
+      "Increase Attack Rate +50",
+      "Increase AG Value +5"
     ],
     "parts": ["Bone Armor", "Bone Pants", "Bone Boots", "Pendant of Wind"]
+  },
+  "Syllon": {
+    "options": [
+      "Double Damage Chance +5%",
+      "Increase Critical Damage Chance +5%",
+      "Increase Defense +20",
+      "Increase Strength +50",
+      "Increase Agility +50",
+      "Increase Stamina +50",
+      "Increase Energy +50"
+    ],
+    "parts": ["Bone Helm", "Bone Armor", "Bone Gloves", "Bone Boots"]
   },
   "Hera": {
     "options": [
       "Increase Strength +15",
-      "Increase wizardry dmg +10%",
-      "Increase defensive skill when equipped with shield +5%",
+      "Increase Wizardy Damage +10%",
+      "Increase defensive skill when using shield +5%",
       "Increase Energy +15",
-      "Increase attack success rate +50",
-      "Critical damage rate +10%",
-      "Excellent damage rate +10%",
-      "Increase maximum life +50",
-      "Increase maximum mana +50"
+      "Increase Attack Rate +50",
+      "Increase Critical Damage Chance +10%",
+      "Increase Excellent Damage Chance +10%",
+      "Increase Max. Life +50",
+      "Increase Max. Mana +50"
     ],
     "parts": [
       "Sphinx Mask",
@@ -138,15 +232,24 @@
       "Skull Shield"
     ]
   },
+  "Minet": {
+    "options": [
+      "Increase Energy +30",
+      "Increase Defense +30",
+      "Increase Max. Mana +100",
+      "Increase Skill Damage +15"
+    ],
+    "parts": ["Sphinx Armor", "Sphinx Pants", "Sphinx Boots"]
+  },
   "Anubis": {
     "options": [
-      "Double Dmg rate +10%",
-      "Increase Max mana +50 ",
-      "Increase. Wizardry dmg +10%",
-      "Critical damage rate +15%",
-      "Excellent damage rate +15%",
-      "Increase critical damage +20",
-      "Increase excellent damage +20"
+      "Double Damage Chance +10%",
+      "Increase Max. Mana +50",
+      "Increase Wizardry Damage +10%",
+      "Increase Critical Damage Chance +15%",
+      "Increase Excellent Damage Chance +15%",
+      "Increase Critical Damage +20",
+      "Increase Excellent Damage +20"
     ],
     "parts": [
       "Legendary Helm",
@@ -155,14 +258,29 @@
       "Ring of Fire"
     ]
   },
+  "Enis": {
+    "options": [
+      "Increase Skill Damage +10",
+      "Double Damage Chance +10%",
+      "Increase Energy +30",
+      "Increase. Wizardry Damage +10%",
+      "Ignore Enemy's Defense +5%"
+    ],
+    "parts": [
+      "Legendary Helm",
+      "Legendary Armor",
+      "Legendary Pants",
+      "Legendary Boots"
+    ]
+  },
   "Ceto": {
     "options": [
       "Increase Agility +10",
-      "Increase Max HP +50",
-      "Increase Def skill +20",
+      "Increase Max. Life +50",
+      "Increase Defense +20",
       "Increase defensive skill while using shields +5%",
       "Increase Energy +10",
-      "Increases Max HP +50",
+      "Increase Max. Life +50",
       "Increase Strength +20"
     ],
     "parts": [
@@ -174,15 +292,25 @@
       "Ring of Earth"
     ]
   },
+  "Drake": {
+    "options": [
+      "Increase Agility +20",
+      "Increase Damage +25",
+      "Double Damage Chance +20%",
+      "Increase Defense +40",
+      "Increase Critical Damage Chance +10%"
+    ],
+    "parts": ["Vine Helm", "Vine Armor", "Vine Pants", "Vine Boots"]
+  },
   "Gaia": {
     "options": [
-      "Increase attacking skill +10",
-      "Increase max mana +25",
-      "Power +10",
-      "Double dmg rate +5%",
+      "Increase Skill Damage +10",
+      "Increase Max. Mana +25",
+      "Increase Strength +10",
+      "Double Damage Chance +5%",
       "Increase Agility +30",
-      "Excellent damage rate +10%",
-      "Increase excellent damage +10"
+      "Increase Excellent damage Chance +10%",
+      "Increase Excellent Damage +10"
     ],
     "parts": [
       "Silk Helm",
@@ -192,15 +320,23 @@
       "Golden Crossbow"
     ]
   },
+  "Fase": {
+    "options": [
+      "Increase Max. Life +100",
+      "Increase Max. Mana +100",
+      "Increase Defense +100"
+    ],
+    "parts": ["Silk Pants", "Silk Gloves", "Silk Boots"]
+  },
   "Odin": {
     "options": [
       "Increase Energy +15",
-      "Increase max life +50",
-      "Increase attack success rate +50",
+      "Increase Max. Life +50",
+      "Increase Attack Rate +50",
       "Increase Agility +30",
-      "Increase maximum mana +50",
-      "Ignore enemy's defensive skill +5%",
-      "Increase maximum AG +50"
+      "Increase Max. Mana +50",
+      "Ignore Enemy's Defense +5%",
+      "Increase Maximum AG +50"
     ],
     "parts": [
       "Wind Helm",
@@ -210,25 +346,38 @@
       "Wind Boots"
     ]
   },
+  "Elvian": {
+    "options": ["Increase Agility +30", "Ignore Enemy's Defense +5%"],
+    "parts": ["Wind Pants", "Wind Boots"]
+  },
   "Argo": {
     "options": [
-      "Increase Agility +30",
-      "Power +30",
-      "Increase attacking skill +25",
-      "Double damage rate +5%"
+      "Increase Max. Damage +20",
+      "Increase Skill Damage +25",
+      "Increase Maximum AG +50",
+      "Double Damage Chance +5%"
+    ],
+    "parts": ["Spirit Armor", "Spirit Pants", "Spirit Gloves"]
+  },
+  "Karis": {
+    "options": [
+      "Increase Skill Damage +15",
+      "Double Damage Chance +10%",
+      "Increase Critical Damage Chance +10%",
+      "Increase Agility +40"
     ],
     "parts": ["Spirit Armor", "Spirit Pants", "Spirit Gloves"]
   },
   "Gywen": {
     "options": [
-      "Double Damage rate +10%",
       "Increase Agility +30",
-      "Incr min attacking skill +20",
-      "Incr max attacking skill +20",
-      "Critical damage rate +15%",
-      "Excellent damage rate +15%",
-      "Increase critical damage +20",
-      "Increase excellent damage +20"
+      "Increase Min. Damage +20",
+      "Increase Defense +20",
+      "Increase Max. Damage +20",
+      "Increase Critical Damage Chance +15%",
+      "Increase Excellent Damage Chance +15%",
+      "Increase Critical Damage Chance +20",
+      "Increase Excellent Damage +20"
     ],
     "parts": [
       "Guardian Armor",
@@ -238,33 +387,268 @@
       "Silver Bow"
     ]
   },
+  "Ahruan": {
+    "options": [
+      "Increase Damage +10",
+      "Double Damage Chance +10%",
+      "Increase Skill Damage +20",
+      "Increase Critical Damage Chance +15%",
+      "Increase Excellent Damage Chance +15%",
+      "Ignore Enemy's Defense +5%"
+    ],
+    "parts": [
+      "Guardian Help",
+      "Guardian Armor",
+      "Guardian Pants",
+      "Guardian Boots"
+    ]
+  },
   "Gaion": {
     "options": [
-      "Ignore enemy's defensive skill +5%",
-      "Double Damage rate +15%",
-      "Inc. attacking skill +15",
-      "Excellent damage rate +15%",
-      "Increase excellent damage +30",
-      "Increase wizardry +20%",
+      "Ignore Enemy's Defense +5%",
+      "Double Damage Chance +15%",
+      "Increase Skill Damage +15",
+      "Increase Excellent Damage Chance +15%",
+      "Increase Excellent Damage +30",
+      "Increase Wizardry Damage +10%",
       "Increase Strength +30"
     ],
     "parts": [
-      "Unicorn Armor",
-      "Unicorn Pants",
-      "Unicorn Boots",
+      "Storm Crow Armor",
+      "Storm Crow Pants",
+      "Storm Crow Boots",
       "Pendant of Water"
     ]
   },
-  "Hyon": {
+  "Muren": {
     "options": [
-      "Increase defense +25",
-      "Double Damage rate +10%",
-      "Increase skill damage +20",
-      "Critical damage rate +15%",
-      "Excellent damage rate +15%",
-      "Increase Critical Damage +20",
+      "Increase Skill Damage +10",
+      "Increase Wizardy Damage +10%",
+      "Double Damage Chance +15%",
+      "Increase Critical Damage Chance +15%",
+      "Increase Excellent Damage Chance +15%",
+      "Increase Defense +25",
+      "Increase damage two handed weapons +20%"
+    ],
+    "parts": [
+      "Storm Crow Armor",
+      "Storm Crow Pants",
+      "Storm Crow Gloves",
+      "Ring of Fire"
+    ]
+  },
+  "Agnis": {
+    "options": [
+      "Double Damage Chance +10%",
+      "Increase Defense +40",
+      "Increase Skill Damage +20",
+      "Increase Critical Damage Chance +15%",
+      "Increase Excellent Damage Chance +15%",
+      "Increase Critical Damage Chance +20",
       "Increase Excellent Damage +20"
     ],
-    "parts": ["Dragon Helm", "Dragon Gloves", "Dragon Boots", "Lightning Sword"]
+    "parts": [
+      "Adamantine Mask",
+      "Adamantine Armor",
+      "Adamantine Pants",
+      "Ring of Poison"
+    ]
+  },
+  "Broy": {
+    "options": [
+      "Increase Damage +20",
+      "Increase Skill Damage +20",
+      "Increase Energy +30",
+      "Increase Critical Damage Chance +15%",
+      "Increase Excellent Damage Chance +15%",
+      "Ignore Enemy's Defense +5%",
+      "Increase Command +30"
+    ],
+    "parts": [
+      "Adamantine Pants",
+      "Adamantine Gloves",
+      "Adamantine Boots",
+      "Pendant of Ice"
+    ]
+  },
+  "Mahes": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +17%"
+    ],
+    "parts": [
+      "Black Dragon Helm",
+      "Black Dragon Armor",
+      "Black Dragon Pants",
+      "Black Dragon Boots"
+    ]
+  },
+  "Bragi": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +17%"
+    ],
+    "parts": [
+      "Dark Phoenix Helm",
+      "Dark Phoenix Armor",
+      "Dark Phoenix Pants",
+      "Dark Phoenix Boots"
+    ]
+  },
+  "Bes": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +17%"
+    ],
+    "parts": ["Eclipse Helm", "Eclipse Armor", "Eclipse Pants", "Eclipse Boots"]
+  },
+  "Alvis": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +17%"
+    ],
+    "parts": [
+      "Grand Soul Armor",
+      "Grand Soul Gloves",
+      "Grand Soul Boots",
+      "Pendant of Water"
+    ]
+  },
+  "Demeters": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +17%"
+    ],
+    "parts": [
+      "Dark Soul Mask",
+      "Dark Soul Armor",
+      "Dark Soul Pants",
+      "Dark Soul Boots"
+    ]
+  },
+  "Serket": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +17%"
+    ],
+    "parts": ["Iris Helm", "Iris Armor", "Iris Pants", "Iris Boots"]
+  },
+  "Frigg": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +17%"
+    ],
+    "parts": [
+      "Holy Spirit Armor",
+      "Holy Spirit Pants",
+      "Holy Spirit Boots",
+      "Pendant of Wind"
+    ]
+  },
+  "Tyr": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +17%"
+    ],
+    "parts": [
+      "Thunder Gloves",
+      "Thunder Pants",
+      "Thunder Boots",
+      "Pendant of Lightning"
+    ]
+  },
+  "Khons": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +17%"
+    ],
+    "parts": [
+      "Darksteel Mask",
+      "Darksteel Armor",
+      "Darksteel Pants",
+      "Darksteel Boots"
+    ]
+  },
+  "Surt": {
+    "options": [
+      "Increase Skill Damage +20",
+      "Increase Strength +10",
+      "Double Damage Chance +18%",
+      "Increase Damage +50",
+      "Increase Critical Damage Chance +17%",
+      "Increase Excellent Damage +20",
+      "Ignore Enemy's Defense +9%",
+      "Increase all stats +10",
+      "Increase Excellent Damage Chance +18%"
+    ],
+    "parts": [
+      "Glorious Mask",
+      "Glorious Armor",
+      "Glorious Gloves",
+      "Glorious Boots"
+    ]
   }
 }

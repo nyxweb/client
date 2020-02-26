@@ -31,10 +31,15 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
     }
   };
 
+  const ancientName =
+    !!item.ancient &&
+    !!itemData.options.ancient &&
+    itemData.options.ancient[item.ancient === 5 ? 0 : 1];
+
   return (
     <div className='Options'>
       <div className='row name' style={name(item)}>
-        {itemData.name} {item.level > 0 && '+' + item.level}
+        {ancientName} {itemData.name} {item.level > 0 && '+' + item.level}
       </div>
       <div className='row dur'>Durability: {item.durability}</div>
       {image && (
@@ -92,13 +97,12 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
           )}
         </div>
       )}
-      {!!item.ancient && !!itemData.options.ancient && (
+      {!!item.ancient && !!itemData.options.ancient && !!ancientName && (
         <div className='row ancient'>
-          {ancient[itemData.options.ancient].options.map(
-            (anc: string, i: number) => (
-              <div key={i}>{anc}</div>
-            )
-          )}
+          <div className='head'>Set Options</div>
+          {ancient[ancientName].options.map((anc: string, i: number) => (
+            <div key={i}>{anc}</div>
+          ))}
         </div>
       )}
     </div>

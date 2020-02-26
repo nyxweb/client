@@ -13,26 +13,19 @@
       margin: 10px 0;
       text-align: center;
 
-      &:first-of-type {
-        margin: 0 0 10px 0;
-      }
-
-      &:last-of-type {
-        margin: 10px 0 0 0;
-      }
-
       &.name {
         font-size: 15px;
+        padding: 2px 7px;
       }
 
       &.dur {
-        margin: -8px 0 20px 0;
+        margin: -4px 0 20px 0;
         font-size: 12px;
       }
 
       &.equipped {
         background: rgb(129, 5, 5);
-        padding: 2px;
+        padding: 2px 7px;
       }
 
       &.pink {
@@ -48,6 +41,23 @@
       &.options,
       &.excellent {
         color: rgb(151, 174, 208);
+      }
+
+      &.ancient {
+        color: rgb(75, 70, 70);
+
+        .head {
+          color: rgb(182, 166, 125);
+          margin-bottom: 10px;
+        }
+      }
+
+      &:first-of-type {
+        margin: 0 0 10px 0;
+      }
+
+      &:last-of-type {
+        margin: 10px 0 0 0;
       }
     }
   }
