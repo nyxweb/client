@@ -22,7 +22,7 @@ const market = (state = initialState, action: ReduxAction) => {
     case MARKET_LATEST_FAILED:
       return {
         ...state,
-        latest: null
+        latest: false
       };
     default:
       return state;

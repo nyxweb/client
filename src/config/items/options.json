@@ -62,5 +62,16 @@
   "luck": [
     "Luck(success rate of Jewel of Soul +25%)",
     "Luck(critical damage rate +5%)"
-  ]
+  ],
+  "pink": {
+    "weapon": ["Additional Damage +200", "Attack success rate increase +10"],
+    "helm": [
+      "SD recovery rate increase +20%",
+      "Defense success rate increase +10"
+    ],
+    "armor": ["SD auto recovery", "Defense success rate increase +10"],
+    "pants": ["Defensive skill +200", "Defense success rate increase +10"],
+    "gloves": ["Max. HP increase +200", "Defense success rate increase +10"],
+    "boots": ["Max. SD increase +700", "Defense success rate increase +10"]
+  }
 }

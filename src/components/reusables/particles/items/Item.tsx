@@ -49,6 +49,7 @@ const Item: React.FC<Props> = ({
 
   const id = uuid();
   const item = decode(hex);
+
   const itemData =
     item && itemsList[item.group] && itemsList[item.group].items[item.id]
       ? itemsList[item.group].items[item.id]

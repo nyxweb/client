@@ -54,10 +54,17 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
           ))}
         </div>
       )}
-      {!!item.skill && !!itemData.options.skill && (
+      {item.three80 && itemData.options.pink && (
+        <div className='row pink'>
+          {options.pink.map((pink: string, i: number) => (
+            <div key={i}>{pink}</div>
+          ))}
+        </div>
+      )}
+      {item.skill && !!itemData.options.skill && (
         <div className='row skill'>This item has a special skill</div>
       )}
-      {!!item.luck && (
+      {item.luck && (
         <div className='row luck'>
           {options.luck.map((luck: string, i: number) => (
             <div key={i}>{luck}</div>
@@ -73,7 +80,7 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
             {itemData.options.additional === 'rec' ||
             itemData.options.additional === 'arrows'
               ? item.options + '%'
-              : item.options * 4}
+              : '+' + item.options * 4}
           </div>
         )}
       {itemData.options.excellent && !!item.excellent.find(x => x) && (

@@ -3,10 +3,11 @@ export default interface Item {
   group: number;
   excellent: number[];
   durability: number;
-  luck: number;
+  luck: boolean;
   level: number;
-  skill: number;
+  skill: boolean;
   options: number;
   serial: string;
   ancient: number;
+  three80: boolean;
 }

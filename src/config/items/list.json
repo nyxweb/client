@@ -42,7 +42,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 48, 64]
       },
@@ -53,7 +54,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [0, 16, 32, 48, 64]
       },
@@ -64,7 +66,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [0, 16, 32, 48, 64]
       },
@@ -75,7 +78,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 32, 48, 64]
       },
@@ -86,7 +90,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 48, 64]
       },
@@ -97,7 +102,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 48, 64]
       },
@@ -108,7 +114,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 48]
       },
@@ -119,7 +126,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 32, 48]
       },
@@ -130,7 +138,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 48]
       },
@@ -141,7 +150,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 48]
       },
@@ -152,7 +162,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 32, 48]
       },
@@ -163,7 +174,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 32, 48]
       },
@@ -174,7 +186,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 48]
       },
@@ -185,7 +198,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 48]
       },
@@ -196,7 +210,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [17]
       },
@@ -207,7 +222,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [48]
       },
@@ -218,7 +234,8 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [16, 48, 64]
       },
@@ -229,29 +246,82 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
         },
         "class": [17]
       },
       "21": {
-        "name": "Death Blade",
+        "name": "Dark Reign Blade",
         "x": 2,
         "y": 4,
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false
+          "ancient": false,
+          "skill": true
+        },
+        "class": [48]
+      },
+      "22": {
+        "name": "Bone Blade",
+        "x": 1,
+        "y": 4,
+        "options": {
+          "excellent": 1,
+          "additional": "dmg",
+          "ancient": false,
+          "skill": true,
+          "pink": "weapon"
+        },
+        "class": [17]
+      },
+      "23": {
+        "name": "Explosion Blade",
+        "x": 2,
+        "y": 4,
+        "options": {
+          "excellent": 1,
+          "additional": "dmgwiz",
+          "ancient": false,
+          "skill": true,
+          "pink": "weapon"
+        },
+        "class": [48]
+      },
+      "24": {
+        "name": "Daybreaker",
+        "x": 2,
+        "y": 4,
+        "options": {
+          "excellent": 1,
+          "additional": "dmg",
+          "ancient": false,
+          "skill": true
+        },
+        "class": [16]
+      },
+      "25": {
+        "name": "Sword Dancer",
+        "x": 2,
+        "y": 4,
+        "options": {
+          "excellent": 1,
+          "additional": "dmgwiz",
+          "ancient": false,
+          "skill": true
         },
         "class": [48]
       },
       "31": {
-        "name": "Death Broad",
+        "name": "Rune Blade",
         "x": 2,
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmgwiz",
+          "ancient": false,
+          "skill": true
         },
         "class": [48]
       }
@@ -508,15 +578,38 @@
         "class": [64]
       },
       "13": {
-        "name": "Mace of the King",
+        "name": "Divine Scepter of Archangel",
         "x": 1,
-        "y": 3,
+        "y": 4,
         "options": {
           "excellent": 1,
           "additional": "dmg",
           "ancient": false
         },
-        "class": [17]
+        "class": [64]
+      },
+      "14": {
+        "name": "Soleil Scepter",
+        "x": 1,
+        "y": 4,
+        "options": {
+          "excellent": 1,
+          "additional": "dmg",
+          "ancient": false,
+          "pink": "weapon"
+        },
+        "class": [64]
+      },
+      "15": {
+        "name": "Shining Scepter",
+        "x": 1,
+        "y": 4,
+        "options": {
+          "excellent": 1,
+          "additional": "dmg",
+          "ancient": false
+        },
+        "class": [64]
       }
     }
   },
@@ -900,6 +993,31 @@
           "skill": "triple"
         },
         "class": [33]
+      },
+      "21": {
+        "name": "Sylph Wind Bow",
+        "x": 2,
+        "y": 4,
+        "options": {
+          "excellent": 1,
+          "additional": "dmg",
+          "ancient": false,
+          "skill": "triple",
+          "pink": "weapon"
+        },
+        "class": [33]
+      },
+      "22": {
+        "name": "Albatross Bow",
+        "x": 2,
+        "y": 4,
+        "options": {
+          "excellent": 1,
+          "additional": "dmg",
+          "ancient": false,
+          "skill": "triple"
+        },
+        "class": [33]
       }
     }
   },
@@ -1029,6 +1147,29 @@
       },
       "11": {
         "name": "Staff of Kundun",
+        "x": 1,
+        "y": 4,
+        "options": {
+          "excellent": 2,
+          "additional": "wiz",
+          "ancient": false
+        },
+        "class": [1]
+      },
+      "12": {
+        "name": "Grand Viper Staff",
+        "x": 1,
+        "y": 4,
+        "options": {
+          "excellent": 2,
+          "additional": "wiz",
+          "ancient": false,
+          "pink": "weapon"
+        },
+        "class": [1]
+      },
+      "13": {
+        "name": "Platina Staff",
         "x": 1,
         "y": 4,
         "options": {
@@ -1535,6 +1676,94 @@
           "ancient": false
         },
         "class": [64]
+      },
+      "29": {
+        "name": "Dragon Knight Helm",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [17]
+      },
+      "30": {
+        "name": "Venom Mist Helm",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [1]
+      },
+      "31": {
+        "name": "Sylphid Ray Helm",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [33]
+      },
+      "33": {
+        "name": "Sunlight Helm",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [64]
+      },
+      "34": {
+        "name": "Ashcrow Helm",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [16]
+      },
+      "35": {
+        "name": "Eclipse Helm",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [0]
+      },
+      "36": {
+        "name": "Iris Helm",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [32]
+      },
+      "38": {
+        "name": "Glorious Mask",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [64]
       }
     }
   },
@@ -1851,6 +2080,121 @@
       },
       "28": {
         "name": "Dark Master Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [64]
+      },
+      "29": {
+        "name": "Dragon Knight Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "armor"
+        },
+        "class": [17]
+      },
+      "30": {
+        "name": "Venom Mist Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "armor"
+        },
+        "class": [1]
+      },
+      "31": {
+        "name": "Sylphid Ray Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "armor"
+        },
+        "class": [33]
+      },
+      "32": {
+        "name": "Volcano Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "armor"
+        },
+        "class": [48]
+      },
+      "33": {
+        "name": "Sunlight Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "armor"
+        },
+        "class": [64]
+      },
+      "34": {
+        "name": "Ashcrow Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [16]
+      },
+      "35": {
+        "name": "Eclipse Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [0]
+      },
+      "36": {
+        "name": "Iris Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [32]
+      },
+      "37": {
+        "name": "Valiant Armor",
+        "x": 2,
+        "y": 3,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [48]
+      },
+      "38": {
+        "name": "Glorious Armor",
         "x": 2,
         "y": 3,
         "options": {
@@ -2183,6 +2527,121 @@
           "ancient": false
         },
         "class": [64]
+      },
+      "29": {
+        "name": "Dragon Knight Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "pants"
+        },
+        "class": [17]
+      },
+      "30": {
+        "name": "Venom Mist Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "pants"
+        },
+        "class": [1]
+      },
+      "31": {
+        "name": "Sylphid Ray Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "pants"
+        },
+        "class": [33]
+      },
+      "32": {
+        "name": "Volcano Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "pants"
+        },
+        "class": [48]
+      },
+      "33": {
+        "name": "Sunlight Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "pants"
+        },
+        "class": [64]
+      },
+      "34": {
+        "name": "Ashcrow Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [16]
+      },
+      "35": {
+        "name": "Eclipse Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [0]
+      },
+      "36": {
+        "name": "Iris Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [32]
+      },
+      "37": {
+        "name": "Valiant Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [48]
+      },
+      "38": {
+        "name": "Glorious Pants",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [64]
       }
     }
   },
@@ -2499,6 +2958,121 @@
       },
       "28": {
         "name": "Dark Master Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [64]
+      },
+      "29": {
+        "name": "Dragon Knight Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "gloves"
+        },
+        "class": [17]
+      },
+      "30": {
+        "name": "Venom Mist Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "gloves"
+        },
+        "class": [1]
+      },
+      "31": {
+        "name": "Sylphid Ray Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "gloves"
+        },
+        "class": [33]
+      },
+      "32": {
+        "name": "Volcano Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "gloves"
+        },
+        "class": [48]
+      },
+      "33": {
+        "name": "Sunlight Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "gloves"
+        },
+        "class": [64]
+      },
+      "34": {
+        "name": "Ashcrow Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [16]
+      },
+      "35": {
+        "name": "Eclipse Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [0]
+      },
+      "36": {
+        "name": "Iris Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [32]
+      },
+      "37": {
+        "name": "Valiant Gloves",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [48]
+      },
+      "38": {
+        "name": "Glorious Gloves",
         "x": 2,
         "y": 2,
         "options": {
@@ -2831,6 +3405,121 @@
           "ancient": false
         },
         "class": [64]
+      },
+      "29": {
+        "name": "Dragon Knight Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "boots"
+        },
+        "class": [17]
+      },
+      "30": {
+        "name": "Venom Mist Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "boots"
+        },
+        "class": [1]
+      },
+      "31": {
+        "name": "Sylphid Ray Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "boots"
+        },
+        "class": [33]
+      },
+      "32": {
+        "name": "Volcano Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "boots"
+        },
+        "class": [48]
+      },
+      "33": {
+        "name": "Sunlight Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false,
+          "pink": "boots"
+        },
+        "class": [64]
+      },
+      "34": {
+        "name": "Ashcrow Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [16]
+      },
+      "35": {
+        "name": "Eclipse Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [0]
+      },
+      "36": {
+        "name": "Iris Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [32]
+      },
+      "37": {
+        "name": "Valiant Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [48]
+      },
+      "38": {
+        "name": "Glorious Boots",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": 3,
+          "additional": "deff",
+          "ancient": false
+        },
+        "class": [64]
       }
     }
   },
@@ -3121,6 +3810,16 @@
         },
         "class": [64]
       },
+      "26": {
+        "name": "Gem of Secret",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
       "30": {
         "name": "Jewel of Bless",
         "x": 1,
@@ -3140,6 +3839,102 @@
           "additional": false,
           "ancient": false
         }
+      },
+      "32": {
+        "name": "Red Ribbon Box",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "33": {
+        "name": "Green Ribbon Box",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "34": {
+        "name": "Blue Ribbon Box",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "35": {
+        "name": "Scroll of Fire Scream",
+        "x": 1,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        },
+        "class": [64]
+      },
+      "36": {
+        "name": "Wing of Storm",
+        "x": 4,
+        "y": 3,
+        "options": {
+          "excellent": 4,
+          "additional": "rec",
+          "ancient": false
+        },
+        "class": [17]
+      },
+      "37": {
+        "name": "Wing of Eternal",
+        "x": 4,
+        "y": 3,
+        "options": {
+          "excellent": 4,
+          "additional": "rec",
+          "ancient": false
+        },
+        "class": [1]
+      },
+      "38": {
+        "name": "Wing of Illusion",
+        "x": 4,
+        "y": 3,
+        "options": {
+          "excellent": 4,
+          "additional": "rec",
+          "ancient": false
+        },
+        "class": [33]
+      },
+      "39": {
+        "name": "Wing of Ruin",
+        "x": 4,
+        "y": 3,
+        "options": {
+          "excellent": 4,
+          "additional": "rec",
+          "ancient": false
+        },
+        "class": [48]
+      },
+      "40": {
+        "name": "Cape of Emperor",
+        "x": 4,
+        "y": 3,
+        "options": {
+          "excellent": 4,
+          "additional": "rec",
+          "ancient": false
+        },
+        "class": [64]
       }
     }
   },
@@ -3450,6 +4245,196 @@
         "name": "Spirit",
         "x": 1,
         "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "32": {
+        "name": "Splinter of Armor",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "33": {
+        "name": "Bless of Guardian",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "34": {
+        "name": "Claw of Beast",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "35": {
+        "name": "Fragment of Horn",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "36": {
+        "name": "Broken Horn",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "37": {
+        "name": "Horn of Fenrir",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "38": {
+        "name": "Moonstone Pendant",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "39": {
+        "name": "Skeleton Ring",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "40": {
+        "name": "Halloween Ring",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "41": {
+        "name": "Christmas Pendant",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "42": {
+        "name": "GM Ring",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "43": {
+        "name": "Seal of Ascension",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "44": {
+        "name": "Seal of Wealth",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "45": {
+        "name": "Seal of Sustenance",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "49": {
+        "name": "Old Scroll",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "50": {
+        "name": "Illusion Sorcerer Covenant",
+        "x": 1,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "51": {
+        "name": "Scroll of Blood",
+        "x": 2,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "52": {
+        "name": "Condor Flame",
+        "x": 1,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "53": {
+        "name": "Condor Feather",
+        "x": 1,
+        "y": 2,
         "options": {
           "excellent": false,
           "additional": false,
@@ -3781,6 +4766,296 @@
           "additional": false,
           "ancient": false
         }
+      },
+      "32": {
+        "name": "Pink Chocolate Box",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "33": {
+        "name": "Red Chocolate Box",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "34": {
+        "name": "Blue Chocolate Box",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "35": {
+        "name": "Small SD Potion",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "36": {
+        "name": "SD Potion",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "37": {
+        "name": "Large SD Potion",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "38": {
+        "name": "Small Complex Potion",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "39": {
+        "name": "Complex Potion",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "40": {
+        "name": "Large Complex Potion",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "41": {
+        "name": "Gemstone",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "42": {
+        "name": "Jewel of Harmony",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "43": {
+        "name": "Lower Refining Stone",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "44": {
+        "name": "Higher Refining Stone",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "45": {
+        "name": "Halloween Pumpkin",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "46": {
+        "name": "Jack O'Lantern Blessings",
+        "x": 1,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "47": {
+        "name": "Jack O'Lantern Wrath",
+        "x": 1,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "48": {
+        "name": "Jack O'Lantern Cry",
+        "x": 1,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "49": {
+        "name": "Jack O'Lantern Food",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "50": {
+        "name": "Jack O'Lantern Drink",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "51": {
+        "name": "Christmas Star",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "52": {
+        "name": "GM Gift",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "55": {
+        "name": "Green Chaos Box",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "56": {
+        "name": "Red Chaos Box",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "57": {
+        "name": "Purple Chaos Box",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "63": {
+        "name": "Firecracker",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "64": {
+        "name": "Cursed Castle Water",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "65": {
+        "name": "Death-beam Knight Flame",
+        "x": 1,
+        "y": 1,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "66": {
+        "name": "Hell-Miner Horn",
+        "x": 1,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
+      },
+      "67": {
+        "name": "Dark Phoenix Feather",
+        "x": 1,
+        "y": 2,
+        "options": {
+          "excellent": false,
+          "additional": false,
+          "ancient": false
+        }
       }
     }
   },
@@ -3920,7 +5195,7 @@
         "class": [1]
       },
       "12": {
-        "name": "Scroll of Blast",
+        "name": "Scroll of Cometfall",
         "x": 1,
         "y": 2,
         "options": {
@@ -3942,7 +5217,7 @@
         "class": [0, 48]
       },
       "14": {
-        "name": "Scroll of Telekinesis",
+        "name": "Scroll of Teleport Ally",
         "x": 1,
         "y": 2,
         "options": {
@@ -3986,7 +5261,7 @@
         "class": [1]
       },
       "18": {
-        "name": "Scroll of Hellburst",
+        "name": "Scroll of Nova",
         "x": 1,
         "y": 2,
         "options": {
