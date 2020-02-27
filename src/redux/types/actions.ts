@@ -1,7 +1,17 @@
 // User
-export const USER_LOGIN = 'USER_LOGIN';
-export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED';
-export const USER_LOGOUT = 'USER_LOGOUT';
+export const LOGIN = 'LOGIN';
+export const LOGIN_FAILED = 'LOGIN_FAILED';
+export const LOGOUT = 'LOGOUT';
+
+// User -> Account
+export const SET_ACCOUNT_LOADER = 'SET_ACCOUNT_LOADER';
+
+// User -> Character
+export const SET_CHARACTER_LOADER = 'SET_CHARACTER_LOADER';
+export const SET_CHARACTERS = 'SET_CHARACTERS';
+
+// User -> Extra
+export const SET_EXTRA_LOADER = 'SET_EXTRA_LOADER';
 
 // Rankings
 export const GET_HOF = 'GET_HOF';

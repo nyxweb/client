@@ -4,7 +4,7 @@ import axios from 'axios';
 import { notice } from 'actions/utils';
 
 // Types
-import { USER_LOGIN, USER_LOGIN_FAILED } from 'redux/types/actions';
+import { LOGIN, LOGIN_FAILED } from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
@@ -28,14 +28,14 @@ const userLogin: ActionCreator<ThunkAction<
     axios.defaults.headers.common.nyxAuthToken = data.jwt_token;
 
     dispatch({
-      type: USER_LOGIN,
+      type: LOGIN,
       payload: data
     });
 
     notice(data);
   } catch (error) {
     dispatch({
-      type: USER_LOGIN_FAILED
+      type: LOGIN_FAILED
     });
 
     notice(error);

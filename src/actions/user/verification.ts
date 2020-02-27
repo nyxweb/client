@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Types
-import { USER_LOGIN, USER_LOGOUT } from 'redux/types/actions';
+import { LOGIN, LOGOUT } from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
@@ -19,13 +19,13 @@ const userVerification: ActionCreator<ThunkAction<
       );
 
       dispatch({
-        type: USER_LOGIN,
+        type: LOGIN,
         payload: data
       });
     }
   } catch (error) {
     dispatch({
-      type: USER_LOGOUT
+      type: LOGOUT
     });
   }
 

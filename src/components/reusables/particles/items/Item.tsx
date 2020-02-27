@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import uuid from 'uuid/v4';
 
@@ -60,6 +60,8 @@ const Item: React.FC<Props> = ({
   itemStyle.width = realSize ? size * itemData.x : size;
   itemStyle.height = realSize ? size * itemData.y : size;
 
+  const tooltipRef: React.Ref<any> = useRef();
+
   return (
     item &&
     itemData && (
@@ -74,6 +76,8 @@ const Item: React.FC<Props> = ({
             src={getItemImage(`./${item.group}/${item.id}.gif`)}
             alt={itemData.name}
             className='item-image'
+            // onDrag={() => ReactTooltip.hide()}
+            // ! onCompositionStart={() => ReactTooltip.hide()}
           />
         ) : (
           itemData.name

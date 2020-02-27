@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 // Reusables
 import Resource from 'components/reusables/particles/Resource';
@@ -10,50 +10,46 @@ import { logout } from 'actions/user';
 
 // Types
 import AppState from 'redux/types/app';
-import UserState from 'redux/types/user/User';
 import IResource from 'redux/types/reusables/Resource';
 
-interface Props {
-  user: UserState;
-  logout: () => void;
-}
+interface Props {}
 
-const UserArea: React.FC<Props> = ({ user, logout }) => {
+const UserArea: React.FC<Props> = () => {
   const [resources, setResources] = useState<IResource[]>([]);
   const [menu, setMenu] = useState('');
+  const dispatch = useDispatch();
+
+  const account = useSelector((state: AppState) => state.user.account.info);
 
   useEffect(() => {
-    if (user.resources?.list) {
-      setResources(JSON.parse(user.resources.list));
-    }
-  }, [user.resources]);
+    setResources(JSON.parse(account!.resources.list));
+  }, [account!.resources]);
+
+  const doLogout = () => dispatch(logout());
 
   return (
     <div className='UserArea'>
       <div className='welcome'>
         <span
           className={`highlight ${
-            user.status?.ConnectStat === 1 ? 'online' : 'offline'
+            account!.status?.ConnectStat === 1 ? 'online' : 'offline'
           }`}
         >
-          {user.memb___id}
+          {account!.memb___id}
         </span>
-        <button onClick={logout}>Logout</button>
+        <button onClick={doLogout}>Logout</button>
       </div>
-      {user.resources?.list && (
-        <div className='resources'>
-          {resources.map((res: IResource, i: number) => (
-            <Resource key={i} name={res.name} value={res.value} />
-          ))}
-        </div>
-      )}
+      <div className='resources'>
+        {resources.map((res: IResource, i: number) => (
+          <Resource key={i} name={res.name} value={res.value} />
+        ))}
+      </div>
       <div className='menu'>
         <div className='section'>
           <div className='title' onClick={() => setMenu('account')}>
             Account
           </div>
           <div className={`content ${menu === 'account' ? 'open' : 'closed'}`}>
-            <Link to='/user/account'>Account Info</Link>
             <Link to='/user/account/password'>Change Password</Link>
             <Link to='/user/account/vip'>VIP Status</Link>
             <Link to='/user/account/online'>Online Time</Link>
@@ -88,8 +84,4 @@ const UserArea: React.FC<Props> = ({ user, logout }) => {
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  user: state.user
-});
-
-export default connect(mapStateToProps, { logout })(UserArea);
+export default UserArea;

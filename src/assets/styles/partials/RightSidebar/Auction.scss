@@ -6,6 +6,8 @@
     background: rgba(63, 85, 114, 0.1);
     padding: 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 
     & > img {
       max-width: 100%;

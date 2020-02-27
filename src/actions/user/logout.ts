@@ -1,4 +1,4 @@
-import { USER_LOGOUT } from 'redux/types/actions';
+import { LOGOUT } from 'redux/types/actions';
 
 // Types
 import AppState from 'redux/types/app';
@@ -14,7 +14,7 @@ const userLogout: ActionCreator<ThunkAction<
   delete localStorage.nyxToken;
 
   dispatch({
-    type: USER_LOGOUT
+    type: LOGOUT
   });
 };
 
