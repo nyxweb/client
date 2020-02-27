@@ -9,5 +9,9 @@ export default interface Item {
   options: number;
   serial: string;
   ancient: number;
-  three80: boolean;
+  pink: boolean;
+  harmony: {
+    type: number;
+    level: number;
+  };
 }

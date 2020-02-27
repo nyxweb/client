@@ -32,6 +32,10 @@
         color: rgb(184, 129, 183);
       }
 
+      &.harmony {
+        color: goldenrod;
+      }
+
       &.skill {
         margin-bottom: -10px;
       }
@@ -39,15 +43,12 @@
       &.skill,
       &.luck,
       &.options,
-      &.excellent {
-        color: rgb(151, 174, 208);
-      }
-
+      &.excellent,
       &.ancient {
-        color: rgb(75, 70, 70);
+        color: rgb(151, 174, 208);
 
         .head {
-          color: rgb(182, 166, 125);
+          color: goldenrod;
           margin-bottom: 10px;
         }
       }

@@ -31,10 +31,28 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
     }
   };
 
+  // Ancient option
   const ancientName =
-    !!item.ancient &&
-    !!itemData.options.ancient &&
-    itemData.options.ancient[item.ancient === 5 ? 0 : 1];
+    !!item.ancient && itemData.options.ancient
+      ? item.ancient === 10 && itemData.options.ancient[1]
+        ? itemData.options.ancient[1]
+        : itemData.options.ancient[0]
+        ? itemData.options.ancient[0]
+        : false
+      : false;
+
+  // Harmony (yellow option)
+  const harmony =
+    item.group === 5
+      ? 'staffs'
+      : [0, 1, 2, 3, 4].includes(item.group)
+      ? 'weapons'
+      : 'items';
+
+  // Wings options
+  if (item.group === 12) {
+    itemData.options.additional = item.excellent[5] ? 'dmg' : 'rec';
+  }
 
   return (
     <div className='Options'>
@@ -59,13 +77,24 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
           ))}
         </div>
       )}
-      {item.three80 && itemData.options.pink && (
-        <div className='row pink'>
-          {options.pink.map((pink: string, i: number) => (
-            <div key={i}>{pink}</div>
-          ))}
-        </div>
-      )}
+      {item.pink &&
+        itemData.options.pink &&
+        options.pink[itemData.options.pink] && (
+          <div className='row pink'>
+            {options.pink[itemData.options.pink].map(
+              (pink: string, i: number) => (
+                <div key={i}>{pink}</div>
+              )
+            )}
+          </div>
+        )}
+      {!!item.harmony.type &&
+        !!options.harmony[harmony][item.harmony.type - 1] && (
+          <div className='row harmony'>
+            {options.harmony[harmony][item.harmony.type - 1]} +
+            {item.harmony.level}%
+          </div>
+        )}
       {item.skill && !!itemData.options.skill && (
         <div className='row skill'>This item has a special skill</div>
       )}
@@ -90,11 +119,22 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
         )}
       {itemData.options.excellent && !!item.excellent.find(x => x) && (
         <div className='row excellent'>
-          {item.excellent.map((x: number, i: number) =>
-            x ? (
-              <div key={i}>{options[itemData.options.excellent][i]}</div>
-            ) : null
-          )}
+          {item.excellent.map((x: number, i: number) => {
+            if (x) {
+              if (
+                (item.group === 12 || item.group === 13) &&
+                (i === 0 || i === 1)
+              ) {
+                options[itemData.options.excellent][i] = options[
+                  itemData.options.excellent
+                ][i].replace('{placeholder}', 50 + item.level * 5);
+              }
+
+              return (
+                <div key={i}>{options[itemData.options.excellent][i]}</div>
+              );
+            }
+          })}
         </div>
       )}
       {!!item.ancient && !!itemData.options.ancient && !!ancientName && (

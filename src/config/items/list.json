@@ -8,8 +8,7 @@
         "y": 2,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [0, 16, 32, 48, 64]
       },
@@ -19,8 +18,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [0, 16, 32, 48, 64]
       },
@@ -42,7 +40,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48, 64]
@@ -54,7 +51,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [0, 16, 32, 48, 64]
@@ -66,7 +62,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [0, 16, 32, 48, 64]
@@ -78,7 +73,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 32, 48, 64]
@@ -90,7 +84,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48, 64]
@@ -102,7 +95,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48, 64]
@@ -114,7 +106,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48]
@@ -126,7 +117,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 32, 48]
@@ -138,7 +128,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48]
@@ -150,7 +139,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48]
@@ -162,7 +150,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 32, 48]
@@ -186,7 +173,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48]
@@ -198,7 +184,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48]
@@ -210,7 +195,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [17]
@@ -222,7 +206,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [48]
@@ -234,7 +217,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48, 64]
@@ -246,7 +228,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [17]
@@ -258,7 +239,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true
         },
         "class": [48]
@@ -270,7 +250,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": true,
           "pink": "weapon"
         },
@@ -283,7 +262,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmgwiz",
-          "ancient": false,
           "skill": true,
           "pink": "weapon"
         },
@@ -296,7 +274,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
+
           "skill": true
         },
         "class": [16]
@@ -308,7 +286,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmgwiz",
-          "ancient": false,
+
           "skill": true
         },
         "class": [48]
@@ -320,7 +298,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmgwiz",
-          "ancient": false,
+
           "skill": true
         },
         "class": [48]
@@ -336,8 +314,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [0, 16, 32, 48, 64]
       },
@@ -347,8 +324,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [0, 16, 32, 48, 64]
       },
@@ -358,8 +334,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48, 64]
       },
@@ -369,8 +344,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48, 64]
       },
@@ -380,8 +354,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [0, 32, 48]
       },
@@ -391,8 +364,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -402,8 +374,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48]
       },
@@ -413,8 +384,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48]
       },
@@ -424,8 +394,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [0, 16, 48]
       }
@@ -440,8 +409,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48, 64]
       },
@@ -462,8 +430,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48, 64]
       },
@@ -473,8 +440,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48]
       },
@@ -484,8 +450,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48]
       },
@@ -495,8 +460,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48]
       },
@@ -506,8 +470,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 48]
       },
@@ -517,8 +480,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [33]
       },
@@ -528,8 +490,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [64]
       },
@@ -539,8 +500,7 @@
         "y": 3,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [64]
       },
@@ -550,8 +510,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [64]
       },
@@ -561,8 +520,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [64]
       },
@@ -572,8 +530,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [64]
       },
@@ -583,8 +540,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [64]
       },
@@ -595,7 +551,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
+
           "pink": "weapon"
         },
         "class": [64]
@@ -606,8 +562,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [64]
       }
@@ -622,8 +577,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -633,8 +587,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -644,8 +597,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -655,8 +607,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -666,8 +617,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -677,8 +627,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -688,8 +637,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -699,8 +647,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -710,8 +657,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -721,8 +667,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [16, 32, 48]
       },
@@ -732,8 +677,7 @@
         "y": 4,
         "options": {
           "excellent": 1,
-          "additional": "dmg",
-          "ancient": false
+          "additional": "dmg"
         },
         "class": [17]
       }
@@ -749,7 +693,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
+
           "skill": "triple"
         },
         "class": [32]
@@ -761,7 +705,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
+
           "skill": "triple"
         },
         "class": [32]
@@ -773,7 +717,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
+
           "skill": "triple"
         },
         "class": [32]
@@ -785,7 +729,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
+
           "skill": "triple"
         },
         "class": [32]
@@ -797,7 +741,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
+
           "skill": "triple"
         },
         "class": [32]
@@ -821,7 +765,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
+
           "skill": "triple"
         },
         "class": [32]
@@ -833,7 +777,7 @@
         "options": {
           "excellent": false,
           "additional": "arrows",
-          "ancient": false,
+
           "skill": false
         },
         "class": [32]
@@ -845,7 +789,7 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
+
           "skill": "triple"
         },
         "class": [32]
@@ -869,7 +813,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [32]
@@ -881,7 +824,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [32]
@@ -893,7 +835,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [32]
@@ -905,7 +846,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [32]
@@ -917,7 +857,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [32]
@@ -929,7 +868,6 @@
         "options": {
           "excellent": false,
           "additional": "arrows",
-          "ancient": false,
           "skill": false
         },
         "class": [32]
@@ -941,7 +879,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [32]
@@ -953,7 +890,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [33]
@@ -965,7 +901,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [32]
@@ -977,7 +912,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [33]
@@ -989,7 +923,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [33]
@@ -1001,7 +934,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple",
           "pink": "weapon"
         },
@@ -1014,7 +946,6 @@
         "options": {
           "excellent": 1,
           "additional": "dmg",
-          "ancient": false,
           "skill": "triple"
         },
         "class": [33]
@@ -1041,8 +972,7 @@
         "y": 3,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0, 48]
       },
@@ -1052,8 +982,7 @@
         "y": 3,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0, 48]
       },
@@ -1063,8 +992,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0, 48]
       },
@@ -1074,8 +1002,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0, 48]
       },
@@ -1085,8 +1012,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0, 48]
       },
@@ -1096,8 +1022,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0, 48]
       },
@@ -1107,8 +1032,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0, 48]
       },
@@ -1118,8 +1042,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0, 48]
       },
@@ -1129,8 +1052,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [1]
       },
@@ -1140,8 +1062,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0, 48]
       },
@@ -1151,8 +1072,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [1]
       },
@@ -1163,7 +1083,7 @@
         "options": {
           "excellent": 2,
           "additional": "wiz",
-          "ancient": false,
+
           "pink": "weapon"
         },
         "class": [1]
@@ -1174,8 +1094,7 @@
         "y": 4,
         "options": {
           "excellent": 2,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [1]
       }
@@ -1201,8 +1120,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [16, 48, 64]
       },
@@ -1213,7 +1131,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48, 64]
@@ -1225,7 +1142,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [32]
@@ -1237,7 +1153,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [0, 16, 32, 48, 64]
@@ -1249,7 +1164,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48, 64]
@@ -1273,7 +1187,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48, 64]
@@ -1285,7 +1198,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 32, 48, 64]
@@ -1309,7 +1221,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48, 64]
@@ -1321,7 +1232,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 32, 48, 64]
@@ -1333,7 +1243,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48]
@@ -1345,7 +1254,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [16, 48]
@@ -1357,7 +1265,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [0, 48]
@@ -1369,7 +1276,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [1]
@@ -1381,7 +1287,6 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
           "skill": true
         },
         "class": [33]
@@ -1392,13 +1297,13 @@
     "title": "Helm",
     "items": {
       "0": {
-        "name": "Bronze Helmet",
+        "name": "Bronze Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Mist", "Mist"]
         },
         "class": [16, 64]
       },
@@ -1409,7 +1314,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Hyon"]
+          "ancient": ["Hyon", "Vicious"]
         },
         "class": [16]
       },
@@ -1420,34 +1325,34 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Apollo"]
+          "ancient": ["Apollo", "Barnake"]
         },
         "class": [0]
       },
       "3": {
-        "name": "Legendary Helmet",
+        "name": "Legendary Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Anubis"]
+          "ancient": ["Anubis", "Enis"]
         },
         "class": [0]
       },
       "4": {
-        "name": "Bone Helmet",
+        "name": "Bone Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Sylion"]
         },
         "class": [0]
       },
       "5": {
-        "name": "Leather Helmet",
+        "name": "Leather Helm",
         "x": 2,
         "y": 2,
         "options": {
@@ -1458,18 +1363,18 @@
         "class": [16, 64]
       },
       "6": {
-        "name": "Scale Helmet",
+        "name": "Scale Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Eplete"]
+          "ancient": ["Eplete", "Berserker"]
         },
         "class": [16, 64]
       },
       "7": {
-        "name": "Sphinx Mask",
+        "name": "Sphinx Helm",
         "x": 2,
         "y": 2,
         "options": {
@@ -1480,40 +1385,40 @@
         "class": [0]
       },
       "8": {
-        "name": "Brass Helmet",
+        "name": "Brass Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Cloud"]
         },
         "class": [16]
       },
       "9": {
-        "name": "Plate Helmet",
+        "name": "Plate Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Rave"]
         },
         "class": [16]
       },
       "10": {
-        "name": "Vine Helmet",
+        "name": "Vine Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Ceto"]
+          "ancient": ["Ceto", "Drake"]
         },
         "class": [32]
       },
       "11": {
-        "name": "Silk Helmet",
+        "name": "Silk Helm",
         "x": 2,
         "y": 2,
         "options": {
@@ -1524,7 +1429,7 @@
         "class": [32]
       },
       "12": {
-        "name": "Wind Helmet",
+        "name": "Wind Helm",
         "x": 2,
         "y": 2,
         "options": {
@@ -1535,101 +1440,97 @@
         "class": [32]
       },
       "13": {
-        "name": "Spirit Helmet",
+        "name": "Spirit Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Karis"]
         },
         "class": [32]
       },
       "14": {
-        "name": "Guardian Helmet",
+        "name": "Guardian Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Ahruan"]
         },
         "class": [32]
       },
       "16": {
-        "name": "Black Dragon Helmet",
+        "name": "Black Dragon Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Mahes"]
         },
         "class": [16]
       },
       "17": {
-        "name": "Dark Phoenix Helmet",
+        "name": "Dark Phoenix Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Bragi"]
         },
         "class": [17]
       },
       "18": {
-        "name": "Grand Soul Helmet",
+        "name": "Grand Soul Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [1]
       },
       "19": {
-        "name": "Divine Helmet",
+        "name": "Divine Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [32]
       },
       "21": {
-        "name": "Great Dragon Helmet",
+        "name": "Great Dragon Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [17]
       },
       "22": {
-        "name": "Black Soul Helmet",
+        "name": "Dark Soul Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Demeters"]
         },
         "class": [1]
       },
       "24": {
-        "name": "Red Spirit Helmet",
+        "name": "Red Spirit Helm",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [33]
       },
@@ -1639,8 +1540,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
@@ -1651,7 +1551,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Agnis"]
         },
         "class": [64]
       },
@@ -1662,7 +1562,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Khon"]
         },
         "class": [64]
       },
@@ -1672,8 +1572,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
@@ -1683,8 +1582,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [17]
       },
@@ -1694,8 +1592,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [1]
       },
@@ -1705,8 +1602,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [33]
       },
@@ -1716,8 +1612,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
@@ -1727,8 +1622,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [16]
       },
@@ -1739,7 +1633,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Bes"]
         },
         "class": [0]
       },
@@ -1750,7 +1644,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Serket"]
         },
         "class": [32]
       },
@@ -1761,7 +1655,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Surt"]
         },
         "class": [64]
       }
@@ -1777,7 +1671,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Hyperion"]
+          "ancient": ["Hyperion", "Hyperion"]
         },
         "class": [16, 48, 64]
       },
@@ -1788,7 +1682,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Vicious"]
         },
         "class": [16, 48]
       },
@@ -1810,7 +1704,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Anubis"]
+          "ancient": ["Anubis", "Enis"]
         },
         "class": [0, 48]
       },
@@ -1821,7 +1715,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Evis"]
+          "ancient": ["Evis", "Sylion"]
         },
         "class": [0, 48]
       },
@@ -1843,7 +1737,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Eplete"]
+          "ancient": ["Eplete", "Berserker"]
         },
         "class": [16, 48, 64]
       },
@@ -1854,7 +1748,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Hera"]
+          "ancient": ["Hera", "Minet"]
         },
         "class": [0, 48]
       },
@@ -1865,7 +1759,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Garuda"]
+          "ancient": ["Garuda", "Garuda"]
         },
         "class": [16, 48]
       },
@@ -1876,7 +1770,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Kantata"]
+          "ancient": ["Kantata", "Rave"]
         },
         "class": [16, 48]
       },
@@ -1887,7 +1781,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Drake"]
         },
         "class": [32]
       },
@@ -1931,7 +1825,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Gywen"]
+          "ancient": ["Gywen", "Ahruan"]
         },
         "class": [32]
       },
@@ -1942,7 +1836,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Gaion"]
+          "ancient": ["Gaion", "Muren"]
         },
         "class": [48]
       },
@@ -1953,7 +1847,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Mahes"]
         },
         "class": [16]
       },
@@ -1964,7 +1858,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Bragi"]
         },
         "class": [17]
       },
@@ -1975,7 +1869,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Alvis"]
         },
         "class": [1]
       },
@@ -1985,8 +1879,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [32]
       },
@@ -1997,7 +1890,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Tyr"]
         },
         "class": [48]
       },
@@ -2007,19 +1900,18 @@
         "y": 3,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [17]
       },
       "22": {
-        "name": "Grand Soul Armor",
+        "name": "Dark Soul Armor",
         "x": 2,
         "y": 3,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Demeters"]
         },
         "class": [1]
       },
@@ -2029,8 +1921,7 @@
         "y": 3,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [48]
       },
@@ -2041,7 +1932,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Frigg"]
         },
         "class": [33]
       },
@@ -2051,8 +1942,7 @@
         "y": 3,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
@@ -2063,7 +1953,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Agnis"]
         },
         "class": [64]
       },
@@ -2074,7 +1964,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Khon"]
         },
         "class": [64]
       },
@@ -2084,8 +1974,7 @@
         "y": 3,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
@@ -2096,7 +1985,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "armor"
         },
         "class": [17]
@@ -2108,7 +1997,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "armor"
         },
         "class": [1]
@@ -2120,7 +2009,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "armor"
         },
         "class": [33]
@@ -2132,7 +2021,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "armor"
         },
         "class": [48]
@@ -2144,7 +2033,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "armor"
         },
         "class": [64]
@@ -2155,8 +2044,7 @@
         "y": 3,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [16]
       },
@@ -2167,7 +2055,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Bes"]
         },
         "class": [0]
       },
@@ -2178,7 +2066,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Serket"]
         },
         "class": [32]
       },
@@ -2189,7 +2077,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Apis"]
         },
         "class": [48]
       },
@@ -2200,7 +2088,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Surt"]
         },
         "class": [64]
       }
@@ -2216,7 +2104,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Hyperion"]
+          "ancient": ["Hyperion", "Mist"]
         },
         "class": [16, 64]
       },
@@ -2227,7 +2115,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Vicious"]
         },
         "class": [16, 48]
       },
@@ -2238,7 +2126,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Apollo"]
+          "ancient": ["Apollo", "Barnake"]
         },
         "class": [0, 48]
       },
@@ -2249,7 +2137,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Enis"]
         },
         "class": [0, 48]
       },
@@ -2282,7 +2170,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Eplete"]
+          "ancient": ["Eplete", "Berserker"]
         },
         "class": [16, 48, 64]
       },
@@ -2293,7 +2181,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Hera"]
+          "ancient": ["Hera", "Minet"]
         },
         "class": [0, 48]
       },
@@ -2304,7 +2192,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Garuda"]
+          "ancient": ["Garuda", "Cloud"]
         },
         "class": [16, 48]
       },
@@ -2315,7 +2203,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Kantata"]
+          "ancient": ["Kantata", "Rave"]
         },
         "class": [16, 48]
       },
@@ -2326,7 +2214,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Ceto"]
+          "ancient": ["Ceto", "Drake"]
         },
         "class": [32]
       },
@@ -2337,7 +2225,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Gaia"]
+          "ancient": ["Gaia", "Fase"]
         },
         "class": [32]
       },
@@ -2348,7 +2236,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Odin"]
+          "ancient": ["Odin", "Elvian"]
         },
         "class": [32]
       },
@@ -2359,7 +2247,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Argo"]
+          "ancient": ["Argo", "Karis"]
         },
         "class": [32]
       },
@@ -2370,7 +2258,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Ahruan"]
         },
         "class": [32]
       },
@@ -2381,7 +2269,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Gaion"]
+          "ancient": ["Gaion", "Muren"]
         },
         "class": [48]
       },
@@ -2392,7 +2280,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Mahes"]
         },
         "class": [16]
       },
@@ -2403,7 +2291,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Bragi"]
         },
         "class": [17]
       },
@@ -2413,8 +2301,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [1]
       },
@@ -2424,8 +2311,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [32]
       },
@@ -2436,7 +2322,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Tyr"]
         },
         "class": [48]
       },
@@ -2446,19 +2332,18 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [17]
       },
       "22": {
-        "name": "Grand Soul Pants",
+        "name": "Dark Soul Pants",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Demeters"]
         },
         "class": [1]
       },
@@ -2468,8 +2353,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [48]
       },
@@ -2480,7 +2364,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Frigg"]
         },
         "class": [33]
       },
@@ -2490,19 +2374,18 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
       "26": {
-        "name": "Dark Soul Pants",
+        "name": "Adamantine Pants",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Agnis", "Broy"]
         },
         "class": [1]
       },
@@ -2513,7 +2396,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Khon"]
         },
         "class": [64]
       },
@@ -2523,8 +2406,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
@@ -2535,7 +2417,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "pants"
         },
         "class": [17]
@@ -2547,7 +2429,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "pants"
         },
         "class": [1]
@@ -2559,7 +2441,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "pants"
         },
         "class": [33]
@@ -2571,7 +2453,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "pants"
         },
         "class": [48]
@@ -2583,7 +2465,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "pants"
         },
         "class": [64]
@@ -2594,8 +2476,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [16]
       },
@@ -2606,7 +2487,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Bes"]
         },
         "class": [0]
       },
@@ -2617,7 +2498,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Serket"]
         },
         "class": [32]
       },
@@ -2628,7 +2509,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Apis"]
         },
         "class": [48]
       },
@@ -2638,8 +2519,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       }
@@ -2655,7 +2535,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Mist", "Mist"]
         },
         "class": [16, 64]
       },
@@ -2699,7 +2579,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Sylion"]
         },
         "class": [0, 48]
       },
@@ -2721,7 +2601,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Berserker", "Berserker"]
         },
         "class": [16, 48, 64]
       },
@@ -2776,7 +2656,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Gaia"]
+          "ancient": ["Gaia", "Fase"]
         },
         "class": [32]
       },
@@ -2820,7 +2700,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Muren"]
         },
         "class": [48]
       },
@@ -2831,7 +2711,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Mahes"]
         },
         "class": [16]
       },
@@ -2841,8 +2721,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [17]
       },
@@ -2853,7 +2732,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Alvis"]
         },
         "class": [1]
       },
@@ -2863,8 +2742,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [32]
       },
@@ -2875,7 +2753,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Tyr"]
         },
         "class": [48]
       },
@@ -2885,19 +2763,17 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [17]
       },
       "22": {
-        "name": "Grand Soul Gloves",
+        "name": "Dark Soul Gloves",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [1]
       },
@@ -2907,8 +2783,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [48]
       },
@@ -2918,8 +2793,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [33]
       },
@@ -2929,19 +2803,18 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
       "26": {
-        "name": "Dark Soul Gloves",
+        "name": "Adamantine Gloves",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Broy"]
         },
         "class": [1]
       },
@@ -2951,8 +2824,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
@@ -2962,8 +2834,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
@@ -2974,7 +2845,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "gloves"
         },
         "class": [17]
@@ -2986,7 +2857,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "gloves"
         },
         "class": [1]
@@ -2998,7 +2869,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "gloves"
         },
         "class": [33]
@@ -3010,7 +2881,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "gloves"
         },
         "class": [48]
@@ -3022,7 +2893,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "gloves"
         },
         "class": [64]
@@ -3033,8 +2904,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [16]
       },
@@ -3044,8 +2914,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [0]
       },
@@ -3055,8 +2924,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [32]
       },
@@ -3067,7 +2935,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Apis"]
         },
         "class": [48]
       },
@@ -3078,7 +2946,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Surt"]
         },
         "class": [64]
       }
@@ -3094,7 +2962,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Hyperion"]
+          "ancient": ["Hyperion", "Hyperion"]
         },
         "class": [16, 64]
       },
@@ -3116,7 +2984,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Barnake"]
         },
         "class": [0, 48]
       },
@@ -3127,7 +2995,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Enis"]
         },
         "class": [0, 48]
       },
@@ -3138,7 +3006,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Evis"]
+          "ancient": ["Evis", "Sylion"]
         },
         "class": [0, 48]
       },
@@ -3160,7 +3028,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Berserker", "Berserker"]
         },
         "class": [16, 48, 64]
       },
@@ -3171,7 +3039,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Hera"]
+          "ancient": ["Hera", "Minet"]
         },
         "class": [0, 48]
       },
@@ -3193,7 +3061,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Kantata"]
         },
         "class": [16, 48]
       },
@@ -3204,7 +3072,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Ceto"]
+          "ancient": ["Ceto", "Drake"]
         },
         "class": [32]
       },
@@ -3215,7 +3083,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Fase"]
         },
         "class": [32]
       },
@@ -3226,7 +3094,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Odin"]
+          "ancient": ["Odin", "Elvian"]
         },
         "class": [32]
       },
@@ -3237,7 +3105,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Karis"]
         },
         "class": [32]
       },
@@ -3248,7 +3116,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": ["Gywen"]
+          "ancient": ["Gywen", "Ahruan"]
         },
         "class": [32]
       },
@@ -3270,7 +3138,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Mahes"]
         },
         "class": [16]
       },
@@ -3281,7 +3149,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Bragi"]
         },
         "class": [17]
       },
@@ -3292,7 +3160,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Alvis"]
         },
         "class": [1]
       },
@@ -3302,8 +3170,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [32]
       },
@@ -3314,7 +3181,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Tyr"]
         },
         "class": [48]
       },
@@ -3324,19 +3191,18 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [17]
       },
       "22": {
-        "name": "Grand Soul Boots",
+        "name": "Dark Soul Boots",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Demeters"]
         },
         "class": [1]
       },
@@ -3346,8 +3212,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [48]
       },
@@ -3358,7 +3223,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Frigg"]
         },
         "class": [33]
       },
@@ -3368,19 +3233,18 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
       "26": {
-        "name": "Dark Soul Boots",
+        "name": "Adamantine Boots",
         "x": 2,
         "y": 2,
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Broy"]
         },
         "class": [1]
       },
@@ -3391,7 +3255,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Khon"]
         },
         "class": [64]
       },
@@ -3401,8 +3265,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [64]
       },
@@ -3413,7 +3276,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "boots"
         },
         "class": [17]
@@ -3425,7 +3288,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "boots"
         },
         "class": [1]
@@ -3437,7 +3300,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "boots"
         },
         "class": [33]
@@ -3449,7 +3312,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "boots"
         },
         "class": [48]
@@ -3461,7 +3324,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false,
+
           "pink": "boots"
         },
         "class": [64]
@@ -3472,8 +3335,7 @@
         "y": 2,
         "options": {
           "excellent": 3,
-          "additional": "deff",
-          "ancient": false
+          "additional": "deff"
         },
         "class": [16]
       },
@@ -3484,7 +3346,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Bes"]
         },
         "class": [0]
       },
@@ -3495,7 +3357,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Serket"]
         },
         "class": [32]
       },
@@ -3506,7 +3368,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Apis"]
         },
         "class": [48]
       },
@@ -3517,7 +3379,7 @@
         "options": {
           "excellent": 3,
           "additional": "deff",
-          "ancient": false
+          "ancient": ["Surt"]
         },
         "class": [64]
       }
@@ -3532,8 +3394,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [32]
       },
@@ -3543,8 +3404,7 @@
         "y": 3,
         "options": {
           "excellent": false,
-          "additional": "wiz",
-          "ancient": false
+          "additional": "wiz"
         },
         "class": [0]
       },
@@ -3554,8 +3414,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": "add",
-          "ancient": false
+          "additional": "add"
         },
         "class": [32]
       },
@@ -3565,8 +3424,7 @@
         "y": 3,
         "options": {
           "excellent": 4,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [33]
       },
@@ -3576,8 +3434,7 @@
         "y": 3,
         "options": {
           "excellent": 4,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [1]
       },
@@ -3587,8 +3444,7 @@
         "y": 3,
         "options": {
           "excellent": 4,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [17]
       },
@@ -3598,8 +3454,7 @@
         "y": 2,
         "options": {
           "excellent": 4,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [48]
       },
@@ -3609,8 +3464,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [16, 48]
       },
@@ -3620,8 +3474,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [32]
       },
@@ -3631,8 +3484,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [32]
       },
@@ -3642,8 +3494,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [32]
       },
@@ -3653,8 +3504,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [32]
       },
@@ -3664,8 +3514,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [16]
       },
@@ -3675,8 +3524,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [16]
       },
@@ -3686,8 +3534,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [16]
       },
@@ -3697,8 +3544,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "16": {
@@ -3707,8 +3553,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "17": {
@@ -3717,8 +3562,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [33]
       },
@@ -3728,8 +3572,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [33]
       },
@@ -3739,8 +3582,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [16]
       },
@@ -3750,8 +3592,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [32]
       },
@@ -3761,8 +3602,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [64]
       },
@@ -3772,8 +3612,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [64]
       },
@@ -3783,8 +3622,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [64]
       },
@@ -3794,8 +3632,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [64]
       },
@@ -3805,8 +3642,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [64]
       },
@@ -3816,8 +3652,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "30": {
@@ -3826,8 +3661,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "31": {
@@ -3836,8 +3670,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "32": {
@@ -3846,8 +3679,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "33": {
@@ -3856,8 +3688,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "34": {
@@ -3866,8 +3697,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "35": {
@@ -3876,8 +3706,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [64]
       },
@@ -3887,8 +3716,7 @@
         "y": 3,
         "options": {
           "excellent": 4,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [17]
       },
@@ -3898,8 +3726,7 @@
         "y": 3,
         "options": {
           "excellent": 4,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [1]
       },
@@ -3909,8 +3736,7 @@
         "y": 3,
         "options": {
           "excellent": 4,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [33]
       },
@@ -3920,8 +3746,7 @@
         "y": 3,
         "options": {
           "excellent": 4,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [48]
       },
@@ -3931,8 +3756,7 @@
         "y": 3,
         "options": {
           "excellent": 4,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         },
         "class": [64]
       }
@@ -3947,8 +3771,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "1": {
@@ -3957,8 +3780,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "2": {
@@ -3967,8 +3789,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "3": {
@@ -3977,8 +3798,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "4": {
@@ -3987,8 +3807,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "5": {
@@ -3997,8 +3816,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "7": {
@@ -4007,8 +3825,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "8": {
@@ -4028,7 +3845,7 @@
         "options": {
           "excellent": 3,
           "additional": "rec",
-          "ancient": ["Kantata"]
+          "ancient": ["Kantata", "Agnis"]
         }
       },
       "10": {
@@ -4037,8 +3854,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": "rec",
-          "ancient": false
+          "additional": "rec"
         }
       },
       "11": {
@@ -4047,8 +3863,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "12": {
@@ -4058,7 +3873,7 @@
         "options": {
           "excellent": 2,
           "additional": "rec",
-          "ancient": ["Eplete"]
+          "ancient": ["Eplete", "Tyr"]
         }
       },
       "13": {
@@ -4077,8 +3892,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "15": {
@@ -4087,8 +3901,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "16": {
@@ -4097,8 +3910,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "17": {
@@ -4107,8 +3919,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "18": {
@@ -4117,8 +3928,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "19": {
@@ -4127,8 +3937,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "20": {
@@ -4137,8 +3946,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "21": {
@@ -4148,7 +3956,7 @@
         "options": {
           "excellent": 3,
           "additional": "rec",
-          "ancient": ["Anubis"]
+          "ancient": ["Anubis", "Muren"]
         }
       },
       "22": {
@@ -4158,7 +3966,7 @@
         "options": {
           "excellent": 3,
           "additional": "rec",
-          "ancient": ["Ceto"]
+          "ancient": ["Ceto", "Vicious"]
         }
       },
       "23": {
@@ -4188,7 +3996,7 @@
         "options": {
           "excellent": 1,
           "additional": "rec",
-          "ancient": ["Apollo"]
+          "ancient": ["Apollo", "Broy"]
         }
       },
       "26": {
@@ -4198,7 +4006,7 @@
         "options": {
           "excellent": 1,
           "additional": "rec",
-          "ancient": ["Evis"]
+          "ancient": ["Evis", "Frigg"]
         }
       },
       "27": {
@@ -4208,7 +4016,7 @@
         "options": {
           "excellent": 1,
           "additional": "rec",
-          "ancient": ["Gaion"]
+          "ancient": ["Gaion", "Alvis"]
         }
       },
       "28": {
@@ -4227,8 +4035,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "30": {
@@ -4237,8 +4044,7 @@
         "y": 3,
         "options": {
           "excellent": 5,
-          "additional": "add",
-          "ancient": false
+          "additional": "add"
         }
       },
       "31": {
@@ -4247,8 +4053,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "32": {
@@ -4257,8 +4062,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "33": {
@@ -4267,8 +4071,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "34": {
@@ -4277,8 +4080,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "35": {
@@ -4287,8 +4089,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "36": {
@@ -4297,8 +4098,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "37": {
@@ -4307,8 +4107,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "38": {
@@ -4317,8 +4116,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "39": {
@@ -4327,8 +4125,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "40": {
@@ -4337,8 +4134,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "41": {
@@ -4347,8 +4143,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "42": {
@@ -4357,8 +4152,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "43": {
@@ -4367,8 +4161,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "44": {
@@ -4377,8 +4170,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "45": {
@@ -4387,8 +4179,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "49": {
@@ -4397,8 +4188,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "50": {
@@ -4407,8 +4197,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "51": {
@@ -4417,8 +4206,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "52": {
@@ -4427,8 +4215,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "53": {
@@ -4437,8 +4224,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       }
     }
@@ -4452,8 +4238,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "1": {
@@ -4462,8 +4247,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "2": {
@@ -4472,8 +4256,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "3": {
@@ -4482,8 +4265,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "4": {
@@ -4492,8 +4274,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "5": {
@@ -4502,8 +4283,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "6": {
@@ -4512,8 +4292,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "7": {
@@ -4522,8 +4301,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "8": {
@@ -4532,8 +4310,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "9": {
@@ -4542,8 +4319,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "10": {
@@ -4552,8 +4328,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "11": {
@@ -4562,8 +4337,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "levels": []
       },
@@ -4573,8 +4347,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "13": {
@@ -4583,8 +4356,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "14": {
@@ -4593,8 +4365,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "15": {
@@ -4603,8 +4374,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "16": {
@@ -4613,8 +4383,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "17": {
@@ -4623,8 +4392,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "18": {
@@ -4633,8 +4401,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "19": {
@@ -4643,8 +4410,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "20": {
@@ -4653,8 +4419,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "21": {
@@ -4663,8 +4428,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "22": {
@@ -4673,8 +4437,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "23": {
@@ -4683,8 +4446,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "24": {
@@ -4693,8 +4455,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "25": {
@@ -4703,8 +4464,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "26": {
@@ -4713,8 +4473,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "27": {
@@ -4723,8 +4482,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "28": {
@@ -4733,8 +4491,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "29": {
@@ -4743,8 +4500,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "30": {
@@ -4753,8 +4509,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "31": {
@@ -4763,8 +4518,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "32": {
@@ -4773,8 +4527,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "33": {
@@ -4783,8 +4536,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "34": {
@@ -4793,8 +4545,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "35": {
@@ -4803,8 +4554,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "36": {
@@ -4813,8 +4563,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "37": {
@@ -4823,8 +4572,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "38": {
@@ -4833,8 +4581,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "39": {
@@ -4843,8 +4590,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "40": {
@@ -4853,8 +4599,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "41": {
@@ -4863,8 +4608,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "42": {
@@ -4873,8 +4617,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "43": {
@@ -4883,8 +4626,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "44": {
@@ -4893,8 +4635,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "45": {
@@ -4903,8 +4644,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "46": {
@@ -4913,8 +4653,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "47": {
@@ -4923,8 +4662,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "48": {
@@ -4933,8 +4671,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "49": {
@@ -4943,8 +4680,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "50": {
@@ -4953,8 +4689,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "51": {
@@ -4963,8 +4698,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "52": {
@@ -4973,8 +4707,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "55": {
@@ -4983,8 +4716,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "56": {
@@ -4993,8 +4725,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "57": {
@@ -5003,8 +4734,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "63": {
@@ -5013,8 +4743,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "64": {
@@ -5023,8 +4752,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "65": {
@@ -5033,8 +4761,7 @@
         "y": 1,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "66": {
@@ -5043,8 +4770,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       },
       "67": {
@@ -5053,8 +4779,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         }
       }
     }
@@ -5068,8 +4793,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5079,8 +4803,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5090,8 +4813,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5101,8 +4823,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5112,8 +4833,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5123,8 +4843,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0]
       },
@@ -5134,8 +4853,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5145,8 +4863,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5156,8 +4873,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5167,8 +4883,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0]
       },
@@ -5178,8 +4893,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5189,8 +4903,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [1]
       },
@@ -5200,8 +4913,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5211,8 +4923,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [0, 48]
       },
@@ -5222,8 +4933,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [1]
       },
@@ -5233,8 +4943,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [1]
       },
@@ -5244,8 +4953,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [1]
       },
@@ -5255,8 +4963,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [1]
       },
@@ -5266,8 +4973,7 @@
         "y": 2,
         "options": {
           "excellent": false,
-          "additional": false,
-          "ancient": false
+          "additional": false
         },
         "class": [1]
       }

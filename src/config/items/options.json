@@ -24,16 +24,16 @@
     "Increase MaxHP +4%"
   ],
   "4": [
-    "Life +{wingsLife} Increased",
-    "Mana +{wingsMana} Increased",
+    "Life +{placeholder} Increased",
+    "Mana +{placeholder} Increased",
     "Ignore enemy's defenses by 3%",
-    "+50 MAX STAMINA",
-    "Increase Attacking(wizardy)speed +7",
+    "+50 Max Stamina",
+    "Increase Attacking Speed +7",
     ""
   ],
   "5": [
-    "Life +{wingsLife} increased",
-    "Mana +{wingsMana} increased",
+    "Life +{placeholder} increased",
+    "Mana +{placeholder} increased",
     "Ignore enemy's defenses by 3%",
     "Increase command +20",
     "",
@@ -73,5 +73,39 @@
     "pants": ["Defensive skill +200", "Defense success rate increase +10"],
     "gloves": ["Max. HP increase +200", "Defense success rate increase +10"],
     "boots": ["Max. SD increase +700", "Defense success rate increase +10"]
+  },
+  "harmony": {
+    "staffs": [
+      "Magic Power Increase",
+      "Required Strength Decrease",
+      "Required Agility Decrease",
+      "Skill Attack Power Increase",
+      "Critical Damage Increase",
+      "SD Decrement Increase",
+      "Attack Success Rate Increase",
+      "SD bypass Rate Increase"
+    ],
+    "weapons": [
+      "Minimum Attack Power Increase",
+      "Maximum Attack Power Increase",
+      "Required Strength Decrease",
+      "Required Agility Decrease",
+      "Attack Power Increase(Min, Max)",
+      "Critical Damage Increase",
+      "Skill Attack Power Increase",
+      "Attack Success Rate Increase",
+      "SD decrement Increase",
+      "SD bypass Rate Increase"
+    ],
+    "items": [
+      "Defense Power Increase",
+      "Maximum AG Increase",
+      "Maximum HP Increase",
+      "HP Automatic Rate Increase",
+      "MP Automatic Rate Increase",
+      "Defense Success Rate Increase",
+      "Damage Decrease Rate Increase",
+      "SD Rate Increase"
+    ]
   }
 }
