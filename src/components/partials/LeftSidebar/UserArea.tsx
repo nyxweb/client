@@ -23,7 +23,7 @@ const UserArea: React.FC<Props> = () => {
 
   useEffect(() => {
     setResources(JSON.parse(account!.resources.list));
-  }, [account!.resources]);
+  }, [account]);
 
   const doLogout = () => dispatch(logout());
 

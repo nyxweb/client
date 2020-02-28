@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 // Partials
@@ -12,17 +12,16 @@ import getTop5Guilds from 'actions/rankings/getTop5Guilds';
 
 // Types
 import AppState from 'redux/types/app';
-import Guild from 'redux/types/rankings/Guild';
 
-interface Props {
-  guilds: Guild[];
-  getTop5Guilds: Function;
-}
+interface Props {}
 
-const TopGuilds: React.FC<Props> = ({ guilds, getTop5Guilds }) => {
+const TopGuilds: React.FC<Props> = () => {
+  const guilds = useSelector((state: AppState) => state.rankings.top5guilds);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    getTop5Guilds();
-  }, [getTop5Guilds]);
+    dispatch(getTop5Guilds());
+  }, [dispatch]);
 
   return (
     <ContentBlock title='top 5 guilds' desc='our top 5 leading guilds'>
@@ -37,14 +36,14 @@ const TopGuilds: React.FC<Props> = ({ guilds, getTop5Guilds }) => {
           </tr>
         </thead>
         <tbody>
-          {!guilds ? (
+          {!guilds.list || guilds.loading ? (
             <tr>
               <td colSpan={4}>
-                {guilds === null ? <Loader /> : 'Failed to load'}
+                <Loader />
               </td>
             </tr>
-          ) : guilds.length ? (
-            guilds.map((guild: Guild, i: number) => (
+          ) : guilds.list.length ? (
+            guilds.list.map((guild, i: number) => (
               <tr key={i}>
                 <td>{i + 1}</td>
                 <td>
@@ -66,8 +65,4 @@ const TopGuilds: React.FC<Props> = ({ guilds, getTop5Guilds }) => {
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  guilds: state.rankings.top5guilds
-});
-
-export default connect(mapStateToProps, { getTop5Guilds })(TopGuilds);
+export default TopGuilds;

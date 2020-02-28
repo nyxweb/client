@@ -6,7 +6,7 @@
   padding: 10px 0;
   background: url('../../../images/ranks/effect2.gif') no-repeat center center;
 
-  & .frame {
+  .frame {
     background: rgba(0, 0, 0, 0.1);
     width: 100px;
     padding: 10px 0;
@@ -14,33 +14,11 @@
     flex-direction: column;
     align-items: center;
 
-    .name {
-      margin-top: 10px;
-      text-align: center;
-
-      & a {
-        color: goldenrod;
-      }
-
-      &:after {
-        display: inline-block;
-        content: '';
-        width: 4px;
-        height: 4px;
-        margin-left: 5px;
-        border-radius: 4px;
-      }
-
-      &.online:after {
-        background: green;
-      }
-
-      &.offline:after {
-        background: red;
-      }
+    .CharacterName {
+      margin-top: 5px;
     }
 
-    & .card {
+    .card {
       position: relative;
       width: 70px;
       height: 70px;

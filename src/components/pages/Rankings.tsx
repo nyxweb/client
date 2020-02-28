@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 // Partials
 import Table from 'components/partials/MainContent/rankings/Table';
@@ -10,43 +10,32 @@ import { getCharacters, clearCharacters } from 'actions/rankings';
 
 // Types
 import AppState from 'redux/types/app';
-import Character from 'redux/types/rankings/Character';
 
-interface Props {
-  characters: Character[];
-  getCharacters: Function;
-  clearCharacters: Function;
-}
+interface Props {}
 
-const Rankings: React.FC<Props> = ({
-  characters,
-  getCharacters,
-  clearCharacters
-}) => {
-  const [loading, setLoading] = useState(true);
+const Rankings: React.FC<Props> = () => {
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    getCharacters({ loader: setLoading, page });
+  const rankings = useSelector((state: AppState) => state.rankings.characters);
+  const dispatch = useDispatch();
 
-    return () => clearCharacters();
-  }, [page, getCharacters, clearCharacters]);
+  useEffect(() => {
+    dispatch(getCharacters(page));
+
+    return () => {
+      dispatch(clearCharacters());
+    };
+  }, [page, dispatch]);
 
   return (
     <div className='Rankings'>
-      {loading ? (
+      {rankings.loading ? (
         <Loader />
       ) : (
-        <Table characters={characters} page={page} setPage={setPage} />
+        <Table characters={rankings.list!} page={page} setPage={setPage} />
       )}
     </div>
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  characters: state.rankings.characters
-});
-
-export default connect(mapStateToProps, { getCharacters, clearCharacters })(
-  Rankings
-);
+export default Rankings;

@@ -119,8 +119,9 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
         )}
       {itemData.options.excellent && !!item.excellent.find(x => x) && (
         <div className='row excellent'>
-          {item.excellent.map((x: number, i: number) => {
-            if (x) {
+          {item.excellent
+            .filter(x => x)
+            .map((_, i) => {
               if (
                 (item.group === 12 || item.group === 13) &&
                 (i === 0 || i === 1)
@@ -133,8 +134,7 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
               return (
                 <div key={i}>{options[itemData.options.excellent][i]}</div>
               );
-            }
-          })}
+            })}
         </div>
       )}
       {!!item.ancient && !!itemData.options.ancient && !!ancientName && (

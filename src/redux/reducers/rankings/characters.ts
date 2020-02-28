@@ -4,18 +4,22 @@ import {
   CLEAR_RANK_CHARACTERS
 } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
-import Character from 'redux/types/rankings/Character';
+import CharactersState from 'redux/types/rankings/CharactersState';
 
-const initialState: Character[] | null = null;
+const initialState: CharactersState = {
+  loading: false,
+  list: null
+};
 
-const characters = (state = initialState, action: ReduxAction) => {
-  const { type, payload } = action;
-
+const characters = (state = initialState, { type, payload }: ReduxAction) => {
   switch (type) {
     case GET_RANK_CHARACTERS:
-      return payload;
+      return {
+        ...state,
+        list: payload
+      };
     case CLEAR_RANK_CHARACTERS:
-      return null;
+      return initialState;
     case GET_RANK_CHARACTERS_FAILED:
     default:
       return state;

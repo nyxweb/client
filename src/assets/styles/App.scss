@@ -44,6 +44,7 @@ button {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   padding: 7px 15px;
   display: inline-block;
+  border-radius: 3px;
 }
 
 input {
@@ -68,8 +69,10 @@ input {
 
   // Partials
   @import 'assets/styles/partials/Loader.scss';
+  @import 'assets/styles/partials/Character/Name.scss';
 
   // Reusables
+  @import 'assets/styles/reusables/Input.scss';
   @import 'assets/styles/reusables/Tooltip.scss';
   @import 'assets/styles/reusables/Form.scss';
   @import 'assets/styles/reusables/user/Warehouse.scss';
