@@ -57,7 +57,7 @@ const Market: React.FC<Props> = ({ latest, getLatest }) => {
                   <Item
                     hex={item.hex}
                     image={true}
-                    size={70}
+                    slotSize={70}
                     realSize={false}
                   />
                 </div>

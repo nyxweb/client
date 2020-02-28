@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useState, useEffect } from 'react';
 import ReactTooltip from 'react-tooltip';
 import uuid from 'uuid/v4';
 
@@ -17,26 +17,33 @@ const getImage = require.context('../../../../assets/images/items/', true);
 // import IItems from 'redux/types/items/List';
 
 interface Props {
+  id?: string;
   /** item hex */
   hex: string;
   /** show image or item name */
   image?: boolean;
-  /** item size per slot */
-  size?: number;
+  /** each slot size */
+  slotSize?: number;
   /** real items size or one slot */
   realSize?: boolean;
 
   /** item styles */
   style?: CSSProperties;
+
+  setDragItem?: (dragItem: EventTarget) => void;
 }
 
 const Item: React.FC<Props> = ({
+  id = uuid(),
   hex,
   image = true,
-  size = 26,
+  slotSize = 26,
   realSize = true,
-  style = {}
+  style = {},
+  setDragItem
 }) => {
+  const [dragged, setDragged] = useState(false);
+
   const itemsList: any = list;
 
   const getItemImage = (name: string) => {
@@ -47,7 +54,6 @@ const Item: React.FC<Props> = ({
     }
   };
 
-  const id = uuid();
   const item = decode(hex);
 
   const itemData =
@@ -55,26 +61,39 @@ const Item: React.FC<Props> = ({
       ? itemsList[item.group].items[item.id]
       : false;
 
-  // Size
-  const itemStyle: CSSProperties = {};
-  itemStyle.width = realSize ? size * itemData.x : size;
-  itemStyle.height = realSize ? size * itemData.y : size;
+  const itemStyle: CSSProperties = {
+    width: realSize ? slotSize * itemData.x : slotSize,
+    height: realSize ? slotSize * itemData.y : slotSize
+  };
 
   return (
     item &&
     itemData && (
       <div
-        className='Item'
+        className={`Item ${dragged ? 'dragged' : ''}`}
         style={{ ...itemStyle, ...style }}
         data-tip
         data-for={id}
+        data-x={itemData.x}
+        data-y={itemData.y}
+        onMouseDown={() => {
+          ReactTooltip.hide();
+        }}
+        draggable={!!setDragItem}
+        onDrag={e => {
+          setDragged(true);
+          setDragItem && setDragItem(e.target);
+        }}
+        onDragEnd={() => setDragged(false)}
       >
         {image ? (
-          <img
-            src={getItemImage(`./${item.group}/${item.id}.gif`)}
-            alt={itemData.name}
+          <div
+            style={{
+              background: `url('${getItemImage(
+                `./${item.group}/${item.id}.gif`
+              )}') no-repeat center center/contain`
+            }}
             className='item-image'
-            onDrag={() => ReactTooltip.hide()}
           />
         ) : (
           itemData.name

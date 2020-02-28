@@ -1,7 +1,9 @@
 .Warehouse {
+  position: relative;
   display: inline-block;
   margin: 30px;
   padding: 16px;
+  user-select: none;
 
   background: url('../../../images/partials/warehouse/frame-corner-top-left.png')
       no-repeat top left/32px 32px,
@@ -20,12 +22,26 @@
     url('../../../images/partials/warehouse/frame-border-bottom.png') no-repeat
       bottom center/100% 16px;
 
-  & .content {
+  .content {
     position: relative;
     border-top: 1px solid #2b2a27;
     border-left: 1px solid #2b2a27;
     border-radius: 3px;
     background: url('../../../images/partials/warehouse/slot.png') repeat top
       left/32px 32px;
+
+    .empty-slot {
+      float: left;
+      width: 32px;
+      height: 32px;
+
+      &.busy {
+        background: rgba(255, 0, 0, 0.171);
+      }
+
+      &.empty {
+        background: rgba(19, 149, 58, 0.171);
+      }
+    }
   }
 }
