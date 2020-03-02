@@ -10,6 +10,7 @@ import { decode } from 'helpers/items';
 
 // Config
 import list from 'config/items/list.json';
+import IItem from 'redux/types/items/Item';
 
 const getImage = require.context('../../../../assets/images/items/', true);
 
@@ -19,7 +20,7 @@ const getImage = require.context('../../../../assets/images/items/', true);
 interface Props {
   id?: string;
   /** item hex */
-  hex: string;
+  hex?: string;
   /** show image or item name */
   image?: boolean;
   /** each slot size */
@@ -30,20 +31,36 @@ interface Props {
   /** item styles */
   style?: CSSProperties;
 
-  setDragItem?: (dragItem: EventTarget) => void;
+  /** for settings the item that is being dragged */
+  setDragItem?: (item: {
+    x: number;
+    y: number;
+    slot: number;
+    dragging: boolean;
+  }) => void;
+
+  /** Slot the item sits on (for warehouse etc.) */
+  slot?: number;
+
+  item?: IItem;
+
+  itemData?: any;
 }
 
 const Item: React.FC<Props> = ({
   id = uuid(),
-  hex,
+  hex = '',
   image = true,
   slotSize = 26,
   realSize = true,
   style = {},
-  setDragItem
+  setDragItem,
+  slot,
+  item,
+  itemData: _itemData
 }) => {
-  const [dragged, setDragged] = useState(false);
-
+  const [isDragged, setIsDragged] = useState(false);
+  const [preview, setPreview] = useState<HTMLImageElement>();
   const itemsList: any = list;
 
   const getItemImage = (name: string) => {
@@ -54,44 +71,78 @@ const Item: React.FC<Props> = ({
     }
   };
 
-  const item = decode(hex);
+  const itemDecode = item || decode(hex);
+
+  const itemImage =
+    itemDecode && getItemImage(`./${itemDecode.group}/${itemDecode.id}.gif`);
 
   const itemData =
-    item && itemsList[item.group] && itemsList[item.group].items[item.id]
-      ? itemsList[item.group].items[item.id]
-      : false;
+    _itemData ||
+    (itemDecode &&
+    itemsList[itemDecode.group] &&
+    itemsList[itemDecode.group].items[itemDecode.id]
+      ? itemsList[itemDecode.group].items[itemDecode.id]
+      : false);
 
   const itemStyle: CSSProperties = {
     width: realSize ? slotSize * itemData.x : slotSize,
     height: realSize ? slotSize * itemData.y : slotSize
   };
 
+  // Event Listeners
+  const onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
+    e.dataTransfer.setDragImage(preview!, 0, 0);
+  };
+
+  const onDrag = () => {
+    if (!isDragged && setDragItem) {
+      setIsDragged(true);
+      setDragItem({
+        x: itemData.x,
+        y: itemData.y,
+        slot: slot!,
+        dragging: true
+      });
+    }
+  };
+
+  const onDragEnd = () => {
+    console.log('end');
+    if (setDragItem) {
+      setIsDragged(false);
+      setDragItem({
+        x: itemData.x,
+        y: itemData.y,
+        slot: slot!,
+        dragging: false
+      });
+    }
+  };
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = itemImage;
+    image.onload = () => setPreview(image);
+  }, [itemImage]);
+
   return (
-    item &&
+    itemDecode &&
     itemData && (
       <div
-        className={`Item ${dragged ? 'dragged' : ''}`}
+        className={`Item ${isDragged ? 'dragged' : ''}`}
         style={{ ...itemStyle, ...style }}
         data-tip
         data-for={id}
-        data-x={itemData.x}
-        data-y={itemData.y}
-        onMouseDown={() => {
-          ReactTooltip.hide();
-        }}
+        onMouseDown={() => ReactTooltip.hide()}
         draggable={!!setDragItem}
-        onDrag={e => {
-          setDragged(true);
-          setDragItem && setDragItem(e.target);
-        }}
-        onDragEnd={() => setDragged(false)}
+        onDragStart={onDragStart}
+        onDrag={onDrag}
+        onDragEnd={onDragEnd}
       >
         {image ? (
           <div
             style={{
-              background: `url('${getItemImage(
-                `./${item.group}/${item.id}.gif`
-              )}') no-repeat center center/contain`
+              background: `url('${itemImage}') no-repeat center center/contain`
             }}
             className='item-image'
           />
@@ -99,7 +150,7 @@ const Item: React.FC<Props> = ({
           itemData.name
         )}
         <ReactTooltip effect='solid' place='left' offset={{ left: 10 }} id={id}>
-          <Options item={item} itemData={itemData} image={!image} />
+          <Options item={itemDecode} itemData={itemData} image={!image} />
         </ReactTooltip>
       </div>
     )

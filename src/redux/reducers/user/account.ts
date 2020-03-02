@@ -2,7 +2,9 @@ import {
   SET_ACCOUNT_LOADER,
   LOGIN,
   LOGIN_FAILED,
-  LOGOUT
+  LOGOUT,
+  WAREHOUSE_MOVE_ITEM,
+  WAREHOUSE_UNLOCK
 } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
 import AccountState from 'redux/types/user/AccountState';
@@ -26,6 +28,28 @@ const account = (state = initialState, { type, payload }: ReduxAction) => {
       return {
         ...state,
         info: payload
+      };
+    case WAREHOUSE_MOVE_ITEM:
+      return {
+        ...state,
+        info: {
+          ...state.info,
+          warehouse: {
+            ...state.info?.warehouse,
+            items: payload
+          }
+        }
+      };
+    case WAREHOUSE_UNLOCK:
+      return {
+        ...state,
+        info: {
+          ...state.info,
+          warehouse: {
+            ...state.info?.warehouse,
+            lock: false
+          }
+        }
       };
     case LOGOUT:
       return initialState;

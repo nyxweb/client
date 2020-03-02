@@ -10,10 +10,16 @@ import { decode } from 'helpers/items';
 // Config
 import list from 'config/items/list.json';
 
+// Actions
+import { storage } from 'actions/user/extra';
+import { useDispatch } from 'react-redux';
+
 interface Item {
-  hex: string;
   id: string;
   style: CSSProperties;
+  slot: number;
+  item: any;
+  itemData: any;
 }
 
 interface Props {
@@ -27,6 +33,8 @@ interface Props {
   slotsY?: number;
   /** each slot size */
   slotSize?: number;
+  /** locked warehouse */
+  locked?: boolean;
 }
 
 const Warehouse: React.FC<Props> = ({
@@ -34,12 +42,26 @@ const Warehouse: React.FC<Props> = ({
   realSize = true,
   slotsX = 8,
   slotsY = 15,
-  slotSize = 26
+  slotSize = 26,
+  locked = false
 }) => {
   const [itemsList, setItemsList] = useState<Item[]>();
-  const [hexArray] = useState(items.match(/.{32}/g));
-  const [dragItem, setDragItem] = useState();
-  const [slots, setSlots] = useState();
+  const [hexArray, setHexArray] = useState<RegExpMatchArray | null>();
+  const [dragItem, setDragItem] = useState<{
+    x: number;
+    y: number;
+    slot: number;
+    dragging: boolean;
+  }>();
+  const [slots, setSlots] = useState<number[][]>();
+  const [slotEmpty, setSlotEmpty] = useState(false);
+  const [vaultPass, setVaultPass] = useState('');
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    items && setHexArray(items.match(/.{32}/g));
+  }, [items]);
 
   const itemsDB: any = list;
 
@@ -51,56 +73,83 @@ const Warehouse: React.FC<Props> = ({
 
   useEffect(() => {
     const list: Item[] = [];
-
     const slots_: number[][] = [];
-    Array(hexArray!.length)
-      .fill(null)
-      .forEach((_, i) => {
+
+    if (hexArray) {
+      Array(hexArray.length)
+        .fill(null)
+        .forEach((_, i) => {
+          const row = Math.floor(i / 8);
+          if (slots_[row]) slots_[row].push(0);
+          else slots_[row] = [0];
+        });
+
+      hexArray.forEach((hex, i) => {
         const row = Math.floor(i / 8);
-        if (slots_[row]) slots_[row].push(0);
-        else slots_[row] = [0];
+        const column = Math.floor(i - row * 8);
+
+        if (hex.toLowerCase() !== 'f'.repeat(32)) {
+          const item = decode(hex);
+          const itemData =
+            item && itemsDB[item.group] && itemsDB[item.group].items[item.id]
+              ? itemsDB[item.group].items[item.id]
+              : false;
+
+          if (itemData) {
+            for (let x = 0; x < itemData.x; x++) {
+              for (let y = 0; y < itemData.y; y++) {
+                if (
+                  slots_[y + row] !== undefined &&
+                  slots_[y + row][x + column] !== undefined
+                )
+                  slots_[y + row][x + column] = 1;
+              }
+            }
+
+            // Item style
+            const style: CSSProperties = {
+              position: 'absolute',
+              top: row * slotSize,
+              left: column * slotSize,
+              background: 'rgba(0,0,0,0.3)'
+            };
+
+            list.push({
+              id: uuid.v4(),
+              style,
+              slot: i,
+              item,
+              itemData
+            });
+          }
+        }
       });
 
-    hexArray!.forEach((hex, i) => {
-      const row = Math.floor(i / 8);
-      const column = Math.floor(i - row * 8);
+      setSlots(slots_);
+      setItemsList(list);
+    }
+  }, [hexArray]);
 
-      if (hex.toLowerCase() !== 'f'.repeat(32)) {
-        const item = decode(hex);
-        const itemData =
-          item && itemsDB[item.group] && itemsDB[item.group].items[item.id]
-            ? itemsDB[item.group].items[item.id]
-            : false;
+  useEffect(() => {
+    colorSlots({ clear: true });
 
-        if (itemData) {
-          for (let x = 0; x < itemData.x; x++) {
-            for (let y = 0; y < itemData.y; y++) {
-              slots_[y + row][x + column] = 1;
-            }
-          }
+    if (slots && dragItem) {
+      const _slots = [...slots];
+      const { x, y, slot: itemSlot, dragging } = dragItem;
 
-          // Item style
-          const style: CSSProperties = {
-            position: 'absolute',
-            top: row * slotSize,
-            left: column * slotSize,
-            background: 'rgba(0,0,0,0.3)'
-          };
+      const row = Math.floor(itemSlot / 8);
+      const column = Math.floor(itemSlot - row * 8);
 
-          list.push({
-            id: uuid.v4(),
-            style,
-            hex
-          });
+      for (let _x = 0; _x < x; _x++) {
+        for (let _y = 0; _y < y; _y++) {
+          if (_slots[row + _y] && _slots[row + _y][column + _x])
+            _slots[row + _y][column + _x] = dragging ? 0 : 1;
         }
       }
-    });
 
-    console.log(slots_);
-    setSlots(slots_);
-
-    setItemsList(list);
-  }, [hexArray]);
+      setSlots(_slots);
+    }
+  }, [dragItem]);
 
   const isSlotEmpty = ({
     slot,
@@ -110,17 +159,82 @@ const Warehouse: React.FC<Props> = ({
     slot: number;
     x: number;
     y: number;
-  }) => {
-    for (let _x = 0; _x < x; _x++) {
-      for (let _y = 0; _y < y; _y++) {
-        slots[y + _y][x + _x] = 1;
+  }): void => {
+    if (slots) {
+      const row = Math.floor(slot / 8);
+      const column = Math.floor(slot - row * 8);
+      let isEmpty = true;
+      const slotsToColor: number[] = [];
+
+      for (let _x = 0; _x < x; _x++) {
+        for (let _y = 0; _y < y; _y++) {
+          if (column + _x < 8) {
+            slotsToColor.push(slot + _x + _y * 8);
+          }
+
+          if (
+            slots[_y + row] === undefined ||
+            slots[_y + row][_x + column] === undefined ||
+            slots[_y + row][_x + column] !== 0
+          )
+            isEmpty = false;
+        }
       }
+
+      setSlotEmpty(isEmpty);
+      colorSlots({ slots: slotsToColor, empty: isEmpty });
+    }
+  };
+
+  const colorSlots = ({ slots = [-1], empty = false, clear = false }): void => {
+    const slotsArray = document.querySelectorAll('div.empty-slot');
+
+    slotsArray.forEach((slot: any) => {
+      if (clear) slot.style.background = 'transparent';
+      else {
+        const slotId = Number(slot.dataset.slot);
+
+        if (slots.includes(slotId))
+          slot.style.background = empty
+            ? 'rgba(19, 149, 58, 0.171)'
+            : 'rgba(255, 0, 0, 0.171)';
+        else slot.style.background = 'transparent';
+      }
+    });
+  };
+
+  // EventListeners
+  const onItemDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLDivElement;
+    const slot = target.dataset.slot;
+
+    if (dragItem && slotEmpty) {
+      dispatch(
+        storage.moveItem({ itemSlot: dragItem.slot, newSlot: Number(slot) })
+      );
     }
   };
 
   return (
     <div className='Warehouse'>
       <div className='content' style={containerStyle}>
+        {locked && (
+          <div className='locked'>
+            <div className='fields'>
+              <input
+                type='password'
+                value={vaultPass}
+                placeholder='Vault Password'
+                onChange={e => setVaultPass(e.target.value)}
+              />
+              <button
+                onClick={() => dispatch(storage.unlockWarehouse(vaultPass))}
+              >
+                unlock
+              </button>
+            </div>
+          </div>
+        )}
         {hexArray &&
           realSize &&
           Array(hexArray.length)
@@ -135,30 +249,25 @@ const Warehouse: React.FC<Props> = ({
                   e.stopPropagation();
                   e.preventDefault();
                 }}
-                onDragEnter={(e: React.DragEvent) => {
-                  const target: any = e.target;
-                  const slot = target.dataset.slot;
-                  const x = target.dataset.x;
-                  const y = target.dataset.y;
-
-                  // target.style.background = 'red';
-                  isSlotEmpty({ slot, x, y });
+                onDragEnter={() => {
+                  if (dragItem)
+                    isSlotEmpty({ slot: i, x: dragItem.x, y: dragItem.y });
                 }}
-                onDrop={e => {
-                  console.log('drop', dragItem);
-                }}
+                onDrop={onItemDrop}
               />
             ))}
         {itemsList &&
-          itemsList.map(({ hex, id, style }, i: number) => (
+          itemsList.map(({ id, style, slot, item, itemData }, i: number) => (
             <Item
-              hex={hex}
               key={i}
               slotSize={slotSize}
               realSize={realSize}
               style={style}
               id={id}
               setDragItem={setDragItem}
+              slot={slot}
+              item={item}
+              itemData={itemData}
             />
           ))}
       </div>

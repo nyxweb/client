@@ -12,6 +12,8 @@ export const SET_CHARACTERS = 'SET_CHARACTERS';
 
 // User -> Extra
 export const SET_EXTRA_LOADER = 'SET_EXTRA_LOADER';
+export const WAREHOUSE_MOVE_ITEM = 'WAREHOUSE_MOVE_ITEM';
+export const WAREHOUSE_UNLOCK = 'WAREHOUSE_UNLOCK';
 
 // Rankings
 export const GET_HOF = 'GET_HOF';

@@ -1,5 +1,6 @@
 import MEMB_STAT from './MEMB_STAT';
 import _nyxResources from './_nyxResources';
+import warehouse from './warehouse';
 
 export default interface AccountState {
   loading: boolean;
@@ -17,6 +18,7 @@ export default interface AccountState {
     admin_lvl: number;
     status: MEMB_STAT;
     resources: _nyxResources;
+    warehouse: warehouse;
   } | null;
 
   vip: {} | null;
