@@ -37,10 +37,13 @@ const moveItem: ActionCreator<ThunkAction<
       payload: add
     });
 
-    await axios.patch(process.env.REACT_APP_API_URI + '/users/auth', {
-      itemSlot,
-      newSlot
-    });
+    await axios.patch(
+      process.env.REACT_APP_API_URI + '/extra/storage/moveItem',
+      {
+        itemSlot,
+        newSlot
+      }
+    );
   } catch (error) {
     notice(error);
   }
