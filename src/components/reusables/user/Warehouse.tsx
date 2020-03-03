@@ -128,7 +128,7 @@ const Warehouse: React.FC<Props> = ({
       setSlots(slots_);
       setItemsList(list);
     }
-  }, [hexArray]);
+  }, [hexArray, itemsDB, slotSize]);
 
   useEffect(() => {
     colorSlots({ clear: true });

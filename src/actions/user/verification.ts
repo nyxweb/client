@@ -15,7 +15,7 @@ const userVerification: ActionCreator<ThunkAction<
   try {
     if (localStorage.nyxToken) {
       const { data } = await axios.post(
-        process.env.REACT_APP_API_URI + '/users/verify'
+        process.env.REACT_APP_API_URI + '/user/account/verify'
       );
 
       dispatch({
