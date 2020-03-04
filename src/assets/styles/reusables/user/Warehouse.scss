@@ -1,7 +1,6 @@
 .Warehouse {
   position: relative;
   display: inline-block;
-  margin: 30px;
   padding: 16px;
   user-select: none;
 
@@ -58,18 +57,11 @@
       }
     }
 
-    .empty-slot {
+    .warehouse-empty-slot,
+    .storage-empty-slot {
       float: left;
       width: 32px;
       height: 32px;
-
-      &.busy {
-        background: rgba(255, 0, 0, 0.171);
-      }
-
-      &.empty {
-        background: rgba(19, 149, 58, 0.171);
-      }
     }
   }
 }

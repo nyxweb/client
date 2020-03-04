@@ -1,10 +1,5 @@
 import React, { CSSProperties } from 'react';
 
-// Types
-// import IResource from 'redux/types/reusables/Resource';
-
-const items = require.context('../../../assets/images/items', true);
-
 interface IResource {
   name: string;
   value: number | false;
@@ -29,7 +24,7 @@ const Resource: React.FC<IResource> = ({
 
   return (
     <div className={`Resource ${name}`} style={resourceStyle}>
-      <img src={items(`./resources/` + name + '.gif')} alt='res' />
+      <img src={`/images/items/resources/` + name + '.gif'} alt='res' />
       {value !== false ? <span>{value}</span> : ''}
     </div>
   );

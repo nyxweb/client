@@ -3,8 +3,9 @@ import {
   LOGIN,
   LOGIN_FAILED,
   LOGOUT,
-  WAREHOUSE_MOVE_ITEM,
-  WAREHOUSE_UNLOCK
+  WAREHOUSE_UNLOCK,
+  WAREHOUSE_UPDATE,
+  STORAGE_UPDATE
 } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
 import AccountState from 'redux/types/user/AccountState';
@@ -29,13 +30,24 @@ const account = (state = initialState, { type, payload }: ReduxAction) => {
         ...state,
         info: payload
       };
-    case WAREHOUSE_MOVE_ITEM:
+    case WAREHOUSE_UPDATE:
       return {
         ...state,
         info: {
           ...state.info,
           warehouse: {
             ...state.info?.warehouse,
+            items: payload
+          }
+        }
+      };
+    case STORAGE_UPDATE:
+      return {
+        ...state,
+        info: {
+          ...state.info,
+          resources: {
+            ...state.info?.resources,
             items: payload
           }
         }

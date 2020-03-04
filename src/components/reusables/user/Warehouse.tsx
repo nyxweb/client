@@ -14,6 +14,9 @@ import list from 'config/items/list.json';
 import { storage } from 'actions/user/extra';
 import { useDispatch } from 'react-redux';
 
+// Types
+import { DragItem } from 'components/partials/MainContent/user/extra/Storage';
+
 interface Item {
   id: string;
   style: CSSProperties;
@@ -23,8 +26,10 @@ interface Item {
 }
 
 interface Props {
+  /** the type of the warehouse */
+  type?: 'warehouse' | 'storage';
   /** items hex string */
-  items: string;
+  items?: string;
   /** wether or not items should take only one slot or real size */
   realSize?: boolean;
   /** slots per row horizontally */
@@ -35,24 +40,24 @@ interface Props {
   slotSize?: number;
   /** locked warehouse */
   locked?: boolean;
+
+  dragItem?: DragItem;
+  setDragItem?: (item: DragItem) => void;
 }
 
 const Warehouse: React.FC<Props> = ({
+  type,
   items,
   realSize = true,
   slotsX = 8,
   slotsY = 15,
   slotSize = 26,
-  locked = false
+  locked = false,
+  dragItem,
+  setDragItem
 }) => {
   const [itemsList, setItemsList] = useState<Item[]>();
   const [hexArray, setHexArray] = useState<RegExpMatchArray | null>();
-  const [dragItem, setDragItem] = useState<{
-    x: number;
-    y: number;
-    slot: number;
-    dragging: boolean;
-  }>();
   const [slots, setSlots] = useState<number[][]>();
   const [slotEmpty, setSlotEmpty] = useState(false);
   const [vaultPass, setVaultPass] = useState('');
@@ -149,7 +154,7 @@ const Warehouse: React.FC<Props> = ({
 
       setSlots(_slots);
     }
-  }, [dragItem]);
+  }, [dragItem?.dragging, dragItem?.to]);
 
   const isSlotEmpty = ({
     slot,
@@ -182,12 +187,14 @@ const Warehouse: React.FC<Props> = ({
       }
 
       setSlotEmpty(isEmpty);
-      colorSlots({ slots: slotsToColor, empty: isEmpty });
+      if (dragItem?.to === 'warehouse') {
+        colorSlots({ slots: slotsToColor, empty: isEmpty });
+      }
     }
   };
 
   const colorSlots = ({ slots = [-1], empty = false, clear = false }): void => {
-    const slotsArray = document.querySelectorAll('div.empty-slot');
+    const slotsArray = document.querySelectorAll(`.${dragItem?.to}-empty-slot`);
 
     slotsArray.forEach((slot: any) => {
       if (clear) slot.style.background = 'transparent';
@@ -210,7 +217,12 @@ const Warehouse: React.FC<Props> = ({
 
     if (dragItem && slotEmpty) {
       dispatch(
-        storage.moveItem({ itemSlot: dragItem.slot, newSlot: Number(slot) })
+        storage.moveItem({
+          itemSlot: dragItem.slot,
+          newSlot: Number(slot),
+          from: dragItem.from,
+          to: dragItem.to
+        })
       );
     }
   };
@@ -236,13 +248,12 @@ const Warehouse: React.FC<Props> = ({
           </div>
         )}
         {hexArray &&
-          realSize &&
-          Array(hexArray.length)
+          Array(realSize ? hexArray.length : slotsX * slotsY)
             .fill(null)
             .map((_, i) => (
               <div
                 key={i}
-                className='empty-slot'
+                className={type + '-empty-slot'}
                 style={{ width: slotSize, height: slotSize }}
                 data-slot={i}
                 onDragOver={e => {
@@ -250,8 +261,13 @@ const Warehouse: React.FC<Props> = ({
                   e.preventDefault();
                 }}
                 onDragEnter={() => {
-                  if (dragItem)
+                  if (dragItem && setDragItem) {
                     isSlotEmpty({ slot: i, x: dragItem.x, y: dragItem.y });
+                    setDragItem({
+                      ...dragItem,
+                      to: type!
+                    });
+                  }
                 }}
                 onDrop={onItemDrop}
               />
@@ -265,6 +281,8 @@ const Warehouse: React.FC<Props> = ({
               style={style}
               id={id}
               setDragItem={setDragItem}
+              dragItem={dragItem}
+              from={type}
               slot={slot}
               item={item}
               itemData={itemData}

@@ -11,11 +11,7 @@ import { decode } from 'helpers/items';
 // Config
 import list from 'config/items/list.json';
 import IItem from 'redux/types/items/Item';
-
-const getImage = require.context('../../../../assets/images/items/', true);
-
-// Types
-// import IItems from 'redux/types/items/List';
+import { DragItem } from 'components/partials/MainContent/user/extra/Storage';
 
 interface Props {
   id?: string;
@@ -32,12 +28,13 @@ interface Props {
   style?: CSSProperties;
 
   /** for settings the item that is being dragged */
-  setDragItem?: (item: {
-    x: number;
-    y: number;
-    slot: number;
-    dragging: boolean;
-  }) => void;
+  setDragItem?: (item: DragItem) => void;
+
+  /** item being dragged */
+  dragItem?: DragItem;
+
+  /** where the item is from */
+  from?: 'warehouse' | 'storage';
 
   /** Slot the item sits on (for warehouse etc.) */
   slot?: number;
@@ -55,6 +52,8 @@ const Item: React.FC<Props> = ({
   realSize = true,
   style = {},
   setDragItem,
+  dragItem,
+  from,
   slot,
   item,
   itemData: _itemData
@@ -63,18 +62,10 @@ const Item: React.FC<Props> = ({
   const [preview, setPreview] = useState<HTMLImageElement>();
   const itemsList: any = list;
 
-  const getItemImage = (name: string) => {
-    try {
-      return getImage(name);
-    } catch (error) {
-      return getImage('./unknown.png');
-    }
-  };
-
   const itemDecode = item || decode(hex);
 
   const itemImage =
-    itemDecode && getItemImage(`./${itemDecode.group}/${itemDecode.id}.gif`);
+    itemDecode && `/images/items/${itemDecode.group}/${itemDecode.id}.gif`;
 
   const itemData =
     _itemData ||
@@ -98,31 +89,36 @@ const Item: React.FC<Props> = ({
     if (!isDragged && setDragItem) {
       setIsDragged(true);
       setDragItem({
+        ...dragItem!,
         x: itemData.x,
         y: itemData.y,
         slot: slot!,
-        dragging: true
+        dragging: true,
+        from: from!
       });
     }
   };
 
   const onDragEnd = () => {
-    console.log('end');
     if (setDragItem) {
       setIsDragged(false);
       setDragItem({
+        ...dragItem!,
         x: itemData.x,
         y: itemData.y,
         slot: slot!,
-        dragging: false
+        dragging: false,
+        from: from!
       });
     }
   };
 
   useEffect(() => {
-    const image = new Image();
-    image.src = itemImage;
-    image.onload = () => setPreview(image);
+    if (itemImage) {
+      const image = new Image();
+      image.src = itemImage;
+      image.onload = () => setPreview(image);
+    }
   }, [itemImage]);
 
   return (

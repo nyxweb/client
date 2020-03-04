@@ -11,8 +11,6 @@ import ancientList from 'config/items/ancient.json';
 // Types
 import Item from 'redux/types/items/Item';
 
-const getImage = require.context('../../../../assets/images/items/', true);
-
 interface Props {
   item: Item;
   itemData: any;
@@ -22,14 +20,6 @@ interface Props {
 const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
   const options: any = optionsList;
   const ancient: any = ancientList;
-
-  const getItemImage = (name: string) => {
-    try {
-      return getImage(name);
-    } catch (error) {
-      return getImage('./unknown.png');
-    }
-  };
 
   // Ancient option
   const ancientName =
@@ -62,10 +52,7 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
       <div className='row dur'>Durability: {item.durability}</div>
       {image && (
         <div className='row item-pic'>
-          <img
-            src={getItemImage(`./${item.group}/${item.id}.gif`)}
-            alt='item'
-          />
+          <img src={`/images/items/${item.group}/${item.id}.gif`} alt='item' />
         </div>
       )}
       {!!itemData.class && (
