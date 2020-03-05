@@ -61,6 +61,10 @@ const Warehouse: React.FC<Props> = ({
   const [slots, setSlots] = useState<number[][]>();
   const [slotEmpty, setSlotEmpty] = useState(false);
   const [vaultPass, setVaultPass] = useState('');
+  const [emptySlots, setEmptySlots] = useState<{
+    warehouse: NodeListOf<Element>;
+    storage: NodeListOf<Element>;
+  }>();
 
   const dispatch = useDispatch();
 
@@ -71,10 +75,19 @@ const Warehouse: React.FC<Props> = ({
   const itemsDB: any = list;
 
   const containerStyle: CSSProperties = {
-    width: slotsX * slotSize + 1,
-    height: slotsY * slotSize + 1,
+    width: slotsX * slotSize + 2,
+    height: slotsY * slotSize + 2,
     backgroundSize: slotSize
   };
+
+  if (
+    dragItem &&
+    dragItem.dragging &&
+    ((dragItem.to === 'warehouse' && type === 'warehouse') ||
+      (dragItem.to === 'storage' && type === 'storage'))
+  ) {
+    containerStyle.border = '1px dashed red';
+  }
 
   useEffect(() => {
     const list: Item[] = [];
@@ -133,12 +146,14 @@ const Warehouse: React.FC<Props> = ({
       setSlots(slots_);
       setItemsList(list);
     }
+
+    if (!hexArray) setSlots([]);
   }, [hexArray, itemsDB, slotSize]);
 
   useEffect(() => {
-    colorSlots({ clear: true });
+    clearSlots();
 
-    if (slots && dragItem) {
+    if (slots && dragItem && type !== 'storage') {
       const _slots = [...slots];
       const { x, y, slot: itemSlot, dragging } = dragItem;
 
@@ -193,29 +208,39 @@ const Warehouse: React.FC<Props> = ({
     }
   };
 
-  const colorSlots = ({ slots = [-1], empty = false, clear = false }): void => {
-    const slotsArray = document.querySelectorAll(`.${dragItem?.to}-empty-slot`);
-
-    slotsArray.forEach((slot: any) => {
-      if (clear) slot.style.background = 'transparent';
-      else {
-        const slotId = Number(slot.dataset.slot);
-
-        if (slots.includes(slotId))
-          slot.style.background = empty
-            ? 'rgba(19, 149, 58, 0.171)'
-            : 'rgba(255, 0, 0, 0.171)';
-        else slot.style.background = 'transparent';
-      }
+  const clearSlots = () => {
+    emptySlots?.warehouse.forEach((slot: any) => {
+      slot.style.background = 'transparent';
     });
   };
+
+  const colorSlots = ({ slots = [-1], empty = false }): void => {
+    clearSlots();
+
+    emptySlots?.warehouse.forEach((slot: any) => {
+      const slotId = Number(slot.dataset.slot);
+
+      if (slots.includes(slotId))
+        slot.style.background = empty
+          ? 'rgba(19, 149, 58, 0.171)'
+          : 'rgba(255, 0, 0, 0.171)';
+      else slot.style.background = 'transparent';
+    });
+  };
+
+  useEffect(() => {
+    setEmptySlots({
+      warehouse: document.querySelectorAll('.warehouse-empty-slot'),
+      storage: document.querySelectorAll('.storage-empty-slot')
+    });
+  }, []);
 
   // EventListeners
   const onItemDrop = (e: React.DragEvent<HTMLDivElement>) => {
     const target = e.target as HTMLDivElement;
     const slot = target.dataset.slot;
 
-    if (dragItem && slotEmpty) {
+    if ((dragItem && slotEmpty) || (dragItem && dragItem.to === 'storage')) {
       dispatch(
         storage.moveItem({
           itemSlot: dragItem.slot,
@@ -247,31 +272,30 @@ const Warehouse: React.FC<Props> = ({
             </div>
           </div>
         )}
-        {hexArray &&
-          Array(realSize ? hexArray.length : slotsX * slotsY)
-            .fill(null)
-            .map((_, i) => (
-              <div
-                key={i}
-                className={type + '-empty-slot'}
-                style={{ width: slotSize, height: slotSize }}
-                data-slot={i}
-                onDragOver={e => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                }}
-                onDragEnter={() => {
-                  if (dragItem && setDragItem) {
-                    isSlotEmpty({ slot: i, x: dragItem.x, y: dragItem.y });
-                    setDragItem({
-                      ...dragItem,
-                      to: type!
-                    });
-                  }
-                }}
-                onDrop={onItemDrop}
-              />
-            ))}
+        {Array(realSize && hexArray ? hexArray.length : slotsX * slotsY)
+          .fill(null)
+          .map((_, i) => (
+            <div
+              key={i}
+              className={type + '-empty-slot'}
+              style={{ width: slotSize, height: slotSize }}
+              data-slot={i}
+              onDragOver={e => {
+                e.stopPropagation();
+                e.preventDefault();
+              }}
+              onDragEnter={() => {
+                if (dragItem && setDragItem) {
+                  isSlotEmpty({ slot: i, x: dragItem.x, y: dragItem.y });
+                  setDragItem({
+                    ...dragItem,
+                    to: type!
+                  });
+                }
+              }}
+              onDrop={onItemDrop}
+            />
+          ))}
         {itemsList &&
           itemsList.map(({ id, style, slot, item, itemData }, i: number) => (
             <Item

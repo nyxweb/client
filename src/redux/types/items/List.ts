@@ -9,9 +9,9 @@ export default interface ItemsList {
         options: {
           excellent: number;
           additional: string;
-          ancient: boolean;
+          ancient?: boolean;
         };
-        class: [];
+        class: number[];
       };
     };
   };

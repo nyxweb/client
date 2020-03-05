@@ -18,50 +18,47 @@ const moveItem: ActionCreator<ThunkAction<
   Action
 >> = ({ itemSlot, newSlot, from, to }) => async dispatch => {
   try {
-    const removeItem = (
-      items: string,
-      slot: number,
-      replace: string = ''
-    ): string =>
-      items.slice(0, slot * 32) + replace + items.slice((slot + 1) * 32);
-
     const {
       warehouse: { items: warehouse },
       resources: { items: storage }
     } = store.getState().user.account.info;
 
-    const oldItem = (from === 'warehouse' ? warehouse : storage).substr(
+    const item = (from === 'warehouse' ? warehouse : storage).substr(
       itemSlot * 32,
       32
     );
 
-    // let newWarehouse = warehouse;
-    // let newStorage = storage;
-    // if(from === 'warehouse' && to === 'warehouse') {
-    //   newWarehouse = warehouse.split('').splice(itemSlot * 32, 32, replace)
-    // }
+    let updatedWarehouse = warehouse;
+    let updatedStorage = storage;
 
-    let newWarehouse;
-    if (from === 'warehouse')
-      newWarehouse = warehouse.replace(oldItem, 'f'.repeat(32));
-    else {
-      newWarehouse =
+    if (from === 'warehouse') {
+      updatedWarehouse = warehouse.replace(item, 'f'.repeat(32));
+
+      if (to === 'storage') {
+        updatedStorage = storage + item;
+      } else {
+        updatedWarehouse =
+          updatedWarehouse.slice(0, newSlot * 32) +
+          item +
+          updatedWarehouse.slice((newSlot + 1) * 32);
+      }
+    } else {
+      updatedWarehouse =
         warehouse.slice(0, newSlot * 32) +
-        oldItem +
+        item +
         warehouse.slice((newSlot + 1) * 32);
-    }
 
-    const newStorage =
-      from === 'warehouse' ? storage + oldItem : storage.replace(oldItem, '');
+      updatedStorage = storage.replace(item, '');
+    }
 
     dispatch({
       type: WAREHOUSE_UPDATE,
-      payload: newWarehouse
+      payload: updatedWarehouse
     });
 
     dispatch({
       type: STORAGE_UPDATE,
-      payload: newStorage
+      payload: updatedStorage
     });
 
     // await axios.patch(
