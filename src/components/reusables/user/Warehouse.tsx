@@ -65,29 +65,19 @@ const Warehouse: React.FC<Props> = ({
     warehouse: NodeListOf<Element>;
     storage: NodeListOf<Element>;
   }>();
+  const [containerStyle, setContainerStyle] = useState<CSSProperties>({
+    width: slotsX * slotSize + 2,
+    height: slotsY * slotSize + 2,
+    backgroundSize: slotSize
+  });
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    items && setHexArray(items.match(/.{32}/g));
+    if (items && items.length) setHexArray(items.match(/.{32}/g));
   }, [items]);
 
   const itemsDB: any = list;
-
-  const containerStyle: CSSProperties = {
-    width: slotsX * slotSize + 2,
-    height: slotsY * slotSize + 2,
-    backgroundSize: slotSize
-  };
-
-  if (
-    dragItem &&
-    dragItem.dragging &&
-    ((dragItem.to === 'warehouse' && type === 'warehouse') ||
-      (dragItem.to === 'storage' && type === 'storage'))
-  ) {
-    containerStyle.border = '1px dashed red';
-  }
 
   useEffect(() => {
     const list: Item[] = [];
@@ -146,12 +136,29 @@ const Warehouse: React.FC<Props> = ({
       setSlots(slots_);
       setItemsList(list);
     }
-
-    if (!hexArray) setSlots([]);
   }, [hexArray, itemsDB, slotSize]);
 
   useEffect(() => {
     clearSlots();
+
+    if (
+      dragItem &&
+      dragItem.dragging &&
+      ((dragItem.to === 'warehouse' && type === 'warehouse') ||
+        (dragItem.to === 'storage' &&
+          dragItem.from === 'warehouse' &&
+          type === 'storage') ||
+        (dragItem.from === 'storage' && type === 'warehouse'))
+    ) {
+      setContainerStyle({
+        ...containerStyle,
+        border: '1px dashed red'
+      });
+    } else {
+      const style = { ...containerStyle };
+      delete style.border;
+      setContainerStyle(style);
+    }
 
     if (slots && dragItem && type !== 'storage') {
       const _slots = [...slots];
@@ -209,7 +216,7 @@ const Warehouse: React.FC<Props> = ({
   };
 
   const clearSlots = () => {
-    emptySlots?.warehouse.forEach((slot: any) => {
+    emptySlots?.warehouse.forEach((slot: any): void => {
       slot.style.background = 'transparent';
     });
   };

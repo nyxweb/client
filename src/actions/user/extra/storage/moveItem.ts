@@ -43,12 +43,14 @@ const moveItem: ActionCreator<ThunkAction<
           updatedWarehouse.slice((newSlot + 1) * 32);
       }
     } else {
-      updatedWarehouse =
-        warehouse.slice(0, newSlot * 32) +
-        item +
-        warehouse.slice((newSlot + 1) * 32);
+      if (to === 'warehouse') {
+        updatedWarehouse =
+          warehouse.slice(0, newSlot * 32) +
+          item +
+          warehouse.slice((newSlot + 1) * 32);
 
-      updatedStorage = storage.replace(item, '');
+        updatedStorage = storage.replace(item, '');
+      } else return;
     }
 
     dispatch({
