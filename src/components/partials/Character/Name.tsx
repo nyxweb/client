@@ -5,7 +5,14 @@ import { Link } from 'react-router-dom';
 import Character from 'redux/types/rankings/Character';
 
 interface Props {
-  char: Character;
+  char:
+    | Character
+    | {
+        Name: string;
+        status: { ConnectStat: number };
+        account: { GameIDC: string };
+        guild_memb: { G_Name: string };
+      };
   guild?: boolean;
 }
 

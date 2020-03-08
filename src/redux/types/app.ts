@@ -1,18 +1,13 @@
-import UserState from './User';
-import Character from 'redux/types/rankings/Character';
-import Event from 'redux/types/others/Event';
-import Guild from './rankings/Guild';
+import UserState from './user/UserState';
+import RankState from './rankings/RankState';
+import OtherState from './others/OtherState';
+import ConfigState from './ConfigState';
 
 export default interface AppState {
   user: UserState;
-  rankings: {
-    hof: Character[];
-    top5guilds: Guild[];
-    characters: Character[];
-  };
-  others: {
-    events: Event[];
-  };
+  rankings: RankState;
+  others: OtherState;
+  config: ConfigState;
 }
 
 export interface ReduxAction {

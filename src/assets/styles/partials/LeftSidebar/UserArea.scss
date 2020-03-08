@@ -1,0 +1,117 @@
+.UserArea {
+  & > .welcome {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .highlight {
+    color: #c8ddf1;
+
+    &:after {
+      display: inline-block;
+      content: '';
+      width: 6px;
+      height: 6px;
+      margin: 0 0 2px 5px;
+      border-radius: 4px;
+    }
+
+    &.online:after {
+      background: green;
+    }
+
+    &.offline:after {
+      background: red;
+    }
+  }
+
+  & > .menu {
+    margin: 0 10px 10px 10px;
+
+    & .section {
+      & .title {
+        font-size: 14px;
+        padding: 10px;
+        cursor: url('../../../images/main/pointer.cur'), pointer;
+        user-select: none;
+      }
+
+      & .content {
+        overflow: hidden;
+        transition: 0.5s ease-in-out;
+        background: rgba(63, 85, 114, 0.1);
+
+        & a {
+          display: block;
+          padding: 5px;
+          font-size: 12px;
+          margin: 0 10px 0 10px;
+
+          &:hover {
+            background: rgba(63, 85, 114, 0.1);
+          }
+
+          &:first-of-type {
+            margin: 10px 10px 0 10px;
+          }
+
+          &:last-of-type {
+            margin: 0 10px 10px 10px;
+          }
+        }
+
+        &.open {
+          max-height: 200px;
+        }
+
+        &.closed {
+          max-height: 0;
+        }
+      }
+    }
+  }
+
+  & > .resources {
+    box-shadow: 0px 0 15px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(63, 85, 114, 0.1);
+    margin: 0 10px 10px 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+
+    .main {
+      float: left;
+      width: 100%;
+      padding: 5px 5px 0 5px;
+      display: flex;
+
+      .block {
+        padding: 5px;
+        box-shadow: 0px 0 15px 0 rgba(0, 0, 0, 0.2);
+        background: rgba(63, 85, 114, 0.1);
+        display: flex;
+        align-items: center;
+        border-radius: 3px;
+
+        &.credits {
+          color: goldenrod;
+          width: 100px;
+        }
+
+        &.money {
+          flex: auto;
+          color: rgb(53, 189, 76);
+          margin-left: 5px;
+        }
+
+        svg {
+          height: 15px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

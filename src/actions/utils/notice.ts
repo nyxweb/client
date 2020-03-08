@@ -1,4 +1,4 @@
-import { store } from 'react-notifications-component';
+import { store } from "react-notifications-component";
 
 interface Props {
   error?: string;
@@ -11,23 +11,25 @@ interface Props {
   };
 }
 
-const notice = (obj: Props) => {
+const notice = ({ error, success, response }: Props) => {
   const type =
-    obj.success || obj.response?.data.success
-      ? 'success'
-      : obj.error || obj.response?.data.error
-      ? 'danger'
-      : 'warning';
+    success || response?.data.success
+      ? "success"
+      : error || response?.data.error
+      ? "danger"
+      : "warning";
 
-  const message = obj.error || obj.success || obj.response?.data.error;
+  const message = error || success || response?.data.error;
+
+  if (!message) return;
 
   store.addNotification({
     type,
     message,
-    insert: 'bottom',
-    container: 'top-right',
-    animationIn: ['animated', 'fadeIn'],
-    animationOut: ['animated', 'fadeOut'],
+    insert: "bottom",
+    container: "top-right",
+    animationIn: ["animated", "fadeIn"],
+    animationOut: ["animated", "fadeOut"],
     dismiss: {
       duration: 5000,
       onScreen: true,

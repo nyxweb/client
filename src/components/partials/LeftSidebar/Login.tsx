@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // Actions
-import userLogin from 'redux/actions/user/login';
+import userLogin from 'actions/user/login';
 
 interface Props {
   userLogin: Function;

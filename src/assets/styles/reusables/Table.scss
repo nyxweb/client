@@ -1,0 +1,27 @@
+table.Table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead tr {
+    background: none;
+  }
+
+  tbody tr:nth-of-type(odd) {
+    background: rgba(63, 85, 114, 0.1);
+  }
+
+  th,
+  td {
+    padding: 5px 0;
+    text-align: center;
+
+    a.down-link {
+      display: inline-block;
+      padding: 5px 15px;
+      background: linear-gradient(to bottom right, #434141, #2a2929);
+      border: 1px solid #7c7a7a;
+      border-radius: 3px;
+      color: white;
+    }
+  }
+}

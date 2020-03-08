@@ -1,16 +1,21 @@
 import { GET_RANK_5GUILDS, GET_RANK_5GUILDS_FAILED } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
-import Guild from 'redux/types/rankings/Guild';
+import top5GuildsState from 'redux/types/rankings/top5GuildsState';
 
-const initialState: Guild[] | null = null;
+const initialState: top5GuildsState = {
+  loading: false,
+  list: null
+};
 
-const guilds = (state = initialState, action: ReduxAction) => {
-  const { type, payload } = action;
-
+const guilds = (state = initialState, { type, payload }: ReduxAction) => {
   switch (type) {
     case GET_RANK_5GUILDS:
-      return payload;
+      return {
+        ...state,
+        list: payload
+      };
     case GET_RANK_5GUILDS_FAILED:
+      return initialState;
     default:
       return state;
   }

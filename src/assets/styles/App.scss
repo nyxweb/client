@@ -26,25 +26,27 @@ a {
   cursor: url('../images/main/pointer.cur'), pointer;
 }
 
-a:hover,
-button:hover {
+a:hover
+// button:hover 
+ {
   -webkit-filter: brightness(120%);
   filter: brightness(120%);
   text-decoration: none;
 }
 
-button {
-  transition: all 0.3s ease;
-  cursor: url('../images/main/pointer.cur'), pointer;
-  background: url(../images/partials/button.jpg) no-repeat center center/cover;
-  border: none;
-  outline: none;
-  color: #c3eaee;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-  padding: 7px 15px;
-  display: inline-block;
-}
+// button {
+//   transition: all 0.3s ease;
+//   cursor: url('../images/main/pointer.cur'), pointer;
+//   background: url(../images/partials/button.jpg) no-repeat center center/cover;
+//   border: none;
+//   outline: none;
+//   color: #c3eaee;
+//   text-transform: uppercase;
+//   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+//   padding: 7px 15px;
+//   display: inline-block;
+//   border-radius: 3px;
+// }
 
 input {
   background-color: #131f2d;
@@ -66,6 +68,19 @@ input {
   @import 'assets/styles/layout/Header.scss';
   @import 'assets/styles/layout/Footer.scss';
 
+  // Partials
+  @import 'assets/styles/partials/Loader.scss';
+  @import 'assets/styles/partials/Character/Name.scss';
+
+  // Reusables
+  @import 'assets/styles/reusables/Input.scss';
+  @import 'assets/styles/reusables/Tooltip.scss';
+  @import 'assets/styles/reusables/Form.scss';
+  @import 'assets/styles/reusables/user/Warehouse.scss';
+  @import 'assets/styles/reusables/Button.scss';
+  @import 'assets/styles/reusables/Table.scss';
+  @import 'assets/styles/reusables/NoData.scss';
+
   & .Container {
     min-height: 1050px;
     display: flex;
@@ -77,8 +92,9 @@ input {
     @import 'assets/styles/layout/RightSidebar.scss';
 
     // Partials
-    @import 'assets/styles/partials/Loader.scss';
     @import 'assets/styles/partials/Guild/Mark.scss';
+    @import 'assets/styles/partials/particles/Resource.scss';
+    @import 'assets/styles/partials/particles/Items.scss';
 
     &:before {
       content: '';

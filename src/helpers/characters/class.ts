@@ -41,4 +41,4 @@ const shortClass = (Class: number) => {
   }
 };
 
-export { charClass, shortClass };
+export default { charClass, shortClass };
