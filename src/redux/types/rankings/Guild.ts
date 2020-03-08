@@ -10,7 +10,5 @@ export default interface Guild {
   G_Type: number;
   G_Rival: number;
   G_Union: number;
-  TotalMembers: number;
-  TotalResets: number;
   guild_memb: GuildMember[];
 }

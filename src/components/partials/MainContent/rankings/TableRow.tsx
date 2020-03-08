@@ -5,7 +5,7 @@ import GuildMark from 'components/partials/Guild/Mark';
 import CharacterName from 'components/partials/Character/Name';
 
 // Helpers
-import { cclass } from 'helpers/characters';
+import { charClass } from 'helpers/characters/class';
 
 // Types
 import Character from 'redux/types/rankings/Character';
@@ -22,7 +22,7 @@ const TableRow: React.FC<Props> = ({ rank, char }) => {
       <td>
         <CharacterName char={char} />
       </td>
-      <td>{cclass.charClass(char.Class)}</td>
+      <td>{charClass(char.Class)}</td>
       <td>
         {char.cLevel}
         <sup>{char.Resets}</sup>

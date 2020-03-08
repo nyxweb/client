@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
 // Reducers
-import market from 'redux/reducers/others/market';
+import events from 'redux/reducers/others/events';
 
 const reducers = combineReducers({
-  market
+  events
 });
 
 export default reducers;

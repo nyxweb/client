@@ -1,39 +1,12 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 
-interface Props {
-  value: string;
-  type?: 'button' | 'submit' | 'reset' | undefined;
-  looks?: 'basic' | 'default' | 'primary' | 'secondary' | undefined;
-  loading?: boolean;
-  onClick?: Function;
-  style?: CSSProperties;
-}
+// Interfaces
+import { Button as Props } from 'interfaces/components/reusables/Form';
 
-const Button: React.FC<Props> = ({
-  type = 'button',
-  value,
-  looks,
-  loading = false,
-  onClick,
-  style
-}) => {
+const Button: React.FC<Props> = ({ type, value, looks, loading = false }) => {
   return (
-    <button
-      className={`Button ${looks || 'basic'}`}
-      type={type}
-      disabled={loading}
-      style={style}
-      onClick={e => (onClick ? onClick(e) : {})}
-    >
-      {loading ? (
-        <div className='loading'>
-          <div className='container'>
-            <div className='fill' />
-          </div>
-        </div>
-      ) : (
-        value
-      )}
+    <button className={`Button ${looks || 'basic'}`} type={type || undefined}>
+      {value}
     </button>
   );
 };

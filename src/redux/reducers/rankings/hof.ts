@@ -1,21 +1,16 @@
 import { GET_HOF, GET_HOF_FAILED } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
-import HOFState from 'redux/types/rankings/HOFState';
+import Character from 'redux/types/rankings/Character';
 
-const initialState: HOFState = {
-  loading: false,
-  list: null
-};
+const initialState: Character[] | null = null;
 
-const hof = (state = initialState, { type, payload }: ReduxAction) => {
+const hof = (state = initialState, action: ReduxAction) => {
+  const { type, payload } = action;
+
   switch (type) {
     case GET_HOF:
-      return {
-        ...state,
-        list: payload
-      };
+      return payload;
     case GET_HOF_FAILED:
-      return initialState;
     default:
       return state;
   }

@@ -2,10 +2,9 @@ a.menu-link {
   display: block;
   margin: 8px 0 0 20px;
   position: relative;
-  font-size: 14px;
 
-  &:first-of-type {
-    margin: 3px 0 0 20px;
+  :first-of-type {
+    margin: 0 0 0 20px;
   }
 
   &:before {
@@ -13,7 +12,7 @@ a.menu-link {
     position: absolute;
     width: 10px;
     height: 12px;
-    margin: 4px 0 0 -15px;
-    background: url('../../../images/partials/li.png') no-repeat center center;
+    margin-left: -15px;
+    background: url('../../../images/partials/li.png') no-repeat left center;
   }
 }

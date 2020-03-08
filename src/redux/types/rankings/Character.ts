@@ -1,4 +1,4 @@
-import MEMB_STAT from '../user/MEMB_STAT';
+import MEMB_STAT from './MEMB_STAT';
 import AccountCharacter from './AccountCharacter';
 import GuildMember from './GuildMember';
 
