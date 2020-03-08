@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 // Partials
 import Download from 'components/partials/LeftSidebar/Download';
@@ -11,23 +11,19 @@ import TopGuilds from 'components/partials/LeftSidebar/TopGuilds';
 // Types
 import AppState from 'redux/types/app';
 
-interface Props {
-  username: null | string;
-}
+interface Props {}
 
-const LeftSidebar: React.FC<Props> = ({ username }) => {
+const LeftSidebar: React.FC<Props> = () => {
+  const account = useSelector((state: AppState) => state.user.account.info);
+
   return (
     <aside className='LeftSidebar'>
       <Download />
-      {username ? <UserArea /> : <Login />}
+      {account ? <UserArea /> : <Login />}
       <Menu />
       <TopGuilds />
     </aside>
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  username: state.user.username
-});
-
-export default connect(mapStateToProps)(LeftSidebar);
+export default LeftSidebar;

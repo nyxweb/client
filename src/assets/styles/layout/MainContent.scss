@@ -26,6 +26,7 @@
     position: absolute;
   }
 
-  @import 'assets/styles/partials/MainContent/TopPlayers.scss';
   @import 'assets/styles/pages/Router.scss';
+  @import 'assets/styles/partials/MainContent/TopPlayers.scss';
+  @import 'assets/styles/partials/MainContent/UserArea.scss';
 }

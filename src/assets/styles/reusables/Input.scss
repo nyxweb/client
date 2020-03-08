@@ -1,0 +1,35 @@
+.Input {
+  position: relative;
+
+  &.group {
+    display: flex;
+
+    & > input {
+      border-radius: 3px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+      width: 100px;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      -moz-appearance: textfield;
+    }
+
+    & > button {
+      border-radius: 3px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      width: 50px;
+    }
+
+    & > .Resource {
+      position: absolute;
+      top: calc(50% - 10px);
+      right: 55px;
+    }
+  }
+}

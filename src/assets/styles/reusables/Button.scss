@@ -1,58 +1,61 @@
 .Button {
-  padding: 5px 10px;
+  cursor: url('../../images/main/pointer.cur'), pointer;
+  background: url(../../images/partials/button.jpg) no-repeat center
+    center/cover;
   border: none;
   outline: none;
-  border-radius: 5px;
-  font-size: 14px;
+  color: #c3eaee;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 0 15px;
+  display: inline-block;
+  border-radius: 3px;
   transition: 0.3s ease-in-out;
-  background: #f0f0f0;
+  height: 30px;
+  line-height: 30px;
 
   &:hover {
-    background: #dddddd;
+    -webkit-filter: brightness(120%);
+    filter: brightness(120%);
+    text-decoration: none;
   }
 
-  &.default {
-    color: #333333;
-    background: #ffffff;
-    border: 1px solid #cccccc;
+  .loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    &:hover {
-      background: #e6e6e6;
-      border-color: #adadad;
-    }
-  }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 3px;
+      border-radius: 2px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.2);
 
-  &.primary {
-    color: #333333;
-    background: #ffffff;
-    border: 1px solid #cccccc;
+      .fill {
+        position: absolute;
+        background: rgba(9, 73, 116, 0.712);
+        width: 100%;
+        height: 100%;
+        animation: loader 1.5s ease-in-out forwards infinite;
+      }
 
-    &:hover {
-      color: #ffffff;
-      background: #267fce;
-      border-color: #195385;
-    }
-
-    &:active {
-      background: #1b619e;
-      border-color: #113e64;
-    }
-  }
-
-  &.secondary {
-    color: #ffffff;
-    background: #267fce;
-    border: 1px solid #195385;
-
-    &:hover {
-      color: #ffffff;
-      background: #1761a1;
-      border-color: #14426b;
-    }
-
-    &:active {
-      background: #124c7e;
-      border-color: #113e64;
+      @keyframes loader {
+        0% {
+          width: 0%;
+          left: 0;
+        }
+        50% {
+          width: 100%;
+          left: 0;
+        }
+        100% {
+          left: 100%;
+        }
+      }
     }
   }
 }

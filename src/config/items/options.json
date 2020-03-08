@@ -1,0 +1,111 @@
+{
+  "1": [
+    "Increase Mana per kill +8",
+    "Increase hit points per kill +8",
+    "Increase attacking(wizardly)speed +7",
+    "Increase Damage +2%",
+    "Increase Damage +level/20",
+    "Excellent Damage Rate +10%"
+  ],
+  "2": [
+    "Increase Mana per kill +8",
+    "Increase hit points per kill +8",
+    "Increase attacking(wizardly)speed +7",
+    "Increase Wizardy Damage +2%",
+    "Increase Wizardy Damage +level/20",
+    "Excellent Damage Rate +10%"
+  ],
+  "3": [
+    "Increase Zen After Hunt +40%",
+    "Defense success rate +10%",
+    "Reflect damage +5%",
+    "Damage Decrease +4%",
+    "Increase MaxMana +4%",
+    "Increase MaxHP +4%"
+  ],
+  "4": [
+    "Life +{placeholder} Increased",
+    "Mana +{placeholder} Increased",
+    "Ignore enemy's defenses by 3%",
+    "+50 Max Stamina",
+    "Increase Attacking Speed +7",
+    ""
+  ],
+  "5": [
+    "Life +{placeholder} increased",
+    "Mana +{placeholder} increased",
+    "Ignore enemy's defenses by 3%",
+    "Increase command +20",
+    "",
+    ""
+  ],
+  "additional": {
+    "dmg": "Additional Damage",
+    "deff": "Additional Defense",
+    "wiz": "Additional Wizardy Damage",
+    "rec": "Automatic HP Recovery",
+    "mana": "Max mana increase",
+    "dmgwiz": "Additional (Wizardy/Attack) Damage",
+    "arrows": "Increases damage by"
+  },
+  "skills": {
+    "triple": "Triple Shot skill (Mana: 5)",
+    "cyclon": "Cyclone Cutting skill (Mana:9)",
+    "falling": "Falling Slash skill (Mana: 9)",
+    "upper": "Uppercut skill (Mana: 10)",
+    "lunge": "Lunge skill (Mana: 9)",
+    "slashing": "Slashing skill (Mana: 10)",
+    "power": "Power Slash skill (Mana: 15)",
+    "force": "Force Wave skill (Mana: 10)",
+    "defense": "Defense skill (Mana: 30)"
+  },
+  "luck": [
+    "Luck(success rate of Jewel of Soul +25%)",
+    "Luck(critical damage rate +5%)"
+  ],
+  "pink": {
+    "weapon": ["Additional Damage +200", "Attack success rate increase +10"],
+    "helm": [
+      "SD recovery rate increase +20%",
+      "Defense success rate increase +10"
+    ],
+    "armor": ["SD auto recovery", "Defense success rate increase +10"],
+    "pants": ["Defensive skill +200", "Defense success rate increase +10"],
+    "gloves": ["Max. HP increase +200", "Defense success rate increase +10"],
+    "boots": ["Max. SD increase +700", "Defense success rate increase +10"]
+  },
+  "harmony": {
+    "staffs": [
+      "Magic Power Increase",
+      "Required Strength Decrease",
+      "Required Agility Decrease",
+      "Skill Attack Power Increase",
+      "Critical Damage Increase",
+      "SD Decrement Increase",
+      "Attack Success Rate Increase",
+      "SD bypass Rate Increase"
+    ],
+    "weapons": [
+      "Minimum Attack Power Increase",
+      "Maximum Attack Power Increase",
+      "Required Strength Decrease",
+      "Required Agility Decrease",
+      "Attack Power Increase(Min, Max)",
+      "Critical Damage Increase",
+      "Skill Attack Power Increase",
+      "Attack Success Rate Increase",
+      "SD decrement Increase",
+      "SD bypass Rate Increase"
+    ],
+    "items": [
+      "Defense Power Increase",
+      "Maximum AG Increase",
+      "Maximum HP Increase",
+      "HP Automatic Rate Increase",
+      "MP Automatic Rate Increase",
+      "Defense Success Rate Increase",
+      "Damage Decrease Rate Increase",
+      "SD Rate Increase"
+    ]
+  }
+}
