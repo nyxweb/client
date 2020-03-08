@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 // Partials
 import ContentBlock from 'components/partials/RightSidebar/ContentBlock';
@@ -7,32 +7,20 @@ import ContentBlock from 'components/partials/RightSidebar/ContentBlock';
 // Reusables
 import ReactLoader from 'components/reusables/ReactLoader';
 
-// Actions
-import getEvents from 'actions/others/getEvents';
-
 // Types
 import AppState from 'redux/types/app';
 import Event from 'redux/types/others/Event';
 
-interface Props {
-  events: Event[];
-  getEvents: Function;
-}
+interface Props {}
 
-const EventTimers: React.FC<Props> = ({ events, getEvents }) => {
-  useEffect(() => {
-    getEvents();
-  }, [getEvents]);
+const EventTimers: React.FC<Props> = () => {
+  const events = useSelector((state: AppState) => state.config.events);
 
   return (
     <ContentBlock title='server events' desc='server events schedule'>
       <div className='EventTimers'>
         {!events ? (
-          events === null ? (
-            <ReactLoader />
-          ) : (
-            'Failed to load'
-          )
+          <ReactLoader />
         ) : events.length ? (
           events.map((event: Event, i: number) => (
             <EventCard key={i} event={event} />
@@ -103,8 +91,4 @@ const EventCard: React.FC<EventProps> = ({ event: { name, hours } }) => {
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  events: state.others.events
-});
-
-export default connect(mapStateToProps, { getEvents })(EventTimers);
+export default EventTimers;

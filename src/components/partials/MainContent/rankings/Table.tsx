@@ -14,7 +14,7 @@ interface Props {
 
 const Table: React.FC<Props> = ({ characters, page, setPage }) => {
   return (
-    <table>
+    <table className='Table'>
       <thead>
         <tr>
           <th>#</th>

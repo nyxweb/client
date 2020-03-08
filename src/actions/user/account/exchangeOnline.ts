@@ -1,7 +1,11 @@
 import axios from 'axios';
 
 // Types
-import { SET_ACCOUNT_LOADER } from 'redux/types/actions';
+import {
+  SET_ONLINE,
+  SET_CREDITS,
+  SET_ACCOUNT_LOADER
+} from 'redux/types/actions';
 
 // Redux
 import AppState from 'redux/types/app';
@@ -11,18 +15,12 @@ import { ThunkAction } from 'redux-thunk';
 // Actions
 import { notice } from 'actions/utils';
 
-interface Form {
-  password: string;
-  newPassword: string;
-  newRePassword: string;
-}
-
-const changePassword: ActionCreator<ThunkAction<
+const exchangeOnline: ActionCreator<ThunkAction<
   void,
   AppState,
   any,
   Action
->> = (form: Form) => async dispatch => {
+>> = () => async dispatch => {
   dispatch({
     type: SET_ACCOUNT_LOADER,
     payload: true
@@ -30,9 +28,18 @@ const changePassword: ActionCreator<ThunkAction<
 
   try {
     const { data } = await axios.patch(
-      process.env.REACT_APP_API_URI + '/user/account/password',
-      form
+      process.env.REACT_APP_API_URI + '/user/account/online'
     );
+
+    dispatch({
+      type: SET_ONLINE,
+      payload: data.status
+    });
+
+    dispatch({
+      type: SET_CREDITS,
+      payload: data.credits
+    });
 
     notice(data);
   } catch (error) {
@@ -45,4 +52,4 @@ const changePassword: ActionCreator<ThunkAction<
   });
 };
 
-export default changePassword;
+export default exchangeOnline;

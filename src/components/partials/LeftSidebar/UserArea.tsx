@@ -4,6 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // Reusables
 import Resource from 'components/reusables/particles/Resource';
+import Button from 'components/reusables/form/Button';
+
+// Icons
+import { ReactComponent as CreditsIcon } from 'assets/icons/credits.svg';
+import { ReactComponent as MoneyIcon } from 'assets/icons/money.svg';
 
 // Actions
 import { logout } from 'actions/user';
@@ -25,8 +30,6 @@ const UserArea: React.FC<Props> = () => {
     setResources(JSON.parse(account!.resources.list));
   }, [account]);
 
-  const doLogout = () => dispatch(logout());
-
   return (
     <div className='UserArea'>
       <div className='welcome'>
@@ -37,12 +40,24 @@ const UserArea: React.FC<Props> = () => {
         >
           {account!.memb___id}
         </span>
-        <button onClick={doLogout}>Logout</button>
+        <Button
+          value='logout'
+          onClick={() => dispatch(logout())}
+          style={{ width: 80 }}
+        />
       </div>
       <div className='resources'>
         {resources.map((res: IResource, i: number) => (
           <Resource key={i} name={res.name} value={res.value} />
         ))}
+        <div className='main'>
+          <div className='block credits'>
+            <CreditsIcon /> {account?.resources.credits.toLocaleString()}
+          </div>
+          <div className='block money'>
+            <MoneyIcon /> {account?.resources.zen.toLocaleString()}
+          </div>
+        </div>
       </div>
       <div className='menu'>
         <div className='section'>

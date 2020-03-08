@@ -4,6 +4,7 @@ import warehouse from './warehouse';
 
 export default interface AccountState {
   loading: boolean;
+  verified: null | boolean;
 
   info: {
     memb___id: string;
@@ -22,6 +23,12 @@ export default interface AccountState {
   } | null;
 
   vip: {} | null;
-  online: {} | null;
-  logs: {} | null;
+  logs:
+    | {
+        message: string;
+        module: string;
+        timestamp: number;
+        ip: string;
+      }[]
+    | null;
 }

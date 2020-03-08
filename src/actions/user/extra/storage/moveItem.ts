@@ -4,12 +4,14 @@ import axios from 'axios';
 import { notice } from 'actions/utils';
 
 // Types
-import { WAREHOUSE_UPDATE, STORAGE_UPDATE } from 'redux/types/actions';
+import {
+  WAREHOUSE_UPDATE,
+  STORAGE_UPDATE,
+  SET_ACCOUNT_LOADER
+} from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
-
-import store from 'redux/store';
 
 const moveItem: ActionCreator<ThunkAction<
   Promise<any>,
@@ -17,64 +19,39 @@ const moveItem: ActionCreator<ThunkAction<
   any,
   Action
 >> = ({ itemSlot, newSlot, from, to }) => async dispatch => {
+  dispatch({
+    type: SET_ACCOUNT_LOADER,
+    payload: true
+  });
+
   try {
-    const {
-      warehouse: { items: warehouse },
-      resources: { items: storage }
-    } = store.getState().user.account.info;
-
-    const item = (from === 'warehouse' ? warehouse : storage).substr(
-      itemSlot * 32,
-      32
-    );
-
-    let updatedWarehouse = warehouse;
-    let updatedStorage = storage;
-
-    if (from === 'warehouse') {
-      updatedWarehouse = warehouse.replace(item, 'f'.repeat(32));
-
-      if (to === 'storage') {
-        updatedStorage = storage + item;
-      } else {
-        updatedWarehouse =
-          updatedWarehouse.slice(0, newSlot * 32) +
-          item +
-          updatedWarehouse.slice((newSlot + 1) * 32);
+    const { data } = await axios.patch(
+      process.env.REACT_APP_API_URI + '/user/extra/storage/moveitem',
+      {
+        itemSlot,
+        newSlot,
+        from,
+        to
       }
-    } else {
-      if (to === 'warehouse') {
-        updatedWarehouse =
-          warehouse.slice(0, newSlot * 32) +
-          item +
-          warehouse.slice((newSlot + 1) * 32);
-
-        updatedStorage = storage.replace(item, '');
-      } else return;
-    }
+    );
 
     dispatch({
       type: WAREHOUSE_UPDATE,
-      payload: updatedWarehouse
+      payload: data.warehouse
     });
 
     dispatch({
       type: STORAGE_UPDATE,
-      payload: updatedStorage
+      payload: data.storage
     });
-
-    // await axios.patch(
-    //   process.env.REACT_APP_API_URI + '/user/extra/storage/moveitem',
-    //   {
-    //     itemSlot,
-    //     newSlot,
-    //     area
-    //   }
-    // );
   } catch (error) {
-    console.log(error.message);
     notice(error);
   }
+
+  dispatch({
+    type: SET_ACCOUNT_LOADER,
+    payload: false
+  });
 };
 
 export default moveItem;

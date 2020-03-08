@@ -33,7 +33,7 @@ const Password: React.FC<Props> = () => {
           <div className='title'>Current Password</div>
           <input
             className='field'
-            type='text'
+            type='password'
             name='password'
             placeholder='letters and digits only'
             value={form.password}
@@ -44,7 +44,7 @@ const Password: React.FC<Props> = () => {
           <div className='title'>New Password</div>
           <input
             className='field'
-            type='text'
+            type='password'
             name='newPassword'
             placeholder='letters and digits only'
             value={form.newPassword}
@@ -55,7 +55,7 @@ const Password: React.FC<Props> = () => {
           <div className='title'>Repeat Password</div>
           <input
             className='field'
-            type='text'
+            type='password'
             name='newRePassword'
             placeholder='repeat password'
             value={form.newRePassword}

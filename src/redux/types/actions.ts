@@ -4,7 +4,12 @@ export const LOGIN_FAILED = 'LOGIN_FAILED';
 export const LOGOUT = 'LOGOUT';
 
 // User -> Account
+export const SET_CREDITS = 'SET_CREDITS';
 export const SET_ACCOUNT_LOADER = 'SET_ACCOUNT_LOADER';
+export const SET_LOGS = 'SET_LOGS';
+export const CLEAR_LOGS = 'CLEAR_LOGS';
+export const SET_ONLINE = 'SET_ONLINE';
+export const SET_ACCOUNT_INFO = 'SET_ACCOUNT_INFO';
 
 // User -> Character
 export const SET_CHARACTER_LOADER = 'SET_CHARACTER_LOADER';
@@ -30,5 +35,4 @@ export const MARKET_LATEST = 'MARKET_LATEST';
 export const MARKET_LATEST_FAILED = 'MARKET_LATEST_FAILED';
 
 // Config
-export const CONFIG_EVENTS = 'CONFIG_EVENTS';
-export const CONFIG_EVENTS_FAILED = 'CONFIG_EVENTS_FAILED';
+export const SET_CONFIG = 'SET_CONFIG';

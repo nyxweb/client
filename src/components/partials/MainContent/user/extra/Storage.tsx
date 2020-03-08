@@ -31,7 +31,7 @@ const Storage: React.FC<Props> = () => {
 
   return (
     <div className='Storage'>
-      {!account.info ? (
+      {!account.info || account.loading ? (
         <Loader />
       ) : (
         <>

@@ -74,7 +74,11 @@ const Warehouse: React.FC<Props> = ({
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (items && items.length) setHexArray(items.match(/.{32}/g));
+    if (items && items.length) setHexArray(items.match(/[a-f0-9]{32}/gi));
+    else {
+      setHexArray([]);
+      setItemsList([]);
+    }
   }, [items]);
 
   const itemsDB: any = list;
@@ -152,7 +156,7 @@ const Warehouse: React.FC<Props> = ({
     ) {
       setContainerStyle({
         ...containerStyle,
-        border: '1px dashed red'
+        border: '1px dashed #157362'
       });
     } else {
       const style = { ...containerStyle };
@@ -244,6 +248,7 @@ const Warehouse: React.FC<Props> = ({
 
   // EventListeners
   const onItemDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    clearSlots();
     const target = e.target as HTMLDivElement;
     const slot = target.dataset.slot;
 
@@ -256,6 +261,13 @@ const Warehouse: React.FC<Props> = ({
           to: dragItem.to
         })
       );
+    }
+
+    if (setDragItem) {
+      setDragItem({
+        ...dragItem!,
+        dragging: false
+      });
     }
   };
 

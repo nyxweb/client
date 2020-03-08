@@ -5,16 +5,20 @@ import {
   LOGOUT,
   WAREHOUSE_UNLOCK,
   WAREHOUSE_UPDATE,
-  STORAGE_UPDATE
+  STORAGE_UPDATE,
+  SET_LOGS,
+  CLEAR_LOGS,
+  SET_ONLINE,
+  SET_CREDITS
 } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
 import AccountState from 'redux/types/user/AccountState';
 
 const initialState: AccountState = {
   loading: false,
+  verified: null,
   info: null,
   logs: null,
-  online: null,
   vip: null
 };
 
@@ -28,7 +32,13 @@ const account = (state = initialState, { type, payload }: ReduxAction) => {
     case LOGIN:
       return {
         ...state,
+        verified: true,
         info: payload
+      };
+    case LOGIN_FAILED:
+      return {
+        ...initialState,
+        verified: false
       };
     case WAREHOUSE_UPDATE:
       return {
@@ -63,9 +73,37 @@ const account = (state = initialState, { type, payload }: ReduxAction) => {
           }
         }
       };
+    case SET_LOGS:
+      return {
+        ...state,
+        logs: payload
+      };
+    case CLEAR_LOGS:
+      return {
+        ...state,
+        logs: null
+      };
+    case SET_ONLINE:
+      return {
+        ...state,
+        info: {
+          ...state.info,
+          status: payload
+        }
+      };
+    case SET_CREDITS:
+      return {
+        ...state,
+        info: {
+          ...state.info,
+          resources: {
+            ...state.info?.resources,
+            credits: payload
+          }
+        }
+      };
     case LOGOUT:
       return initialState;
-    case LOGIN_FAILED:
     default:
       return state;
   }

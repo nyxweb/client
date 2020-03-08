@@ -63,7 +63,7 @@ const Auction: React.FC<Props> = () => {
         <div className='Input group'>
           <Resource name='bless' value={false} margin={0} size={20} />
           <input type='number' />
-          <Button value='bid' />
+          <Button value='bid' style={{ width: 50 }} />
         </div>
       </div>
     </div>

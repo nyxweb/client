@@ -11,7 +11,7 @@ const userVerification: ActionCreator<ThunkAction<
   AppState,
   any,
   Action
->> = loading => async dispatch => {
+>> = () => async dispatch => {
   try {
     if (localStorage.nyxToken) {
       const { data } = await axios.post(
@@ -28,8 +28,6 @@ const userVerification: ActionCreator<ThunkAction<
       type: LOGOUT
     });
   }
-
-  loading(false);
 };
 
 export default userVerification;

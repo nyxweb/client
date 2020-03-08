@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Types
-import { SET_ACCOUNT_LOADER } from 'redux/types/actions';
+import { SET_LOGS, SET_ACCOUNT_LOADER } from 'redux/types/actions';
 
 // Redux
 import AppState from 'redux/types/app';
@@ -11,30 +11,26 @@ import { ThunkAction } from 'redux-thunk';
 // Actions
 import { notice } from 'actions/utils';
 
-interface Form {
-  password: string;
-  newPassword: string;
-  newRePassword: string;
-}
-
-const changePassword: ActionCreator<ThunkAction<
+const getLogs: ActionCreator<ThunkAction<
   void,
   AppState,
   any,
   Action
->> = (form: Form) => async dispatch => {
+>> = () => async dispatch => {
   dispatch({
     type: SET_ACCOUNT_LOADER,
     payload: true
   });
 
   try {
-    const { data } = await axios.patch(
-      process.env.REACT_APP_API_URI + '/user/account/password',
-      form
+    const { data } = await axios.get(
+      process.env.REACT_APP_API_URI + '/user/account/logs'
     );
 
-    notice(data);
+    dispatch({
+      type: SET_LOGS,
+      payload: data
+    });
   } catch (error) {
     notice(error);
   }
@@ -45,4 +41,4 @@ const changePassword: ActionCreator<ThunkAction<
   });
 };
 
-export default changePassword;
+export default getLogs;
