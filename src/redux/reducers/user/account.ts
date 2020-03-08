@@ -103,7 +103,7 @@ const account = (state = initialState, { type, payload }: ReduxAction) => {
         }
       };
     case LOGOUT:
-      return initialState;
+      return { ...initialState, verified: false };
     default:
       return state;
   }
