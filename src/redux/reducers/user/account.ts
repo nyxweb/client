@@ -9,7 +9,8 @@ import {
   SET_LOGS,
   CLEAR_LOGS,
   SET_ONLINE,
-  SET_CREDITS
+  SET_CREDITS,
+  SET_ACCOUNT_INFO
 } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
 import AccountState from 'redux/types/user/AccountState';
@@ -18,8 +19,7 @@ const initialState: AccountState = {
   loading: false,
   verified: null,
   info: null,
-  logs: null,
-  vip: null
+  logs: null
 };
 
 const account = (state = initialState, { type, payload }: ReduxAction) => {
@@ -100,6 +100,14 @@ const account = (state = initialState, { type, payload }: ReduxAction) => {
             ...state.info?.resources,
             credits: payload
           }
+        }
+      };
+    case SET_ACCOUNT_INFO:
+      return {
+        ...state,
+        info: {
+          ...state.info,
+          ...payload
         }
       };
     case LOGOUT:

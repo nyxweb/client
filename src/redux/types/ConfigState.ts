@@ -6,6 +6,7 @@ export default interface ConfigState {
       }[]
     | null;
   online_time: number | null;
+  vip: number | null;
   reset: {
     max_reset: number;
     reset_level: number;

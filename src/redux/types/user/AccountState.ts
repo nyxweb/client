@@ -22,7 +22,6 @@ export default interface AccountState {
     warehouse: warehouse;
   } | null;
 
-  vip: {} | null;
   logs:
     | {
         message: string;

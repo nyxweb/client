@@ -5,6 +5,7 @@ import ConfigState from '../types/ConfigState';
 const initialState: ConfigState = {
   events: null,
   online_time: null,
+  vip: null,
   reset: null
 };
 

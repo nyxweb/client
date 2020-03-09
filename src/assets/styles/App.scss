@@ -26,29 +26,14 @@ a {
   cursor: url('../images/main/pointer.cur'), pointer;
 }
 
-a:hover
-// button:hover 
- {
+a:hover {
   -webkit-filter: brightness(120%);
   filter: brightness(120%);
   text-decoration: none;
 }
 
-// button {
-//   transition: all 0.3s ease;
-//   cursor: url('../images/main/pointer.cur'), pointer;
-//   background: url(../images/partials/button.jpg) no-repeat center center/cover;
-//   border: none;
-//   outline: none;
-//   color: #c3eaee;
-//   text-transform: uppercase;
-//   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-//   padding: 7px 15px;
-//   display: inline-block;
-//   border-radius: 3px;
-// }
-
-input {
+input,
+select {
   background-color: #131f2d;
   border: 1px solid #2c3545;
   color: #7d8a9f;

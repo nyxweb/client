@@ -25,25 +25,27 @@ const moveItem: ActionCreator<ThunkAction<
   });
 
   try {
-    const { data } = await axios.patch(
-      process.env.REACT_APP_API_URI + '/user/extra/storage/moveitem',
-      {
-        itemSlot,
-        newSlot,
-        from,
-        to
-      }
-    );
+    if (from !== to || (from === to && from !== 'storage')) {
+      const { data } = await axios.patch(
+        process.env.REACT_APP_API_URI + '/user/extra/storage/moveitem',
+        {
+          itemSlot,
+          newSlot,
+          from,
+          to
+        }
+      );
 
-    dispatch({
-      type: WAREHOUSE_UPDATE,
-      payload: data.warehouse
-    });
+      dispatch({
+        type: WAREHOUSE_UPDATE,
+        payload: data.warehouse
+      });
 
-    dispatch({
-      type: STORAGE_UPDATE,
-      payload: data.storage
-    });
+      dispatch({
+        type: STORAGE_UPDATE,
+        payload: data.storage
+      });
+    }
   } catch (error) {
     notice(error);
   }

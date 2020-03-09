@@ -1,2 +1,39 @@
 .VIP {
+  margin: 20px;
+  padding: 15px;
+  background: rgba(63, 85, 114, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+
+  .head {
+    font-size: 20px;
+    text-align: center;
+
+    time {
+      padding: 5px 10px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+  }
+
+  .content {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+
+    select {
+      margin-right: 10px;
+    }
+  }
+
+  .info {
+    .title {
+      font-size: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    margin-top: 20px;
+    padding: 10px 0 10px 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
 }
