@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+// Reusables
+import Button from 'components/reusables/form/Button';
+
 // Actions
 import { register } from 'actions/user';
 
@@ -72,7 +75,7 @@ const Register: React.FC<Props> = () => {
           />
         </div>
         <div className='row center'>
-          <button>Register</button>
+          <Button type='submit' value='register' />
         </div>
       </form>
     </div>

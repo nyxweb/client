@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-// Actions
-import { notice } from 'actions/utils';
-
 // Types
-import { SET_CONFIG } from 'redux/types/actions';
+import { SET_CONFIG, SET_CONFIG_FAILED } from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
@@ -23,7 +20,9 @@ const getConfig: ActionCreator<ThunkAction<
       payload: data
     });
   } catch (error) {
-    notice(error);
+    dispatch({
+      type: SET_CONFIG_FAILED
+    });
   }
 };
 

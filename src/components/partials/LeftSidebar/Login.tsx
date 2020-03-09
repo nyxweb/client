@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// Reusables
+import Button from 'components/reusables/form/Button';
+
 // Redux
 import { connect } from 'react-redux';
 
@@ -49,7 +52,7 @@ const Login: React.FC<Props> = ({ userLogin }) => {
           value={form.password}
           onChange={typer}
         />
-        <button>login</button>
+        <Button type='submit' value='login' />
       </form>
       <Link to='/forgot-password'>Recover your lost Password!</Link>
     </div>

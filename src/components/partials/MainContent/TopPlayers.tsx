@@ -26,14 +26,12 @@ const TopPlayers: React.FC<Props & RouteComponentProps> = ({ history }) => {
 
   return (
     <div className='TopPlayers'>
-      {!hof.list || hof.loading ? (
+      {hof.loading ? (
         <ReactLoader />
-      ) : hof.list.length ? (
-        hof.list.map((char, i: number) => (
+      ) : (
+        hof.list!.map((char, i: number) => (
           <CharacterCard key={i} char={char} history={history} />
         ))
-      ) : (
-        <div>No characters</div>
       )}
     </div>
   );

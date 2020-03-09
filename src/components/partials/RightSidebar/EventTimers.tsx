@@ -19,14 +19,14 @@ const EventTimers: React.FC<Props> = () => {
   return (
     <ContentBlock title='server events' desc='server events schedule'>
       <div className='EventTimers'>
-        {!events ? (
+        {events === null ? (
           <ReactLoader />
-        ) : events.length ? (
+        ) : events === false ? (
+          'Failed to load'
+        ) : (
           events.map((event: Event, i: number) => (
             <EventCard key={i} event={event} />
           ))
-        ) : (
-          'No data'
         )}
       </div>
     </ContentBlock>

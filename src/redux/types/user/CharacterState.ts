@@ -1,7 +1,6 @@
+import Character from '../rankings/Character';
+
 export default interface CharacterState {
   loading: boolean;
-  reset: {} | null;
-  stats: {} | null;
-  name: {} | null;
-  class: {} | null;
+  list: Character[] | null;
 }
