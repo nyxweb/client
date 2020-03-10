@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Types
-import { LOGIN, LOGOUT } from 'redux/types/actions';
+import { LOGIN, LOGIN_FAILED, LOGOUT } from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
@@ -22,10 +22,18 @@ const userVerification: ActionCreator<ThunkAction<
         type: LOGIN,
         payload: data
       });
+    } else {
+      dispatch({
+        type: LOGIN_FAILED
+      });
     }
   } catch (error) {
     dispatch({
       type: LOGOUT
+    });
+
+    dispatch({
+      type: LOGIN_FAILED
     });
   }
 };

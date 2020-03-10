@@ -40,7 +40,7 @@ const Logs: React.FC<Props> = () => {
             <tr>
               <th>#</th>
               <th>module</th>
-              <th>message</th>
+              <th>log</th>
               <th>time</th>
               <th>ip</th>
             </tr>
@@ -49,14 +49,16 @@ const Logs: React.FC<Props> = () => {
             {logs.map((log, i) => (
               <tr key={i}>
                 <td>{i + 1}</td>
-                <td>{log.module ? log.module : 'unknown'}</td>
-                <td>{log.message}</td>
-                <td>
+                <td style={{ textAlign: 'left' }}>
+                  {log.module ? log.module : 'unknown'}
+                </td>
+                <td style={{ textAlign: 'left' }}>{log.message}</td>
+                <td style={{ textAlign: 'right' }}>
                   <Moment fromNow unix>
                     {log.timestamp / 1000}
                   </Moment>
                 </td>
-                <td>{log.ip}</td>
+                <td style={{ textAlign: 'right' }}>{log.ip}</td>
               </tr>
             ))}
           </tbody>

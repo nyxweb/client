@@ -17,7 +17,7 @@ const userLogin: ActionCreator<ThunkAction<
 >> = ({ username, password }) => async dispatch => {
   try {
     const { data } = await axios.post(
-      process.env.REACT_APP_API_URI + '/users/auth',
+      process.env.REACT_APP_API_URI + '/user/account/auth',
       {
         username,
         password
