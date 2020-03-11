@@ -12,8 +12,8 @@ const RightSidebar: React.FC<Props> = () => {
   return (
     <aside className='RightSidebar'>
       <Status />
-      <Auction />
       <Market />
+      <Auction />
       <EventTimers />
     </aside>
   );

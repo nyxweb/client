@@ -49,7 +49,7 @@ const VIP: React.FC<Props> = () => {
                 </span>
               </div>
             ) : (
-              `You are currently not a VIP.`
+              `You are currently not a VIP`
             )}
           </div>
           <div className='content'>

@@ -2,17 +2,17 @@
   display: flex;
   align-items: center;
 
-  & .guild {
+  .guild {
     flex: 1;
     text-align: right;
     padding-right: 5px;
   }
 
-  & .name {
+  .name {
     flex: 1;
     text-align: left;
 
-    & a {
+    a {
       color: goldenrod;
     }
 

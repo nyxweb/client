@@ -48,6 +48,10 @@ select {
   width: 1200px;
   margin: 0 auto;
 
+  span.highlight {
+    color: #c8ddf1;
+  }
+
   // Layout
   @import 'assets/styles/layout/Navbar.scss';
   @import 'assets/styles/layout/Header.scss';
