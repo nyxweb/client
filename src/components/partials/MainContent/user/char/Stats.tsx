@@ -21,6 +21,7 @@ interface Props {}
 
 const Stats: React.FC<Props> = () => {
   const [char, setChar] = useState<Character>();
+  const [pointsLeft, setPointsLeft] = useState<number>();
 
   const initialStats = {
     Strength: 0,
@@ -44,17 +45,34 @@ const Stats: React.FC<Props> = () => {
   const onChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const find = list && list.find(c => c.Name === e.target.value);
     setChar(find ? find : undefined);
+    setPointsLeft(find ? find.LevelUpPoint : 0);
     setForm(initialStats);
   };
 
   const typer = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
+    if (!char) return;
 
-    if (typeof value === 'number' && value >= 0 && value <= 65000) {
+    const value = Number(e.target.value);
+    const sum =
+      form.Strength +
+      form.Dexterity +
+      form.Vitality +
+      form.Energy +
+      form.Leadership +
+      value;
+
+    if (
+      typeof value === 'number' &&
+      value >= 0 &&
+      value <= 65000 &&
+      char.LevelUpPoint >= sum
+    ) {
       setForm({
         ...form,
         [e.target.name]: value
       });
+
+      setPointsLeft(char.LevelUpPoint - sum);
     }
   };
 
@@ -87,32 +105,62 @@ const Stats: React.FC<Props> = () => {
                           <tr>
                             <td>Strength</td>
                             <td>
-                              <input disabled value={char.Strength} />
+                              <span
+                                className={`shadow ${
+                                  !!form.Strength ? 'added' : ''
+                                }`}
+                              >
+                                {char.Strength + form.Strength}
+                              </span>
                             </td>
                           </tr>
                           <tr>
                             <td>Agility</td>
                             <td>
-                              <input disabled value={char.Dexterity} />
+                              <span
+                                className={`shadow ${
+                                  !!form.Dexterity ? 'added' : ''
+                                }`}
+                              >
+                                {char.Dexterity + form.Dexterity}
+                              </span>
                             </td>
                           </tr>
                           <tr>
                             <td>Vitality</td>
                             <td>
-                              <input disabled value={char.Vitality} />
+                              <span
+                                className={`shadow ${
+                                  !!form.Vitality ? 'added' : ''
+                                }`}
+                              >
+                                {char.Vitality + form.Vitality}
+                              </span>
                             </td>
                           </tr>
                           <tr>
                             <td>Energy</td>
                             <td>
-                              <input disabled value={char.Energy} />
+                              <span
+                                className={`shadow ${
+                                  !!form.Energy ? 'added' : ''
+                                }`}
+                              >
+                                {char.Energy + form.Energy}
+                              </span>
                             </td>
                           </tr>
                           {[64, 65].includes(char.Class) && (
                             <tr>
                               <td>Command</td>
                               <td>
-                                <input disabled value={char.Leadership} />
+                                <span
+                                  className={`shadow ${
+                                    !!form.Leadership ? 'added' : ''
+                                  }`}
+                                >
+                                  {char.Leadership + form.Leadership}
+                                </span>
                               </td>
                             </tr>
                           )}
@@ -125,78 +173,88 @@ const Stats: React.FC<Props> = () => {
                     </div>
                   )}
                 </div>
-
-                <table className='Table characters'>
-                  <tbody>
-                    <tr>
-                      <td>Strength</td>
-                      <td>
-                        <input
-                          type='number'
-                          name='Strength'
-                          min={0}
-                          max={65000}
-                          onChange={typer}
-                          value={form.Strength}
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Agility</td>
-                      <td>
-                        <input
-                          type='number'
-                          name='Dexterity'
-                          min={0}
-                          max={65000}
-                          onChange={typer}
-                          value={form.Dexterity}
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Vitality</td>
-                      <td>
-                        <input
-                          type='number'
-                          name='Vitality'
-                          min={0}
-                          max={65000}
-                          onChange={typer}
-                          value={form.Vitality}
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Energy</td>
-                      <td>
-                        <input
-                          type='number'
-                          name='Energy'
-                          min={0}
-                          max={65000}
-                          onChange={typer}
-                          value={form.Energy}
-                        />
-                      </td>
-                    </tr>
-                    {char && [64, 65].includes(char.Class) && (
-                      <tr>
-                        <td>Command</td>
-                        <td>
-                          <input
-                            type='number'
-                            name='Leadership'
-                            min={0}
-                            max={65000}
-                            onChange={typer}
-                            value={form.Leadership}
-                          />
-                        </td>
-                      </tr>
-                    )}
-                  </tbody>
-                </table>
+                <div className='stats-adder'>
+                  <div className='points-left'>
+                    Points left&nbsp;
+                    <span className='shadow'>{pointsLeft || '-'}</span>
+                  </div>
+                  <div className='stats'>
+                    <table className='Table characters'>
+                      <tbody>
+                        <tr>
+                          <td>Strength</td>
+                          <td>
+                            <input
+                              type='number'
+                              name='Strength'
+                              min={0}
+                              max={65000}
+                              onChange={typer}
+                              value={form.Strength || ''}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Agility</td>
+                          <td>
+                            <input
+                              type='number'
+                              name='Dexterity'
+                              min={0}
+                              max={65000}
+                              onChange={typer}
+                              value={form.Dexterity || ''}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Vitality</td>
+                          <td>
+                            <input
+                              type='number'
+                              name='Vitality'
+                              min={0}
+                              max={65000}
+                              onChange={typer}
+                              value={form.Vitality || ''}
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Energy</td>
+                          <td>
+                            <input
+                              type='number'
+                              name='Energy'
+                              min={0}
+                              max={65000}
+                              onChange={typer}
+                              value={form.Energy || ''}
+                            />
+                          </td>
+                        </tr>
+                        {char && [64, 65].includes(char.Class) && (
+                          <tr>
+                            <td>Command</td>
+                            <td>
+                              <input
+                                type='number'
+                                name='Leadership'
+                                min={0}
+                                max={65000}
+                                onChange={typer}
+                                value={form.Leadership || ''}
+                              />
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className='save-button'>
+                    <Button value='save stats' />
+                  </div>
+                </div>
               </div>
             )}
           </div>
