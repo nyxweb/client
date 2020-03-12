@@ -10,7 +10,6 @@ import { getLogs } from 'actions/user/account';
 
 // Types
 import AppState from 'redux/types/app';
-import { CLEAR_LOGS } from 'redux/types/actions';
 
 interface Props {}
 
@@ -22,13 +21,7 @@ const Logs: React.FC<Props> = () => {
 
   useEffect(() => {
     dispatch(getLogs());
-
-    return () => {
-      dispatch({
-        type: CLEAR_LOGS
-      });
-    };
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className='Logs'>

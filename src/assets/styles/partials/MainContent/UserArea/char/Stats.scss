@@ -1,2 +1,70 @@
 .Stats {
+  margin: 20px;
+  padding: 15px;
+  background: rgba(63, 85, 114, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+
+  .content {
+    display: flex;
+    justify-content: center;
+
+    .no-data {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .main {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 50% 50%;
+
+      .char-list,
+      .Table {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      .char-list {
+        display: grid;
+        grid-template-rows: 60px 1fr;
+        width: calc(100% - 15px);
+
+        .select {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          select {
+            width: calc(100% - 30px);
+          }
+        }
+
+        .text {
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .char-preview {
+          padding: 0 15px 15px 15px;
+
+          input {
+            width: 70px;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    .title {
+      font-size: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    margin-top: 15px;
+    padding: 10px 0 10px 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
 }

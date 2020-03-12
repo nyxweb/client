@@ -23,7 +23,7 @@ const Online: React.FC<Props> = () => {
 
   useEffect(() => {
     dispatch(getOnline());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className='Online'>

@@ -28,7 +28,7 @@ const VIP: React.FC<Props> = () => {
 
   useEffect(() => {
     dispatch(getVIP());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className='VIP'>

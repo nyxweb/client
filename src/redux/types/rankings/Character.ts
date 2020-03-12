@@ -8,6 +8,12 @@ export default interface Character {
   Class: number;
   Experience: number;
   Money: number;
+  LevelUpPoint: number;
+  Strength: number;
+  Dexterity: number;
+  Vitality: number;
+  Energy: number;
+  Leadership: number;
   MapNumber: number;
   PkCount: number;
   PkLevel: number;

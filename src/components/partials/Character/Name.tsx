@@ -9,7 +9,7 @@ interface Props {
     | Character
     | {
         Name: string;
-        status: { ConnectStat: number };
+        status: { ConnectStat: number } | boolean;
         account: { GameIDC: string };
         guild_memb: { G_Name: string };
       };
@@ -18,12 +18,13 @@ interface Props {
 
 const Name: React.FC<Props> = ({ char, guild = true }) => {
   const status =
-    !char.status ||
-    !char.account ||
-    char.status.ConnectStat !== 1 ||
-    char.account.GameIDC !== char.Name
-      ? 'offline'
-      : 'online';
+    char.status === true ||
+    (char.status &&
+      char.account &&
+      char.status.ConnectStat === 1 &&
+      char.account.GameIDC === char.Name)
+      ? 'online'
+      : 'offline';
 
   return (
     <div className='CharacterName'>
