@@ -12,7 +12,7 @@ interface Props {
 const register = async (form: Props) => {
   try {
     const { data } = await axios.post(
-      process.env.REACT_APP_API_URI + '/users',
+      process.env.REACT_APP_API_URI + '/user/account',
       form
     );
 
