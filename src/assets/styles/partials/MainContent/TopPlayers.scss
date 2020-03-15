@@ -14,6 +14,13 @@
     flex-direction: column;
     align-items: center;
 
+    &:hover {
+      .card {
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+        transform: scale(1.07) rotate(-0.01turn);
+      }
+    }
+
     .CharacterName {
       margin-top: 5px;
     }
@@ -27,10 +34,6 @@
       box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
       cursor: url('../../../images/main/pointer.cur'), pointer;
       transition: 0.2s ease-in-out;
-
-      &:hover {
-        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-      }
 
       &.sm {
         background-image: url('../../../images/classes/sm.gif');

@@ -8,9 +8,6 @@ import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 
-// Actions
-import { notice } from 'actions/utils';
-
 const getChars: ActionCreator<ThunkAction<
   void,
   AppState,

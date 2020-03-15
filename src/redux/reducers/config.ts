@@ -6,7 +6,8 @@ const initialState: ConfigState = {
   events: null,
   online_time: null,
   vip: null,
-  reset: null
+  reset: null,
+  stats: null
 };
 
 const events = (state = initialState, action: ReduxAction) => {
@@ -20,7 +21,8 @@ const events = (state = initialState, action: ReduxAction) => {
         events: false,
         online_time: false,
         vip: false,
-        reset: false
+        reset: false,
+        stats: false
       };
     default:
       return state;

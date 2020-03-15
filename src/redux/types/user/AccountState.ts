@@ -3,6 +3,7 @@ import _nyxResources from './_nyxResources';
 import warehouse from './warehouse';
 
 export default interface AccountState {
+  loginLoader: boolean;
   loading: boolean;
   verified: null | boolean;
 

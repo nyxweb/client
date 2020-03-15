@@ -19,4 +19,5 @@ export default interface ConfigState {
       }
     | null
     | false;
+  stats: number | null;
 }

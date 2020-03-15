@@ -95,21 +95,28 @@
         display: flex;
         align-items: center;
         border-radius: 3px;
-
-        &.credits {
-          color: goldenrod;
-          width: 100px;
-        }
-
-        &.money {
-          flex: auto;
-          color: rgb(53, 189, 76);
-          margin-left: 5px;
-        }
+        color: #c8ddf1;
 
         svg {
           height: 15px;
           margin-right: 5px;
+        }
+
+        &.credits {
+          width: 100px;
+
+          svg {
+            color: goldenrod;
+          }
+        }
+
+        &.money {
+          flex: auto;
+          margin-left: 5px;
+
+          svg {
+            color: rgb(53, 189, 76);
+          }
         }
       }
     }

@@ -1,4 +1,5 @@
 import {
+  SET_LOGIN_LOADER,
   SET_ACCOUNT_LOADER,
   LOGIN,
   LOGIN_FAILED,
@@ -16,6 +17,7 @@ import { ReduxAction } from 'redux/types/app';
 import AccountState from 'redux/types/user/AccountState';
 
 const initialState: AccountState = {
+  loginLoader: false,
   loading: false,
   verified: null,
   info: null,
@@ -24,6 +26,11 @@ const initialState: AccountState = {
 
 const account = (state = initialState, { type, payload }: ReduxAction) => {
   switch (type) {
+    case SET_LOGIN_LOADER:
+      return {
+        ...state,
+        loginLoader: payload
+      };
     case SET_ACCOUNT_LOADER:
       return {
         ...state,

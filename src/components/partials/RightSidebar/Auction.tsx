@@ -5,10 +5,14 @@ import Resource from 'components/reusables/particles/Resource';
 
 import Name from '../Character/Name';
 import Button from 'components/reusables/form/Button';
+import { useSelector } from 'react-redux';
+import AppState from '../../../redux/types/app';
 
 interface Props {}
 
 const Auction: React.FC<Props> = () => {
+  const logged = useSelector((state: AppState) => state.user.account.verified);
+
   return (
     <div className='Auction'>
       <div className='timer'>
@@ -59,13 +63,15 @@ const Auction: React.FC<Props> = () => {
           <Item hex='2500DC2666A9000000C0000000000000' />
         </div>
       </div>
-      <div className='currency'>
-        <div className='Input group'>
-          <Resource name='bless' value={false} margin={0} size={20} />
-          <input type='number' />
-          <Button value='bid' style={{ width: 50 }} />
+      {logged && (
+        <div className='currency'>
+          <div className='Input group'>
+            <Resource name='bless' value={false} margin={0} size={20} />
+            <input type='number' />
+            <Button value='bid' style={{ width: 50 }} />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

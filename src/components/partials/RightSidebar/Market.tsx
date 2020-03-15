@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 // Partials
 import ContentBlock from 'components/partials/RightSidebar/ContentBlock';
@@ -13,18 +13,17 @@ import ReactLoader from 'components/reusables/ReactLoader';
 import { getLatest } from 'actions/others/market';
 
 // Types
-import _nyxMarket from 'redux/types/others/_nyxMarket';
 import AppState from 'redux/types/app';
 
-interface Props {
-  latest: _nyxMarket[];
-  getLatest: Function;
-}
+interface Props {}
 
-const Market: React.FC<Props> = ({ latest, getLatest }) => {
+const Market: React.FC<Props> = () => {
+  const latest = useSelector((state: AppState) => state.others.market.latest);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    getLatest();
-  }, [getLatest]);
+    dispatch(getLatest());
+  }, [dispatch]);
 
   return (
     <ContentBlock title='market items' desc='latest items on the market'>
@@ -36,21 +35,23 @@ const Market: React.FC<Props> = ({ latest, getLatest }) => {
             'Failed to load'
           )
         ) : latest.length ? (
-          latest.map((item: _nyxMarket, i: number) => {
+          latest.map((item, i) => {
             const price = item.price ? JSON.parse(item.price) : null;
 
             return (
               <div className='Item' key={i}>
                 <div className='price'>
                   {price
-                    ? price.map((p: any, i: number) => (
-                        <Resource
-                          key={i}
-                          name={p.name}
-                          value={p.value}
-                          margin='7px 7px 7px 0'
-                        />
-                      ))
+                    ? price.map(
+                        (p: { name: string; value: number }, i: number) => (
+                          <Resource
+                            key={i}
+                            name={p.name}
+                            value={p.value}
+                            margin='7px 7px 7px 0'
+                          />
+                        )
+                      )
                     : 'free'}
                 </div>
                 <div className='image'>
@@ -72,8 +73,4 @@ const Market: React.FC<Props> = ({ latest, getLatest }) => {
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  latest: state.others.market.latest
-});
-
-export default connect(mapStateToProps, { getLatest })(Market);
+export default Market;

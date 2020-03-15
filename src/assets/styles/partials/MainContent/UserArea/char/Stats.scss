@@ -86,6 +86,10 @@
 
         .stats {
           padding: 0 15px 15px 15px;
+
+          input {
+            width: 80px;
+          }
         }
 
         .save-button {

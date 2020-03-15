@@ -39,4 +39,5 @@ export default interface Character {
   status: MEMB_STAT;
   account: AccountCharacter;
   guild_memb: GuildMember;
+  [name: string]: any;
 }

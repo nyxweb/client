@@ -5,10 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Loader from 'components/partials/Loader';
 
 // Actions
-import { getChars, reset } from 'actions/user/character';
-
-// Helpers
-import { cclass } from 'helpers/characters';
+import { getChars, saveStats } from 'actions/user/character';
 
 // Reusales
 import Button from 'components/reusables/form/Button';
@@ -23,7 +20,7 @@ const Stats: React.FC<Props> = () => {
   const [char, setChar] = useState<Character>();
   const [pointsLeft, setPointsLeft] = useState<number>();
 
-  const initialStats = {
+  const initialStats: { [name: string]: number } = {
     Strength: 0,
     Dexterity: 0,
     Vitality: 0,
@@ -35,12 +32,18 @@ const Stats: React.FC<Props> = () => {
   const { loading, list } = useSelector(
     (state: AppState) => state.user.character
   );
-  const config = useSelector((state: AppState) => state.config.reset);
+  const maxStats = useSelector((state: AppState) => state.config.stats);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getChars());
   }, [dispatch]);
+
+  useEffect(() => {
+    setChar(undefined);
+    setForm(initialStats);
+    // eslint-disable-next-line
+  }, [list]);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const find = list && list.find(c => c.Name === e.target.value);
@@ -50,29 +53,34 @@ const Stats: React.FC<Props> = () => {
   };
 
   const typer = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!char) return;
+    if (!char || !list || !maxStats) return;
 
     const value = Number(e.target.value);
+    const name = e.target.name;
+    const newForm: any = {
+      ...form,
+      [name]:
+        char[name] + value > Number(maxStats)
+          ? Number(maxStats) - char[name]
+          : value
+    };
+
     const sum =
-      form.Strength +
-      form.Dexterity +
-      form.Vitality +
-      form.Energy +
-      form.Leadership +
-      value;
+      newForm.Strength +
+      newForm.Dexterity +
+      newForm.Vitality +
+      newForm.Energy +
+      newForm.Leadership;
 
-    if (
-      typeof value === 'number' &&
-      value >= 0 &&
-      value <= 65000 &&
-      char.LevelUpPoint >= sum
-    ) {
-      setForm({
-        ...form,
-        [e.target.name]: value
-      });
-
+    if (typeof value === 'number' && value >= 0 && char.LevelUpPoint >= sum) {
+      setForm(newForm);
       setPointsLeft(char.LevelUpPoint - sum);
+    }
+  };
+
+  const onClickSave = () => {
+    if (char) {
+      dispatch(saveStats({ ...form, Name: char.Name }));
     }
   };
 
@@ -89,11 +97,14 @@ const Stats: React.FC<Props> = () => {
               <div className='main'>
                 <div className='char-list'>
                   <div className='select'>
-                    <select onChange={onChangeHandler}>
+                    <select
+                      onChange={onChangeHandler}
+                      defaultValue={char?.Name}
+                    >
                       <option value=''>-</option>
-                      {list.map((char, i) => (
-                        <option key={i} value={char.Name}>
-                          {char.Name}
+                      {list.map((c, i) => (
+                        <option key={i} value={c.Name}>
+                          {c.Name} ( {c.LevelUpPoint.toLocaleString()} )
                         </option>
                       ))}
                     </select>
@@ -176,7 +187,9 @@ const Stats: React.FC<Props> = () => {
                 <div className='stats-adder'>
                   <div className='points-left'>
                     Points left&nbsp;
-                    <span className='shadow'>{pointsLeft || '-'}</span>
+                    <span className='shadow'>
+                      {pointsLeft?.toLocaleString() || '-'}
+                    </span>
                   </div>
                   <div className='stats'>
                     <table className='Table characters'>
@@ -187,8 +200,6 @@ const Stats: React.FC<Props> = () => {
                             <input
                               type='number'
                               name='Strength'
-                              min={0}
-                              max={65000}
                               onChange={typer}
                               value={form.Strength || ''}
                             />
@@ -200,8 +211,6 @@ const Stats: React.FC<Props> = () => {
                             <input
                               type='number'
                               name='Dexterity'
-                              min={0}
-                              max={65000}
                               onChange={typer}
                               value={form.Dexterity || ''}
                             />
@@ -213,8 +222,6 @@ const Stats: React.FC<Props> = () => {
                             <input
                               type='number'
                               name='Vitality'
-                              min={0}
-                              max={65000}
                               onChange={typer}
                               value={form.Vitality || ''}
                             />
@@ -226,8 +233,6 @@ const Stats: React.FC<Props> = () => {
                             <input
                               type='number'
                               name='Energy'
-                              min={0}
-                              max={65000}
                               onChange={typer}
                               value={form.Energy || ''}
                             />
@@ -240,8 +245,6 @@ const Stats: React.FC<Props> = () => {
                               <input
                                 type='number'
                                 name='Leadership'
-                                min={0}
-                                max={65000}
                                 onChange={typer}
                                 value={form.Leadership || ''}
                               />
@@ -252,18 +255,18 @@ const Stats: React.FC<Props> = () => {
                     </table>
                   </div>
                   <div className='save-button'>
-                    <Button value='save stats' />
+                    <Button value='save stats' onClick={onClickSave} />
                   </div>
                 </div>
               </div>
             )}
           </div>
-          {config && (
+          {maxStats && (
             <div className='info'>
               <ul style={{ lineHeight: 1.8 }}>
                 <li>
-                  Current max resets are{' '}
-                  <span className='highlight'>{config.max_reset}</span>
+                  Current max stats is{' '}
+                  <span className='highlight'>{maxStats}</span>
                 </li>
               </ul>
             </div>

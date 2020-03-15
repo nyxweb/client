@@ -4,8 +4,9 @@ export const LOGIN_FAILED = 'LOGIN_FAILED';
 export const LOGOUT = 'LOGOUT';
 
 // User -> Account
-export const SET_CREDITS = 'SET_CREDITS';
+export const SET_LOGIN_LOADER = 'SET_LOGIN_LOADER';
 export const SET_ACCOUNT_LOADER = 'SET_ACCOUNT_LOADER';
+export const SET_CREDITS = 'SET_CREDITS';
 export const SET_LOGS = 'SET_LOGS';
 export const CLEAR_LOGS = 'CLEAR_LOGS';
 export const SET_ONLINE = 'SET_ONLINE';
@@ -29,6 +30,7 @@ export const GET_RANK_5GUILDS_FAILED = 'GET_RANK_5GUILDS_FAILED';
 export const GET_RANK_CHARACTERS = 'GET_RANK_CHARACTERS';
 export const GET_RANK_CHARACTERS_FAILED = 'GET_RANK_CHARACTERS_FAILED';
 export const CLEAR_RANK_CHARACTERS = 'CLEAR_RANK_CHARACTERS';
+export const RANKINGS_LOADING = 'RANKINGS_LOADING';
 
 // Others
 export const MARKET_LATEST = 'MARKET_LATEST';
