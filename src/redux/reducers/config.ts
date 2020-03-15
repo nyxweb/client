@@ -7,7 +7,8 @@ const initialState: ConfigState = {
   online_time: null,
   vip: null,
   reset: null,
-  stats: null
+  stats: null,
+  downloads: null
 };
 
 const events = (state = initialState, action: ReduxAction) => {

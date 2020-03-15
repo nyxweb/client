@@ -35,16 +35,21 @@ const shortClass = (Class: number) => {
   switch (Class) {
     case 0:
     case 1:
+    case 2:
       return 'sm';
     case 16:
     case 17:
+    case 18:
       return 'bk';
     case 32:
     case 33:
+    case 34:
       return 'elf';
     case 48:
+    case 49:
       return 'mg';
     case 64:
+    case 65:
       return 'dl';
     default:
       return 'none';

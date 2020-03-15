@@ -43,7 +43,7 @@ const VIP: React.FC<Props> = () => {
                 <span
                   title={new Date(info.VipExpirationTime * 1000).toString()}
                 >
-                  <Moment fromNow unix>
+                  <Moment fromNow unix withTitle>
                     {info.VipExpirationTime}
                   </Moment>
                 </span>

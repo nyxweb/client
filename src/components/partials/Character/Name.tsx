@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 
 // Types
@@ -10,13 +10,14 @@ interface Props {
     | {
         Name: string;
         status: { ConnectStat: number } | boolean;
-        account: { GameIDC: string };
-        guild_memb: { G_Name: string };
+        account?: { GameIDC: string };
+        guild_memb?: { G_Name: string };
       };
   guild?: boolean;
+  style?: CSSProperties;
 }
 
-const Name: React.FC<Props> = ({ char, guild = true }) => {
+const Name: React.FC<Props> = ({ char, guild = true, style }) => {
   const status =
     char.status === true ||
     (char.status &&
@@ -27,7 +28,7 @@ const Name: React.FC<Props> = ({ char, guild = true }) => {
       : 'offline';
 
   return (
-    <div className='CharacterName'>
+    <div className='CharacterName' style={style}>
       {guild && (
         <span className='guild'>
           [&nbsp;

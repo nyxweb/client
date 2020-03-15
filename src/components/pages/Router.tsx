@@ -6,6 +6,7 @@ import News from 'components/pages/News';
 import Register from 'components/pages/Register';
 import Download from 'components/pages/Download';
 import Rankings from 'components/pages/Rankings';
+import Character from 'components/pages/Character';
 import Login from 'components/pages/Login';
 import UserArea from 'components/pages/UserArea';
 import NotFound from 'components/pages/NotFound';
@@ -23,6 +24,7 @@ const Router: React.FC<Props> = () => {
         <Route path='/register' exact component={Register} />
         <Route path='/download' exact component={Download} />
         <Route path='/rankings' exact component={Rankings} />
+        <Route path='/char/:name' exact component={Character} />
         <Route path='/login' exact component={Login} />
         <PrivateRoute path='/user' component={UserArea} />
         <Route path='/' component={NotFound} />

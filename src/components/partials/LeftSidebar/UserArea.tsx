@@ -63,6 +63,9 @@ const UserArea: React.FC<Props> = () => {
         <div className='section'>
           <div className='title' onClick={() => setMenu('account')}>
             Account
+            <div className='underline'>
+              <span className='line' />
+            </div>
           </div>
           <div className={`content ${menu === 'account' ? 'open' : 'closed'}`}>
             <Link to='/user/account/password'>Change Password</Link>
@@ -74,6 +77,9 @@ const UserArea: React.FC<Props> = () => {
         <div className='section'>
           <div className='title' onClick={() => setMenu('char')}>
             Character
+            <div className='underline'>
+              <span className='line' />
+            </div>
           </div>
           <div className={`content ${menu === 'char' ? 'open' : 'closed'}`}>
             <Link to='/user/char/reset'>Reset</Link>
@@ -85,6 +91,9 @@ const UserArea: React.FC<Props> = () => {
         <div className='section'>
           <div className='title' onClick={() => setMenu('extra')}>
             Extra Features
+            <div className='underline'>
+              <span className='line' />
+            </div>
           </div>
           <div className={`content ${menu === 'extra' ? 'open' : 'closed'}`}>
             <Link to='/user/extra/market'>Market</Link>

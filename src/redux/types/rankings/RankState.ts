@@ -1,9 +1,24 @@
-import HOFState from './HOFState';
-import top5GuildsState from './top5GuildsState';
-import CharactersState from './CharactersState';
+import Character from './Character';
+import Guild from './Guild';
 
 export default interface RankState {
-  hof: HOFState;
-  top5guilds: top5GuildsState;
-  characters: CharactersState;
+  hof: {
+    loading: boolean;
+    list: Character[] | null;
+  };
+
+  top5guilds: {
+    loading: boolean;
+    list: Guild[] | null;
+  };
+
+  characters: {
+    loading: boolean;
+    list: Character[] | null;
+  };
+
+  character: {
+    loading: boolean;
+    char: Character | null;
+  };
 }

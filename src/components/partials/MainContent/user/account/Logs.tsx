@@ -2,16 +2,19 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Moment from 'react-moment';
 import reactStringReplace from 'react-string-replace';
+import uuid from 'uuid/v4';
 
 // Partials
 import Loader from 'components/partials/Loader';
 
 // Actions
 import { getLogs } from 'actions/user/account';
+import { getChars } from 'actions/user/character';
 
 // Types
 import AppState from 'redux/types/app';
 import Item from 'components/reusables/particles/items/Item';
+import Name from 'components/partials/Character/Name';
 
 interface Props {}
 
@@ -19,10 +22,12 @@ const Logs: React.FC<Props> = () => {
   const { loading, logs } = useSelector(
     (state: AppState) => state.user.account
   );
+  const chars = useSelector((state: AppState) => state.user.character.list);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getLogs());
+    dispatch(getChars());
   }, [dispatch]);
 
   return (
@@ -46,18 +51,35 @@ const Logs: React.FC<Props> = () => {
               let message = reactStringReplace(
                 log.message,
                 /{item:([^}]{32})}/gim,
-                (match, i) => <Item key={i} hex={match} image={false} />
+                match => <Item key={uuid()} hex={match} image={false} />
               );
 
               // Highlight of text
               message = reactStringReplace(
                 message,
                 /{highlight:([^}]+)}/gm,
-                (match, i) => (
-                  <span key={i} className='highlight'>
+                match => (
+                  <span key={uuid()} className='highlight'>
                     {match}
                   </span>
                 )
+              );
+
+              // Character Names
+              message = reactStringReplace(
+                message,
+                /{char:([^}]+)}/gm,
+                match => {
+                  const find = chars && chars.find(c => c.Name === match);
+                  return (
+                    <Name
+                      key={uuid()}
+                      char={{ Name: match, status: find ? find.status : false }}
+                      guild={false}
+                      style={{ display: 'inline-block' }}
+                    />
+                  );
+                }
               );
 
               return (
@@ -70,6 +92,7 @@ const Logs: React.FC<Props> = () => {
                       style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
                       fromNow
                       unix
+                      withTitle
                     >
                       {log.timestamp / 1000}
                     </Moment>

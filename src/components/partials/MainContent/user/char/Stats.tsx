@@ -121,7 +121,9 @@ const Stats: React.FC<Props> = () => {
                                   !!form.Strength ? 'added' : ''
                                 }`}
                               >
-                                {char.Strength + form.Strength}
+                                {(
+                                  char.Strength + form.Strength
+                                ).toLocaleString()}
                               </span>
                             </td>
                           </tr>
@@ -133,7 +135,9 @@ const Stats: React.FC<Props> = () => {
                                   !!form.Dexterity ? 'added' : ''
                                 }`}
                               >
-                                {char.Dexterity + form.Dexterity}
+                                {(
+                                  char.Dexterity + form.Dexterity
+                                ).toLocaleString()}
                               </span>
                             </td>
                           </tr>
@@ -145,7 +149,9 @@ const Stats: React.FC<Props> = () => {
                                   !!form.Vitality ? 'added' : ''
                                 }`}
                               >
-                                {char.Vitality + form.Vitality}
+                                {(
+                                  char.Vitality + form.Vitality
+                                ).toLocaleString()}
                               </span>
                             </td>
                           </tr>
@@ -157,7 +163,7 @@ const Stats: React.FC<Props> = () => {
                                   !!form.Energy ? 'added' : ''
                                 }`}
                               >
-                                {char.Energy + form.Energy}
+                                {(char.Energy + form.Energy).toLocaleString()}
                               </span>
                             </td>
                           </tr>
@@ -170,7 +176,9 @@ const Stats: React.FC<Props> = () => {
                                     !!form.Leadership ? 'added' : ''
                                   }`}
                                 >
-                                  {char.Leadership + form.Leadership}
+                                  {(
+                                    char.Leadership + form.Leadership
+                                  ).toLocaleString()}
                                 </span>
                               </td>
                             </tr>

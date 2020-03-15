@@ -20,4 +20,14 @@ export default interface ConfigState {
     | null
     | false;
   stats: number | null;
+  downloads:
+    | {
+        name: string;
+        sound: boolean;
+        host: string;
+        size: string;
+        upload: number;
+        link: string;
+      }[]
+    | null;
 }

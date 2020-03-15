@@ -15,6 +15,8 @@ export default interface Character {
   Energy: number;
   Leadership: number;
   MapNumber: number;
+  MapPosX: number;
+  MapPosY: number;
   PkCount: number;
   PkLevel: number;
   PkTime: number;

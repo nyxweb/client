@@ -180,6 +180,7 @@ const Warehouse: React.FC<Props> = ({
 
       setSlots(_slots);
     }
+    // eslint-disable-next-line
   }, [dragItem?.dragging, dragItem?.to]);
 
   const isSlotEmpty = ({

@@ -1,14 +1,16 @@
 import { combineReducers } from 'redux';
 
 // Reducers
-import hof from 'redux/reducers/rankings/hof';
-import top5guilds from 'redux/reducers/rankings/top5guilds';
-import characters from 'redux/reducers/rankings/characters';
+import hof from './hof';
+import top5guilds from './top5guilds';
+import characters from './characters';
+import character from './character';
 
 const reducers = combineReducers({
   hof,
   top5guilds,
-  characters
+  characters,
+  character
 });
 
 export default reducers;
