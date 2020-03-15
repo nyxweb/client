@@ -14,6 +14,7 @@ export default interface Character {
   Vitality: number;
   Energy: number;
   Leadership: number;
+  Inventory: string;
   MapNumber: number;
   MapPosX: number;
   MapPosY: number;

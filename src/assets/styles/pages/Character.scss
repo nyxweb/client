@@ -12,15 +12,8 @@
     border-radius: 3px;
 
     .image {
-      padding: 25px;
       width: 50%;
-      height: 300px;
       text-align: center;
-
-      img {
-        max-width: 100%;
-        max-height: 230px;
-      }
     }
 
     td {
@@ -29,9 +22,12 @@
 
     & > tbody {
       & > tr:first-of-type {
-        font-size: 20px;
+        font-size: 22px;
+        background: rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid #223141;
 
         td {
+          padding: 15px 0;
           text-align: center;
         }
       }
@@ -42,8 +38,144 @@
         border-collapse: collapse;
         width: 100%;
 
-        td {
-          border-bottom: 1px solid #334455;
+        tr:nth-child(odd) {
+          background: rgba(0, 0, 0, 0.1);
+          border-top: 1px solid #223141;
+          border-bottom: 1px solid #223141;
+        }
+      }
+    }
+  }
+
+  .equipment {
+    box-shadow: 0px 0 15px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(63, 85, 114, 0.1);
+    border-radius: 3px;
+    margin-top: 20px;
+
+    .title {
+      font-size: 18px;
+      background: rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #223141;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .container {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+
+      .content {
+        position: relative;
+        box-sizing: content-box;
+        width: 420px;
+        height: 380px;
+        background-position: center center;
+        border-radius: 5px;
+        box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 0.5);
+        border: 1px solid #372b24;
+
+        .item {
+          position: absolute;
+          background: #091517;
+          transition: 0.2s ease-in-out;
+          border: 1px solid #372b24;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &.pet {
+            top: 24px;
+            left: 3px;
+            width: 70px;
+            height: 70px;
+            background: #060e0f;
+          }
+
+          &.helm {
+            top: 24px;
+            left: 80px;
+            width: 70px;
+            height: 70px;
+          }
+
+          &.pants {
+            bottom: 10px;
+            left: 88px;
+            width: 70px;
+            height: 70px;
+          }
+
+          &.boots {
+            bottom: 10px;
+            right: 87px;
+            width: 70px;
+            height: 70px;
+          }
+
+          &.gloves {
+            top: 146px;
+            right: 10px;
+            width: 70px;
+            height: 70px;
+          }
+
+          &.wep1 {
+            bottom: 10px;
+            left: 10px;
+            width: 70px;
+            height: 134px;
+            background: #060e0f;
+          }
+
+          &.wep2 {
+            bottom: 10px;
+            right: 10px;
+            width: 70px;
+            height: 134px;
+            background: #060e0f;
+          }
+
+          &.pend {
+            top: 126px;
+            right: 98px;
+            width: 38px;
+            height: 38px;
+          }
+
+          &.ring1 {
+            bottom: 100px;
+            left: 100px;
+            width: 38px;
+            height: 38px;
+          }
+
+          &.ring2 {
+            bottom: 100px;
+            right: 100px;
+            width: 38px;
+            height: 38px;
+          }
+
+          &.wings {
+            top: 10px;
+            right: 10px;
+            width: 166px;
+            height: 102px;
+            background: #060e0f;
+          }
+
+          &.armor {
+            top: 114px;
+            left: 45px;
+            width: 70px;
+            height: 102px;
+          }
         }
       }
     }

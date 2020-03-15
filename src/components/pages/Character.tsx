@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { match } from 'react-router-dom';
 
@@ -10,10 +10,11 @@ import Loader from 'components/partials/Loader';
 import { getCharacter, clearCharacter } from 'actions/rankings';
 
 // Helpers
-import { cclass, rankings } from 'helpers/characters';
+import { cclass, rankings, inventory } from 'helpers/characters';
 
 // Types
 import AppState from 'redux/types/app';
+import Item from 'components/reusables/particles/items/Item';
 
 interface Props {
   match: match<{ name: string }>;
@@ -24,6 +25,8 @@ const Rankings: React.FC<Props> = ({
     params: { name }
   }
 }) => {
+  const [inv, setInv] = useState<any>();
+
   const { loading, char } = useSelector(
     (state: AppState) => state.rankings.character
   );
@@ -37,12 +40,16 @@ const Rankings: React.FC<Props> = ({
     };
   }, [dispatch, name]);
 
+  useEffect(() => {
+    char && setInv(inventory.decode(char.Inventory));
+  }, [char]);
+
   return (
     <div className='Character'>
       {loading ? (
         <Loader />
       ) : !char ? (
-        'no char'
+        `This character doesn't exist`
       ) : (
         <>
           <table className='char-info'>
@@ -74,6 +81,10 @@ const Rankings: React.FC<Props> = ({
                         </td>
                       </tr>
                       <tr>
+                        <td>Total Points</td>
+                        <td>{char.totalPoints.toLocaleString()}</td>
+                      </tr>
+                      <tr>
                         <td>Status</td>
                         <td
                           dangerouslySetInnerHTML={{
@@ -96,12 +107,41 @@ const Rankings: React.FC<Props> = ({
                           ( {char.MapPosX}, {char.MapPosY} )
                         </td>
                       </tr>
+                      <tr>
+                        <td>Zen</td>
+                        <td>{char.Money.toLocaleString()}</td>
+                      </tr>
                     </tbody>
                   </table>
                 </td>
               </tr>
             </tbody>
           </table>
+          <div className='equipment'>
+            <div className='title'>Equipment</div>
+            <div className='container'>
+              <div
+                className='content'
+                style={{
+                  backgroundImage: `url('/images/classes/${cclass.shortClass(
+                    char.Class
+                  )}_inv.png')`
+                }}
+              >
+                {inv &&
+                  Object.keys(inv).map((key, i) => (
+                    <div key={i} className={`item ${key}`}>
+                      {inv[key] && (
+                        <Item
+                          hex={inv[key]}
+                          style={{ maxWidth: '100%', maxHeight: '100%' }}
+                        />
+                      )}
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
         </>
       )}
     </div>
