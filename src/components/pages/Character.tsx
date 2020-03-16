@@ -62,7 +62,7 @@ const Rankings: React.FC<Props> = ({
               <tr>
                 <td className='image'>
                   <img
-                    src={`/images/classes/${cclass.shortClass(char.Class)}.png`}
+                    src={`/images/classes/${cclass.shortClass(char.Class)}.jpg`}
                     alt='char'
                   />
                 </td>

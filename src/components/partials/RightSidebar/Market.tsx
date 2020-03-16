@@ -14,6 +14,7 @@ import { getLatest } from 'actions/others/market';
 
 // Types
 import AppState from 'redux/types/app';
+import IResource from 'redux/types/reusables/Resource';
 
 interface Props {}
 
@@ -42,16 +43,13 @@ const Market: React.FC<Props> = () => {
               <div className='Item' key={i}>
                 <div className='price'>
                   {price
-                    ? price.map(
-                        (p: { name: string; value: number }, i: number) => (
-                          <Resource
-                            key={i}
-                            name={p.name}
-                            value={p.value}
-                            margin='7px 7px 7px 0'
-                          />
-                        )
-                      )
+                    ? price.map((r: IResource, i: number) => (
+                        <Resource
+                          key={i}
+                          resource={r}
+                          style={{ margin: '7px 7px 7px 0' }}
+                        />
+                      ))
                     : 'free'}
                 </div>
                 <div className='image'>

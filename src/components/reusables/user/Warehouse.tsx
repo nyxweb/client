@@ -7,15 +7,13 @@ import Item from '../particles/items/Item';
 // Helpers
 import { decode } from 'helpers/items';
 
-// Config
-import list from 'config/items/list.json';
-
 // Actions
 import { storage } from 'actions/user/extra';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Types
 import { DragItem } from 'components/partials/MainContent/user/extra/Storage';
+import AppState from 'redux/types/app';
 
 interface Item {
   id: string;
@@ -71,6 +69,7 @@ const Warehouse: React.FC<Props> = ({
     backgroundSize: slotSize
   });
 
+  const { itemsList: itemsDB } = useSelector((state: AppState) => state.config);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -80,8 +79,6 @@ const Warehouse: React.FC<Props> = ({
       setItemsList([]);
     }
   }, [items]);
-
-  const itemsDB: any = list;
 
   useEffect(() => {
     const list: Item[] = [];
@@ -103,7 +100,10 @@ const Warehouse: React.FC<Props> = ({
         if (hex.toLowerCase() !== 'f'.repeat(32)) {
           const item = decode(hex);
           const itemData =
-            item && itemsDB[item.group] && itemsDB[item.group].items[item.id]
+            item &&
+            itemsDB &&
+            itemsDB[item.group] &&
+            itemsDB[item.group].items[item.id]
               ? itemsDB[item.group].items[item.id]
               : false;
 

@@ -1,17 +1,18 @@
 import React, { CSSProperties, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import ReactTooltip from 'react-tooltip';
 import uuid from 'uuid/v4';
 
 // Reusables
 import Options from 'components/reusables/particles/items/Options';
+import { DragItem } from 'components/partials/MainContent/user/extra/Storage';
 
 // Helpers
 import { decode } from 'helpers/items';
 
-// Config
-import list from 'config/items/list.json';
+// Types
 import IItem from 'redux/types/items/Item';
-import { DragItem } from 'components/partials/MainContent/user/extra/Storage';
+import AppState from 'redux/types/app';
 
 interface Props {
   id?: string;
@@ -60,20 +61,27 @@ const Item: React.FC<Props> = ({
 }) => {
   const [isDragged, setIsDragged] = useState(false);
   const [preview, setPreview] = useState<HTMLImageElement>();
-  const itemsList: any = list;
+
+  const { itemsList } = useSelector((state: AppState) => state.config);
 
   const itemDecode = item || decode(hex);
 
-  const itemImage =
-    itemDecode && `/images/items/${itemDecode.group}/${itemDecode.id}.gif`;
-
   const itemData =
     _itemData ||
-    (itemDecode &&
+    (itemsList &&
+    itemDecode &&
     itemsList[itemDecode.group] &&
     itemsList[itemDecode.group].items[itemDecode.id]
       ? itemsList[itemDecode.group].items[itemDecode.id]
       : false);
+
+  const itemImage =
+    itemDecode &&
+    `/images/items/${itemDecode.group}/${itemDecode.id}${
+      itemData.levels && itemData.levels[itemDecode.level]
+        ? '-' + itemDecode.level
+        : ''
+    }.gif`;
 
   const itemStyle: CSSProperties = {
     width: realSize ? slotSize * itemData.x : slotSize,
@@ -114,12 +122,12 @@ const Item: React.FC<Props> = ({
   };
 
   useEffect(() => {
-    if (itemImage) {
+    if (itemImage && itemData) {
       const image = new Image();
       image.src = itemImage;
       image.onload = () => setPreview(image);
     }
-  }, [itemImage]);
+  }, [itemImage, itemData]);
 
   return (
     itemDecode &&

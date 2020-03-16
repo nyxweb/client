@@ -1,6 +1,6 @@
 export default interface Resource {
-  name: string;
-  value: number;
-  size?: number;
-  margin?: string;
+  group: number;
+  id: number;
+  level: number;
+  value?: number;
 }

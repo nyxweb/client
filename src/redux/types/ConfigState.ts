@@ -30,4 +30,8 @@ export default interface ConfigState {
         link: string;
       }[]
     | null;
+
+  itemsList: { [key: string]: any } | null;
+  itemsAncient: { [key: string]: any } | null;
+  itemsOptions: { [key: string]: any } | null;
 }

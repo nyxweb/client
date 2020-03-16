@@ -48,7 +48,7 @@ const UserArea: React.FC<Props> = () => {
       </div>
       <div className='resources'>
         {resources.map((res: IResource, i: number) => (
-          <Resource key={i} name={res.name} value={res.value} />
+          <Resource key={i} resource={res} />
         ))}
         <div className='main'>
           <div className='block credits'>

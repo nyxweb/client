@@ -1,2 +1,16 @@
 .Resources {
+  margin: 20px;
+  background: rgba(63, 85, 114, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  padding: 0 0 15px 0;
+
+  .block {
+    display: inline-flex;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0 0 15px;
+    background: rgba(0, 0, 0, 0.15);
+  }
 }

@@ -8,7 +8,10 @@ const initialState: ConfigState = {
   vip: null,
   reset: null,
   stats: null,
-  downloads: null
+  downloads: null,
+  itemsList: null,
+  itemsAncient: null,
+  itemsOptions: null
 };
 
 const events = (state = initialState, action: ReduxAction) => {

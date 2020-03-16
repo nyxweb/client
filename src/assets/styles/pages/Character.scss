@@ -78,23 +78,15 @@
 
         .item {
           position: absolute;
-          background: #091517;
-          transition: 0.2s ease-in-out;
-          border: 1px solid #372b24;
           display: flex;
           align-items: center;
           justify-content: center;
-
-          &:hover {
-            transform: scale(1.1);
-          }
 
           &.pet {
             top: 24px;
             left: 3px;
             width: 70px;
             height: 70px;
-            background: #060e0f;
           }
 
           &.helm {
@@ -130,7 +122,6 @@
             left: 10px;
             width: 70px;
             height: 134px;
-            background: #060e0f;
           }
 
           &.wep2 {
@@ -138,7 +129,6 @@
             right: 10px;
             width: 70px;
             height: 134px;
-            background: #060e0f;
           }
 
           &.pend {
@@ -167,7 +157,6 @@
             right: 10px;
             width: 166px;
             height: 102px;
-            background: #060e0f;
           }
 
           &.armor {

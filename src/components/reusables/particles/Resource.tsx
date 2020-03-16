@@ -1,32 +1,47 @@
 import React, { CSSProperties } from 'react';
 
-interface IResource {
-  name: string;
-  value: number | false;
+// Types
+import IResource from 'redux/types/reusables/Resource';
+import { useSelector } from 'react-redux';
+import AppState from '../../../redux/types/app';
+
+interface Props {
+  resource: IResource;
   size?: number;
-  margin?: string | number;
   style?: CSSProperties;
 }
 
-const Resource: React.FC<IResource> = ({
-  name,
-  value = 0,
+const Resource: React.FC<Props> = ({
+  resource,
   size = 30,
-  margin = '5px 0 0 5px',
-  style
+  style = { margin: '5px 0 0 5px' }
 }) => {
-  const resourceStyle: CSSProperties = {
-    width: size,
-    height: size,
-    margin,
-    ...style
-  };
+  const { itemsList } = useSelector((state: AppState) => state.config);
+  const itemData =
+    itemsList &&
+    itemsList[resource.group] &&
+    itemsList[resource.group].items[resource.id]
+      ? itemsList[resource.group].items[resource.id]
+      : false;
 
   return (
-    <div className={`Resource ${name}`} style={resourceStyle}>
-      <img src={`/images/items/resources/` + name + '.gif'} alt='res' />
-      {value !== false ? <span>{value}</span> : ''}
-    </div>
+    itemData && (
+      <div className='Resource' style={{ width: size, height: size, ...style }}>
+        <img
+          src={`/images/items/${resource.group}/${resource.id}${
+            itemData.levels && itemData.levels[resource.level]
+              ? '-' + resource.level
+              : ''
+          }.gif`}
+          alt='res'
+        />
+        {resource.value || resource.value === 0 ? (
+          <span>{resource.value}</span>
+        ) : (
+          ''
+        )}
+      </div>
+    )
   );
 };
 

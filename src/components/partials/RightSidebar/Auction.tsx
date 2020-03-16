@@ -31,7 +31,11 @@ const Auction: React.FC<Props> = () => {
                 }}
                 guild={false}
               />{' '}
-              <Resource name='bless' value={1234} margin={0} />
+              <Resource
+                resource={{ group: 14, id: 13, level: 0, value: 59 }}
+                size={30}
+                style={{ margin: 0 }}
+              />
             </div>
             <div className='char'>
               <Name
@@ -43,7 +47,11 @@ const Auction: React.FC<Props> = () => {
                 }}
                 guild={false}
               />{' '}
-              <Resource name='bless' value={323} margin={0} />
+              <Resource
+                resource={{ group: 14, id: 13, level: 0, value: 21 }}
+                size={30}
+                style={{ margin: 0 }}
+              />
             </div>
             <div className='char'>
               <Name
@@ -55,7 +63,11 @@ const Auction: React.FC<Props> = () => {
                 }}
                 guild={false}
               />{' '}
-              <Resource name='bless' value={211} margin={0} />
+              <Resource
+                resource={{ group: 14, id: 13, level: 0, value: 11 }}
+                size={30}
+                style={{ margin: 0 }}
+              />
             </div>
           </div>
         </div>
@@ -66,7 +78,11 @@ const Auction: React.FC<Props> = () => {
       {logged && (
         <div className='currency'>
           <div className='Input group'>
-            <Resource name='bless' value={false} margin={0} size={20} />
+            <Resource
+              resource={{ group: 14, id: 13, level: 0 }}
+              size={20}
+              style={{ margin: 0 }}
+            />
             <input type='number' />
             <Button value='bid' style={{ width: 50 }} />
           </div>
