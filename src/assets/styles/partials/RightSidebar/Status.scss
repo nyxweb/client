@@ -14,21 +14,17 @@
     font-weight: bold;
     display: flex;
     justify-content: center;
+    background: url('../../../images/partials/server-green.png') no-repeat
+      center center/cover;
 
     &.online {
-      background: url('../../../images/partials/server-on.png') no-repeat center
-        center/contain;
-
       &:after {
         content: 'ON';
-        color: #0c3000;
+        color: #76a818;
       }
     }
 
     &.offline {
-      background: url('../../../images/partials/server-off.png') no-repeat
-        center center/contain;
-
       &:after {
         content: 'OFF';
         color: #f00000;

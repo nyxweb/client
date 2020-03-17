@@ -3,16 +3,34 @@ table.Table {
   border-collapse: collapse;
 
   thead tr {
-    background: none;
+    background: rgba(0, 0, 0, 0.2);
+
+    th {
+      padding: 10px;
+    }
   }
 
-  tbody tr:nth-of-type(odd) {
-    background: rgba(63, 85, 114, 0.1);
+  tbody {
+    tr {
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    tr:nth-of-type(odd) {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    tr:hover {
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    sup {
+      color: rgb(185, 21, 21);
+    }
   }
 
   th,
   td {
-    padding: 5px;
+    padding: 10px;
     text-align: center;
 
     a.down-link {
@@ -22,6 +40,10 @@ table.Table {
       border: 1px solid #7c7a7a;
       border-radius: 3px;
       color: white;
+    }
+
+    &:last-of-type {
+      padding: 5px;
     }
   }
 }

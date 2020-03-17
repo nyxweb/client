@@ -2,13 +2,15 @@ table.TopGuilds {
   width: 100%;
   border-collapse: collapse;
 
-  & thead {
+  thead {
     font-size: 12px;
     text-align: left;
 
-    & th {
-      padding: 5px;
+    th {
+      padding: 10px;
       text-align: center;
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 
       &:first-of-type {
         text-align: left;
@@ -24,10 +26,19 @@ table.TopGuilds {
     }
   }
 
-  & tbody {
-    & td {
-      padding: 5px;
+  tbody {
+    tr {
+      transition: 0.1s ease-in-out;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    td {
+      padding: 10px;
       text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 
       &:first-of-type {
         text-align: left;
@@ -40,11 +51,6 @@ table.TopGuilds {
       &:last-of-type {
         text-align: right;
         padding: 2px;
-      }
-
-      & img {
-        width: 20px;
-        height: 20px;
       }
     }
   }

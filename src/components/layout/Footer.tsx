@@ -7,8 +7,8 @@ const Footer: React.FC<Props> = () => {
   return (
     <footer className='Footer'>
       <div className='copyright'>
-        <span>NyxWeb 2020 by Dea7h</span>
-        <span>Design by zebah</span>
+        <span>Created for www.DarksTeam.net</span>
+        <span>NyxWeb by Dea7h</span>
       </div>
       <div className='menu'>
         <Link to='/'>Home</Link>

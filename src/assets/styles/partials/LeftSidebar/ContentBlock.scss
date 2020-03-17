@@ -3,7 +3,7 @@
   box-shadow: 0px 12px 30px -5px rgba(0, 0, 0, 0.1),
     0px -12px 30px -5px rgba(0, 0, 0, 0.1);
 
-  & .title {
+  .title {
     color: #657793;
     line-height: 1.6;
     padding: 15px 20px 0 20px;
@@ -11,8 +11,8 @@
     display: flex;
     justify-content: space-between;
 
-    & .text {
-      & span {
+    .text {
+      span {
         display: block;
         font-size: 16px;
         color: #fff;
@@ -21,8 +21,9 @@
       }
     }
 
-    & .image {
-      background: url(../../../images/partials/bar-title-bg.png) no-repeat;
+    .image {
+      background: url('../../../images/partials/bar-title-bg.png') no-repeat
+        center center;
       width: 43px;
       height: 42px;
       border-radius: 50%;
@@ -30,7 +31,7 @@
     }
   }
 
-  & .content {
+  .content {
     padding: 20px;
   }
 }

@@ -48,6 +48,7 @@ const Login: React.FC<Props & RouteComponentProps> = ({ history }) => {
               name='username'
               value={form.username}
               onChange={typer}
+              autoComplete='off'
             />
             <input
               type='password'
@@ -57,9 +58,11 @@ const Login: React.FC<Props & RouteComponentProps> = ({ history }) => {
               value={form.password}
               onChange={typer}
             />
-            <Button type='submit' value='login' />
+            <div className='group'>
+              <Link to='/recover'>Recover Password</Link>
+              <Button type='submit' value='login' />
+            </div>
           </form>
-          <Link to='/forgot-password'>Recover your lost Password!</Link>
         </>
       )}
     </div>

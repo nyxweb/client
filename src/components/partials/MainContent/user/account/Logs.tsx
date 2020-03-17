@@ -94,7 +94,7 @@ const Logs: React.FC<Props> = () => {
                       unix
                       withTitle
                     >
-                      {log.timestamp}
+                      {Math.floor(log.timestamp / 1000)}
                     </Moment>
                   </td>
                   <td style={{ whiteSpace: 'nowrap' }}>{log.ip}</td>

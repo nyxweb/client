@@ -47,6 +47,11 @@ body {
       border-radius: 3px;
       transition: all 0.5s ease;
       outline: none;
+
+      &:hover,
+      &:focus {
+        border: 1px solid #3e4e69;
+      }
     }
 
     .App {

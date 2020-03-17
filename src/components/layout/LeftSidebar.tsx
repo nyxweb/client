@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import Download from 'components/partials/LeftSidebar/Download';
 import Login from 'components/partials/LeftSidebar/Login';
 import UserArea from 'components/partials/LeftSidebar/UserArea';
-import Menu from 'components/partials/LeftSidebar/Menu';
 import TopGuilds from 'components/partials/LeftSidebar/TopGuilds';
 
 // Types
@@ -20,7 +19,6 @@ const LeftSidebar: React.FC<Props> = () => {
     <aside className='LeftSidebar'>
       <Download />
       {account ? <UserArea /> : <Login />}
-      <Menu />
       <TopGuilds />
     </aside>
   );

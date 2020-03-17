@@ -42,8 +42,9 @@ const Name: React.FC<Props> = ({ char, guild = true, style }) => {
           &nbsp;]
         </span>
       )}
-      <span className={`name ${status}`}>
+      <span className='name'>
         <Link to={`/char/${char.Name}`}>{char.Name}</Link>
+        <span className={`status ${status}`} />
       </span>
     </div>
   );
