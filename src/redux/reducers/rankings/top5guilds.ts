@@ -1,8 +1,13 @@
 import { GET_RANK_5GUILDS, GET_RANK_5GUILDS_FAILED } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
-import top5GuildsState from 'redux/types/rankings/top5GuildsState';
+import Guild from 'redux/types/rankings/Guild';
 
-const initialState: top5GuildsState = {
+interface I5Guilds {
+  loading: boolean;
+  list: Guild[] | null | false;
+}
+
+const initialState: I5Guilds = {
   loading: false,
   list: null
 };

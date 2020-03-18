@@ -37,6 +37,11 @@ export const SET_CHARACTER_LOADING = 'SET_CHARACTER_LOADING';
 export const GET_CHARACTER = 'GET_CHARACTER';
 export const CLEAR_CHARACTER = 'CLEAR_CHARACTER';
 
+// Rankings -> Single Guild
+export const SET_GUILD_LOADING = 'SET_GUILD_LOADING';
+export const GET_GUILD = 'GET_GUILD';
+export const CLEAR_GUILD = 'CLEAR_GUILD';
+
 // Others
 export const MARKET_LATEST = 'MARKET_LATEST';
 export const MARKET_LATEST_FAILED = 'MARKET_LATEST_FAILED';

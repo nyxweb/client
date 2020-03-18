@@ -51,7 +51,14 @@ const Logs: React.FC<Props> = () => {
               let message = reactStringReplace(
                 log.message,
                 /{item:([^}]{32})}/gim,
-                match => <Item key={uuid()} hex={match} image={false} />
+                match => (
+                  <Item
+                    key={uuid()}
+                    hex={match}
+                    image={false}
+                    style={{ display: 'inline-block' }}
+                  />
+                )
               );
 
               // Highlight of text

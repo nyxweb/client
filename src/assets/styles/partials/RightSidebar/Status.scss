@@ -10,21 +10,25 @@
     width: 74px;
     height: 74px;
     line-height: 77px;
-    font-size: 14px;
     font-weight: bold;
     display: flex;
     justify-content: center;
-    background: url('../../../images/partials/server-green.png') no-repeat
-      center center/cover;
+    align-items: center;
 
     &.online {
+      background: url('../../../images/partials/server-green.png') no-repeat
+        center center/cover;
+
       &:after {
         content: 'ON';
-        color: #76a818;
+        color: #18a824;
       }
     }
 
     &.offline {
+      background: url('../../../images/partials/server-blue.png') no-repeat
+        center center/cover;
+
       &:after {
         content: 'OFF';
         color: #f00000;

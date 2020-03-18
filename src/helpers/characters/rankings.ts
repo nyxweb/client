@@ -161,4 +161,17 @@ const pkStatus = (pk: number) => {
   }
 };
 
-export default { winsTranslate, location, pkStatus };
+const guildPosition = (pos: number) => {
+  switch (pos) {
+    case 128:
+      return `<font color='#ff0000'>Guild Master</font>`;
+    case 64:
+      return `<font color='#92c2d4'>Assist. Master</font>`;
+    case 32:
+      return `<font color='#ffad73'>Battle Master</font>`;
+    default:
+      return `<font color='#e6f7ff'>Member</font>`;
+  }
+};
+
+export default { winsTranslate, location, pkStatus, guildPosition };

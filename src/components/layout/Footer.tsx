@@ -6,8 +6,12 @@ interface Props {}
 const Footer: React.FC<Props> = () => {
   return (
     <footer className='Footer'>
+      <div
+        className='scroll-up'
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      />
       <div className='copyright'>
-        <span>Created for www.DarksTeam.net</span>
+        <span>MuOnline Server</span>
         <span>NyxWeb by Dea7h</span>
       </div>
       <div className='menu'>

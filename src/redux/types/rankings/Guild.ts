@@ -13,4 +13,6 @@ export default interface Guild {
   TotalMembers: number;
   TotalResets: number;
   guild_memb: GuildMember[];
+  members: GuildMember[];
+  alliance: Guild[];
 }

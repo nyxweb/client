@@ -5,9 +5,14 @@ import {
   RANKINGS_LOADING
 } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
-import CharactersState from 'redux/types/rankings/CharactersState';
+import Character from 'redux/types/rankings/Character';
 
-const initialState: CharactersState = {
+interface ICharacters {
+  loading: boolean;
+  list: Character[] | null | false;
+}
+
+const initialState: ICharacters = {
   loading: false,
   list: null
 };

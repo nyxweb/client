@@ -1,8 +1,13 @@
 import { GET_HOF, GET_HOF_FAILED } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
-import HOFState from 'redux/types/rankings/HOFState';
+import Character from 'redux/types/rankings/Character';
 
-const initialState: HOFState = {
+interface IHof {
+  loading: boolean;
+  list: Character[] | null | false;
+}
+
+const initialState: IHof = {
   loading: false,
   list: null
 };

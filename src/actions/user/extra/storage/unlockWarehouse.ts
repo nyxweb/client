@@ -1,5 +1,3 @@
-// import axios from 'axios';
-
 // Actions
 import { notice } from 'actions/utils';
 
@@ -16,9 +14,7 @@ const unlockWarehouse: ActionCreator<ThunkAction<
   Action
 >> = password => async dispatch => {
   try {
-    dispatch({
-      type: WAREHOUSE_UNLOCK
-    });
+    dispatch({ type: WAREHOUSE_UNLOCK });
   } catch (error) {
     notice(error);
   }

@@ -9,6 +9,7 @@ const initialState: ConfigState = {
   reset: null,
   stats: null,
   downloads: null,
+  change_name: null,
   itemsList: null,
   itemsAncient: null,
   itemsOptions: null

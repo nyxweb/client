@@ -12,18 +12,16 @@ import { ThunkAction } from 'redux-thunk';
 import { notice } from 'actions/utils';
 import { getChars } from 'actions/user/character';
 
-const saveStats: ActionCreator<ThunkAction<
-  void,
-  AppState,
-  any,
-  Action
->> = form => async dispatch => {
+const changeName: ActionCreator<ThunkAction<void, AppState, any, Action>> = (
+  name: string,
+  newName: string
+) => async dispatch => {
   dispatch({ type: SET_CHARACTER_LOADER, payload: true });
 
   try {
     const { data } = await axios.patch(
-      process.env.REACT_APP_API_URI + '/user/character/stats',
-      form
+      process.env.REACT_APP_API_URI + '/user/character/name',
+      { name, newName }
     );
 
     dispatch(getChars());
@@ -36,4 +34,4 @@ const saveStats: ActionCreator<ThunkAction<
   dispatch({ type: SET_CHARACTER_LOADER, payload: false });
 };
 
-export default saveStats;
+export default changeName;

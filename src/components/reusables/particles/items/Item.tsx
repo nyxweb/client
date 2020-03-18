@@ -8,7 +8,7 @@ import Options from 'components/reusables/particles/items/Options';
 import { DragItem } from 'components/partials/MainContent/user/extra/Storage';
 
 // Helpers
-import { decode } from 'helpers/items';
+import { decode, name } from 'helpers/items';
 
 // Types
 import IItem from 'redux/types/items/Item';
@@ -153,7 +153,12 @@ const Item: React.FC<Props> = ({
             />
           </div>
         ) : (
-          <span className='Item name highlight' data-tip data-for={id}>
+          <span
+            className={`Item name}`}
+            style={{ color: name(itemDecode).color, ...style }}
+            data-tip
+            data-for={id}
+          >
             {itemData.name}
           </span>
         )}

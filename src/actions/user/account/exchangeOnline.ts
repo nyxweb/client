@@ -21,35 +21,22 @@ const exchangeOnline: ActionCreator<ThunkAction<
   any,
   Action
 >> = () => async dispatch => {
-  dispatch({
-    type: SET_ACCOUNT_LOADER,
-    payload: true
-  });
+  dispatch({ type: SET_ACCOUNT_LOADER, payload: true });
 
   try {
     const { data } = await axios.patch(
       process.env.REACT_APP_API_URI + '/user/account/online'
     );
 
-    dispatch({
-      type: SET_ONLINE,
-      payload: data.status
-    });
-
-    dispatch({
-      type: SET_CREDITS,
-      payload: data.credits
-    });
+    dispatch({ type: SET_ONLINE, payload: data.status });
+    dispatch({ type: SET_CREDITS, payload: data.credits });
 
     notice(data);
   } catch (error) {
     notice(error);
   }
 
-  dispatch({
-    type: SET_ACCOUNT_LOADER,
-    payload: false
-  });
+  dispatch({ type: SET_ACCOUNT_LOADER, payload: false });
 };
 
 export default exchangeOnline;

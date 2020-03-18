@@ -4,6 +4,7 @@ import { match } from 'react-router-dom';
 
 // Partials
 import Name from 'components/partials/Character/Name';
+import Item from 'components/reusables/particles/items/Item';
 import Loader from 'components/partials/Loader';
 
 // Actions
@@ -14,13 +15,12 @@ import { cclass, rankings, inventory } from 'helpers/characters';
 
 // Types
 import AppState from 'redux/types/app';
-import Item from 'components/reusables/particles/items/Item';
 
 interface Props {
   match: match<{ name: string }>;
 }
 
-const Rankings: React.FC<Props> = ({
+const Character: React.FC<Props> = ({
   match: {
     params: { name }
   }
@@ -148,4 +148,4 @@ const Rankings: React.FC<Props> = ({
   );
 };
 
-export default Rankings;
+export default Character;

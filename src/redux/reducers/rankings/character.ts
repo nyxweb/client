@@ -1,8 +1,13 @@
 import { SET_CHARACTER_LOADING, GET_CHARACTER } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
-import CharacterState from 'redux/types/rankings/CharacterState';
+import Character from 'redux/types/rankings/Character';
 
-const initialState: CharacterState = {
+interface ICharacter {
+  loading: boolean;
+  char: Character | null | false;
+}
+
+const initialState: ICharacter = {
   loading: false,
   char: null
 };

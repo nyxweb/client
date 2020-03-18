@@ -14,10 +14,7 @@ import { notice } from 'actions/utils';
 const reset: ActionCreator<ThunkAction<void, AppState, any, Action>> = (
   name: string
 ) => async dispatch => {
-  dispatch({
-    type: SET_CHARACTER_LOADER,
-    payload: true
-  });
+  dispatch({ type: SET_CHARACTER_LOADER, payload: true });
 
   try {
     const { data } = await axios.patch(
@@ -30,10 +27,7 @@ const reset: ActionCreator<ThunkAction<void, AppState, any, Action>> = (
     notice(error);
   }
 
-  dispatch({
-    type: SET_CHARACTER_LOADER,
-    payload: false
-  });
+  dispatch({ type: SET_CHARACTER_LOADER, payload: false });
 };
 
 export default reset;

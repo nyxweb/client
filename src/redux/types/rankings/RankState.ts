@@ -19,6 +19,11 @@ export default interface RankState {
 
   character: {
     loading: boolean;
-    char: Character | null;
+    char: Character | null | false;
+  };
+
+  guild: {
+    loading: boolean;
+    data: Guild | null | false;
   };
 }

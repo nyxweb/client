@@ -2,14 +2,15 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 // Pages
-import News from 'components/pages/News';
-import Register from 'components/pages/Register';
-import Download from 'components/pages/Download';
-import Rankings from 'components/pages/Rankings';
-import Character from 'components/pages/Character';
-import Login from 'components/pages/Login';
-import UserArea from 'components/pages/UserArea';
-import NotFound from 'components/pages/NotFound';
+import News from './News';
+import Register from './Register';
+import Download from './Download';
+import Rankings from './Rankings';
+import Character from './Character';
+import Guild from './Guild';
+import Login from './Login';
+import UserArea from './UserArea';
+import NotFound from './NotFound';
 
 // Reusables
 import PrivateRoute from 'components/reusables/PrivateRoute';
@@ -25,6 +26,7 @@ const Router: React.FC<Props> = () => {
         <Route path='/download' exact component={Download} />
         <Route path='/rankings' exact component={Rankings} />
         <Route path='/char/:name' exact component={Character} />
+        <Route path='/guild/:name' exact component={Guild} />
         <Route path='/login' exact component={Login} />
         <PrivateRoute path='/user' component={UserArea} />
         <Route path='/' component={NotFound} />

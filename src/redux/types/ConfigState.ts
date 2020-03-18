@@ -31,6 +31,12 @@ export default interface ConfigState {
       }[]
     | null;
 
+  change_name: {
+    cost: number;
+    min_length: number;
+    max_length: number;
+  } | null;
+
   itemsList: { [key: string]: any } | null;
   itemsAncient: { [key: string]: any } | null;
   itemsOptions: { [key: string]: any } | null;

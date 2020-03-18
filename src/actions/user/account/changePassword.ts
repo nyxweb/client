@@ -23,10 +23,7 @@ const changePassword: ActionCreator<ThunkAction<
   any,
   Action
 >> = (form: Form) => async dispatch => {
-  dispatch({
-    type: SET_ACCOUNT_LOADER,
-    payload: true
-  });
+  dispatch({ type: SET_ACCOUNT_LOADER, payload: true });
 
   try {
     const { data } = await axios.patch(
@@ -39,10 +36,7 @@ const changePassword: ActionCreator<ThunkAction<
     notice(error);
   }
 
-  dispatch({
-    type: SET_ACCOUNT_LOADER,
-    payload: false
-  });
+  dispatch({ type: SET_ACCOUNT_LOADER, payload: false });
 };
 
 export default changePassword;

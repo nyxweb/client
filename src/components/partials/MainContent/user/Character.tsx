@@ -14,7 +14,7 @@ interface Props {}
 
 const Character: React.FC<Props> = () => {
   return (
-    <div className='Character'>
+    <div className='UserCharacter'>
       <Switch>
         <Route path='/user/char/reset' component={Reset} />
         <Route path='/user/char/stats' component={Stats} />

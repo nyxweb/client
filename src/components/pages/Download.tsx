@@ -14,7 +14,7 @@ const Download: React.FC<Props> = () => {
 
   return (
     <div className='Download'>
-      <table>
+      <table className='Table'>
         <thead>
           <tr>
             <th>#</th>

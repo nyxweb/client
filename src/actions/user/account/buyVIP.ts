@@ -18,10 +18,7 @@ import { notice } from 'actions/utils';
 const buyVIP: ActionCreator<ThunkAction<void, AppState, any, Action>> = (
   vipDays: number
 ) => async dispatch => {
-  dispatch({
-    type: SET_ACCOUNT_LOADER,
-    payload: true
-  });
+  dispatch({ type: SET_ACCOUNT_LOADER, payload: true });
 
   try {
     const { data } = await axios.patch(
@@ -31,25 +28,16 @@ const buyVIP: ActionCreator<ThunkAction<void, AppState, any, Action>> = (
       }
     );
 
-    dispatch({
-      type: SET_ACCOUNT_INFO,
-      payload: data.info
-    });
+    dispatch({ type: SET_ACCOUNT_INFO, payload: data.info });
 
-    dispatch({
-      type: SET_CREDITS,
-      payload: data.credits
-    });
+    dispatch({ type: SET_CREDITS, payload: data.credits });
 
     notice(data);
   } catch (error) {
     notice(error);
   }
 
-  dispatch({
-    type: SET_ACCOUNT_LOADER,
-    payload: false
-  });
+  dispatch({ type: SET_ACCOUNT_LOADER, payload: false });
 };
 
 export default buyVIP;

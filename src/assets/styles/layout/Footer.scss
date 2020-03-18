@@ -1,4 +1,5 @@
 .Footer {
+  position: relative;
   color: #455468;
   line-height: 1.3;
   height: 300px;
@@ -6,17 +7,31 @@
   align-items: center;
   justify-content: space-between;
 
-  & .copyright {
+  .scroll-up {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    background: url('../../images/layout/scroll-up.png') no-repeat center
+      center/cover;
+    cursor: url('../../images/main/pointer.cur'), pointer;
+  }
+
+  .copyright {
     display: flex;
     flex-direction: column;
+    font-size: 11px;
 
-    & :first-child {
+    span:first-of-type {
       font-size: 14px;
     }
   }
 
-  & .menu {
-    & a {
+  .menu {
+    a {
       color: #455468;
       text-transform: uppercase;
       font-size: 12px;

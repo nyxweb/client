@@ -1,2 +1,29 @@
-.Name {
+.UserCharName {
+  margin: 20px;
+  padding: 15px;
+  background: rgba(63, 85, 114, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+
+  .fields {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+
+    input {
+      margin: 0 10px;
+      width: 100px;
+    }
+  }
+
+  .info {
+    .title {
+      font-size: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    margin-top: 20px;
+    padding: 10px 0 10px 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
 }

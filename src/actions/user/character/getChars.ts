@@ -14,26 +14,17 @@ const getChars: ActionCreator<ThunkAction<
   any,
   Action
 >> = () => async dispatch => {
-  dispatch({
-    type: SET_CHARACTER_LOADER,
-    payload: true
-  });
+  dispatch({ type: SET_CHARACTER_LOADER, payload: true });
 
   try {
     const { data } = await axios.get(
       process.env.REACT_APP_API_URI + '/user/character'
     );
 
-    dispatch({
-      type: SET_CHARACTERS,
-      payload: data
-    });
+    dispatch({ type: SET_CHARACTERS, payload: data });
   } catch (error) {}
 
-  dispatch({
-    type: SET_CHARACTER_LOADER,
-    payload: false
-  });
+  dispatch({ type: SET_CHARACTER_LOADER, payload: false });
 };
 
 export default getChars;

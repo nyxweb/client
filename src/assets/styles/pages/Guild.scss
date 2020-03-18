@@ -1,0 +1,81 @@
+.Guild {
+  margin: 20px;
+  padding: 15px;
+  background: rgba(63, 85, 114, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+
+  table.guild-info {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0px 0 15px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(63, 85, 114, 0.1);
+    border-radius: 3px;
+
+    .image {
+      width: 50%;
+      text-align: center;
+    }
+
+    td {
+      padding: 10px;
+    }
+
+    & > tbody {
+      & > tr:first-of-type {
+        font-size: 22px;
+        background: rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid #223141;
+
+        td {
+          padding: 15px 0;
+          text-align: center;
+        }
+      }
+    }
+
+    .info {
+      table {
+        border-collapse: collapse;
+        width: 100%;
+
+        tr:nth-child(odd) {
+          background: rgba(0, 0, 0, 0.1);
+          border-top: 1px solid #223141;
+          border-bottom: 1px solid #223141;
+        }
+      }
+    }
+  }
+
+  .equipment {
+    box-shadow: 0px 0 15px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(63, 85, 114, 0.1);
+    border-radius: 3px;
+    margin-top: 20px;
+
+    .title {
+      font-size: 18px;
+      background: rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #223141;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .container {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+
+      .content {
+        position: relative;
+        box-sizing: content-box;
+        width: 420px;
+        height: 380px;
+        background-position: center center;
+        border-radius: 5px;
+        box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 0.5);
+        border: 1px solid #372b24;
+      }
+    }
+  }
+}

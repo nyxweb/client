@@ -19,10 +19,7 @@ const moveItem: ActionCreator<ThunkAction<
   any,
   Action
 >> = ({ itemSlot, newSlot, from, to }) => async dispatch => {
-  dispatch({
-    type: SET_ACCOUNT_LOADER,
-    payload: true
-  });
+  dispatch({ type: SET_ACCOUNT_LOADER, payload: true });
 
   try {
     if (from !== to || (from === to && from !== 'storage')) {
@@ -36,24 +33,14 @@ const moveItem: ActionCreator<ThunkAction<
         }
       );
 
-      dispatch({
-        type: WAREHOUSE_UPDATE,
-        payload: data.warehouse
-      });
-
-      dispatch({
-        type: STORAGE_UPDATE,
-        payload: data.storage
-      });
+      dispatch({ type: WAREHOUSE_UPDATE, payload: data.warehouse });
+      dispatch({ type: STORAGE_UPDATE, payload: data.storage });
     }
   } catch (error) {
     notice(error);
   }
 
-  dispatch({
-    type: SET_ACCOUNT_LOADER,
-    payload: false
-  });
+  dispatch({ type: SET_ACCOUNT_LOADER, payload: false });
 };
 
 export default moveItem;
