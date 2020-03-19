@@ -7,7 +7,7 @@ import { notice } from 'actions/utils';
 import {
   WAREHOUSE_UPDATE,
   STORAGE_UPDATE,
-  SET_ACCOUNT_LOADER
+  SET_EXTRA_LOADER
 } from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
@@ -19,7 +19,7 @@ const moveItem: ActionCreator<ThunkAction<
   any,
   Action
 >> = ({ itemSlot, newSlot, from, to }) => async dispatch => {
-  dispatch({ type: SET_ACCOUNT_LOADER, payload: true });
+  dispatch({ type: SET_EXTRA_LOADER, payload: true });
 
   try {
     if (from !== to || (from === to && from !== 'storage')) {
@@ -40,7 +40,7 @@ const moveItem: ActionCreator<ThunkAction<
     notice(error);
   }
 
-  dispatch({ type: SET_ACCOUNT_LOADER, payload: false });
+  dispatch({ type: SET_EXTRA_LOADER, payload: false });
 };
 
 export default moveItem;

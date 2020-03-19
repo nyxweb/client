@@ -38,6 +38,11 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
       ? 'weapons'
       : 'items';
 
+  const itemName =
+    itemData.levels && itemData.levels[item.level]
+      ? itemData.levels[item.level]
+      : itemData.name + `${item.level > 0 ? ' +' + item.level : ''}`;
+
   // Wings options
   if (item.group === 12) {
     itemData.options.additional = item.excellent[5] ? 'dmg' : 'rec';
@@ -48,7 +53,7 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
     ancient && (
       <div className='Options'>
         <div className='row name' style={name(item)}>
-          {ancientName} {itemData.name} {item.level > 0 && '+' + item.level}
+          {ancientName} {itemName}
         </div>
         <div className='row dur'>Durability: {item.durability}</div>
         {image && (

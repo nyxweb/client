@@ -24,11 +24,14 @@ interface Props {}
 const Storage: React.FC<Props> = () => {
   const [dragItem, setDragItem] = useState<DragItem>();
 
-  const account = useSelector((state: AppState) => state.user.account);
+  const {
+    account,
+    extra: { loading }
+  } = useSelector((state: AppState) => state.user);
 
   return (
     <div className='Storage'>
-      {!account.info || account.loading ? (
+      {!account.info || loading ? (
         <Loader />
       ) : (
         <>

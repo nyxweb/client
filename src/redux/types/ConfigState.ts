@@ -32,9 +32,19 @@ export default interface ConfigState {
     | null;
 
   change_name: {
+    enabled: boolean;
     cost: number;
     min_length: number;
     max_length: number;
+  } | null;
+
+  change_class: {
+    enabled: boolean;
+    cost: number;
+    min_resets: number;
+    max_resets: number;
+    min_level: number;
+    classes: number[];
   } | null;
 
   itemsList: { [key: string]: any } | null;

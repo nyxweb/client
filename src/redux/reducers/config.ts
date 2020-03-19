@@ -10,6 +10,7 @@ const initialState: ConfigState = {
   stats: null,
   downloads: null,
   change_name: null,
+  change_class: null,
   itemsList: null,
   itemsAncient: null,
   itemsOptions: null

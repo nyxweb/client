@@ -38,7 +38,8 @@ body {
     }
 
     input,
-    select {
+    select,
+    button {
       background-color: #131f2d;
       border: 1px solid #2c3545;
       color: #7d8a9f;
@@ -52,6 +53,12 @@ body {
       &:focus {
         border: 1px solid #3e4e69;
       }
+    }
+
+    button,
+    button span,
+    button font {
+      cursor: url('../images/main/pointer.cur'), pointer;
     }
 
     sup {

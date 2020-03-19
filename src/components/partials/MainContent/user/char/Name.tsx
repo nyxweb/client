@@ -32,7 +32,7 @@ const Name: React.FC<Props> = () => {
         <Loader />
       ) : !list || !list.length ? (
         'No characters found'
-      ) : (
+      ) : config && config.enabled ? (
         <>
           <div className='fields'>
             <select onChange={e => setName(e.target.value)}>
@@ -71,6 +71,8 @@ const Name: React.FC<Props> = () => {
             </div>
           )}
         </>
+      ) : (
+        'This module is currently disabled.'
       )}
     </div>
   );

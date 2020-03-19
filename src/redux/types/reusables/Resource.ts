@@ -3,4 +3,5 @@ export default interface Resource {
   id: number;
   level: number;
   value?: number;
+  [key: string]: any;
 }

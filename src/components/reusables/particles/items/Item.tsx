@@ -88,6 +88,12 @@ const Item: React.FC<Props> = ({
     height: realSize ? slotSize * itemData.y : slotSize
   };
 
+  const itemName =
+    itemData.levels && itemDecode && itemData.levels[itemDecode.level]
+      ? itemData.levels[itemDecode.level]
+      : itemData.name +
+        `${itemDecode && itemDecode.level > 0 ? ' +' + itemDecode.level : ''}`;
+
   // Event Listeners
   const onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
     e.dataTransfer.setDragImage(preview!, 0, 0);
@@ -159,7 +165,7 @@ const Item: React.FC<Props> = ({
             data-tip
             data-for={id}
           >
-            {itemData.name}
+            {itemName}
           </span>
         )}
         <ReactTooltip effect='solid' place='left' offset={{ left: 10 }} id={id}>
