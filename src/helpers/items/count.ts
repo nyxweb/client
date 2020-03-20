@@ -26,20 +26,4 @@ const items = (warehouse: string, item: Item | Resource): number => {
   return count;
 };
 
-const emptySlots = (warehouse: string): number => {
-  let count = 0;
-
-  if (warehouse.length / 32 !== 120) {
-    return count;
-  }
-
-  warehouse.match(/.{32}/g)!.forEach(hex => {
-    if (hex.toLowerCase() === 'f'.repeat(32)) {
-      count++;
-    }
-  });
-
-  return count;
-};
-
-export default { items, emptySlots };
+export default { items };

@@ -6,6 +6,7 @@ import Resource from 'components/reusables/particles/Resource';
 
 // Helpers
 import { count } from 'helpers/items';
+import slotsMatrix, { multidimensionalSum } from 'helpers/items/slotsMatrix';
 
 // Actions
 import { notice } from 'actions/utils';
@@ -30,6 +31,7 @@ const Resources: React.FC<Props> = () => {
 
   const account = useSelector((state: AppState) => state.user.account.info);
   const loading = useSelector((state: AppState) => state.user.extra.loading);
+  const itemsDB = useSelector((state: AppState) => state.config.itemsList);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -51,13 +53,15 @@ const Resources: React.FC<Props> = () => {
         })
       );
 
+      const matrix = slotsMatrix(account.warehouse.items, itemsDB);
+
       setCounter(c => ({
         ...c,
         found: countItems,
-        empty: count.emptySlots(account.warehouse.items)
+        empty: 120 - multidimensionalSum(matrix)
       }));
     }
-  }, [account]);
+  }, [account, itemsDB]);
 
   const typer = (e: React.ChangeEvent<HTMLInputElement>, res: IResource) => {
     if (fields) {
@@ -69,9 +73,9 @@ const Resources: React.FC<Props> = () => {
       const newTotalInput = counter.input - fields[index].value! + value;
 
       if (index >= 0 && value >= 0) {
-        if (newTotalInput > 120) {
+        if (newTotalInput > counter.empty) {
           return notice({
-            error: 'You cannot withdraw more than 120 items.'
+            error: `You only have space for ${counter.empty} items.`
           });
         }
 

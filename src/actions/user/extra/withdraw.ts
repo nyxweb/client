@@ -4,7 +4,7 @@ import axios from 'axios';
 import { notice } from 'actions/utils';
 
 // Types
-import { WAREHOUSE_UPDATE, SET_EXTRA_LOADER } from 'redux/types/actions';
+import { /* WAREHOUSE_UPDATE, */ SET_EXTRA_LOADER } from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';

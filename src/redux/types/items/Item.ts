@@ -1,6 +1,6 @@
 export default interface Item {
-  id: number;
   group: number;
+  id: number;
   excellent: number[];
   durability: number;
   luck: boolean;

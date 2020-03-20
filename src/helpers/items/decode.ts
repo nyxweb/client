@@ -20,7 +20,7 @@ const hexDecode = (hex: string): Item | false => {
   const level = (opts >> 3) & 0b1111;
   const skill = !!((opts >> 7) & 0b1);
   const options = (opts & 0b11) | (((exos >> 6) & 0b1) << 2);
-  const ancient = hex2dec(hex.substr(16, 2));
+  const ancient = hex2dec(hex.substr(17, 1));
   const serial = hex.substr(6, 8);
   const durability = hex2dec(hex.substr(4, 2));
   const pink = !!hex2dec(hex.substr(19, 1));
