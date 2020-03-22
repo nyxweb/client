@@ -5,10 +5,10 @@ import { Switch, Route } from 'react-router-dom';
 import NotFound from 'components/pages/NotFound';
 
 // Partials
-import Password from 'components/partials/MainContent/user/account/Password';
-import VIP from 'components/partials/MainContent/user/account/VIP';
-import Online from 'components/partials/MainContent/user/account/Online';
-import Logs from 'components/partials/MainContent/user/account/Logs';
+import Password from './account/Password';
+import VIP from './account/VIP';
+import Online from './account/Online';
+import Logs from './account/Logs';
 
 interface Props {}
 

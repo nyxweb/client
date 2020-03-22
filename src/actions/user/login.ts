@@ -28,7 +28,10 @@ const userLogin: ActionCreator<ThunkAction<
 
     dispatch({ type: LOGIN, payload: data });
     notice(data);
-    history.push('/user/account/logs');
+
+    if (!window.location.pathname.includes('/user/')) {
+      history.push('/user/account/logs');
+    }
   } catch (error) {
     dispatch({ type: LOGIN_FAILED });
     notice(error);

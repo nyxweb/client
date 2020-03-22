@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Account from 'components/partials/MainContent/user/Account';
 import Character from 'components/partials/MainContent/user/Character';
 import Extras from 'components/partials/MainContent/user/Extras';
+import Admin from 'components/partials/MainContent/user/Admin';
 
 interface Props {}
 
@@ -15,6 +16,7 @@ const UserArea: React.FC<Props> = () => {
         <Route path='/user/account' component={Account} />
         <Route path='/user/char' component={Character} />
         <Route path='/user/extra' component={Extras} />
+        <Route path='/user/admin' component={Admin} />
       </Switch>
     </div>
   );

@@ -4,7 +4,11 @@ import axios from 'axios';
 import { notice } from 'actions/utils';
 
 // Types
-import { /* WAREHOUSE_UPDATE, */ SET_EXTRA_LOADER } from 'redux/types/actions';
+import {
+  WAREHOUSE_UPDATE,
+  RESOURCES_UPDATE,
+  SET_EXTRA_LOADER
+} from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
@@ -24,7 +28,14 @@ const depositResources: ActionCreator<ThunkAction<
       { deposits: resources }
     );
 
-    // dispatch({ type: WAREHOUSE_UPDATE, payload: data.warehouse });
+    const updated: any = {
+      ...data.resources,
+      list: data.resources.resources
+    };
+    delete updated.resources;
+
+    dispatch({ type: WAREHOUSE_UPDATE, payload: data.items });
+    dispatch({ type: RESOURCES_UPDATE, payload: updated });
     notice(data);
   } catch (error) {
     notice(error);

@@ -38,7 +38,7 @@ const TopGuilds: React.FC<Props> = () => {
         <tbody>
           {!guilds.list || guilds.loading ? (
             <tr>
-              <td colSpan={4} style={{ textAlign: 'left' }}>
+              <td colSpan={5} style={{ textAlign: 'left' }}>
                 {guilds.loading ? <Loader /> : 'Failed to load'}
               </td>
             </tr>

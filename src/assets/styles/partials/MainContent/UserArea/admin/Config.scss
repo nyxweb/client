@@ -1,0 +1,33 @@
+.AdminConfig {
+  margin: 20px;
+  padding: 15px;
+  background: rgba(63, 85, 114, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+
+  .controls {
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin-left: 10px;
+    }
+  }
+
+  .selected {
+    margin-top: 15px;
+    text-align: center;
+
+    .field {
+      margin-top: 15px;
+      padding: 25px;
+      background: rgba(63, 85, 114, 0.1);
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    @import './config/Events.scss';
+    @import './config/Reset.scss';
+    @import './config/Resources.scss';
+    @import './config/Downloads.scss';
+    @import './config/ItemsList.scss';
+  }
+}

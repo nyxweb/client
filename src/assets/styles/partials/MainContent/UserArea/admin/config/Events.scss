@@ -1,0 +1,149 @@
+.Events {
+  .title {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .new-event {
+      display: inline-flex;
+      align-items: center;
+
+      .add-icon {
+        width: 15px;
+        height: 15px;
+        transition: 0.2s ease-in-out;
+        margin-left: 5px;
+
+        &:hover {
+          color: #88b0d4;
+        }
+      }
+    }
+  }
+
+  .info {
+    padding: 15px;
+    margin-top: 15px;
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin-top: 15px;
+
+    tr {
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    td {
+      vertical-align: top;
+      border-radius: 4px;
+      padding: 5px;
+
+      input {
+        margin: 5px;
+      }
+    }
+  }
+
+  .event-name {
+    .controls {
+      display: flex;
+      justify-content: flex-start;
+      opacity: 0;
+      transition: 0.2s ease-in-out;
+
+      .arrow-up,
+      .arrow-down,
+      .trash {
+        width: 15px;
+        height: 15px;
+        margin: 5px 0 10px 5px;
+        transition: 0.2s ease-in-out;
+
+        &:first-of-type {
+          margin: 5px 0 10px 10px;
+        }
+
+        &:hover {
+          color: #88b0d4;
+        }
+      }
+
+      .trash {
+        color: #ce5353;
+
+        &:hover {
+          color: #cc2e2e;
+        }
+      }
+    }
+
+    &:hover {
+      .controls {
+        opacity: 1;
+      }
+    }
+  }
+
+  .hoursList {
+    position: relative;
+
+    svg {
+      opacity: 0;
+      transition: 0.2s ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+
+    .hour-box {
+      display: inline-flex;
+      position: relative;
+      align-items: center;
+
+      input {
+        width: 100px;
+        text-align: center;
+      }
+
+      .index {
+        position: absolute;
+        left: 10px;
+        padding: 3px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .delete {
+    color: #ce5353;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 10px;
+
+    &:hover {
+      color: #cc2e2e;
+    }
+  }
+
+  .add {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+
+    &:hover {
+      color: #88b0d4;
+    }
+  }
+}

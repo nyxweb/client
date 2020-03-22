@@ -59,7 +59,15 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
         {image && (
           <div className='row item-pic'>
             <img
-              src={`/images/items/${item.group}/${item.id}.gif`}
+              src={`/images/items/${item.group}/${item.id}${
+                itemData.levels && itemData.levels[item.level]
+                  ? '-' + item.level
+                  : ''
+              }${
+                item.ancient && itemData.options && itemData.options.ancient
+                  ? 'C'
+                  : ''
+              }.gif`}
               alt='item'
             />
           </div>

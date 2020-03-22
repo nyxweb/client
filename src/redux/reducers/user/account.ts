@@ -6,6 +6,7 @@ import {
   LOGOUT,
   WAREHOUSE_UNLOCK,
   WAREHOUSE_UPDATE,
+  RESOURCES_UPDATE,
   STORAGE_UPDATE,
   SET_LOGS,
   CLEAR_LOGS,
@@ -56,6 +57,14 @@ const account = (state = initialState, { type, payload }: ReduxAction) => {
             ...state.info?.warehouse,
             items: payload
           }
+        }
+      };
+    case RESOURCES_UPDATE:
+      return {
+        ...state,
+        info: {
+          ...state.info,
+          resources: payload
         }
       };
     case STORAGE_UPDATE:

@@ -81,6 +81,10 @@ const Item: React.FC<Props> = ({
       itemData.levels && itemData.levels[itemDecode.level]
         ? '-' + itemDecode.level
         : ''
+    }${
+      itemDecode.ancient && itemData.options && itemData.options.ancient
+        ? 'C'
+        : ''
     }.gif`;
 
   const itemStyle: CSSProperties = {

@@ -91,6 +91,16 @@ const Resources: React.FC<Props> = () => {
     }
   };
 
+  const resetCounter = () => {
+    setCounter({ ...counter, input: 0 });
+    setFields(
+      fields?.map(f => ({
+        ...f,
+        value: 0
+      }))
+    );
+  };
+
   return (
     <div className='Resources'>
       {loading ? (
@@ -133,7 +143,12 @@ const Resources: React.FC<Props> = () => {
             <Button
               value={`deposit ( ${counter.input} )`}
               tooltip='Deposit selected resources'
-              onClick={() => counter.input && dispatch(deposit(fields))}
+              onClick={() => {
+                if (counter.input) {
+                  resetCounter();
+                  dispatch(deposit(fields));
+                }
+              }}
             />
             <Button
               value={`withdraw ( ${
@@ -142,17 +157,23 @@ const Resources: React.FC<Props> = () => {
                   : counter.input
               }/${counter.empty} )`}
               tooltip='Withdraw selected resources'
-              onClick={() =>
-                counter.input &&
-                counter.input <= counter.empty &&
-                dispatch(withdraw(fields))
-              }
+              onClick={() => {
+                if (counter.input && counter.input <= counter.empty) {
+                  resetCounter();
+                  dispatch(withdraw(fields));
+                }
+              }}
             />
             <Button
               value={`deposit all ( ${counter.found} )`}
               looks='green'
               tooltip='Deposit all available resources'
-              onClick={() => counter.found && dispatch(deposit())}
+              onClick={() => {
+                if (counter.found) {
+                  resetCounter();
+                  dispatch(deposit());
+                }
+              }}
             />
           </div>
         </>

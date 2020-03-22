@@ -1,3 +1,4 @@
+import Resource from './reusables/Resource';
 export default interface ConfigState {
   events:
     | {
@@ -8,6 +9,7 @@ export default interface ConfigState {
     | false;
   online_time: number | null | false;
   vip: number | null | false;
+  resources: Resource[] | null | false;
   reset:
     | {
         max_reset: number;
@@ -50,4 +52,6 @@ export default interface ConfigState {
   itemsList: { [key: string]: any } | null;
   itemsAncient: { [key: string]: any } | null;
   itemsOptions: { [key: string]: any } | null;
+
+  [key: string]: any;
 }

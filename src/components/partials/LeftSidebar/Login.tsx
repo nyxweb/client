@@ -18,7 +18,9 @@ const Login: React.FC<Props & RouteComponentProps> = ({ history }) => {
     password: ''
   });
 
-  const loginLoader = useSelector((state: AppState) => state.user.loginLoader);
+  const loginLoader = useSelector(
+    (state: AppState) => state.user.account.loginLoader
+  );
   const dispatch = useDispatch();
 
   const typer = (e: React.ChangeEvent<HTMLInputElement>) => {

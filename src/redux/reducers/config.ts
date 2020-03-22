@@ -6,6 +6,7 @@ const initialState: ConfigState = {
   events: null,
   online_time: null,
   vip: null,
+  resources: null,
   reset: null,
   stats: null,
   downloads: null,

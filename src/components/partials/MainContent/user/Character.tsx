@@ -5,10 +5,10 @@ import { Switch, Route } from 'react-router-dom';
 import NotFound from 'components/pages/NotFound';
 
 // Partials
-import Reset from 'components/partials/MainContent/user/char/Reset';
-import Stats from 'components/partials/MainContent/user/char/Stats';
-import Name from 'components/partials/MainContent/user/char/Name';
-import Class from 'components/partials/MainContent/user/char/Class';
+import Reset from './char/Reset';
+import Stats from './char/Stats';
+import Name from './char/Name';
+import Class from './char/Class';
 
 interface Props {}
 

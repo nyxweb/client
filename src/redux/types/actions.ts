@@ -20,7 +20,11 @@ export const SET_CHARACTERS = 'SET_CHARACTERS';
 export const SET_EXTRA_LOADER = 'SET_EXTRA_LOADER';
 export const WAREHOUSE_UNLOCK = 'WAREHOUSE_UNLOCK';
 export const WAREHOUSE_UPDATE = 'WAREHOUSE_UPDATE';
+export const RESOURCES_UPDATE = 'RESOURCES_UPDATE';
 export const STORAGE_UPDATE = 'STORAGE_UPDATE';
+
+// User -> Admin
+export const SET_ADMIN_LOADER = 'SET_ADMIN_LOADER';
 
 // Rankings
 export const GET_HOF = 'GET_HOF';

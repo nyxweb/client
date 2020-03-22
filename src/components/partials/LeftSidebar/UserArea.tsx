@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Reusables
@@ -19,7 +19,7 @@ import IResource from 'redux/types/reusables/Resource';
 
 interface Props {}
 
-const UserArea: React.FC<Props> = () => {
+const UserArea: React.FC<Props & RouteComponentProps> = ({ history }) => {
   const [resources, setResources] = useState<IResource[]>([]);
   const [menu, setMenu] = useState('');
   const dispatch = useDispatch();
@@ -27,7 +27,9 @@ const UserArea: React.FC<Props> = () => {
   const account = useSelector((state: AppState) => state.user.account.info);
 
   useEffect(() => {
-    setResources(JSON.parse(account!.resources.list));
+    if (account && account.resources) {
+      setResources(JSON.parse(account.resources.list));
+    }
   }, [account]);
 
   return (
@@ -42,7 +44,7 @@ const UserArea: React.FC<Props> = () => {
         </span>
         <Button
           value='logout'
-          onClick={() => dispatch(logout())}
+          onClick={() => dispatch(logout(history))}
           style={{ width: 80 }}
         />
       </div>
@@ -52,10 +54,16 @@ const UserArea: React.FC<Props> = () => {
         ))}
         <div className='main'>
           <div className='block credits'>
-            <CreditsIcon /> {account?.resources.credits.toLocaleString()}
+            <CreditsIcon />{' '}
+            {account && account.resources
+              ? account.resources.credits.toLocaleString()
+              : ''}
           </div>
           <div className='block money'>
-            <MoneyIcon /> {account?.resources.zen.toLocaleString()}
+            <MoneyIcon />{' '}
+            {account && account.resources
+              ? account.resources.zen.toLocaleString()
+              : ''}
           </div>
         </div>
       </div>
@@ -100,12 +108,27 @@ const UserArea: React.FC<Props> = () => {
             <Link to='/user/extra/auction'>Auction</Link>
             <Link to='/user/extra/storage'>Storage</Link>
             <Link to='/user/extra/resources'>Resources</Link>
-            <Link to='/user/extra/quests'>Quests</Link>
+            {/* <Link to='/user/extra/quests'>Quests</Link> */}
           </div>
         </div>
+        {account && account.admin_lvl === 420 && (
+          <div className='section'>
+            <div className='title' onClick={() => setMenu('admin')}>
+              Administration
+              <div className='underline'>
+                <span className='line' />
+              </div>
+            </div>
+            <div className={`content ${menu === 'admin' ? 'open' : 'closed'}`}>
+              <Link to='/user/admin/news'>Post News</Link>
+              <Link to='/user/admin/config'>Configuration</Link>
+              <Link to='/user/admin/adder'>Items and Resources</Link>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default UserArea;
+export default withRouter(UserArea);

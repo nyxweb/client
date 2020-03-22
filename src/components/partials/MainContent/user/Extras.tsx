@@ -5,11 +5,11 @@ import { Switch, Route } from 'react-router-dom';
 import NotFound from 'components/pages/NotFound';
 
 // Partials
-import Market from 'components/partials/MainContent/user/extra/Market';
-import Auction from 'components/partials/MainContent/user/extra/Auction';
-import Storage from 'components/partials/MainContent/user/extra/Storage';
-import Resources from 'components/partials/MainContent/user/extra/Resources';
-import Quests from 'components/partials/MainContent/user/extra/Quests';
+import Market from './extra/Market';
+import Auction from './extra/Auction';
+import Storage from './extra/Storage';
+import Resources from './extra/Resources';
+import Quests from './extra/Quests';
 
 interface Props {}
 
