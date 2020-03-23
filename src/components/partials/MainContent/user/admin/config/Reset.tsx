@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import Button from 'components/reusables/form/Button';
 
 // Actions
-import { notice } from 'actions/utils';
 import { updateConfig } from 'actions/user/admin';
 
 // Types
@@ -35,7 +34,7 @@ const Reset: React.FC<Props> = () => {
   }, [config]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value.replace(/[,\.]/g, ''));
+    const value = Number(e.target.value.replace(/[,.]/g, ''));
     const id = Number(e.target.dataset.id);
 
     if (reset) {

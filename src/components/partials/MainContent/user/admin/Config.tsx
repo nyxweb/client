@@ -19,6 +19,8 @@ import Vip from './config/Vip';
 import Stats from './config/Stats';
 import Resources from './config/Resources';
 import Downloads from './config/Downloads';
+import ChangeName from './config/ChangeName';
+import ChangeClass from './config/ChangeClass';
 import ItemsList from './config/ItemsList';
 
 interface Props {}
@@ -50,6 +52,10 @@ const Config: React.FC<Props> = () => {
         return <Resources />;
       case 'downloads':
         return <Downloads />;
+      case 'change_name':
+        return <ChangeName />;
+      case 'change_class':
+        return <ChangeClass />;
       case 'itemsList':
         return <ItemsList />;
     }

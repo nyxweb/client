@@ -4,9 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 // Icons
 import { ReactComponent as Delete } from 'assets/icons/delete.svg';
 import { ReactComponent as Add } from 'assets/icons/add.svg';
-import { ReactComponent as ArrowUp } from 'assets/icons/arrow-up.svg';
-import { ReactComponent as ArrowDown } from 'assets/icons/arrow-down.svg';
-import { ReactComponent as Trash } from 'assets/icons/trash.svg';
 
 // Reusales
 import Button from 'components/reusables/form/Button';
@@ -16,7 +13,6 @@ import { updateConfig } from 'actions/user/admin';
 
 // Types
 import AppState from 'redux/types/app';
-import Moment from 'react-moment';
 import uuid from 'uuid';
 
 interface Props {}
@@ -39,22 +35,6 @@ const Downloads: React.FC<Props> = () => {
     ancientList &&
       setAncient(Object.entries(ancientList).map(([name]) => name));
   }, [ancientList]);
-
-  // const handleChange = (
-  //   e: React.ChangeEvent<HTMLInputElement>,
-  //   sound = false
-  // ) => {
-  //   const updated = [...list];
-  //   const index = Number(e.target.dataset.index);
-  //   if (sound) {
-  //     updated[index].sound = !updated[index].sound;
-  //   } else {
-  //     updated[index][e.target.name] = e.target.value;
-  //   }
-
-  //   updated[index].upload = Math.floor(Date.now() / 1000);
-  //   setList(updated);
-  // };
 
   const remove = (group: string, id: string) => {
     const updated = { ...list };

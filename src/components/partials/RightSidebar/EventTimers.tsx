@@ -9,7 +9,11 @@ import ReactLoader from 'components/reusables/ReactLoader';
 
 // Types
 import AppState from 'redux/types/app';
-import Event from 'redux/types/others/Event';
+
+interface Event {
+  name: string;
+  hours: string[];
+}
 
 interface Props {}
 

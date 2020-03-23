@@ -157,7 +157,13 @@ const Events: React.FC<Props> = () => {
             ))}
         </tbody>
       </table>
-      <div className='info'>Make sure all hours are in format HH:MM</div>
+      <div className='info'>
+        <div>Make sure all hours are in format HH:MM</div>
+        <div>
+          Also make sure all hours are in order from low to high (for instance:
+          (00:30, 02:30,... 23:30))
+        </div>
+      </div>
     </div>
   );
 };

@@ -53,3 +53,10 @@ export const MARKET_LATEST_FAILED = 'MARKET_LATEST_FAILED';
 // Config
 export const SET_CONFIG = 'SET_CONFIG';
 export const SET_CONFIG_FAILED = 'SET_CONFIG_FAILED';
+
+// News
+export const SET_NEWS_LOADING = 'SET_NEWS_LOADING';
+export const SET_NEWS = 'SET_NEWS';
+export const SET_NEWS_SINGLE = 'SET_NEWS_SINGLE';
+export const CLEAR_NEWS = 'CLEAR_NEWS';
+export const CLEAR_NEWS_SINGLE = 'CLEAR_NEWS_SINGLE';

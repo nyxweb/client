@@ -10,6 +10,7 @@ interface Props {
   onClick?: Function;
   style?: CSSProperties;
   tooltip?: string;
+  className?: string;
 }
 
 const Button: React.FC<Props> = ({
@@ -19,14 +20,15 @@ const Button: React.FC<Props> = ({
   loading = false,
   onClick,
   style,
-  tooltip
+  tooltip,
+  className = ''
 }) => {
   const id = uuid();
 
   return (
     <>
       <button
-        className={`Button ${looks}`}
+        className={`Button ${looks} ${className}`}
         type={type}
         disabled={loading}
         style={style}

@@ -1,7 +1,14 @@
-import Event from './Event';
-import MarketState from './MarketState';
+import _nyxMarket from './_nyxMarket';
+import _nyxNews from './_nyxNews';
 
 export default interface OtherState {
-  events: Event[];
-  market: MarketState;
+  market: {
+    latest: _nyxMarket[] | null;
+  };
+
+  news: {
+    loading: boolean;
+    single: _nyxNews | null;
+    many: _nyxNews[] | null;
+  };
 }

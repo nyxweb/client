@@ -1,0 +1,35 @@
+.ChangeClass {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 15px;
+
+  .title {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+
+    tr {
+      background: rgba(63, 85, 114, 0.1);
+    }
+
+    td {
+      padding: 5px;
+      width: 50%;
+    }
+
+    &.clean {
+      border-collapse: separate;
+      border-spacing: 0 5px;
+
+      tr {
+        background: none;
+      }
+    }
+  }
+}
