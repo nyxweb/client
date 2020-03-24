@@ -9,7 +9,7 @@ const decode = (hex: string) => ({
   wep2: hex.substr(32, 32),
   pend: hex.substr(288, 32),
   ring1: hex.substr(320, 32),
-  ring2: hex.substr(356, 32),
+  ring2: hex.substr(352, 32),
   pet: hex.substr(256, 32)
 });
 

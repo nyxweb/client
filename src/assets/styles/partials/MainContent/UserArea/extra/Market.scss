@@ -1,2 +1,65 @@
 .Market {
+  margin: 20px;
+  background: rgba(63, 85, 114, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  padding: 5px 0 5px 5px;
+  overflow: hidden;
+
+  .itemBlock {
+    width: 91px;
+    background: rgba(0, 0, 0, 0.15);
+    margin: 5px;
+    float: left;
+    display: grid;
+    grid-template-areas:
+      'time     time'
+      'price1   item'
+      'price2   price2'
+      'merchant merchant';
+
+    .price1 {
+      width: 34px;
+      height: 58px;
+      background: rgba(65, 94, 94, 0.24);
+      grid-area: price1;
+    }
+
+    .item {
+      width: 57px;
+      height: 58px;
+      grid-area: item;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .content {
+        max-width: 50px;
+        max-height: 50px;
+      }
+    }
+
+    .price2 {
+      height: 34px;
+      background: rgba(65, 94, 94, 0.24);
+      grid-area: price2;
+    }
+
+    .merchant {
+      height: 25px;
+      grid-area: merchant;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .time {
+      height: 16px;
+      font-size: 9px;
+      padding: 2px;
+      text-align: center;
+      grid-area: time;
+      background: rgba(0, 0, 0, 0.15);
+    }
+  }
 }

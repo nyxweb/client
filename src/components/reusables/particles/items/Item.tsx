@@ -43,6 +43,7 @@ interface Props {
   item?: IItem;
 
   itemData?: any;
+  className?: string;
 }
 
 const Item: React.FC<Props> = ({
@@ -57,7 +58,8 @@ const Item: React.FC<Props> = ({
   from,
   slot,
   item,
-  itemData: _itemData
+  itemData: _itemData,
+  className
 }) => {
   const [isDragged, setIsDragged] = useState(false);
   const [preview, setPreview] = useState<HTMLImageElement>();
@@ -145,7 +147,7 @@ const Item: React.FC<Props> = ({
       <>
         {image ? (
           <div
-            className={`Item ${isDragged ? 'dragged' : ''}`}
+            className={`Item ${isDragged ? 'dragged' : ''} ${className || ''}`}
             style={{ ...itemStyle, ...style }}
             data-tip
             data-for={id}
@@ -164,7 +166,7 @@ const Item: React.FC<Props> = ({
           </div>
         ) : (
           <span
-            className={`Item name}`}
+            className={`Item name ${className || ''}`}
             style={{ color: name(itemDecode).color, ...style }}
             data-tip
             data-for={id}

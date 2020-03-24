@@ -103,7 +103,7 @@ const generateHex = ({
   hex = insert(dec2hex(harmony.level), hex, 21);
 
   // serial
-  hex = insert('f'.repeat(8), hex, 6);
+  hex = insert(serial || 'f'.repeat(8), hex, 6);
 
   return hex;
 };

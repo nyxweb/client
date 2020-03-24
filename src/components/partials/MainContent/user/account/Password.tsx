@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changePassword } from 'actions/user/account';
 import Button from 'components/reusables/form/Button';
 import AppState from 'redux/types/app';
+import Loader from 'components/partials/Loader';
 
 interface Props {}
 
@@ -14,6 +15,7 @@ const Password: React.FC<Props> = () => {
     newPassword: '',
     newRePassword: ''
   });
+
   const dispatch = useDispatch();
   const loading = useSelector((state: AppState) => state.user.account.loading);
 
@@ -28,44 +30,48 @@ const Password: React.FC<Props> = () => {
 
   return (
     <div className='Password'>
-      <form className='FormContainer' onSubmit={onSubmit}>
-        <div className='row'>
-          <div className='title'>Current Password</div>
-          <input
-            className='field'
-            type='password'
-            name='password'
-            placeholder='letters and digits only'
-            value={form.password}
-            onChange={onChange}
-          />
-        </div>
-        <div className='row'>
-          <div className='title'>New Password</div>
-          <input
-            className='field'
-            type='password'
-            name='newPassword'
-            placeholder='letters and digits only'
-            value={form.newPassword}
-            onChange={onChange}
-          />
-        </div>
-        <div className='row'>
-          <div className='title'>Repeat Password</div>
-          <input
-            className='field'
-            type='password'
-            name='newRePassword'
-            placeholder='repeat password'
-            value={form.newRePassword}
-            onChange={onChange}
-          />
-        </div>
-        <div className='row center'>
-          <Button value='Submit' type='submit' loading={loading} />
-        </div>
-      </form>
+      {loading ? (
+        <Loader />
+      ) : (
+        <form className='FormContainer' onSubmit={onSubmit}>
+          <div className='row'>
+            <div className='title'>Current Password</div>
+            <input
+              className='field'
+              type='password'
+              name='password'
+              placeholder='letters and digits only'
+              value={form.password}
+              onChange={onChange}
+            />
+          </div>
+          <div className='row'>
+            <div className='title'>New Password</div>
+            <input
+              className='field'
+              type='password'
+              name='newPassword'
+              placeholder='letters and digits only'
+              value={form.newPassword}
+              onChange={onChange}
+            />
+          </div>
+          <div className='row'>
+            <div className='title'>Repeat Password</div>
+            <input
+              className='field'
+              type='password'
+              name='newRePassword'
+              placeholder='repeat password'
+              value={form.newRePassword}
+              onChange={onChange}
+            />
+          </div>
+          <div className='row center'>
+            <Button value='Submit' type='submit' />
+          </div>
+        </form>
+      )}
     </div>
   );
 };
