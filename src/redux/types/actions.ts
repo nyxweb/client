@@ -22,6 +22,7 @@ export const WAREHOUSE_UNLOCK = 'WAREHOUSE_UNLOCK';
 export const WAREHOUSE_UPDATE = 'WAREHOUSE_UPDATE';
 export const RESOURCES_UPDATE = 'RESOURCES_UPDATE';
 export const STORAGE_UPDATE = 'STORAGE_UPDATE';
+export const SET_MARKET_ITEMS = 'SET_MARKET_ITEMS';
 
 // User -> Admin
 export const SET_ADMIN_LOADER = 'SET_ADMIN_LOADER';
@@ -60,3 +61,6 @@ export const SET_NEWS = 'SET_NEWS';
 export const SET_NEWS_SINGLE = 'SET_NEWS_SINGLE';
 export const CLEAR_NEWS = 'CLEAR_NEWS';
 export const CLEAR_NEWS_SINGLE = 'CLEAR_NEWS_SINGLE';
+
+// Utils
+export const SET_MODAL_LOADER = 'SET_MODAL_LOADER';

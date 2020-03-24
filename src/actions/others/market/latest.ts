@@ -14,11 +14,11 @@ const getCharacters: ActionCreator<ThunkAction<
 >> = () => async dispatch => {
   try {
     const { data } = await axios.get(
-      process.env.REACT_APP_API_URI + '/others/market/latest'
+      process.env.REACT_APP_API_URI + '/others/market?limit=3'
     );
 
     dispatch({
-      type: data ? MARKET_LATEST : MARKET_LATEST_FAILED,
+      type: MARKET_LATEST,
       payload: data
     });
   } catch (error) {

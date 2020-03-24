@@ -1,4 +1,4 @@
-import { SET_EXTRA_LOADER } from 'redux/types/actions';
+import { SET_EXTRA_LOADER, SET_MARKET_ITEMS } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
 import ExtraState from 'redux/types/user/ExtraState';
 
@@ -17,6 +17,11 @@ const extra = (state = initialState, { type, payload }: ReduxAction) => {
       return {
         ...state,
         loading: payload
+      };
+    case SET_MARKET_ITEMS:
+      return {
+        ...state,
+        market: payload
       };
     default:
       return state;

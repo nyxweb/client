@@ -52,20 +52,17 @@ const UserArea: React.FC<Props & RouteComponentProps> = ({ history }) => {
         {resources.map((res: IResource, i: number) => (
           <Resource key={i} resource={res} />
         ))}
-        <div className='main'>
-          <div className='block credits'>
-            <CreditsIcon />{' '}
-            {account && account.resources
-              ? account.resources.credits.toLocaleString()
-              : ''}
+        {account && (
+          <div className='main'>
+            <div className='block credits'>
+              <CreditsIcon />{' '}
+              {Number(account.resources.credits).toLocaleString()}
+            </div>
+            <div className='block money'>
+              <MoneyIcon /> {Number(account.resources.zen).toLocaleString()}
+            </div>
           </div>
-          <div className='block money'>
-            <MoneyIcon />{' '}
-            {account && account.resources
-              ? account.resources.zen.toLocaleString()
-              : ''}
-          </div>
-        </div>
+        )}
       </div>
       <div className='menu'>
         <div className='section'>

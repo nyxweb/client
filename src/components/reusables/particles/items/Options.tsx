@@ -72,7 +72,7 @@ const Options: React.FC<Props> = ({ item, itemData, image = false }) => {
             />
           </div>
         )}
-        {!!itemData.class && (
+        {typeof itemData.class === 'object' && !!itemData.class.length && (
           <div className='row equipped'>
             {itemData.class.map((cls: number, i: number) => (
               <div className='class' key={i}>
