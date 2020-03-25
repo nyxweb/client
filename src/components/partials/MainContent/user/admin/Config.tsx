@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import uuid from 'uuid/v4';
 
 // Partials
 import Loader from 'components/partials/Loader';
-
-// Actions
-import { getConfig } from 'actions/config';
 
 // Types
 import AppState from 'redux/types/app';
@@ -30,11 +27,6 @@ const Config: React.FC<Props> = () => {
 
   const { loading } = useSelector((state: AppState) => state.user.admin);
   const config = useSelector((state: AppState) => state.config);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getConfig());
-  }, [dispatch]);
 
   const renderConfig = (config: string) => {
     switch (config) {

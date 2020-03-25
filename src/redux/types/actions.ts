@@ -61,3 +61,6 @@ export const SET_NEWS = 'SET_NEWS';
 export const SET_NEWS_SINGLE = 'SET_NEWS_SINGLE';
 export const CLEAR_NEWS = 'CLEAR_NEWS';
 export const CLEAR_NEWS_SINGLE = 'CLEAR_NEWS_SINGLE';
+
+// Utils
+export const SET_MODAL_LOADER = 'SET_MODAL_LOADER';

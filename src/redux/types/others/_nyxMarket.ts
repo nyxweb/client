@@ -1,5 +1,9 @@
+import Character from '../rankings/Character';
+
 export default interface _nyxMarket {
+  index: number;
   account: string;
+  character: string;
   hex: string;
   price: string;
   name: string;
@@ -15,4 +19,5 @@ export default interface _nyxMarket {
   options: number;
   ancient: number;
   timestamp: number;
+  character_: Character;
 }
