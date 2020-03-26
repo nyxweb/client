@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from './form/Button';
 
 interface Props {
@@ -18,10 +18,22 @@ const Modal: React.FC<Props> = ({
   onAccept,
   onDecline
 }) => {
+  const modalRef = useRef(null);
+
+  const handleClickOutside = (e: React.MouseEvent) => {
+    if (e.target === modalRef.current) {
+      onDecline();
+    }
+  };
+
   return (
-    <div className={`Modal ${open ? 'open' : 'closed'}`}>
+    <div
+      className={`Modal ${open ? 'open' : 'closed'}`}
+      onClick={handleClickOutside}
+      ref={modalRef}
+    >
       <div className='dialogBox'>
-        <div className='title'>{title}</div>
+        <div className='dialog-title'>{title}</div>
         <div className='buttons'>
           <Button
             value={accept}

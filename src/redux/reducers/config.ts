@@ -1,4 +1,4 @@
-import { SET_CONFIG, SET_CONFIG_FAILED } from 'redux/types/actions';
+import { SET_CONFIG } from 'redux/types/actions';
 import { ReduxAction } from 'redux/types/app';
 import ConfigState from '../types/ConfigState';
 
@@ -14,7 +14,8 @@ const initialState: ConfigState = {
   change_class: null,
   itemsList: null,
   itemsAncient: null,
-  itemsOptions: null
+  itemsOptions: null,
+  market: null
 };
 
 const events = (state = initialState, action: ReduxAction) => {
@@ -23,14 +24,6 @@ const events = (state = initialState, action: ReduxAction) => {
   switch (type) {
     case SET_CONFIG:
       return payload;
-    case SET_CONFIG_FAILED:
-      return {
-        events: false,
-        online_time: false,
-        vip: false,
-        reset: false,
-        stats: false
-      };
     default:
       return state;
   }

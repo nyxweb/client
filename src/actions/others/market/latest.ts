@@ -11,10 +11,11 @@ const getCharacters: ActionCreator<ThunkAction<
   AppState,
   any,
   Action
->> = () => async dispatch => {
+>> = (page, perPage) => async dispatch => {
   try {
     const { data } = await axios.get(
-      process.env.REACT_APP_API_URI + '/others/market?limit=3'
+      process.env.REACT_APP_API_URI +
+        `/others/market?page=${page}&perPage=${perPage}`
     );
 
     dispatch({

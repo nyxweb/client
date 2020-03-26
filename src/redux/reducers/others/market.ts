@@ -3,11 +3,14 @@ import { ReduxAction } from 'redux/types/app';
 import _nyxMarket from 'redux/types/others/_nyxMarket';
 
 interface MarketState {
-  latest: _nyxMarket[] | null;
+  latest: {
+    list: _nyxMarket[] | null;
+    count: number | null;
+  };
 }
 
 const initialState: MarketState = {
-  latest: null
+  latest: { list: null, count: null }
 };
 
 const market = (state = initialState, action: ReduxAction) => {
@@ -22,7 +25,10 @@ const market = (state = initialState, action: ReduxAction) => {
     case MARKET_LATEST_FAILED:
       return {
         ...state,
-        latest: false
+        latest: {
+          list: false,
+          count: 0
+        }
       };
     default:
       return state;

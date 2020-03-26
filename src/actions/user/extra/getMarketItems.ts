@@ -14,12 +14,13 @@ const getMarketItems: ActionCreator<ThunkAction<
   AppState,
   any,
   Action
->> = page => async dispatch => {
+>> = (page, perPage) => async dispatch => {
   dispatch({ type: SET_EXTRA_LOADER, payload: true });
 
   try {
     const { data } = await axios.get(
-      process.env.REACT_APP_API_URI + '/others/market?page=' + page
+      process.env.REACT_APP_API_URI +
+        `/others/market?page=${page}&perPage=${perPage}`
     );
 
     dispatch({ type: SET_MARKET_ITEMS, payload: data });

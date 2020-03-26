@@ -15,6 +15,7 @@ export default interface RankState {
   characters: {
     loading: boolean;
     list: Character[] | null;
+    count: number | null;
   };
 
   character: {

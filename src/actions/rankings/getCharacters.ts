@@ -15,7 +15,7 @@ const getCharacters: ActionCreator<ThunkAction<
   AppState,
   any,
   Action
->> = (page: number) => async dispatch => {
+>> = (page, perPage) => async dispatch => {
   dispatch({
     type: RANKINGS_LOADING,
     payload: true
@@ -23,7 +23,8 @@ const getCharacters: ActionCreator<ThunkAction<
 
   try {
     const { data } = await axios.get(
-      process.env.REACT_APP_API_URI + `/characters?page=${page}`
+      process.env.REACT_APP_API_URI +
+        `/characters?page=${page}&perPage=${perPage}`
     );
 
     dispatch({

@@ -53,5 +53,23 @@ export default interface ConfigState {
   itemsAncient: { [key: string]: any } | null;
   itemsOptions: { [key: string]: any } | null;
 
+  market: {
+    enabled: boolean;
+    sidebar_total: number;
+    per_page: number;
+    items_expire: number;
+    cost: Array<
+      | {
+          group: number;
+          id: number;
+          level: number;
+          value: number;
+        }
+      | {
+          [key in 'zen' | 'credits']: number;
+        }
+    >;
+  } | null;
+
   [key: string]: any;
 }

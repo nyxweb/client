@@ -1,95 +1,104 @@
 .Market {
-  margin: 20px;
-  background: rgba(63, 85, 114, 0.1);
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-  padding: 5px 0 5px 5px;
-  overflow: hidden;
+  .itemsList {
+    margin: 20px;
+    background: rgba(63, 85, 114, 0.1);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    padding: 5px;
 
-  .itemBlock {
-    width: 90px;
-    background: rgba(0, 0, 0, 0.15);
-    margin: 5px;
-    float: left;
-    display: grid;
-    grid-template-areas:
-      'time     time'
-      'price1   item'
-      'price2   price2'
-      'merchant merchant';
-
-    &.free {
+    .itemBlock {
+      width: 101px;
+      background: rgba(0, 0, 0, 0.15);
+      margin: 10px;
+      float: left;
+      display: grid;
       grid-template-areas:
         'time     time'
-        'item     item'
+        'price1   item'
         'price2   price2'
         'merchant merchant';
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid rgba(68, 95, 129, 0.363);
+      transition: 0.2s ease-in-out;
+      box-shadow: 0 0 5px 1px rgba(0, 139, 127, 0.096);
 
       .price1 {
-        display: none;
+        width: 37px;
+        height: 64px;
+        background: rgba(65, 94, 94, 0.24);
+        grid-area: price1;
       }
 
       .item {
-        width: 91px;
-
-        .content {
-          max-width: 80px;
-        }
-      }
-    }
-
-    .price1 {
-      width: 34px;
-      height: 58px;
-      background: rgba(65, 94, 94, 0.24);
-      grid-area: price1;
-    }
-
-    .item {
-      width: 57px;
-      height: 58px;
-      grid-area: item;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .content {
-        max-width: 50px;
-        max-height: 50px;
-      }
-    }
-
-    .price2 {
-      height: 34px;
-      background: rgba(65, 94, 94, 0.24);
-      grid-area: price2;
-
-      .priceFree {
-        width: 100%;
-        height: 100%;
+        width: 64px;
+        height: 64px;
+        grid-area: item;
         display: flex;
         align-items: center;
         justify-content: center;
-        text-transform: uppercase;
-        color: rgb(33, 155, 33);
+        border: 1px solid rgba(68, 95, 129, 0.363);
+
+        .content {
+          max-width: 54px;
+          max-height: 54px;
+        }
       }
-    }
 
-    .merchant {
-      height: 25px;
-      grid-area: merchant;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.15);
-    }
+      &.free {
+        grid-template-areas:
+          'time     time'
+          'item     item'
+          'price2   price2'
+          'merchant merchant';
 
-    .time {
-      height: 16px;
-      font-size: 9px;
-      padding: 2px;
-      text-align: center;
-      grid-area: time;
-      background: rgba(0, 0, 0, 0.15);
+        .price1 {
+          display: none;
+        }
+
+        .item {
+          width: 101px;
+
+          .content {
+            max-width: 90px;
+          }
+        }
+      }
+
+      .price2 {
+        height: 37px;
+        background: rgba(65, 94, 94, 0.24);
+        grid-area: price2;
+
+        .priceFree {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-transform: uppercase;
+          color: rgb(33, 155, 33);
+        }
+      }
+
+      .merchant {
+        height: 25px;
+        grid-area: merchant;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.15);
+      }
+
+      .time {
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        grid-area: time;
+        background: rgba(0, 0, 0, 0.15);
+      }
     }
   }
 }

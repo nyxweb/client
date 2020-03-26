@@ -3,7 +3,10 @@ import _nyxNews from './_nyxNews';
 
 export default interface OtherState {
   market: {
-    latest: _nyxMarket[] | null;
+    latest: {
+      list: _nyxMarket[] | null;
+      count: number | null;
+    };
   };
 
   news: {

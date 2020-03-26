@@ -19,24 +19,50 @@
   }
 
   .dialogBox {
+    position: relative;
     min-width: 250px;
-    min-height: 100px;
-    background: rgba(0, 0, 0, 1);
+    max-width: 600px;
+    background: rgba(20, 30, 43, 0.938) url(../../images/layout/content-bg.jpg);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 25px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.04);
 
-    .title {
-      font-size: 18px;
+    .dialog-title {
       margin: 10px;
+      font-size: 18px;
     }
 
     .buttons {
-      margin: 20px 10px 10px 10px;
+      margin-top: 20px;
       display: flex;
       justify-content: space-evenly;
+    }
+
+    &:before {
+      content: '';
+      background: url('../../images/layout/left-container-icon.png') no-repeat
+        center center/cover;
+      left: -30px;
+      top: -30px;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &:after {
+      content: '';
+      background: url('../../images/layout/right-container-icon.png') no-repeat
+        center center/cover;
+      right: -30px;
+      top: -30px;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      z-index: 1;
     }
   }
 }

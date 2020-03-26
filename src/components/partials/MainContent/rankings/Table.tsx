@@ -33,20 +33,9 @@ const Table: React.FC<Props> = ({ characters, page, setPage }) => {
             <td colSpan={8}>No results found</td>
           </tr>
         ) : (
-          <>
-            {characters.map((char: Character, i: number) => (
-              <TableRow key={i} rank={i + 1 + (page - 1) * 20} char={char} />
-            ))}
-            <tr>
-              <td colSpan={8}>
-                {page > 1 && (
-                  <button onClick={() => setPage(page - 1)}>prev</button>
-                )}{' '}
-                page: [{page}]{' '}
-                <button onClick={() => setPage(page + 1)}>next</button>
-              </td>
-            </tr>
-          </>
+          characters.map((char: Character, i: number) => (
+            <TableRow key={i} rank={i + 1 + (page - 1) * 20} char={char} />
+          ))
         )}
       </tbody>
     </table>

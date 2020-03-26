@@ -1,0 +1,29 @@
+.Pagination {
+  margin: -10px 20px 20px 20px;
+  background: rgba(63, 85, 114, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+
+  .controls {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      width: 15px;
+      height: 15px;
+      margin-left: 10px;
+
+      &.active {
+        color: #53709c;
+
+        &:hover {
+          color: #8aa9d8;
+        }
+      }
+    }
+  }
+}

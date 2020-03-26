@@ -23,18 +23,19 @@ interface Props {}
 const Market: React.FC<Props> = () => {
   const [modal, setModal] = useState({
     title: 'Are you sure you want to buy this item?',
-    accept: 'Yes, buy now',
-    decline: `No, don't buy`,
+    accept: 'buy now',
+    decline: `don't buy`,
     open: false
   });
   const [selectedItem, setItem] = useState<number>();
 
-  const latest = useSelector((state: AppState) => state.others.market.latest);
+  const { list } = useSelector((state: AppState) => state.others.market.latest);
+  const config = useSelector((state: AppState) => state.config.market);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getLatest());
-  }, [dispatch]);
+    config && dispatch(getLatest(1, config.sidebar_total));
+  }, [dispatch, config]);
 
   const onAccept = () => {
     setModal({ ...modal, open: false });
@@ -51,14 +52,14 @@ const Market: React.FC<Props> = () => {
   return (
     <ContentBlock title='market items' desc='latest items on the market'>
       <div className='MarketItems'>
-        {!latest ? (
-          latest === null ? (
+        {!list ? (
+          list === null ? (
             <ReactLoader />
           ) : (
             'Failed to load'
           )
-        ) : latest.length ? (
-          latest.map((item, i) => {
+        ) : list.length ? (
+          list.map((item, i) => {
             const price = item.price ? JSON.parse(item.price) : null;
 
             return (
@@ -69,7 +70,7 @@ const Market: React.FC<Props> = () => {
                       <Resource
                         key={i}
                         resource={r}
-                        style={{ margin: '7px 7px 7px 0' }}
+                        style={{ margin: '5px 5px 5px 0' }}
                       />
                     ))
                   ) : (

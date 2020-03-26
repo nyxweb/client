@@ -5,7 +5,10 @@ import ExtraState from 'redux/types/user/ExtraState';
 const initialState: ExtraState = {
   loading: false,
   auction: null,
-  market: null,
+  market: {
+    list: null,
+    count: null
+  },
   quests: null,
   resources: null,
   storage: null

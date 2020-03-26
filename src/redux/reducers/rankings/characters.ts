@@ -10,11 +10,13 @@ import Character from 'redux/types/rankings/Character';
 interface ICharacters {
   loading: boolean;
   list: Character[] | null | false;
+  count: number | null;
 }
 
 const initialState: ICharacters = {
   loading: false,
-  list: null
+  list: null,
+  count: null
 };
 
 const characters = (state = initialState, { type, payload }: ReduxAction) => {
@@ -27,14 +29,15 @@ const characters = (state = initialState, { type, payload }: ReduxAction) => {
     case GET_RANK_CHARACTERS:
       return {
         ...state,
-        list: payload
+        ...payload
       };
     case CLEAR_RANK_CHARACTERS:
       return initialState;
     case GET_RANK_CHARACTERS_FAILED:
       return {
         ...state,
-        list: false
+        list: false,
+        count: null
       };
     default:
       return state;
