@@ -5,8 +5,11 @@ interface Props {}
 const Header: React.FC<Props> = () => {
   return (
     <header className='Header'>
-      <div className='character'></div>
-      <div className='game-start'></div>
+      <div className='smog'>
+        <div className='x1' />
+        <div className='x2' />
+        <div className='x3' />
+      </div>
     </header>
   );
 };

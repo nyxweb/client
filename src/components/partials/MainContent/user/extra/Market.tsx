@@ -160,7 +160,12 @@ const Market: React.FC<Props> = () => {
           totalItems={totalItems}
         />
       )}
-      <Modal modal={modal} onAccept={onAccept} onDecline={onDecline} />
+      <Modal
+        modal={modal}
+        onAccept={onAccept}
+        onDecline={onDecline}
+        open={modal.open}
+      />
     </div>
   );
 };

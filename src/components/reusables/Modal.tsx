@@ -2,21 +2,23 @@ import React, { useRef } from 'react';
 import Button from './form/Button';
 
 interface Props {
-  modal: {
+  modal?: {
     title: string;
-    accept?: string;
-    decline?: string;
-    open: boolean;
+    accept: string;
+    decline: string;
   };
 
-  onAccept: () => void;
+  onAccept?: () => void;
   onDecline: () => void;
+  open: boolean;
 }
 
 const Modal: React.FC<Props> = ({
-  modal: { title, accept = 'Accept', decline = 'Decline', open },
+  modal,
   onAccept,
-  onDecline
+  onDecline,
+  open,
+  children
 }) => {
   const modalRef = useRef(null);
 
@@ -33,16 +35,26 @@ const Modal: React.FC<Props> = ({
       ref={modalRef}
     >
       <div className='dialogBox'>
-        <div className='dialog-title'>{title}</div>
-        <div className='buttons'>
-          <Button
-            value={accept}
-            className='btn-accept'
-            looks='green'
-            onClick={onAccept}
-          />
-          <Button value={decline} className='btn-decline' onClick={onDecline} />
-        </div>
+        {children && !modal ? (
+          children
+        ) : (
+          <>
+            <div className='dialog-title'>{modal?.title}</div>
+            <div className='buttons'>
+              <Button
+                value={modal?.accept || 'Accept'}
+                className='btn-accept'
+                looks='green'
+                onClick={onAccept}
+              />
+              <Button
+                value={modal?.decline || 'Decline'}
+                className='btn-decline'
+                onClick={onDecline}
+              />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

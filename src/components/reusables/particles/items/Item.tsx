@@ -5,7 +5,10 @@ import uuid from 'uuid/v4';
 
 // Reusables
 import Options from 'components/reusables/particles/items/Options';
-import { DragItem } from 'components/partials/MainContent/user/extra/Storage';
+import {
+  DragItem,
+  SellItem
+} from 'components/partials/MainContent/user/extra/Storage';
 
 // Helpers
 import { decode, name } from 'helpers/items';
@@ -44,6 +47,7 @@ interface Props {
 
   itemData?: any;
   className?: string;
+  sellOnClick?: (item: SellItem) => void;
 }
 
 const Item: React.FC<Props> = ({
@@ -59,7 +63,8 @@ const Item: React.FC<Props> = ({
   slot,
   item,
   itemData: _itemData,
-  className
+  className,
+  sellOnClick
 }) => {
   const [isDragged, setIsDragged] = useState(false);
   const [preview, setPreview] = useState<HTMLImageElement>();
@@ -156,6 +161,16 @@ const Item: React.FC<Props> = ({
             onDragStart={onDragStart}
             onDrag={onDrag}
             onDragEnd={onDragEnd}
+            onClick={() => {
+              if (
+                sellOnClick &&
+                slot !== undefined &&
+                from !== undefined &&
+                item !== undefined
+              ) {
+                sellOnClick({ slot: slot, from, item });
+              }
+            }}
           >
             <div
               style={{

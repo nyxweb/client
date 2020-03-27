@@ -92,7 +92,12 @@ const Market: React.FC<Props> = () => {
           'No data'
         )}
       </div>
-      <Modal modal={modal} onAccept={onAccept} onDecline={onDecline} />
+      <Modal
+        modal={modal}
+        onAccept={onAccept}
+        onDecline={onDecline}
+        open={modal.open}
+      />
     </ContentBlock>
   );
 };

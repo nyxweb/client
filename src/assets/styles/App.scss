@@ -17,6 +17,7 @@ body {
     background: url('../images/layout/lightning.gif') no-repeat top 170px center,
       url('../images/layout/top-bg.jpg') no-repeat top center,
       url('../images/layout/bottom-bg.jpg') no-repeat bottom center;
+    overflow-x: hidden;
 
     * {
       box-sizing: border-box;
@@ -91,8 +92,9 @@ body {
       @import 'assets/styles/reusables/Button.scss';
       @import 'assets/styles/reusables/Table.scss';
       @import 'assets/styles/reusables/NoData.scss';
-      @import 'assets/styles/reusables/Modal.scss';
       @import 'assets/styles/reusables/Pagination.scss';
+      @import 'assets/styles/reusables/Modal.scss';
+      @import 'assets/styles/reusables/CustomModals.scss';
 
       & .Container {
         min-height: 1050px;

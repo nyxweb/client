@@ -12,7 +12,10 @@ import { storage } from 'actions/user/extra';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Types
-import { DragItem } from 'components/partials/MainContent/user/extra/Storage';
+import {
+  DragItem,
+  SellItem
+} from 'components/partials/MainContent/user/extra/Storage';
 import AppState from 'redux/types/app';
 
 interface Item {
@@ -41,6 +44,7 @@ interface Props {
 
   dragItem?: DragItem;
   setDragItem?: (item: DragItem) => void;
+  sellOnClick?: (item: SellItem) => void;
 }
 
 const Warehouse: React.FC<Props> = ({
@@ -52,7 +56,8 @@ const Warehouse: React.FC<Props> = ({
   slotSize = 26,
   locked = false,
   dragItem,
-  setDragItem
+  setDragItem,
+  sellOnClick
 }) => {
   const [itemsList, setItemsList] = useState<Item[]>();
   const [hexArray, setHexArray] = useState<RegExpMatchArray | null>();
@@ -330,6 +335,7 @@ const Warehouse: React.FC<Props> = ({
               slot={slot}
               item={item}
               itemData={itemData}
+              sellOnClick={sellOnClick}
             />
           ))}
       </div>

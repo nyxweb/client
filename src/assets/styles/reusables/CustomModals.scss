@@ -1,0 +1,28 @@
+.CustomModal {
+  &.sellItem {
+    width: 200px;
+
+    .title {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .item {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 10px 0;
+    }
+
+    .fields {
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        input {
+          width: 100px;
+        }
+      }
+    }
+  }
+}
