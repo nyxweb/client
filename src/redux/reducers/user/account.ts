@@ -22,7 +22,10 @@ const initialState: AccountState = {
   loading: false,
   verified: null,
   info: null,
-  logs: null
+  logs: {
+    list: null,
+    count: null
+  }
 };
 
 const account = (state = initialState, { type, payload }: ReduxAction) => {

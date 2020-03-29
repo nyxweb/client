@@ -23,12 +23,15 @@ export default interface AccountState {
     warehouse: warehouse;
   } | null;
 
-  logs:
-    | {
-        message: string;
-        module: string;
-        timestamp: number;
-        ip: string;
-      }[]
-    | null;
+  logs: {
+    list:
+      | {
+          message: string;
+          module: string;
+          timestamp: number;
+          ip: string;
+        }[]
+      | null;
+    count: number | null;
+  };
 }

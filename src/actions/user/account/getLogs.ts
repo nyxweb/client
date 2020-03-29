@@ -11,17 +11,18 @@ import { ThunkAction } from 'redux-thunk';
 // Actions
 import { notice } from 'actions/utils';
 
-const getLogs: ActionCreator<ThunkAction<
-  void,
-  AppState,
-  any,
-  Action
->> = () => async dispatch => {
+const getLogs: ActionCreator<ThunkAction<void, AppState, any, Action>> = (
+  page,
+  perPage,
+  category
+) => async dispatch => {
   dispatch({ type: SET_ACCOUNT_LOADER, payload: true });
 
   try {
     const { data } = await axios.get(
-      process.env.REACT_APP_API_URI + '/user/account/logs'
+      process.env.REACT_APP_API_URI +
+        `/user/account/logs?page=${page}&perPage=${perPage}` +
+        (category ? `&category=${category}` : '')
     );
 
     dispatch({ type: SET_LOGS, payload: data });

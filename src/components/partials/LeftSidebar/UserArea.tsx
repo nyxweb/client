@@ -25,6 +25,7 @@ const UserArea: React.FC<Props & RouteComponentProps> = ({ history }) => {
   const dispatch = useDispatch();
 
   const account = useSelector((state: AppState) => state.user.account.info);
+  const config = useSelector((state: AppState) => state.config);
 
   useEffect(() => {
     if (account && account.resources) {
@@ -89,8 +90,12 @@ const UserArea: React.FC<Props & RouteComponentProps> = ({ history }) => {
           <div className={`content ${menu === 'char' ? 'open' : 'closed'}`}>
             <Link to='/user/char/reset'>Reset</Link>
             <Link to='/user/char/stats'>Add Stats</Link>
-            <Link to='/user/char/name'>Change Name</Link>
-            <Link to='/user/char/class'>Change Class</Link>
+            {config && config.change_name?.enabled && (
+              <Link to='/user/char/name'>Change Name</Link>
+            )}
+            {config && config.change_class?.enabled && (
+              <Link to='/user/char/class'>Change Class</Link>
+            )}
           </div>
         </div>
         <div className='section'>

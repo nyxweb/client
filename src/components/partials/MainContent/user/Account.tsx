@@ -19,7 +19,7 @@ const AccountMain: React.FC<Props> = () => {
         <Route path='/user/account/password' component={Password} />
         <Route path='/user/account/vip' component={VIP} />
         <Route path='/user/account/online' component={Online} />
-        <Route path='/user/account/logs' component={Logs} />
+        <Route path='/user/account/logs/:category?' component={Logs} />
         <Route path='/user/account' component={NotFound} />
       </Switch>
     </div>
