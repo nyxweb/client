@@ -6,7 +6,7 @@ import { getMarketItems } from '.';
 import { getLatest } from 'actions/others/market';
 
 // Types
-import { SET_MODAL_LOADER, STORAGE_UPDATE } from 'redux/types/actions';
+import { SET_MODAL_LOADER, RESOURCES_UPDATE } from 'redux/types/actions';
 import AppState from 'redux/types/app';
 import { ActionCreator, Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
@@ -16,7 +16,7 @@ const buyItem: ActionCreator<ThunkAction<
   AppState,
   any,
   Action
->> = (itemId, page = undefined) => async dispatch => {
+>> = (itemId, page, total) => async dispatch => {
   dispatch({ type: SET_MODAL_LOADER, payload: true });
 
   try {
@@ -25,9 +25,9 @@ const buyItem: ActionCreator<ThunkAction<
       { itemId }
     );
 
-    dispatch({ type: STORAGE_UPDATE, payload: data.storage });
-    dispatch(getMarketItems(page));
-    dispatch(getLatest());
+    dispatch({ type: RESOURCES_UPDATE, payload: data.resources });
+    dispatch(getMarketItems(page, total));
+    dispatch(getLatest(page, total));
     notice(data);
   } catch (error) {
     notice(error);

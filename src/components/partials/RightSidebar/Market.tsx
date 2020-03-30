@@ -39,7 +39,7 @@ const Market: React.FC<Props> = () => {
 
   const onAccept = () => {
     setModal({ ...modal, open: false });
-    dispatch(buyItem(selectedItem));
+    dispatch(buyItem(selectedItem, 1, config?.sidebar_total));
   };
 
   const onDecline = () => setModal({ ...modal, open: false });

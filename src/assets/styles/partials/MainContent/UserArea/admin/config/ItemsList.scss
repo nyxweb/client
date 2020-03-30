@@ -80,6 +80,35 @@
       margin-bottom: 15px;
     }
 
+    .addLevel {
+      width: 15px;
+      height: 15px;
+      transition: 0.2s ease-in-out;
+      margin-left: 10px;
+
+      &:hover {
+        color: #88b0d4;
+      }
+    }
+
+    .itemLevels {
+      position: relative;
+
+      .removeLevel {
+        position: absolute;
+        right: 0;
+        top: calc(50% - 7px);
+        width: 15px;
+        height: 15px;
+        color: #ce5353;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+          color: #cc2e2e;
+        }
+      }
+    }
+
     table.section {
       width: 100%;
       border-collapse: collapse;
@@ -93,9 +122,10 @@
       caption {
         font-size: 14px;
         padding: 5px;
-        margin-bottom: 5px;
+        margin: 20px 0 5px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         text-align: left;
+        vertical-align: middle;
       }
 
       td {

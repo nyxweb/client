@@ -14,7 +14,7 @@ const getMarketItems: ActionCreator<ThunkAction<
   AppState,
   any,
   Action
->> = (page, perPage) => async dispatch => {
+>> = (page = 1, perPage = 20) => async dispatch => {
   dispatch({ type: SET_EXTRA_LOADER, payload: true });
 
   try {

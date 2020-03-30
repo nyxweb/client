@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Icons
+import { ReactComponent as RemoveX } from 'assets/icons/delete.svg';
 import { ReactComponent as Delete } from 'assets/icons/trash.svg';
 import { ReactComponent as Add } from 'assets/icons/add.svg';
 
@@ -17,7 +18,7 @@ import uuid from 'uuid';
 
 interface Props {}
 
-const Downloads: React.FC<Props> = () => {
+const ItemsList: React.FC<Props> = () => {
   const [list, setList] = useState<any>();
   const [ancient, setAncient] = useState<any>();
   const [selected, setSelected] = useState<any>();
@@ -102,6 +103,28 @@ const Downloads: React.FC<Props> = () => {
     setSelected(updated);
   };
 
+  const onChangeLevelName = (name: string, level: number) => {
+    const updated = { ...selected };
+    if (updated.levels) {
+      updated.levels[level] = name;
+    } else {
+      updated.levels = [name];
+    }
+
+    setSelected(updated);
+  };
+
+  const removeLevel = (index: number) => {
+    const updated = { ...selected };
+    if (Object.entries(updated.levels).length > 1) {
+      delete updated.levels[index];
+    } else {
+      delete updated.levels;
+    }
+
+    setSelected(updated);
+  };
+
   return (
     <>
       <div className='ItemsList'>
@@ -112,7 +135,7 @@ const Downloads: React.FC<Props> = () => {
               <select
                 onChange={handleItemSelect}
                 defaultValue={
-                  selected ? `${selected.group}:${selected.id}` : ''
+                  selected ? `${selected.group}:${selected.id}` : '-'
                 }
               >
                 <option>-</option>
@@ -440,6 +463,37 @@ const Downloads: React.FC<Props> = () => {
                 </tr>
               </tbody>
             </table>
+            <table className='section'>
+              <caption>
+                levels ( e.g rena +1 = stone ) <Add className='addLevel' />
+              </caption>
+              <tbody>
+                {selected.levels && Object.entries(selected.levels).length ? (
+                  Object.entries(selected.levels).map(([level, name]: any) => (
+                    <tr>
+                      <td>+{level}</td>
+                      <td className='itemLevels'>
+                        <input
+                          type='text'
+                          value={name}
+                          onChange={e =>
+                            onChangeLevelName(e.target.value, level)
+                          }
+                        />
+                        <RemoveX
+                          className='removeLevel'
+                          onClick={() => removeLevel(level)}
+                        />
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={2}>no levels</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
           </div>
         )}
       </div>
@@ -447,4 +501,4 @@ const Downloads: React.FC<Props> = () => {
   );
 };
 
-export default Downloads;
+export default ItemsList;
