@@ -27,7 +27,7 @@
     "@ckeditor/ckeditor5-build-classic": "^18.0.0",
     "@ckeditor/ckeditor5-react": "^2.1.0",
     "animate.css": "^3.7.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "moment": "^2.24.0",
     "react": "^16.12.0",
